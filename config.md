@@ -27,7 +27,7 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def title = "NLPwShiyi - Natural Language Processing with Shiyi"
 @def website_description = "Website for documenting my journey of understanding Natural Language Processing"
-@def prepath = "./__site"
+@def prepath = "nlpwsys"
 <!-- @def website_url   = "https://dataflowr.github.io/mydocs/" -->
 @def lang = "julia"
 @def author = ""
