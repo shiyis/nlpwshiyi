@@ -570,12 +570,12 @@ footer,
   margin-bottom: 2rem
 }
 
-/* img {
-  display: block;
-  max-width: 100%;
-  margin: 0 0 -1rem;
-  border-radius: 5px
-} */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
 
 table {
   margin-bottom: 1rem;
@@ -1063,3 +1063,29 @@ blockquote {
   margin: 1rem 1rem 1rem 1rem;
   border-radius: 5px;
 } */
+
+
+
+img[alt=cky_tbl] {
+  width: 360px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+img[alt=finite_fig1] {
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+img[alt=finite_fig2] {
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

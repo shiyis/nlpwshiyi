@@ -38,7 +38,7 @@ html {
 }
 
 .franklin-content .container img {
-  /* width: auto; */
+  width: 100%;
   padding-left: 0;
   border-radius: 10px;
 }
@@ -689,11 +689,7 @@ h2 {
 
 }
 
-/* .button:hover{ background-color: #555; }*/
-img[alt=info1] {
-  width: 560px;
-  text-align: center;
-}
+
 
 img[alt=cky] {
   width: 360px;
@@ -724,9 +720,3 @@ img[alt=finite_fig2] {
   width: 50%;
 }
 
-img[alt=intro] {
-  width: 225px;
-  display: block;
-  margin-right: auto;
-  margin-left: 30%;
-}

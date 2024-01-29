@@ -168,6 +168,8 @@ savefig(joinpath(@OUTPUT, "ent1.svg")) # hide
 
 Below is the graph for a Bernoulli trial (X={0,1}) the graph of entropy vs. Pr(X=1). The highest H(X) = 1 = log(2)
 
+---
+
 \fig{ent1}
 
 ---
