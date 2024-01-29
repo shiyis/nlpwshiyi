@@ -1069,7 +1069,7 @@ img[alt=intro] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 
@@ -1078,7 +1078,7 @@ img[alt=cky_tbl] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 img[alt=finite_fig1] {
@@ -1086,7 +1086,7 @@ img[alt=finite_fig1] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 img[alt=finite_fig2] {
@@ -1094,5 +1094,5 @@ img[alt=finite_fig2] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
