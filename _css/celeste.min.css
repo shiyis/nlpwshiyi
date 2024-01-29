@@ -1064,6 +1064,13 @@ blockquote {
   border-radius: 5px;
 } */
 
+img[alt=intro] {
+  width: 360px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 
 img[alt=cky_tbl] {
