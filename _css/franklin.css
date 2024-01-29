@@ -386,15 +386,15 @@ code {
 
 .franklin-content .colbox-blue {
   background-color: #eef3f5;
-  padding-top: 5px;
+  padding-top: 18px;
   padding-right: 10px;
-  padding-left: 10px;
+  padding-left: 12px;
   padding-bottom: 5px;
-  margin-left: 5px;
+  margin-left: 0px;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-radius: 0 10px 10px 0;
-  border-left: 5px solid #4c9cf1;
+  border-radius: 10px 10px 10px 10px;
+  border-left: 3px solid #4c9cf1;
 }
 
 
@@ -685,7 +685,16 @@ h2 {
 .card img {
 
   padding-left: 0;
-  width: 100%;
+  width: 100%;    background-color: #eef3f5;
+  padding-top: 18px;
+  padding-right: 10px;
+  padding-left: 12px;
+  padding-bottom: 5px;
+  margin-left: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px 10px 10px 10px;
+  border-left: 3px solid #4c9cf1;
 
 }
 
@@ -696,27 +705,4 @@ img[alt=cky] {
   text-align: center;
 }
 
-img[alt=cky_tbl] {
-  width: 360px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-img[alt=finite_fig1] {
-  width: 300px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-img[alt=finite_fig2] {
-  width: 300px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
