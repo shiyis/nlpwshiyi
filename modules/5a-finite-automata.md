@@ -1,6 +1,6 @@
 # Finite State Machine and Automata
 
-A finite automaton is the most basic machine capable of pattern recognition (FA). It is used to describe a Regular Language, just like in /baa+!/.
+A finite automaton is the most basic machine capable of pattern recognition (FA). It is used to describe a Regular Language, just like in `/baa+!/`.
 
 It is also used to recognize and evaluate Natural Language Expressions. There are five parts, or tuples, to the abstract machine called the finite automata or finite state machine. Its various states and the rules for transitioning between them are contingent upon the input symbol that is utilized.
 
@@ -73,7 +73,7 @@ See below figure:
 
 ---
 
-One important thing to note is, in NFA, if any path for an input string leads to a final state, then the input string is accepted. For example, in the above NFA, there are multiple paths for the input string “00”. Since one of the paths leads to a final state, “00” is accepted by the above NFA.
+One important thing to note is, in NFA, if any path for an input string leads to a final state, then the input string is accepted. For example, in the above NFA, there are multiple paths for the input string `“00”`. Since one of the paths leads to a final state, `“00”` is accepted by the above NFA.
 
 Some Important Points:
 

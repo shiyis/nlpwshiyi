@@ -1,18 +1,22 @@
 # What Constitutes As The Philosophy of Mind？
 
-This blog will summarize blogs, articles, and papers I have read about _The Computational Theory of Mind_.
+This blog will summarize articles, papers, and material I have gone through that touch on the subject of _The Computational Theory of Mind_.
 
 In this one article that touches on this subject, it's known that the computational theory of mind promises us the abilities of a machine to emulate reasoning, decision-making, problem solving, perception, linguistic comprehension, and other mental processes.
+
+**Table Of Contents**
+
+---
+
+\toc
+
+---
 
 Advances in computing raise the prospect known as _The Computational Theory of Mind_ (CTM). Computationalists understand this paradigm as the principle to cognitive science. Then later two schools of thoughts challenged this orthodox position.
 
 One pertains to the neurological properties of the mind and body and the other emphasized representational mental states.
 
-**Table Of Contents**
-
-\toc
-
-### Computationalism and The Classical Computational Theory of Mind
+### Computationalism vs The Classical Computational Theory of Mind
 
 On the other hand, according to CCTM, the mind is a computational system similar in important respects to a Turing machine, and core mental processes (e.g., reasoning, decision-making, and problem solving) are computations similar in important respects to computations executed by a Turing machine.
 
@@ -23,6 +27,8 @@ Second, CCTM is not intended metaphorically. CCTM does not simply hold that the 
 In offering such a model, we prescind from physical details. We attain an abstract computational description that could be physically implemented in diverse ways (e.g., through silicon chips, or neurons, or pulleys and levers). CCTM holds that a `suitable abstract computational model offers a literally true description of core mental processes`.
 
 The turing machine - or the earliest computational model is a device that assumes unlimited time and storage at its disposal. The device manipulates symbols, much as a human doing type-writing and creating characters on a paper.  In actuality, this would not be possible. A few important components and limitations,
+
+---
 
 @@colbox-blue
 
@@ -37,13 +43,15 @@ The turing machine - or the earliest computational model is a device that assume
 6. human cognitive constraints - lastly, the symbolic system that the Turing computer symbolizes could effectively duplicate it due to our cognitive constraints, which can only yield a certain number of possibilities.
    @@
 
+---
+
 One important breakthrough invention during the computationalism era was the _Logic Theorist_ computer program (Newell and Simon 1956) which proved 38 of the first 52 theorems from _Principia Mathematica_ (Whitehead and Russell 1925).
 
 Since the discrete nature of the system, it's concerned with its competency of whether it could model the continuous nature of human cognition. There's between the _digital_ paradigm behind the system with _analog_ system.
 
 The Turing machine also proved the existence of a _Universal Turing Machine_ (UTM), which results in the ultimate development of current computer logic and system. More importantly, a personal computer can mimic any Turing machine _until it exhausts its limited memory supply_.
 
-### The Representational Theory of Mind vs The Classical Computational Theory of Mind
+### The Representational vs The Classical Computational Theory of Mind
 
 As opposed to type-identity theory, mental states are brain states. Putnam proposed a different view that mental states are [_multiply realizable_](https://plato.stanford.edu/entries/multiple-realizability/): the same mental state can be realized by diverse physical systems, including not only terrestrial creatures but also hypothetical creatures.
 
@@ -57,12 +65,12 @@ Another important limitation with this is that _probabilistic automata_ doesn't 
 
 ```plaintext
 Productivity: 
-    RTM assumes a finites set of symbols in natural language and the device could entertain a infinite 
-	numbers of logic.
+  
+RTM assumes a finites set of symbols in natural language and the device could entertain a infinite numbers of logic.
 
 Systematicity:
-    RTM also assumes that there are inherent systematic relations between basic 
-	cognitive constitutions.
+
+RTM also assumes that there are inherent systematic relations between basic cognitive constitutions.
 ```
 
 Therefore, to reflect such a mental image, the CCTM+RTM must be representational or schematic. This entails that the system will provide an elementary operations with specific rules that's manifested in a plan.
@@ -83,6 +91,8 @@ the mind is computable.
 
 Hilary Putnam (1967) introduced CCTM into philosophy. His position with _logical behaviorism_ and _type-identity theory_.
 
+---
+
 @@colbox-blue
 
 #### Logical Behaviorism vs Type/Token-Identity Theory
@@ -96,8 +106,9 @@ In short,
 * Logical behaviorism focuses on the relationship between mental states and observable behavior.
 * Type/token identity theory focuses on the relationship between mental states and physical states of the brain.
 
-
 @@
+
+---
 
 In the paper "The 'Mental' and the 'Physical'", where the re-known philosopher J.J.C. Smart (crediting the term to Herbert Feigl) presented his theories about 'is consciousness a brain process?"
 
@@ -116,6 +127,8 @@ In this case, he identifies consciousness with the broad term "sensations".
 
 The debate about what human beings are really have been going on for centuries. According to the prominent English biologist Thomas Henry Huxley (1825-1895), he believed that sensations and feelings are mere byproduct of mechanics of the brain. An epiphenomenon that is not the cause of any behavior. In his essay, "On the Hypothesis that Animals Are Automata, and Its History" he wrote:
 
+---
+
 @@colbox-blue
 
 #### What Does It Mean By Consciousness?
@@ -133,6 +146,8 @@ It seems to me that in men, as in brutes, there is no proof that any state of co
 the matter of the organism.
 @@
 
+---
+
 The primal instincts vs. the unknown. The necessity  of consciousness has been a hotly debated topic. A few primal physical responses of humans have indicated that humans could task being an automata without these familiar yet mysterious qualia. For example, humans could drive while talk, have fight-and-flight responses without being aware of it, and blindsight which are sensational responses to visual stimuli without actually experiencing the effects visually.
 
 Lastly, onto the discussions about pain. It seems that the presence of pain is superfluous. We need not to have to experience pain to understand to the risk of injury and be avoidance of danger.
@@ -142,6 +157,8 @@ Lastly, onto the discussions about pain. It seems that the presence of pain is s
 One answer to the questions argues that they are not merely physical,it's the nature's decision bestowed upon us with free will. It lets us to decide with this warning sign. It's more so a trade-off handed over to our free will. We experience discomfort caused by external stimulation and then we are given the option to consciously decide what we are going to do with it.
 
 Another objection to the byproduct hypothesis would be that,
+
+---
 
 @@colbox-blue
 
@@ -157,9 +174,13 @@ Epiphenomenalists would only be left with the option of accepting a crude and un
 
 @@
 
+---
+
 #### Consciousness As Strong Emergence
 
 This is the position that is too good to be true and argued against. As it's not very much plausible that it's the downward causal direction, where the emergence of consciousness caused the microscopic and molecular changes happening at a lower-level. The only justification to this position is that it opens up possibilities for free will. As explained by the physicist Sean Carroll,
+
+---
 
 @@colbox-blue
 
@@ -170,6 +191,8 @@ So-called “weak” emergence just says the obvious thing, that higher-level no
 Downward causation is one manifestation of this strong-emergence attitude. It’s the idea that what happens at lower levels can be directly influenced (causally acted upon) by what is happening at the higher levels. The idea, in other words, that you can’t really understand the microscopic behavior without knowing something about the macroscopic.
 
 @@
+
+---
 
 #### Consciousness As The Fundamental Property of Nature
 
@@ -247,9 +270,7 @@ This is the hot debate between these two different schools of thoughts with the 
 
 _Rescorla, Michael, "The Computational Theory of Mind", The Stanford Encyclopedia of Philosophy (Fall 2020 Edition), Edward N. Zalta (ed.)_
 
----
-
-### Topics That Might Be Relevant To This Blog
+<!-- ### Topics That Might Be Relevant To This Blog
 
 - Topic 2a: Computationalism
 
@@ -278,4 +299,4 @@ _Rescorla, Michael, "The Computational Theory of Mind", The Stanford Encyclopedi
   - [Subtopic 7b: Collaborative Filtering](./modules/7b-collaborative-filtering)
   - [Modules 8: Autoencoders and Transformers](./modules/8-autoencoders)
   - [Subtopic 9: Generative Adversarial Networks](./modules/9-generative-adversarial-networks)
-  - [Subtopic 10: Recurrent Neural Networks](./modules/10a-recurrent-neural-networks)
+  - [Subtopic 10: Recurrent Neural Networks](./modules/10a-recurrent-neural-networks) -->

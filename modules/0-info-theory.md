@@ -42,7 +42,7 @@ After reviewing these ideas, it appears that entropy has something to do with th
 
 ---
 
-![](../extras/info_theory/out.png)
+![info1](../extras/info_theory/out.png)
 
 ---
 
@@ -226,6 +226,8 @@ savefig(joinpath(@OUTPUT, "ent3.svg")) # hide
 
 ```
 
+---
+
 \fig{ent3}
 
 ---
@@ -346,8 +348,8 @@ Entropy can be used by decision tree models to choose the optimal plots for maki
 
 The amount of surprise (or uncertainty) associated with the value of a random variable or the result of a random process is measured by information entropy, often known as Shannon's entropy. Its importance in the decision tree comes from the fact that it enables us to calculate the heterogeneity or impurity of the target variable. The child nodes are then formed in such a way that their combined entropy must be lower than that of the parent node in order to obtain the highest possible level of homogeneity in the response variable.
 
----
 
+<!-- 
 ### Topics That Might Be Relevant To This Blog
 
 - Topic 0: Information Theory
@@ -381,4 +383,4 @@ The amount of surprise (or uncertainty) associated with the value of a random va
     - [Concept 3: Graph](./modules/disrete-math)
   - [Subtopic 5: Thermodynamics](./modules/therm)
     - [Concept 1: Entropy](./modules/therm)
-    - [Concept 2: Classical Thermodynamics](./modules/therm)
+    - [Concept 2: Classical Thermodynamics](./modules/therm) -->

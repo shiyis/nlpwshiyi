@@ -417,6 +417,8 @@ sup {
 }
 
 img {
+  width: 560px;
+  align-items: center;
   border-style: none
 }
 
@@ -658,7 +660,6 @@ p {
 }
 
 strong {
-  padding-left: 0.3rem;
   color: #303030
 }
 
