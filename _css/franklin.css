@@ -470,7 +470,8 @@ body {
 .franklin-content pre>code {
   border: 1px solid #6B8E2340;
   color: deeppink;
-  background-color: ivory;
+  /* opacity: 0.3; */
+  background-color: white;
   padding: 1.5em;
   border-radius: 0;
 }

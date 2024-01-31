@@ -975,7 +975,7 @@ pre code {
   font-size: 17px;
   border: none;
   outline: none;
-  color: white;
+  color: ivory;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -987,6 +987,7 @@ pre code {
   display: none;
   position: absolute;
   min-width: 132px;
+  background-color: white;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
