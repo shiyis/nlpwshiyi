@@ -470,7 +470,7 @@ body {
 .franklin-content pre>code {
   border: 1px solid #6B8E2340;
   color: deeppink;
-  background-color:whitesmoke;
+  background-color: ivory;
   padding: 1.5em;
   border-radius: 0;
 }
@@ -534,7 +534,9 @@ pre.code-output {
 }
 
 @media (min-width: 768px) {
-  .sidebar-nav {}
+  .sidebar-nav {
+    display: none;
+  }
 }
 
 .sidebar .container.sidebar-sticky {
@@ -621,11 +623,11 @@ h2 {
   padding: 0 0px;
 }
 
-/* @media (max-width:62rem) {
-    .column {
-      width:100%;
-      display:block; }
-} */
+
+
+
+
+
 @media (min-width:500px) {
   .row {
     width: 97%;
@@ -643,6 +645,7 @@ h2 {
   .card {
     .container {
       padding: 3px 10px 3px 10px;
+      background-color: ivory;
     }
 
     box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
@@ -686,17 +689,6 @@ h2 {
 
   padding-left: 0;
   width: 100%;    
-  /* background-color: #eef3f5; */
-  /* padding-top: 18px;
-  padding-right: 10px;
-  padding-left: 12px;
-  padding-bottom: 5px;
-  margin-left: 0px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 10px 10px 10px 10px;
-  border-left: 3px solid #4c9cf1; */
-
 }
 
 

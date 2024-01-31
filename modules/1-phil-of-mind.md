@@ -32,7 +32,7 @@ The turing machine - or the earliest computational model is a device that assume
 
 @@colbox-blue
 
-#### A Turing Style Computational System 
+#### A Turing Style Computational System
 
 1. memory locations: assuming an infinitely long linear structure or system, here is where these symbols might be kept. There are always ways to optimize memory locations and storage space, including through the use of techniques like hashing (because the implementation could not realistically assume infinity).
 2. a central processor, which has a limited number of machine states it can enter.
