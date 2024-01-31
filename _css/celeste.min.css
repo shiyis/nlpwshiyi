@@ -1015,10 +1015,18 @@ pre code {
   color: black;
 }
 
+
+.dropdown .dropbtn{
+  width: 132px;
+}
+
+
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
 .dropdown:hover .dropdown-content {
   display: block;
+  width: auto;
 }
+
 
 @media screen and (max-width: 765px) {
 
@@ -1058,6 +1066,10 @@ pre code {
     margin-top: 7px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+  }
+
+  .dropdown:hover .dropbtn{
+    width: 100%;
   }
   
   #toggle1 {
@@ -1107,28 +1119,7 @@ pre code {
     transition: all 0.3s ease;
   }
   
-  /* .topnav a:first-child {
-    margin-top: 40px;
-  } */
-  
-  /* .topnav a:last-child {
-    margin-bottom: 40px;
-  } */
-  
-  .link1 {
-    width: 100%;
-    margin: 0;
-    padding: 10px 0;
-    font: 700 20px 'Oswald', sans-serif;
-  }
-  
-  .link1:hover {
-    background-color: #fff;
-    position: absolute;
-    color: rgb(61, 61, 61);
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-  }
+ 
 }
 
 blockquote {
