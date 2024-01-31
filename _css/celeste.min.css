@@ -1146,9 +1146,13 @@ img[alt=intro] {
 }
 
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 500px) {
     img[alt=intro] {
-      width: 23%;
+      width: 40%;
+    }
+
+    code {
+      text-wrap: pretty;
     }
 }
 
