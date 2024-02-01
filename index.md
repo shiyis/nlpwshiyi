@@ -54,7 +54,7 @@ The first acquires knowledge through reasoning and logic, while the second throu
 and experimentation.
 ```
 
-Below are some important notes about the **historical timeline**:
+Below are some important notes w.r.t. the **historical timeline** of the development of Computational Linguistics and NLP and how it all started from one of these two principles and gradually transitioned to the other (rationalism / computationalism to empiricalism / connectionism; although computationalism is not always symbolic; namely it also incorporates empirical evidence):
 
 \textoutput{cards}
 
