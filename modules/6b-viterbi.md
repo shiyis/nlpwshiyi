@@ -21,30 +21,33 @@ In summary, the backward algorithm in HMMs calculates probabilities representing
 
 ![img](../extras/hmm/viterbi.jpg)
 
-
-Recall that the goal of Viterbi algorithm is to find the best state sequence $q=(q_{1}q_{2}q_{3}...q_{t})$ given the set of observed phones $o=(o_{1}o_{2}...o_{t})$. a graph illustration below demonstrates the output of the dynamic programming. Along the y-axis are all the words in the lexicon; inside each word are its states. The x-axis is ordered by time, with one observed the most likely sequence ending at that state. We can find the most-likely state sequence for the entire observation string by looking at the cell in the right-most column that has the highest probability, and tracking back the sequence that produced it. 
-
+Recall that the goal of Viterbi algorithm is to find the best state sequence $q=(q_{1}q_{2}q_{3}...q_{t})$ given the set of observed phones $o=(o_{1}o_{2}...o_{t})$. a graph illustration below demonstrates the output of the dynamic programming. Along the y-axis are all the words in the lexicon; inside each word are its states. The x-axis is ordered by time, with one observed the most likely sequence ending at that state. We can find the most-likely state sequence for the entire observation string by looking at the cell in the right-most column that has the highest probability, and tracking back the sequence that produced it.
 
 ![img](../extras/hmm/viterbi2.jpg)
 
+More formally, we are searching for the best state sequence $q_{*} = (q_{1}q_{2}...q_{T})$, given an observation sequence $o = (o_{1}o_{2}...o_{T})$ and a model (a weighted automaton or "state graph") $λ$. Each cell viterbi[i,t] of the matrix contains the probability of the best path which accounts for the first _t_ observations and ends in state _i_ of the HMM. This is the most-probable path out of all possible sequences of states of length $t - 1$:
 
-More formally, we are searching for the best state sequence $q_{*} = (q_{1}q_{2}...q_{T})$, given an observation sequence $o = (o_{1}o_{2}...o_{T})$ and a model (a weighted automaton or "state graph") $λ$. Each cell viterbi[i,t] of the matrix contains the probability of the best path which accounts for the first _t_ observations and ends in state _i_ of the HMM. This is the most-probable path out of all possible sequences of states of length $t - 1$: 
-    
-    $$ viterbi[t,i] = \underset{q_{1}, q_{2},...,q_{t-1}}{max}  P(q_{1}q_{2}...q_{t-1},q_{t}=i,o_{1},o_{2},...o_{t}|λ) $$                                           
 
-In order to compute $viterbi[t,i]$, the Viterbi algorithm assumes the dynamic programming invariant. This assumption states that if the ultimate best path of the entire observation sequence happens to go through a state $q_{i}$, that this best mpath must include the best path up to and including state $q_{i}$. This does mean that the best path at any time _t_ is the best path for the whole sequence. A path can look bad at the beginning but turn out the be the best path. 
+$$
+viterbi[t,i] = \underset{q_{1}, q_{2},...,q_{t-1}}{max}  P(q_{1}q_{2}...q_{t-1},q_{t}=i,o_{1},o_{2},...o_{t}|λ)
+$$
 
-In the book _Speech and Language Processing_ (Jurafsky, Martin et al), it talks about the importance of having the invariant assumption (which is a very important principle in solving problems with dynamic programming is applicable); 
+In order to compute $viterbi[t,i]$, the Viterbi algorithm assumes the dynamic programming invariant. This assumption states that if the ultimate best path of the entire observation sequence happens to go through a state $q_{i}$, that this best mpath must include the best path up to and including state $q_{i}$. This does mean that the best path at any time _t_ is the best path for the whole sequence. A path can look bad at the beginning but turn out to be the best path.
 
-> it allows us to break down the computation of the optimal path probability in a simple way: each of the best paths at time _t_ is the best extension of each of the paths ending at time _t - 1_. 
+In the book _Speech and Language Processing_ (Jurafsky, Martin et al), it talks about the importance of having the invariant assumption (which is a very important principle in solving problems with dynamic programming is applicable);
+
+> it allows us to break down the computation of the optimal path probability in a simple way: each of the best paths at time _t_ is the best extension of each of the paths ending at time _t - 1_.
 
 In other words, the recurrence relation for the best path at time _t_ ending in state _j_, $viterbi[t,j]$, is the maximum of the possible extension of every possible previous path from time _t - 1_ to time _t_:
 
-        $$ viterbi[t,j] = \underset{t}{max}(viterbi[t - 1, i]a_{i}{j})b_{j}(o_{t})$$ 
 
-The algorithm as we describe it in takes a sequence of observations, and a single probabilistic automaton, and returns the optimal path through the automaton. 
+$$
+viterbi[t,j] = \underset{t}{max}(viterbi[t - 1, i]a_{i}{j})b_{j}(o_{t})
+$$
 
-The pseudocode is displayed below 
+The algorithm as we describe it in takes a sequence of observations, and a single probabilistic automaton, and returns the optimal path through the automaton.
+
+The pseudocode is displayed below
 
 ```
 function VITERBI(observations of len T, state-graph) return best-path
@@ -66,8 +69,6 @@ function VITERBI(observations of len T, state-graph) return best-path
 # Given an observation sequence of phones and a weighted automaton, the algorithm returns the path through the automaton which has minimum probability and accepts #the observation sequence. a[s,s'] is the transition probability from current state s to next state s' and b_s'(o_t) is the observation likelihood of s' given o_t.
 ```
 
-
-
 💭 Again, the Viterbi algorithm is a dynamic programming algorithm used for finding the most likely sequence of hidden states in a Hidden Markov Model (HMM). It determines the best path at each state based on the probabilities of transitioning between states and emitting observations.
 
 When discussing the "best path at state $q_{i}$," it means the most probable sequence of hidden states up to that particular state in the sequence.
@@ -87,5 +88,3 @@ Similarly, in the Viterbi algorithm, choosing the best path at each state may le
 In both cases, there's a concern about achieving the ultimate optimal value. In Viterbi, it's about finding the globally optimal sequence, and in SGD, it's about reaching the global minimum of the loss function (which we will talk about in a separate blog).
 
 In summary, the connection lies in the challenge of achieving a globally optimal solution when making locally optimal choices at each step. Both Viterbi and SGD face the risk of getting stuck in local optima, and the choices made locally may not collectively lead to the globally optimal solution for the entire sequence or model.
-
-
