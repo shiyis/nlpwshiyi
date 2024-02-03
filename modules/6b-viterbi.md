@@ -34,7 +34,7 @@ $$
 
 In order to compute $viterbi[t,i]$, the Viterbi algorithm assumes the dynamic programming invariant. This assumption states that if the ultimate best path of the entire observation sequence happens to go through a state $q_{i}$, that this best mpath must include the best path up to and including state $q_{i}$. This does mean that the best path at any time _t_ is the best path for the whole sequence. A path can look bad at the beginning but turn out to be the best path.
 
-In the book _Speech and Language Processing_ (Jurafsky, Martin et al), it talks about the importance of having the invariant assumption (which is a very important principle in solving problems with dynamic programming is applicable);
+In the book _Speech and Language Processing_ (Jurafsky, Martin et al), it talks about the importance of having the invariant assumption (which is a very important principle in solving problems where dynamic programming is applicable);
 
 > it allows us to break down the computation of the optimal path probability in a simple way: each of the best paths at time _t_ is the best extension of each of the paths ending at time _t - 1_.
 
