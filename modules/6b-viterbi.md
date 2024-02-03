@@ -1,8 +1,8 @@
 # To Continue Our Discussion on Modeling Random Processes
 
-In the previous section, we have talked about how a HMM network could be constructed to model spectral features (in acoustic modeling) and also to elicit POS (part-of-speech) tagging in sequence labeling. These are accomplished through the forward algorithm. And the find the optimal sequence in either scenarios, the backward algorithm or the viterbi algorithm is applied.
+In the previous section, we have talked about how a HMM network could be constructed to model spectral features (in acoustic modeling) and also to elicit POS (part-of-speech) tagging in sequence labeling. These are accomplished through the forward algorithm. And to find the optimal sequence in either scenarios, the backward algorithm or the viterbi algorithm is applied.
 
-Breaking down what the backward algorithm entails, below is a brief overview of the backward algorithm:
+Breaking down what the backward algorithm entails, below is a brief overview:
 
 1. **Backward Probabilities:**
    The backward algorithm computes a set of probabilities, often denoted as $\beta$ values. These probabilities represent the likelihood of observing the remaining part of the sequence, given that the system is in a particular state at a specific time.
@@ -17,5 +17,6 @@ Breaking down what the backward algorithm entails, below is a brief overview of 
 
 In summary, the backward algorithm in HMMs calculates probabilities representing the likelihood of observing the rest of the sequence given the system's state at a specific time. Together with the forward algorithm, it plays a key role in various aspects of HMMs, including training, decoding, and inference.
 
+###### A Graphic Demonstration of How Viterbi is Applied in Sentence Segmentation
 
-###### What exactly is Viterbi algorithm? And How Does it Work?
+![img](../extras/hmm/viterbi.jpg)
