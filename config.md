@@ -32,12 +32,12 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def title = "NLPwShiyi - Natural Language Processing with Shiyi"
 @def website_description = "Website for documenting my journey of understanding Natural Language Processing"
-@def prepath = "nlpwme""
+@def prepath = "nlpwme"
 
 <!-- @def website_url   = "https://dataflowr.github.io/mydocs/" -->
 
 @def lang = "julia"
-@def author = ""
+@def author = "Shiyi S"
 
 <!-- HEADER SPECS
   NOTE:
@@ -72,7 +72,7 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def add_github_view  = true
 @def add_github_star  = true
-@def github_repo      = "https://github.com/shiyis/nlpwme""
+@def github_repo      = "https://github.com/shiyis/nlpwme"
 
 <!-- SECTION LAYOUT
 NOTE:
@@ -179,7 +179,7 @@ For instance:
 \newcommand{\N}{\mathbb N}
 
 \newcommand{\scal}[1]{\langle #1 \rangle}
-\newcommand{\blurb}[1]{~~~`<p style="font-size: 1.05em; color: #333; line-height:1.5em">`~~~#1~~~`</p>`~~~}
+<!-- \newcommand{\blurb}[1]{~~~<p style="font-size: 1.05em; color: #333; line-height:1.5em"> #1 </p>~~~} -->
 
 <!-- \newcommand{\youtube}[1]{~~~<iframe width="1020" height="574" src="https://www.youtube.com/embed/~~~#1~~~" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>~~~} -->
 
@@ -187,10 +187,9 @@ For instance:
   @@card
     @@container
       ~~~
-      `<h2>`#1 `</h2>`
+      <h2> #1 </h2>
       ~~~
       @@content #2 @@
-      `<!-- ~~~       <p><button class="button">Contact</button></p>       ~~~ -->`
     @@
   @@
 }
