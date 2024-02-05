@@ -72,7 +72,7 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def add_github_view  = true
 @def add_github_star  = true
-@def github_repo      = "https://github.com/shiyis/nlpwsys"
+@def github_repo      = "https://github.com/shiyis/nlpwme""
 
 <!-- SECTION LAYOUT
 NOTE:
@@ -187,12 +187,10 @@ For instance:
   @@card
     @@container
       ~~~
-      `<h2>`#1`</h2>`
+      `<h2>`#1 `</h2>`
       ~~~
       @@content #2 @@
-      `<!-- ~~~
-      <p><button class="button">Contact</button></p>
-      ~~~ -->`
+      `<!-- ~~~       <p><button class="button">Contact</button></p>       ~~~ -->`
     @@
   @@
 }
