@@ -20,7 +20,7 @@ That being said, the language that we used to describe our mental experience is 
 
 Continuing the discussion LOTH or the _The Language of Thought Hypothesis_, again one can postulate that it's closely correlated with the mental representation (drawing reference from _the representational theory of mind_), and also as per the context of current discussions around understanding how the brain actually works (at least w.r.t the folk psychology).
 
-It confirms that _Mentalese_ exists within the scope of research. These "mental representations" are called propositional attitudes and borne out in the form of a natural language as beliefs, desires, intentions, and fears.
+It confirms that _Mentalese_ exists within the scope of research. Aside from the physical aspects (the basic ability to identify, match, and represent the objective and physical reality), researches of these "mental representations" strive to incorporate subjective and qualitative dimensions, for example, consciousness and propositional attitudes specifically borne out in the form of a natural language as feelings, beliefs, desires, intentions, and fears.
 
 The exactness of a mental language or a mental state is yet unknown. However, in folk psychology, these propositional attitudes are a direct reflection and serve a distinctive function to these mental images, in case the locutionary intends that the proposition A* gets assign to these mental states S.
 
