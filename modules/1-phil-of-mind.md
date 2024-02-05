@@ -21,7 +21,7 @@ One pertains to the neurological properties of the mind and body and the other e
 
 #### Consciousness As The Fundamental Property of Nature
 
-Everything started from the debate about what consciousness and mental representations really are, and it has been going on for centuries. 
+Everything started from the debate about what consciousness and mental representations really are, and it has been going on for centuries.
 In answering the question of why we need consciousness, one of the proposed answers is that consciousness is a fundamental property of nature. It's added that
 
 ```plaintext
@@ -44,7 +44,7 @@ This is the position that is too good to be true and therefore argued against. A
 
 Downward causation is one manifestation of this strong-emergence attitude. It’s the idea that what happens at lower levels can be directly influenced (causally acted upon) by what is happening at the higher levels. The idea, in other words, that you can’t really understand the microscopic behavior without knowing something about the macroscopic.
 
-Instead of being a strong emergence, maybe in reality consciousness might just be a weak emergence instead as proposed. 
+Instead of being a strong emergence, maybe in reality consciousness might just be a weak emergence instead as proposed.
 
 The so-called “weak” emergence suggests that higher-level notions like the fluidity or solidity of a material substance emerge out of the properties of its microscopic constituents. In principle, if not in practice, the microscopic description is absolutely complete and comprehensive. A “strong” form of emergence would suggest that something truly new comes into being at the higher levels, something that just isn’t there in the microscopic description.
 
@@ -104,7 +104,7 @@ He argues against the dualists' and [epiphenomenalism](https://en.wikipedia.org/
 To quote him more specifically,
 
 ```plaintext
-It was believed that it is absurd that everything can be explained by the laws of physics except consciousness. 
+It was believed that it is absurd that everything can be explained by the laws of physics except consciousness.
 In this case, he identifies consciousness with the broad term "sensations".
 ```
 
@@ -130,7 +130,7 @@ In short,
 
 ---
 
-The second of the two very important approaches in Cognitive Science helped serve as the foundation for creating the predecessor intelligent systems of the AI we see today. 
+The second of the two very important approaches in Cognitive Science helped serve as the foundation for creating the predecessor intelligent systems of the AI we see today.
 
 
 ### Computationalism and The Classical Computational Theory of Mind
@@ -172,12 +172,12 @@ The Turing machine also proved the existence of a _Universal Turing Machine_ (UT
 As opposed to type-identity theory, where mental states are brain states, Putnam proposed a different view that mental states are [_multiply realizable_](https://plato.stanford.edu/entries/multiple-realizability/): the same mental state can be realized by diverse physical systems, including not only terrestrial creatures but also hypothetical creatures.
 
 ```
-Functionalism therefore is tailor-made to accommodate multiple realizability. 
+Functionalism therefore is tailor-made to accommodate multiple realizability.
 ```
 
-He stresses the importance of _probabilistic automata_, stating that mental states are the machine states of the automaton's central processor. 
+He stresses the importance of _probabilistic automata_, stating that mental states are the machine states of the automaton's central processor.
 
-In summary, functionalism was introduced to address the functional aspects of mental processes (the functional role of an automaton's central processor; for example to manipulate symbols); the computational theory of mind provides a computational framework to describe such a process (namely the process of manipulating symbols by the central process is considered as a mental process being "computational" ); lastly the type/token-identity theory or physicalism of our cognitive processes defines that similar to a natural language (where a CAT is a type and every appearing instance of the word CAT is a token) defines the mental representations that central processor is able to manipulate, operate on, and make computations/calculations with. 
+In summary, functionalism was introduced to address the functional aspects of mental processes (the functional role of an automaton's central processor; for example to manipulate symbols); the computational theory of mind provides a computational framework to describe such a process (namely the process of manipulating symbols by the central process is considered as a mental process being "computational" ); lastly the type/token-identity theory or physicalism of our cognitive processes defines that similar to a natural language (where a CAT is a type and every appearing instance of the word CAT is a token) defines the mental representations that central processor is able to manipulate, operate on, and make computations/calculations with.
 
 
 #### Computationalism vs Functionalism
@@ -186,7 +186,7 @@ In summary, functionalism was introduced to address the functional aspects of me
 In offering such a model, we prescind from physical details. We attain an abstract computational description that could be physically implemented in diverse ways (e.g., through silicon chips, or neurons, or pulleys and levers). CCTM holds that a `suitable abstract computational model offers a literally true description of core mental processes`.
 
 ```
-As per definition, the mind is the functional organization of the brain, whereas computationalism argues that the functional organization of the brain is computable so namely 
+As per definition, the mind is the functional organization of the brain, whereas computationalism argues that the functional organization of the brain is computable so namely
 the mind is computable.
 ```
 
@@ -242,8 +242,8 @@ RTM is able to accomplish the above by assuming,
 
 
 ```plaintext
-Productivity: 
-  
+Productivity:
+
 a finites set of symbols in natural language and the device could entertain a infinite numbers of logic.
 
 Systematicity:
@@ -309,34 +309,3 @@ In short, this hybrid architecture might have had a say to how human brains actu
 **References**
 
 _Rescorla, Michael, "The Computational Theory of Mind", The Stanford Encyclopedia of Philosophy (Fall 2020 Edition), Edward N. Zalta (ed.)_
-
-<!-- ### Topics That Might Be Relevant To This Blog
-
-- Topic 2a: Computationalism
-
-  - [Subtpoic 0: Chomsky Hierarchy](./modules/chomsky-hierarchy)
-  - [Subtopic 1: Context Free Grammar](./modules/context-free-grammar)
-  - [Subtopic 2: Finite State Automata and Transducers](./modules/finite-stat-automata)
-  - [Subtopic 3: Linguistic Trees](./modules/linguistic-trees)
-  - [Subtopic 4: Parsing](./modules/parsing)
-  - [Subtopic 5: Hidden Markov Model](./modules/hidden-markov-model)
-  - [Subtopic 6: Word Net](./modules/word-net)
-  - [Subtopic 7: Heuristics](./modules/universal-dependencies)
-  - [Subtopic 8: Continuous BOW And Skip-gram](./modules/universal-dependencies)
-  - [Subtopic 9: Mutual Information](./modules/universal-dependencies)
-  - [Subtopic 10: Viterbi Dynamic Programming](./modules/universal-dependencies)
-  - [Subtopic 11: Formal Logic Systems, General Problem Solving, and Philosophy of Language](./modules/universal-dependencies)
-  - [Subtopic 12: Syntactic Theory, Taxonomy, and Orthography](./modules/universal-dependencies)
-- Topic 2b: Connectionism
-
-  - [Subtopic 2a: Pytorch Tensors](./modules/2a-pytorch-tensors)
-  - [Subtopic 2b: Automatic Differentiation](./modules/2b-automatic-differentiation)
-  - [Subtopic 3: Loss functions for classification](./modules/3-loss-functions-for-classification)
-  - [Subtopic 4: Optimization for Deep Learning](./modules/4-optimization-for-deep-learning)
-  - [Subtopic 5: Stacking layers](./modules/5-stacking-layers)
-  - [Subtopic 6: Convolutional Neural Network](./modules/6-convolutional-neural-network)
-  - [Subtopic 7a: Embedding layers and dataloaders](./modules/7a-embedding-layers-dataloaders)
-  - [Subtopic 7b: Collaborative Filtering](./modules/7b-collaborative-filtering)
-  - [Modules 8: Autoencoders and Transformers](./modules/8-autoencoders)
-  - [Subtopic 9: Generative Adversarial Networks](./modules/9-generative-adversarial-networks)
-  - [Subtopic 10: Recurrent Neural Networks](./modules/10a-recurrent-neural-networks) -->

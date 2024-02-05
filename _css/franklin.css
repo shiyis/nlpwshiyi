@@ -474,6 +474,7 @@ body {
   background-color: white;
   padding: 1.5em;
   border-radius: 0;
+  text-wrap: initial;
 }
 
 pre.code-output {
