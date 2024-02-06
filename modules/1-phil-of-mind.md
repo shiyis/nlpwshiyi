@@ -259,7 +259,7 @@ More importantly, with a shift in the representation of information toward a sub
 
 > **Dynamic Syntactic Representations**: Traditional syntactic representations often rely on explicit rules and structures. The sub-symbolic nature of the described approach might enable the system to dynamically adapt its syntactic representations based on contextual demands. This could allow for a more fluid and contextually relevant expression of syntactic structures.
 
-> **Flexible Syntactic Processing**:A sub-symbolic, universally distributed mechanism might be better suited to handle syntactic variations and nuances across different contexts. Instead of relying on rigid syntactic rules, the system could adapt and learn syntactic patterns in a more flexible manner.
+> **Flexible Syntactic Processing**: A sub-symbolic, universally distributed mechanism might be better suited to handle syntactic variations and nuances across different contexts. Instead of relying on rigid syntactic rules, the system could adapt and learn syntactic patterns in a more flexible manner.
 
 > **Capturing Syntactic Ambiguity**: Syntactic structures can sometimes be ambiguous, and their interpretation may depend on the broader context. The described approach may facilitate the capture of syntactic ambiguity by allowing for a distributed representation that considers the surrounding information and context.
 
