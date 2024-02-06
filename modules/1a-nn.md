@@ -2,7 +2,7 @@
 
 
 
-To answer this major question, it's important to draw inference from some of the important concepts in psychology. The first one is _The Language of Thought Hypothesis_ and the second one _The Representational Theory of Mind_. The first one touches on the importance of how our brain has a schema when it comes to producing language of thought, or called _Mentalese_. The _Representational Theory of Mind_ on the other hand touches on our cognitive abilities to be able to have volition manifested in natural language through propositional attitudes. The schema goes as,
+To answer this major question, it's important to draw inference from some of the important concepts in psychology. The first one is _The Language of Thought Hypothesis_ and the second one _The Representational Theory of Thought_. The first one touches on the importance of how our brain has a schema when it comes to producing language of thought, or called _Mentalese_. The _Representational Theory of Thought_ on the other hand touches on our cognitive abilities to be able to make conscious decisions, solve problems, and reason; which may be manifested in a natural language as propositional attitudes. The schema goes as,
 
 > X believes that p iff X believes that S which is a mental representation and p is the actual manifestation of S.
 
@@ -18,7 +18,7 @@ That being said, the language that we used to describe our mental experience is 
 
 ### What Does It Mean To Have A Mental Language?
 
-Continuing the discussion LOTH or the _The Language of Thought Hypothesis_, again one can postulate that it's closely correlated with the mental representation (drawing reference from _the representational theory of mind_), and also as per the context of current discussions around understanding how the brain actually works (at least w.r.t the folk psychology).
+Continuing the discussion LOTH or the _The Language of Thought Hypothesis_, again one can postulate that it's closely correlated with the mental representation (drawing reference from _the Representational Theory of Thought_), and also as per the context of current discussions around understanding how the brain actually works (at least w.r.t the folk psychology).
 
 It confirms that _Mentalese_ exists within the scope of research. Aside from the physical aspects (the basic ability to identify, match, and represent the objective and physical reality), researches of these "mental representations" strive to incorporate subjective and qualitative dimensions, for example, consciousness and propositional attitudes specifically borne out in the form of a natural language as feelings, beliefs, desires, intentions, and fears.
 
@@ -28,7 +28,7 @@ This might be fundamental for inferential reasoning, assuming the importance of 
 
 > Someone who *believes* S stands in a psychologically important relation to the proposition expressed by S.
 
-Another important point to bring up here pertaining to the discussion of systematically theorizing the representational theory of mind or what constitutes as a mental language is that token-and-type has to come into play. To be more specific,
+Another important point to bring up here pertaining to the discussion of systematically theorizing The Representational Theory of Thought or what constitutes as a mental language is that token-and-type has to come into play. To be more specific,
 
 > the **type** is the mental representation itself (repeatable), and the tokens are reflected as the mental events or could be neurological. And thought processes are casual sequences of **tokenings** of mental representations.
 
