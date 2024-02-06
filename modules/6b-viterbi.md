@@ -25,7 +25,7 @@ Recall that the goal of Viterbi algorithm is to find the best state sequence $q=
 
 ![img](../extras/hmm/viterbi2.jpg)
 
-More formally, we are searching for the best state sequence $q_{*} = (q_{1}q_{2}...q_{T})$, given an observation sequence $o = (o_{1}o_{2}...o_{T})$ and a model (a weighted automaton or "state graph") $λ$. Each cell viterbi[i,t] of the matrix contains the probability of the best path which accounts for the first _t_ observations and ends in state _i_ of the HMM. This is the most-probable path out of all possible sequences of states of length $t - 1$:
+More formally, we are searching for the best state sequence $q_{*} = (q_{1}q_{2}...q_{T})$, given an observation sequence $o = (o_{1}o_{2}...o_{T})$ and a model (a weighted automaton or "state graph") $λ$. Each cell $viterbi[i,t]$ of the matrix contains the probability of the best path which accounts for the first _t_ observations and ends in state _i_ of the HMM. This is the most-probable path out of all possible sequences of states of length $t - 1$:
 
 
 $$
