@@ -68,7 +68,7 @@ In the domain that deals with how the eye works, it's useful and practical to sp
 
 #### The Primal Instincts vs. The Unknown
 
-However, it seems though the importance of consciousness might have been overall undermined. A few primal physical responses of humans have indicated that humans could task being an automata without these familiar yet mysterious qualia. For example, humans could drive while talk, have fight-and-flight responses without being aware of it, and blindsight which are sensational responses to visual stimuli without actually experiencing the effects visually.
+However, it seems though the importance of consciousness might have been overall exaggerated. A few primal physical responses of humans have indicated that humans could task being an automata without these familiar yet mysterious qualia. For example, humans could drive while talk, have fight-and-flight responses without being aware of it, and blindsight which are sensational responses to visual stimuli without actually experiencing the effects visually.
 
 Lastly, onto the discussions about pain. It seems that the presence of pain is superfluous. We need not to have to experience pain to understand to the risk of injury and be avoidance of danger.
 
