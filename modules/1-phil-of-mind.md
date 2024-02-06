@@ -72,7 +72,7 @@ In the domain that deals with how the eye works, it's useful and practical to sp
 
 However, it seems though the importance of consciousness might have been overall exaggerated. A few primal physical responses of humans have indicated that humans could task being an automata without these familiar yet mysterious qualia. For example, humans could drive while talk, have fight-and-flight responses without being aware of it, and blindsight which are sensational responses to visual stimuli without actually experiencing the effects visually.
 
-Lastly, onto the discussions about pain. It seems that the presence of pain is superfluous. We need not to have to experience pain to understand to the risk of injury and be avoidance of danger.
+Lastly, onto the discussions about pain. It seems that the presence of pain is superfluous. We need not to have to experience pain to understand the risk of injury and be avoidance of danger.
 
 According to a prominent English biologist Thomas Henry Huxley (1825-1895), he believed that sensations and feelings are mere byproduct of mechanics of the brain. An epiphenomenon that is not the cause of any behavior. In his essay, "On the Hypothesis that Animals Are Automata, and Its History" he wrote:
 
