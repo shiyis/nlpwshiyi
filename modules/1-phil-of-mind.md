@@ -37,7 +37,7 @@ According to this [medium article](https://medium.com/curious/are-we-conscious-a
 
 @@colbox-blue
 
-##### Consciousness As Weak/Strong/Noraml Emergence
+##### Consciousness As Weak/Strong/Normal Emergence
 
 
 This is the position that is too good to be true and therefore argued against. As it's not very much plausible that it's the downward causal direction, where the emergence of consciousness caused the microscopic and molecular changes happening at a lower-level. The only justification to this position is that it opens up possibilities for free will, explained by the physicist Sean Carroll.
