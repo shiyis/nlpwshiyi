@@ -42,7 +42,7 @@ In other words, the recurrence relation for the best path at time _t_ ending in 
 
 
 $$
-viterbi[t,j] = \underset{t}{max}(viterbi[t - 1, i]a_{i}{j})b_{j}(o_{t})
+viterbi[t,j] = \underset{t}{max}(viterbi[t - 1, i]a_{ij})b_{j}(o_{t})
 $$
 
 The algorithm as we describe it in takes a sequence of observations, and a single probabilistic automaton, and returns the optimal path through the automaton.
