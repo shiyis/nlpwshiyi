@@ -22,7 +22,7 @@ Continuing the discussion LOTH or the _The Language of Thought Hypothesis_, agai
 
 It confirms that _Mentalese_ exists within the scope of research. Aside from the physical aspects (the basic ability to identify, match, and represent the objective and physical reality), researches of these "mental representations" strive to incorporate subjective and qualitative dimensions, for example, consciousness and propositional attitudes specifically borne out in the form of a natural language as feelings, beliefs, desires, intentions, and fears.
 
-The exactness of a mental language or a mental state is yet unknown. However, in folk psychology, these propositional attitudes are a direct reflection and serve a distinctive function to these mental images, in case the locutionary intends that the proposition A* gets assiged to these mental states S.
+The exactness of a mental language or a mental state is yet unknown. However, in folk psychology, these propositional attitudes are a direct reflection and serve a distinctive function to these mental images, in case the locutionary intends that the proposition A* gets assigned to these mental states S.
 
 This might be fundamental for inferential reasoning, assuming the importance of how it's tied to relevant actions. The mental representations S here are put into "boxes" (a "belief box" or a "desire box"). That being said,
 
