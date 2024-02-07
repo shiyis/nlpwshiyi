@@ -108,13 +108,9 @@ Therefore, it bears that there's no such a thing as concept learning. And the co
 
 In such a case, it's very important to explain what it means by understanding a natural language? The conclusion was that,
 
----
 
-@@colbox-blue
-a Mentalese is a direct medium of the thought process and not the object of interpretation, as we face the conundrum of having to represent it through a meta-language which suffers the logic fallacy of ad infinitum; put differently, "we face the infinite regress of a meta-language". Therefore, it's not perceived or interpreted. One cannot say that they understood the mental language the same way as they understood a natural language.
-@@
+> a Mentalese is a direct medium of the thought process and not the object of interpretation, as we face the conundrum of having to represent it through a meta-language which suffers the logic fallacy of ad infinitum; put differently, "we face the infinite regress of a meta-language". Therefore, it's not perceived or interpreted. One cannot say that they understood the mental language the same way as they understood a natural language.
 
----
 
 similarly to words (lexical items in a natural language), we can hardly define what a primitive expression's semantic properties exactly are. Though it's easy to illustrate the relations between complex expressions formed from these primitive expressions, researchers sought to create paradigms that could well capture the semantic properties of them. Here the strategy was to adopt functionalism (where _mind is the functional organization of the brain_). Therefore, the effort of categorizing what exactly it means by saying "X A's that p iff there is a mental representation S such that X bears A* to S and S means that P" gets broken down into two steps,
 
