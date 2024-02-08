@@ -12,7 +12,7 @@ In this one article that touches on this subject, it's known that the computatio
 
 ---
 
-### The Entailment of Human Beings As Conscious Autommata and  The Definition of Consciousness
+### The Entailment of Human Beings As Conscious Automata and  The Definition of Consciousness
 
 Advances in computing raise the prospect known as _The Computational Theory of Mind_ (CTM). Computationalists understand this paradigm as the principle to cognitive science. Then later two schools of thoughts challenged this orthodox position.
 
