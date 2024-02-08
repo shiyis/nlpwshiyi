@@ -374,7 +374,7 @@ It was done in this style in hope that some inherent properties of the units in 
 
 ### Statistical Semantics and NLP Techniques
 
-Beginning at the end of the 1980s and continuing until the end of 1995, almost every aspect of natural language processing underwent a major transformation: the transition to statistical, corpus-based approaches (as indicated by two special issues on this topic published in the quarterly Computational linguistics in 1993). This shift was made possible by the growing availability and volume of machine-readable text and speech data.
+Beginning at the end of the 1980s and continuing until the end of 1995, almost every aspect of natural language processing underwent a major transformation: the transition to statistical, corpus-based approaches (as indicated by two special issues on this topic published in the quarterly Computational Linguistics in 1993). This shift was made possible by the growing availability and volume of machine-readable text and speech data.
 
 Statistical Natural Language Processing (NLP) challenges traditional computational linguistics views, revealing that ambiguities are too numerous and interrelated to be resolved by heuristic arbitration. Language phenomena need to be treated as stochastic, and distributional properties systematically exploited for reliable hypotheses.
 
@@ -430,7 +430,7 @@ Sentence transduction:
 
 Structural assignment of multi-sentence texts: 
     - discourse relationships, recall, plan recognition;
-    
+
 Large-scale relational extraction: 
     - knowledge extraction, paraphrase and implication relations;
 ```
