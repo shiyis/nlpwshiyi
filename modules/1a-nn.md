@@ -414,17 +414,23 @@ More fully, the types of tasks addressed can be roughly grouped as follows (wher
 
 ```plaintext
 Text and document categorization: 
-    - authorship, news categories, sentiment analysis.
+    - authorship, news categories, sentiment analysis;
+
 Categorization of selected words or phrases' broader contexts: 
-    - lexical disambiguation, named entity recognition, multi-word expression recognition.
+    - lexical disambiguation, named entity recognition, multi-word expression recognition;
+
 Sequence tagging: 
     - cell phones → acoustic features → phonemes → words → POS tags;
+
 Structural assignment of sentences: 
     - parsing, semantic role labeling, quantifier scoping;
+
 Sentence transduction: 
     - machine translation, low-frequency computation;
+
 Structural assignment of multi-sentence texts: 
     - discourse relationships, recall, plan recognition;
+    
 Large-scale relational extraction: 
     - knowledge extraction, paraphrase and implication relations;
 ```
