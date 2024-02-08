@@ -29,36 +29,56 @@ In answering the question of why we need consciousness, one of the proposed answ
 We might add some entirely new nonphysical feature, from which experience can be derived […] we will take experience itself as a fundamental feature of the world, alongside mass, charge, and space-time”.
 ```
 
-This is also known as "fundamental property dualism", which, in David Chalmers' definition, _"regards conscious mental properties as basic constituents of reality on a par with fundamental physical properties such as electromagnetic charge. They may interact in casual and lay-like ways with other fundamental properties such a those of physics, but ontologically  their existence is not dependent upon nor derivative from any other properties"._
+This is also known as "fundamental property dualism", which, in David Chalmers' definition, `"regards conscious mental properties as basic constituents of reality on a par with fundamental physical properties such as electromagnetic charge. They may interact in casual and lay-like ways with other fundamental properties such a those of physics, but ontologically  their existence is not dependent upon nor derivative from any other properties".`
 
-According to this [medium article](https://medium.com/curious/are-we-conscious-automata-18ba889af20), this idea is also referred to as panpsychism, which “holds that mind or a mind-like aspect is a fundamental and ubiquitous feature of reality. It is also described as a theory that “the mind is a fundamental feature of the world which exists throughout the universe.”
+According to this [medium article](https://medium.com/curious/are-we-conscious-automata-18ba889af20), this idea is also referred to as panpsychism, which "holds that mind or a mind-like aspect is a fundamental and ubiquitous feature of reality". It is also described as a theory that "the mind is a fundamental feature of the world which exists throughout the universe."
+
+
+#### Consciousness As Weak/Strong/Normal Emergence
+
+Each one of them is a hypothesis over the emergence and origin of consciousness, and below is a more detailed breakdown.
 
 ---
 
 @@colbox-blue
 
-##### Consciousness As Weak/Strong/Normal Emergence
 
 
-**Strong Emergence**: This is the position that is too good to be true and therefore argued against. As it's not very much plausible that it's the downward causal direction, where the emergence of consciousness caused the microscopic and molecular changes happening at a lower-level. The only justification to this position is that it opens up possibilities for free will, explained by the physicist Sean Carroll.
+**Strong Emergence**: This is the position that is too good to be true and therefore argued against. As it's not very much plausible that it's the downward causal direction, where the emergence of consciousness caused the microscopic and molecular changes happening at a lower-level. 
 
-Downward causation is one manifestation of this strong-emergence attitude. It’s the idea that what happens at lower levels can be directly influenced (causally acted upon) by what is happening at the higher levels. The idea, in other words, that you can’t really understand the microscopic behavior without knowing something about the macroscopic.
+The only justification to this position is that it opens up possibilities for free will, explained by the physicist Sean Carroll.
+
+Downward causation is one manifestation of this strong-emergence attitude. It’s the idea that what happens at lower levels can be directly influenced (causally acted upon) by what is happening at the higher levels. 
+
+The idea, in other words, that you can’t really understand the microscopic behavior without knowing something about the macroscopic.
 
 **Weak Emergence**: Instead of being a strong emergence, maybe in reality consciousness might just be a weak emergence instead as proposed.
 
-The so-called “weak” emergence suggests that higher-level notions like the fluidity or solidity of a material substance emerge out of the properties of its microscopic constituents. In principle, if not in practice, the microscopic description is absolutely complete and comprehensive. A “strong” form of emergence would suggest that something truly new comes into being at the higher levels, something that just isn’t there in the microscopic description.
+The so-called “weak” emergence suggests that higher-level notions like the fluidity or solidity of a material substance emerge out of the properties of its microscopic constituents. 
+
+In principle, if not in practice, the microscopic description is absolutely complete and comprehensive. A “strong” form of emergence would suggest that something truly new comes into being at the higher levels, something that just isn’t there in the microscopic description.
 
 The example used was when we talk about atoms and other physical properties, it might not be suitable to talk about free will, but under the philosophical discussions about human consciousness, motivation, and behavior, it may be otherwise.
 
-ℹ️ In such a case, explaining what a weak emergence is, we may ask the question: if we take the view that consciousness does affect our thoughts and behavior, is that view applicable at the level of atoms and particles, or only at the level appropriate for describing human psychology?
+@@ 
 
-**Normal Emergence**: 
+---
 
-```plaintext
-In answering this question, the article used a different analogy; consider the mechanism that regulates the constriction and dilation of our pupils according to the intensity of the light reaching them. We could say that there's a sort of sensor in our eyes or in our visual processing area in the brain that causes our pupils to behave that way, yet at the fundamental level of physics, the knowledge of such a sensory mechanism is not needed to predict (in principle) the behavior of all the particles composing the eye as they interact among themselves and with all the external particles affecting them. Still, we wouldn't say that the sensor is merely a byproduct that accomplishes nothing.
+ℹ️ In such case, explaining what a weak emergence is, we may ask the question: if we take the view that consciousness does affect our thoughts and behavior, is that view applicable at the level of atoms and particles, or only at the level appropriate for describing human psychology?
+
+
+```
+In answering this question, the article used a different analogy; consider the mechanism that regulates the constriction and dilation of our pupils according to the intensity of the light reaching them. 
+
+We could say that there's a sort of sensor in our eyes or in our visual processing area in the brain that causes our pupils to behave that way, yet at the fundamental level of physics, the knowledge of such a sensory mechanism is not needed to predict (in principle) the behavior of all the particles composing the eye as they interact among themselves and with all the external particles affecting them. 
+
+Still, we wouldn't say that the sensor is merely a byproduct that accomplishes nothing.
 ```
 
-The visual sensor is obviously affecting the behavior of the pupil, yet it doesn't follow that it's affecting the behavior of the underlying atoms in a way that contradicts or is incompatible with our understanding of how atoms behave.
+Therefore, instead of agreeing on each extreme end of the spectrum, below might help construe and reach the ultimate conclusion.
+
+@@colbox-blue
+**Normal Emergence**: The visual sensor is obviously affecting the behavior of the pupil, yet it doesn't follow that it's affecting the behavior of the underlying atoms in a way that contradicts or is incompatible with our understanding of how atoms behave.
 
 Without the sensor, the atoms wouldn't behave as they do, and in that sense the sensor is necessary for the pupil to constrict and dilate; it's that it's necessary to know the existence of the sensor to predict what the atoms of the eye will do next.
 
