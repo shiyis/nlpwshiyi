@@ -53,9 +53,13 @@ In a DFA, the machine only enters one state for a specific input character. For 
 
 ```python
 Create a DFA that, for instance, only accepts strings that end in 'a'.
+
     Assumed: Σ = {a,b}, q = {q0}, F={q1}, Q = {q0, q1}
+
 If you want to create a state transition diagram that is accurate, you should first take into account a language set of all the potential acceptable strings.
+
     L = {a, a, a, a, a, aa, aaa, aaaa, ba, bba, bbbaa, aba, abba, aaba, abaa}
+
 The list above is just a small portion of all possible acceptable strings; there are many other strings that contain the letters "a" and "b".
 ```
 
@@ -88,7 +92,7 @@ In case of NFA
 ? : Q X ? --> $2^Q$  
 ```
 
-ℹ️ Now if you observe you’ll find out Q X ? –> Q is part of Q X ? –> $2^Q$.
+ℹ️ Now if you observe you’ll find out `Q X ? –> Q` is part of `Q X ? –> 2 ^ Q`.
 
 On the RHS side, Q is the subset of $2^Q$ which indicates Q is contained in $2^Q$ or Q is a part of $2^Q$, however, the reverse isn’t true. So mathematically, we can conclude that every DFA is NFA but not vice-versa. Yet there is a way to convert an NFA to DFA, so there exists an equivalent DFA for every NFA.
 
