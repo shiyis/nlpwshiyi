@@ -2,7 +2,11 @@
 
 
 
-To answer this major question, it's important to draw inference from some of the important concepts in psychology. The first one is _The Language of Thought Hypothesis_ and the second one _The Representational Theory of Thought_. The first one touches on the importance of how our brain has a schema when it comes to producing language of thought, or called _Mentalese_. The _Representational Theory of Thought_ on the other hand touches on our cognitive abilities to be able to make conscious decisions, solve problems, and reason; which may be manifested in a natural language as propositional attitudes. The schema goes as,
+To answer this major question, it's important to draw inference from some of the important concepts in psychology. The first one is _The Language of Thought Hypothesis_ and the second one _The Representational Theory of Thought_. 
+
+The first one touches on the importance of how our brain has a schema when it comes to producing language of thought, or called _Mentalese_. The _Representational Theory of Thought_ on the other hand touches on our cognitive abilities to be able to make conscious decisions, solve problems, and reason. 
+
+Above may be manifested in a natural language as propositional attitudes. The schema goes as,
 
 > X believes that p iff X believes that S which is a mental representation and p is the actual manifestation of S.
 
