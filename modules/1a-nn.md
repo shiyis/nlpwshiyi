@@ -388,19 +388,19 @@ In all cases, the three main requirements below are the development of probabili
 
 In modeling:
 
-- Generative vs. discriminative models;
-- Parametric vs. nonparametric models;
+- Generative vs. Discriminative Models;
+- Parametric vs. Non-Parametric Models;
 
 Learning from data:
 
-- Maximum likelihood estimation;
-- Maximum entropy and expectation maximization;
-- Supervised versus unsupervised learning;
+- Maximum Likelihood Estimation;
+- Maximum Entropy and Expectation Maximization;
+- Supervised versus Unsupervised Learning;
 
 In output computation:
 
-- Dynamic programming;
-- Unique output vs. distribution of output.
+- Dynamic Programming;
+- Unique Output vs. Distribution of Output;
 
 @@
 
