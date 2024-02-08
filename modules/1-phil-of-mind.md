@@ -285,10 +285,10 @@ And the storing of information is similar to that of a computer where there's "m
 
 However, many connectionists seek to bridge these two paradigms together instead of trying to argue for one over the other. One of the schools - the implementational connectionists - seeks to find a solution that accommodates these two different hypotheses.
 
-It's also argued by radical connectionists that the traditional or the symbolic way of treating human cognitive information processing should be eliminated because how poorly it reflects these dynamics in human consciousness that could otherwise be materialized through connectionism,
+It's also argued by radical connectionists that the traditional or the symbolic way of treating human cognitive information processing should be eliminated because how poorly it reflects these dynamics in human consciousness that could otherwise be materialized through connectionism.
 
 ```plaintext
-graceful degradation of function, holistic representation of data, spontaneous generalization, appreciation of context, etc.
+Graceful degradation of function, holistic representation of data, spontaneous generalization, appreciation of context, etc.
 ```
 
 Yet, hybrid mechanisms were put out by different teams to mediate such clashes. For example, there were papers that drew inspiration from the classical style of information processing (having one module that acts as the memory location or implementing methods that utilize variable binding techniques for symbolic processing that reflects the classical computational way of thinking aka the turing style information processing and storage).
