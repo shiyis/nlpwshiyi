@@ -30,7 +30,7 @@ This might be fundamental for inferential reasoning, assuming the importance of 
 
 Another important point to bring up here pertaining to the discussion of systematically theorizing The Representational Theory of Thought or what constitutes as a mental language is that token-and-type has to come into play. To be more specific,
 
-> the **type** is the mental representation itself (repeatable), and the tokens are reflected as the mental events or could be neurological. And thought processes are casual sequences of **tokenings** of mental representations.
+> The **type** is the mental representation itself (repeatable), and the tokens are reflected as the mental events or could be neurological. And thought processes are casual sequences of **tokenings** of mental representations.
 
 So, to talk about the actualization of a mental image in such case, the process goes as,
 
@@ -62,13 +62,19 @@ LOT claims that mental states typically have constiuent structures. That said, t
 
 Ancient LOT proponents used syllogism and propositional logic to analyze the semantics of _Mentalese_. Current researchers instead use predicate calculus, which was established in the late 18th century and optimized in the 30s. The premise was that,
 
-> a Mentalese contains primitive words - including predicates, singular terms, and logical connectives - and these words combine to form complex sentences governed by something like the semantics of the predicate calculus.
+> A Mentalese contains primitive words - including predicates, singular terms, and logical connectives - and these words combine to form complex sentences governed by something like the semantics of the predicate calculus.
 
-Logical structure only constitutes partly the complex representations, accompanied with other non-sentential formats including graphs, maps, diagrams, etc. They could also be manifested as ideas and imagistic forms. In fact, logic plays no role in such constructions only loosely connected structures did. Schematic mental maps in relation to actual concrete maps best describe these kinds of mental images and representations. Therefore, pluralism was adopted by some to analyze thoughts, including but not limited to those non-sentential formats mentioned above.
+Logical structure only constitutes partly the complex representations, accompanied with other non-sentential formats including graphs, maps, diagrams, etc. They could also be manifested as ideas and imagistic forms. In fact, logic plays no role in such constructions only loosely connected structures did. 
 
-However illogical these perceptual mental representations are compositional and complex. They also display systematicity. Supporters of LOT will posit that _The Computational Theory of Mind_ serves to produce the language of thought. Together RTT + COMP + CCTM (The Representational Theory of Thought, The Compositionality of Mental Processes, and The Classical Computational Theory of Mind) forges the LOTH. And our cognitive inferential systematicities provide the space for the above hypothesis to stand. However, the system considers only the syntactic importance without the presence of semantic significance.
+Schematic mental maps in relation to actual concrete maps best describe these kinds of mental images and representations. Therefore, pluralism was adopted by some to analyze thoughts, including but not limited to those non-sentential formats mentioned above.
 
-In the modern era, CCTM is however excluded in the discussion. only RTT + COMP is included. This is the original spawning of a new school of computational theory of mind grounded in connectionism.
+However illogical these perceptual mental representations are compositional and complex. They also display systematicity. Supporters of LOT will posit that _The Computational Theory of Mind_ serves to produce the language of thought. 
+
+Together RTT + COMP + CCTM (The Representational Theory of Thought, The Compositionality of Mental Processes, and The Classical Computational Theory of Mind) forges the LOTH. And our cognitive inferential systematicities provide the space for the above hypothesis to stand. 
+
+However, the system considers only the syntactic importance without the presence of semantic significance.
+
+In the modern era, CCTM is however excluded in the discussion. Only RTT + COMP is included. This is the original spawning of a new school of computational theory of mind grounded in connectionism.
 
 ---
 
@@ -109,13 +115,18 @@ Therefore, it bears that there's no such a thing as concept learning. And the co
 In such a case, it's very important to explain what it means by understanding a natural language? The conclusion was that,
 
 
-> a Mentalese is a direct medium of the thought process and not the object of interpretation, as we face the conundrum of having to represent it through a meta-language which suffers the logic fallacy of ad infinitum; put differently, "we face the infinite regress of a meta-language". Therefore, it's not perceived or interpreted. One cannot say that they understood the mental language the same way as they understood a natural language.
+> A Mentalese is a direct medium of the thought process and not the object of interpretation, as we face the conundrum of having to represent it through a meta-language which suffers the logic fallacy of ad infinitum; put differently, "we face the infinite regress of a meta-language". Therefore, it's not perceived or interpreted. One cannot say that they understood the mental language the same way as they understood a natural language.
 
 
-similarly to words (lexical items in a natural language), we can hardly define what a primitive expression's semantic properties exactly are. Though it's easy to illustrate the relations between complex expressions formed from these primitive expressions, researchers sought to create paradigms that could well capture the semantic properties of them. Here the strategy was to adopt functionalism (where _mind is the functional organization of the brain_). Therefore, the effort of categorizing what exactly it means by saying "X A's that p iff there is a mental representation S such that X bears A* to S and S means that P" gets broken down into two steps,
+similarly to words (lexical items in a natural language), we can hardly define what a primitive expression's semantic properties exactly are. 
+
+Though it's easy to illustrate the relations between complex expressions formed from these primitive expressions, researchers sought to create paradigms that could well capture the semantic properties of them. 
+
+Here the strategy was to adopt functionalism (where _mind is the functional organization of the brain_). Therefore, the effort of categorizing what exactly it means by saying `"X A's that p iff there is a mental representation S such that X bears A* to S and S means that P"` gets broken down into two steps,
 
 ```plaintext
 1. to explain in naturalistically acceptable terms what it is to bear psychological relation A* to mental representation S.
+
 2. to explain in naturalistically acceptable terms what it is for mental representation S to mean that p.
 ```
 
@@ -127,11 +138,15 @@ By treating these mental processes as type-token relations, we are able to provi
 
 > e and e* are tokens of the same _Mentalese_ type iff R(e,e*). And individuated in neurological terms it becomes that e and e* are the tokens of the same primitive Mentalese type iff e and e* are tokens of the same neural type.
 
-This is the process of naturalizing intentionality and individuating it through pure neurology. However above schema faces a challenge as it could not address the issue of _multiple realizability_, as it is defined heterogeneously in the realm of neuroscience, physics, and biology. In lieu of which, a functional definition is carried out and goes as,
+This is the process of naturalizing intentionality and individuating it through pure neurology. However above schema faces a challenge as it could not address the issue of _multiple realizability_, as it is defined heterogeneously in the realm of neuroscience, physics, and biology. 
+
+In lieu of which, a functional definition is carried out and goes as,
 
 > e and e* are tokens of the same primitive Mentalese type iff e and e* have the same functional role.
 
-The below strategy gains popularity as it facilitates the Turing style model treating mental processes as a "computational role" subscribing the "functional role" to Turing style computationalism formalism. And there are two categories that represent such a "functional role":
+The below strategy gains popularity as it facilitates the Turing style model treating mental processes as a "computational role" subscribing the "functional role" to Turing style computationalism formalism. 
+
+And there are two categories that represent such a "functional role":
 
 💭 _MOLECULAR_ vs _HOLIST_.
 
@@ -149,9 +164,11 @@ This view is confirmed by the fact that different from a natural language, their
 
 > e and e* are the same primitive types iff they bear the same denotation.
 
-However, this approach also faces some challenge. First, it violates the original LOTH's aim to naturalize intentionality in non-representational computational models, as this approach does not take into account the formal-syntactic types manipulated during mental computation (carried out in the FCS or the formal-syntactic concept of computation's provided explanation of formalism and semantic integrity; which holds that mental computational is sensitive to syntax independent of semantics or mind is practically speaking a "syntactic machine").
+However, this approach also faces some challenge. First, it violates the original LOTH's aim to naturalize intentionality in non-representational computational models, as this approach does not take into account the _formal-syntactic types manipulated during mental computation_.
 
-On top of it, this approach merely prevents the formal-syntactic _Mentalese_ types while executing a reduction in the naturalization of intentionality.
+This may be carried out in the FCS or the formal-syntactic concept of computation's provided explanation of formalism and semantic integrity; which holds that mental computational is sensitive to syntax independent of semantics or mind is practically speaking a `"syntactic machine"`.
+
+*On top of it, this approach merely prevents the formal-syntactic _Mentalese_ types while executing a reduction in the naturalization of intentionality*.
 
 In a nutshell, above individuation theories might not be adequate to account for the entirety of LOTH. More investigation is needed.
 
@@ -408,19 +425,19 @@ Large-scale relational extraction:
     - knowledge extraction, paraphrase and implication relations;
 ```
 
-Text and document classification involves **normalizing functions based on frequency and punctuation of words (i.e. the measure of _tfidf_)**, including discrete features like 0, 1-valued functions. Documents are represented as numeric vectors, with separate classes forming independent clusters. Classical pattern recognition techniques are used to assign new documents to appropriate classes. A simple Bayesian approach assumes each class generates independent feature values, with the highest-performing class selected. A common generative model of real-valued features allows feature interactions, treating known members as multivariate normal random variables.
+Text and document classification involves **normalizing functions based on frequency and punctuation of words (i.e. the measure of _tfidf_)**, including discrete features like `0`, `1`-valued functions. Documents are represented as numeric vectors, with separate classes forming independent clusters. Classical pattern recognition techniques are used to assign new documents to appropriate classes. A simple Bayesian approach assumes each class generates independent feature values, with the highest-performing class selected. A common generative model of real-valued features allows feature interactions, treating known members as multivariate normal random variables.
 
-**Sequence markers**  - play a crucial role in text classification, as they influence the classification of neighboring words. For instance, the presence of "don't" in a sentence might favor classifying "fish" as a verb, which in turn would favor "like" as a preposition. This cascading influence motivates generative sequence models like HMMs. For POS tagging, a large training corpus can estimate the probability of the next POS word, "emitting," and "emission" for most words in the text. Correlation algorithms, forward and backward, can be used to derive possible tags for each word at position _i_, which may be more useful for high-level processing.
+**Sequence Markers**  - play a crucial role in text classification, as they influence the classification of neighboring words. For instance, the presence of "don't" in a sentence might favor classifying "fish" as a verb, which in turn would favor "like" as a preposition. This cascading influence motivates generative sequence models like HMMs. For POS tagging, a large training corpus can estimate the probability of the next POS word, "emitting," and "emission" for most words in the text. Correlation algorithms, forward and backward, can be used to derive possible tags for each word at position _i_, which may be more useful for high-level processing.
 
 **Annotation Limitations** - classification of selected words or phrases involves a block of words or phrases in the context, rather than the entire block of text. Features are chosen based on the target word or phrase's characteristics and its relation to its context. The same supervised learning and classification methods can be applied. However, large training corpora may be difficult to build, especially in statistical word disambiguation tasks, where thousands of words can be used in a single corpus. As a result, annotations are usually limited to a few polysemous words.
 
-**The k-Nearest Neighbor (kNN) method** - is a non-discriminative method that assigns a vector space of unknowns to the text or document of the class most prevalent among its k nearest neighbors. It is nonparametric and does not rely on parameter estimation. **Decision trees**, another non-parametric non-discriminative method, use information theoretic techniques to select classes and branches, providing insight into important features. However, decision trees tend to converge to a non-global optimum, which can be mitigated by decision forests.
+**The K-Nearest Neighbor (kNN) Method** - is a non-discriminative method that assigns a vector space of unknowns to the text or document of the class most prevalent among its k nearest neighbors. It is nonparametric and does not rely on parameter estimation. **Decision trees**, another non-parametric non-discriminative method, use information theoretic techniques to select classes and branches, providing insight into important features. However, decision trees tend to converge to a non-global optimum, which can be mitigated by decision forests.
 
 Each method has advantages and disadvantages, depending on parameter selection and probabilistic model development. Traditional discriminative approaches partition clusters, such as **perceptrons** linearly determine class membership and can learn incrementally with more training data.
 
 **MaxEnt**, also known as polynomial logistic regression, and continuous features. MaxEnt uses binary values given a linguistic input and a function of possible classes. Continuous features, supervised or unsupervised discretization methods, and training data are used to determine the frequency of features. This discriminative method uses a log-linear model, which is now common in many NLP tasks. MaxEnt typically provides better classification performance and can be useful in further computations.
 
-**The support vector machine (SVM) approach** - is a crucial method in statistical natural language processing (NLP). It allows for the distinction of arbitrary class configurations by projecting original class vectors into a higher-dimensional space where the classes are linearly divisible. This method is mediated by a *kernel function*, which measures similarity between pairs of vectors. However, it does not expand the classification criteria, and classification criteria are obtained from a training corpus. MaxEnt classifiers are faster to train and often provide satisfactory accuracy.
+**The Support Vector Machine (SVM) Approach** - is a crucial method in statistical natural language processing (NLP). It allows for the distinction of arbitrary class configurations by projecting original class vectors into a higher-dimensional space where the classes are linearly divisible. This method is mediated by a *kernel function*, which measures similarity between pairs of vectors. However, it does not expand the classification criteria, and classification criteria are obtained from a training corpus. MaxEnt classifiers are faster to train and often provide satisfactory accuracy.
 
 ---
 
@@ -431,9 +448,14 @@ We have talked so much about the statistical methods in dealing with natural lan
 Recurrent Neural Networks (RNN) operate on sequential data, including time-series data and language translation. Recurrent neural networks come in several forms.
 
 ```plaintext
-Vector to Sequence: takes in a vector and output a sequence of any length.
-Sequence to Vector: accepts a sequence as input and output a vector (frequently used for semantic analysis).
-Sequence To Sequence: Models take one sequence as input and produce another sequence (mostly used for machine translation).
+Vector to Sequence: 
+    takes in a vector and output a sequence of any length.
+
+Sequence to Vector: 
+    accepts a sequence as input and output a vector (frequently used for semantic analysis).
+
+Sequence To Sequence: 
+    Models take one sequence as input and produce another sequence (mostly used for machine translation).
 ```
 
 #### The Encoder-Decoder Architect
