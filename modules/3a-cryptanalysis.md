@@ -12,7 +12,7 @@ In summary, cryptography aims to secure communication and data through encryptio
 
 ### Why Is Cryptography Important in Our Discussion of NLP?
 
-With a little bit of digging, I was able to come to below conclusions, 
+With a little bit of digging, I was able to arrive at below summaries, 
 
 **Security Evaluation**: Cryptanalysis helps evaluate the security of cryptographic systems used to protect sensitive data. By analyzing encryption algorithms and protocols, cryptanalysts can identify weaknesses and vulnerabilities that could be exploited by attackers. This evaluation is essential for ensuring the confidentiality, integrity, and authenticity of data in various applications such as online transactions, communication channels, and data storage systems.
 
