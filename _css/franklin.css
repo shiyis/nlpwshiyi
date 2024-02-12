@@ -701,3 +701,8 @@ img[alt=cky] {
 }
 
 
+
+img[alt=skip-gram-demo]{
+  width: 360px;
+  text-align: center;
+}
