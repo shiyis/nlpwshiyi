@@ -4,7 +4,7 @@
 videos = Dict(
               "course-intro" => "ZhC-DIrCe6A",
               "pytorch-tensors" => "BmAS8IH7n3c",
-              "automatic-diff" => "Z6H3zakmn6E",
+              "automatic-diff" => "cNADlHfHQHg",
               "loss-functions" => "jReGEZXq4Ac",
               "optim-basics" => "UvM0hK4E2dc",
               "pytorch-module" => "OiyZXdnLHcI",
