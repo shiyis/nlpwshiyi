@@ -120,7 +120,7 @@ function hfun_bar(vname)
       elseif hour(s) < 1
         display = "$(minute(s)):$(second(s))"
       else
-        display = display = "$(hour(s)):0$(minute(s)):$(second(s))"
+        display = "$(hour(s)):0$(minute(s)):$(second(s))"
       end
       title = join(params[3:end], " ")
       return """
