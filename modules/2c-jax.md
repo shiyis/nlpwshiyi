@@ -1,6 +1,6 @@
-<!-- @def sequence = ["jax"]
+@def sequence = ["jax"]
 
-# Module 2c - Automatic differentiation: VJP and intro to JAX
+# Automatic differentiation: VJP and More on JAX
 
 **Table of Contents**
 
@@ -91,7 +91,7 @@ Each function will take 2 arguments: one being the input `x` and the other being
 \end{align*}
 Then backpropagation is simply done by first computing the gradient of the loss and then composing the **vjp** functions in the right order.
 
-## Practice
+<!-- ## Practice
 
 - intro to JAX: autodiff the functional way [autodiff\_functional\_empty.ipynb](https://github.com/dataflowr/notebooks/blob/master/Module2/autodiff_functional_empty.ipynb) and its solution [autodiff\_functional\_sol.ipynb](https://github.com/dataflowr/notebooks/blob/master/Module2/autodiff_functional_sol.ipynb)
 - Linear regression in JAX [linear\_regression\_jax.ipynb](https://github.com/dataflowr/notebooks/blob/master/Module2/linear_regression_jax.ipynb) -->
