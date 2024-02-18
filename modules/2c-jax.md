@@ -38,26 +38,6 @@ Below is the Jacobian matrix of the vector-valued function $( \mathbf{f}(\mathbf
 
 In summary, the Jacobian matrix provides a linear approximation of the function $( \mathbf{f}(\mathbf{x}) )$ near the point $( \mathbf{x} )$. It captures the sensitivity of each component of $( \mathbf{f} )$ to small changes in the variables $( x_i )$. The vectorized form and the representation using gradients offer different perspectives on the same mathematical concept.
 
-The bboave expression you provided is a mathematical representation of the first-order Taylor expansion of the function $( \mathbf{f}(\mathbf{x}) )$ around the point $( \mathbf{x} )$. Let's break down the key components and understand why this expansion is valid:
-
-1. **Taylor Expansion:**
-   - The Taylor expansion of a function $( \mathbf{f}(\mathbf{x}) )$ around a point $( \mathbf{x}_0 )$ is given by:
-     \[ \mathbf{f}(\mathbf{x}_0 + \mathbf{v}) = \mathbf{f}(\mathbf{x}_0) + J_{\mathbf{f}}(\mathbf{x}_0)\mathbf{v} + o(\|\mathbf{v}\|) \]
-   - Here, $( J_{\mathbf{f}}(\mathbf{x}_0) )$ is the Jacobian matrix of $( \mathbf{f} )$ at the point $( \mathbf{x}_0 )$, and $( o(\|\mathbf{v}\|) )$ represents a term that goes to zero faster than $( \|\mathbf{v}\| )$ as $( \|\mathbf{v}\| )$ approaches zero.
-
-2. **Jacobian Matrix $( J_{\mathbf{f}}(\mathbf{x}) )$:**
-   - The Jacobian matrix $( J_{\mathbf{f}}(\mathbf{x}) )$ represents the linearization of the function $( \mathbf{f} )$ around the point $( \mathbf{x} )$. It contains the partial derivatives of each component of $( \mathbf{f} )$ with respect to each variable $( x_i )$.
-
-3. **Linear Map Interpretation:**
-   - The Jacobian matrix $( J_{\mathbf{f}}(\mathbf{x}) )$ can be viewed as a linear map that transforms small changes in the input vector $( \mathbf{v} )$ to small changes in the output vector $( \mathbf{f} )$.
-   - The linear approximation $( J_{\mathbf{f}}(\mathbf{x})\mathbf{v} )$ represents the change in $( \mathbf{f} )$ resulting from a small change $( \mathbf{v} )$ in the input.
-
-4. **Higher-Order Terms:**
-   - The term $( o(\|\mathbf{v}\|) )$ represents the higher-order terms in the Taylor expansion that capture the behavior beyond the linear approximation. As $( \|\mathbf{v}\| )$ approaches zero, these terms become negligible compared to the linear term.
-
-In summary, the expression you provided is a way to approximate the function $( \mathbf{f} )$ near the point $( \mathbf{x} )$ using a linear map (the Jacobian) and accounting for higher-order terms that become negligible as the input perturbation $( \mathbf{v} )$ becomes small. This is a fundamental concept in calculus and optimization, providing a local linear approximation to a function.
-
-
 ## Taylor Expansion 
 
 The above expressions involve concepts that are related to the Taylor expansion. Let me clarify the connection between the provided expression and the Taylor expansion.
@@ -85,6 +65,25 @@ Hence the Jacobian $J_{\mathbf{f}}(\mathbf{x})\in \mathbb{R}^{m\times n}$ is a l
 \mathbf{f}(\mathbf{x}+h\mathbf{v}) = \mathbf{f}(\mathbf{x}) + h J_{\mathbf{f}}(\mathbf{x})\mathbf{v} +o(h).
 \end{align*}
 The term $J_{\mathbf{f}}(\mathbf{x})\mathbf{v}\in \mathbb{R}^m$ is a Jacobian Vector Product (**JVP**), corresponding to the interpretation where the Jacobian is the linear map: $J_{\mathbf{f}}(\mathbf{x}):\mathbb{R}^n \to \mathbb{R}^m$, where $J_{\mathbf{f}}(\mathbf{x})(\mathbf{v})=J_{\mathbf{f}}(\mathbf{x})\mathbf{v}$.
+
+Above explains a mathematical representation of the first-order Taylor expansion of the function $( \mathbf{f}(\mathbf{x}) )$ around the point $( \mathbf{x} )$. Let's break down the key components and understand why this expansion is valid:
+
+1. **Taylor Expansion:**
+   - The Taylor expansion of a function $( \mathbf{f}(\mathbf{x}) )$ around a point $( \mathbf{x}_0 )$ is given by:
+     \[ \mathbf{f}(\mathbf{x}_0 + \mathbf{v}) = \mathbf{f}(\mathbf{x}_0) + J_{\mathbf{f}}(\mathbf{x}_0)\mathbf{v} + o(\|\mathbf{v}\|) \]
+   - Here, $( J_{\mathbf{f}}(\mathbf{x}_0) )$ is the Jacobian matrix of $( \mathbf{f} )$ at the point $( \mathbf{x}_0 )$, and $( o(\|\mathbf{v}\|) )$ represents a term that goes to zero faster than $( \|\mathbf{v}\| )$ as $( \|\mathbf{v}\| )$ approaches zero.
+
+2. **Jacobian Matrix $( J_{\mathbf{f}}(\mathbf{x}) )$:**
+   - The Jacobian matrix $( J_{\mathbf{f}}(\mathbf{x}) )$ represents the linearization of the function $( \mathbf{f} )$ around the point $( \mathbf{x} )$. It contains the partial derivatives of each component of $( \mathbf{f} )$ with respect to each variable $( x_i )$.
+
+3. **Linear Map Interpretation:**
+   - The Jacobian matrix $( J_{\mathbf{f}}(\mathbf{x}) )$ can be viewed as a linear map that transforms small changes in the input vector $( \mathbf{v} )$ to small changes in the output vector $( \mathbf{f} )$.
+   - The linear approximation $( J_{\mathbf{f}}(\mathbf{x})\mathbf{v} )$ represents the change in $( \mathbf{f} )$ resulting from a small change $( \mathbf{v} )$ in the input.
+
+4. **Higher-Order Terms:**
+   - The term $( o(\|\mathbf{v}\|) )$ represents the higher-order terms in the Taylor expansion that capture the behavior beyond the linear approximation. As $( \|\mathbf{v}\| )$ approaches zero, these terms become negligible compared to the linear term.
+
+In summary, the expression you provided is a way to approximate the function $( \mathbf{f} )$ near the point $( \mathbf{x} )$ using a linear map (the Jacobian) and accounting for higher-order terms that become negligible as the input perturbation $( \mathbf{v} )$ becomes small. This is a fundamental concept in calculus and optimization, providing a local linear approximation to a function.
 
 ## Chain composition
 
