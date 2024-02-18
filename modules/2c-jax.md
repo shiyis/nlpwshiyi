@@ -183,7 +183,7 @@ class Exp(Function):
 # Use it by calling the apply method:
 output = Exp.apply(input)
 ```
-### Backprop the functional way
+### Backprop The Functional Way
 
 Here we will implement in `numpy` a different approach mimicking the functional approach of [JAX](https://jax.readthedocs.io/en/latest/index.html) see [The Autodiff Cookbook](https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html#).
 
