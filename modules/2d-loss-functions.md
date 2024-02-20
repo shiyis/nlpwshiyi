@@ -1,13 +1,35 @@
 @def sequence = ["loss-functions"]
 
-# Module 3 - Loss functions for classification
+# Loss functions for classification
 
 **Table of Contents**
 
 \toc
 
 
-## Loss functions for classification
+# General ML Classification Tasks
+
+In this blog, general machine learning classification task will be covered. 
+
+**Some supervised learning basics** 
+- Linear regression 
+- Gradient descent algorithms
+- Logistic regression 
+- Classification and softmax regression 
+
+The training steps pretty much consist of the below flow:
+    Dataset and Dataloader + Model + Loss and Optimizer = Training 
+
+Maximizing the log likelihood in the training step 
+
+**a probabilistic model**
+
+The dataset is made of $m$ training examples $(x(i), y(i))_{i\in[m]}, where $x(i)\in
+
+
+
+
+
 
 {{youtube_placeholder loss-functions}}
 
