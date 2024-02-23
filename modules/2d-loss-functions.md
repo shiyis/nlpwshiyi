@@ -1,6 +1,6 @@
 @def sequence = ["loss-functions"]
 
-# Loss functions for classification
+# Loss Functions for Classification
 
 **Table of Contents**
 
