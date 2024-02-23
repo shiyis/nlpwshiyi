@@ -38,7 +38,7 @@ The gradient of the least squares cost function is:
 
 $$\frac{\partial}{\partial\theta} J(\theta) = \sum_{i=0}^{m} (y(i) - \theta^T x(i)) \frac{\partial}{\partial \theta_{j}} (y(i) - \sum_{i=0}^{d} \theta_{k}x_{k}(i)) = \sum_{i=0}^{m} (y(i) - \theta^{T} x(i)) = \sum_{i=0}^{m} (y(i) = \theta^{T} x(i))x_j(i)$$
 
-### gradient descent algorithms
+# Gradient  Descent Algorithms
 
 Batch gradient descent performs the update 
 
@@ -140,7 +140,7 @@ For the logistic regression, we had only one parameter $\theta$ whereas here, fo
 For 2 classes, we recover the logistic regression:
 
 $$ p_{\theta} ( y = 1 | x) = \frac{e_{1}^{T}x}{e_{1}^{T}x + e_{0}^{T}x} $$
-$$                         = \frac{1}{1 + e^{\theta_{0} - \theta_{1}^{T}x}}$$
+$$                         = \frac{1}{1 + e^{\theta_{0}^{T} - \theta_{1}^{T}x}}$$
 
 
 Classification and softmax regression:
