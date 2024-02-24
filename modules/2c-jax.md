@@ -1,6 +1,6 @@
 @def sequence = ["jax"]
 
-# Automatic differentiation: VJP and More on JAX
+# Automatic Differentiation: VJP and More on JAX
 
 **Table of Contents**
 
