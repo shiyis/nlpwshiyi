@@ -79,7 +79,7 @@ Here:
 
 The goal in linear regression is often to maximize this log-likelihood function, which is equivalent to minimizing the sum of squared residuals (ordinary least squares approach).
 
-Note that in practice, maximizing the log-likelihood is often done under the assumption that the errors ($(y_i - \mu_i)$) are normally distributed, which allows for the use of maximum likelihood estimation (MLE). This assumption is a key aspect of classical linear regression.
+Note that in practice, maximizing the log-likelihood is often done under the assumption that the errors $(y_i - \mu_i)$ are normally distributed, which allows for the use of maximum likelihood estimation (MLE). This assumption is a key aspect of classical linear regression.
 
 
 Now let's take a look at logistic regression.
