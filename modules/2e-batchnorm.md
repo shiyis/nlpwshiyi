@@ -21,7 +21,7 @@ To quote,
 Weight initialization strategies aim to preserve the activation variance constant across layers, under the initial assumption that the input feature variances are the same.
 
 
-Certainly! Normalization, specifically standardizing input data feature-wise, is a common preprocessing step in machine learning to ensure that different features have comparable scales. This process helps algorithms converge faster and makes models less sensitive to the scale of input features. Let's break down the steps involved in standardizing input data feature-wise:
+Normalization, specifically standardizing input data feature-wise, is a common preprocessing step in machine learning to ensure that different features have comparable scales. This process helps algorithms converge faster and makes models less sensitive to the scale of input features. Let's break down the steps involved in standardizing input data feature-wise:
 
 ### Step 1: Understand the Need for Normalization
 
