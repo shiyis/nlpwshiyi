@@ -90,19 +90,19 @@ In summary, the interpretation of dropout involves understanding its regularizat
 
 The implementation details of dropout during training and testing phases focuses on how to apply dropout to neural network units and how to maintain the means of inputs during training and testing.
 
- 1. **Decision on Dropout**:**
+ 1. **Decision on Dropout**:
    - Decide on which units or layers to apply dropout. Typically, dropout is applied to hidden units (neurons) in the fully connected layers, but the decision might vary based on the specific architecture and problem.
 
- 2. **Dropout Probability $(p)$**:**
+ 2. **Dropout Probability $(p)$**:
    - Choose the dropout probability ($(p)$) which represents the probability that a unit is dropped out during training. Common values range from 0.2 to 0.5.
 
- 3. **Bernoulli Variables**:**
+ 3. **Bernoulli Variables**:
    - For each training sample, independently sample as many Bernoulli variables as there are units. Each Bernoulli variable takes a value of 1 with probability $(1 - p)$ (indicating the unit is kept) and 0 with probability $(p)$ (indicating the unit is dropped).
 
- 4. **During Training**:**
+ 4. **During Training**:
    - Multiply the activations of the units by $(\frac{1}{1 - p})$ during training. This is known as "inverted dropout." The purpose is to scale the activations to compensate for the dropout effect and keep the expected value of the activations consistent.
 
- 5. **During Testing**:**
+ 5. **During Testing**:
    - During the testing phase, when making predictions on new, unseen data, the network should not apply dropout. The standard way to achieve this is to keep the network untouched during testing. However, since dropout introduces a scaling effect during training, a correction is needed to maintain the means of the inputs during testing.
    - The "inverted dropout" approach is to multiply the activations by $(\frac{1}{1 - p})$ during training. To maintain the means of the inputs during testing, simply use the unscaled activations.
 
