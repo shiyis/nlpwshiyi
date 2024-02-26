@@ -852,7 +852,7 @@ code {
   padding: .25em .5em;
   font-size: 85%;
   text-wrap: pretty;
-  color: #bf616a;
+  color: #6962d2;
   background-color: #f9f9f9;
   border-radius: 3px
 }
@@ -931,7 +931,7 @@ pre code {
 
 
 .topnav {
-  background-color: palevioletred;
+  background-color: #8482e6;
   overflow: hidden;
 }
 
@@ -1047,7 +1047,7 @@ pre code {
   
   /* Hamburger */
   .hamburger1 {
-    background-color: palevioletred;
+    background-color: #8482e6;
     height: 53px;
     display: -ms-grid;
     display: grid;
@@ -1101,7 +1101,7 @@ pre code {
   /* Menu */
   .topnav {
     width: 100%;
-    background-color: palevioletred;
+    background-color: #8482e6;
     display: -ms-grid;
     display: grid;
     grid-template-rows: 1fr repeat(3, 1fr);
@@ -1148,12 +1148,22 @@ img[alt=intro] {
 
 @media screen and (max-width: 500px) {
     img[alt=intro] {
-      width: 40%;
+      width: 60%;
+      opacity: 0.95;
+
     }
 
     code {
       text-wrap: pretty;
     }
+}
+
+
+
+img[alt=intro] {
+  opacity: 0.95;
+  width: 125px;
+
 }
 
 
