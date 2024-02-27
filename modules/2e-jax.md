@@ -199,7 +199,7 @@ The expressions and functions described in the provided approach using `numpy` m
 1. **Function $( \mathbf{f}(\mathbf{x}, \mathbf{w}) )$:**
    - This is the target function that takes two sets of parameters, $(\mathbf{x})$ and $(\mathbf{w})$, and produces an output.
 
-2. **Jacobian-Vector Product Functions ($({\bf vjp}_\mathbf{x}(\mathbf{u}))$ and $({\bf vjp}_\mathbf{w}(\mathbf{u}))$):**
+2. **Jacobian-Vector Product Functions $({\bf vjp}_\mathbf{x}(\mathbf{u}))$ and $({\bf vjp}_\mathbf{w}(\mathbf{u}))$:**
    - These functions compute the Jacobian-vector product of the function $( \mathbf{f} )$ with respect to $(\mathbf{x})$ and $(\mathbf{w})$, respectively.
    - $({\bf vjp}_\mathbf{x}(\mathbf{u}))$ computes $(J_{\mathbf{f}}(\mathbf{x})^T \mathbf{u})$, where $(J_{\mathbf{f}}(\mathbf{x}))$ is the Jacobian matrix of $( \mathbf{f} )$ with respect to $(\mathbf{x})$.
    - $({\bf vjp}_\mathbf{w}(\mathbf{u}))$ computes $(J_{\mathbf{f}}(\mathbf{w})^T \mathbf{u})$, where $(J_{\mathbf{f}}(\mathbf{w}))$ is the Jacobian matrix of $( \mathbf{f} )$ with respect to $(\mathbf{w})$.
