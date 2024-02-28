@@ -40,7 +40,7 @@ def approx_sigmoid(x):
 In practice, the choice of activation function and its approximation depends on the specific requirements of the task, the characteristics of the data, and computational considerations.
 
 
-## Benefits of Depth
+## Depth and Related Concepts
 
 - **Content**: Universal Function Approximation Theorem by Hornik et al. (1991)
 - **Summary**: The theorem states that neural networks can approximate any continuous function on a compact domain to any degree of accuracy, given sufficient width (number of neurons) in the hidden layer. The approximation is within an epsilon ($\epsilon$) error margin.
