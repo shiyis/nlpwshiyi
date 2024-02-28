@@ -116,7 +116,7 @@ This bound provides insights into how the mean integrated square error behaves i
 
 
 
-# Perks of Depth 
+## Perks of Depth 
 
 In the context of deep learning and neural networks, depth refers to the number of layers in a network. Deeper networks have more layers. The benefits of having deep neural networks (high depth) include:
 
@@ -143,7 +143,7 @@ In the context of deep learning and neural networks, depth refers to the number 
 Despite the benefits, it's important to note that increasing depth also introduces challenges such as vanishing/exploding gradients during training and increased computational requirements. Proper architectural design, normalization techniques, and regularization methods are often used to address these challenges in deep learning.
 
 
-# Problems with Depth
+## Problems with Depth
  
 Depth in neural networks offers several advantages, it also comes with its set of challenges and problems. Some of the common problems associated with deep networks include:
 
