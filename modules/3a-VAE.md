@@ -4,10 +4,7 @@ Let's introduce the framework of variational autoencoders (VAEs), referencing wo
 
 We are going to expand on the earlier work done by Kingma and Welling (2014), focusing on explaining the topic in finer detail and discussing important follow-up work. It is noted that the text is not a comprehensive review of all related work and assumes the reader has basic knowledge of algebra, calculus, and probability theory.
 
-The chapter discussed in the excerpt covers background material on probabilistic models, directed graphical models, and the integration of these models with neural networks, specifically in the context of deep latent-variable models (DLVMs). It also mentions that chapter 2 will cover the basics of VAEs, chapter 3 will delve into advanced inference techniques, and chapter 4 will discuss advanced generative models. The section A.1 is referenced for more information on mathematical notation.
-
-There are no tables, charts, or diagrams in the image, so no Markdown table or Mermaid diagram is required.
-
+The chapter discussed in the excerpt covers background material on probabilistic models, directed graphical models, and the integration of these models with neural networks, specifically in the context of deep latent-variable models (DLVMs).
 
 ## Generative vs Discriminative Modeling
 
@@ -76,4 +73,193 @@ Key points in the passage include:
 
 Overall, the passage highlights the foundational role of probabilistic models in machine learning, emphasizing their use in capturing and understanding uncertain relationships within data. The learning process involves adjusting model parameters to align the model distribution with the true distribution of the observed data.
 
-## 
+## Parameterizing a categorical distribution
+
+Parameterizing a categorical distribution refers to expressing the distribution in terms of parameters that define its characteristics. In the context of probability distributions, a categorical distribution is a discrete probability distribution that describes the possible outcomes of a categorical variable, which can take on a finite number of distinct categories.
+
+In a categorical distribution, the parameters typically represent the probabilities associated with each category. If there are $(k)$ categories, the categorical distribution would have $(k)$ parameters, each indicating the probability of observing a particular category.
+
+Let's denote the categorical distribution as $(Cat(p_1, p_2, \ldots, p_k))$, where $(p_i)$ represents the probability of the $(i)$-th category. The parameters $(p_1, p_2, \ldots, p_k)$ are the values that need to be determined or specified to fully define the distribution.
+
+For example, if you have a categorical variable representing the outcome of a six-sided die, the categorical distribution would be parameterized by the probabilities of rolling each number from 1 to 6. If the die is fair, the parameters would be $(p_1 = p_2 = \ldots = p_6 = \frac{1}{6})$.
+
+Parameterizing a categorical distribution is essential for various statistical and machine learning applications. The process involves estimating or specifying the values of the parameters based on available data or prior knowledge. Once parameterized, the categorical distribution can be used to model and generate outcomes for the categorical variable.
+
+
+## The Use of Directed Probabilistic Models
+
+The directed probabilistic models, also known as directed probabilistic graphical models (PGMs) or Bayesian networks. 
+
+These models organize variables into a directed acyclic graph, where the edges indicate probabilistic dependencies. 
+
+The joint distribution over the variables in such models factorizes into a product of prior and conditional distributions.
+
+The mathematical expression for the joint distribution is given by:
+
+\[ p(\mathbf{x}_1, \ldots, \mathbf{x}_M) = \prod_{j=1}^{M} p(\mathbf{x}_j | \text{Pa}(\mathbf{x}_j)) \]
+
+Here, $( \text{Pa}(\mathbf{x}_j) )$ represents the set of parent variables of node $(j)$ in the directed graph. For non-root nodes, the distribution conditions on the parents, and for root nodes, the set of parents is empty, resulting in an unconditional distribution.
+
+Traditionally, each conditional probability distribution $( p(\mathbf{x}_j | \text{Pa}(\mathbf{x}_j)) )$ is parameterized using lookup tables or linear models. However, the text suggests a more flexible approach by using neural networks to parameterize these conditional distributions. 
+
+In this case, neural networks take the parents of a variable as input, allowing for a more expressive and adaptable representation of the conditional probabilities. 
+
+This utilization of neural networks provides the model with the capacity to capture complex relationships and dependencies within the probabilistic model.
+
+
+## Minimizing KL-Divergence or Maximizing The ELBO of Parametrized Probabilities 
+
+
+Certainly! Let's define the mathematical notations for a Bernoulli Variational Autoencoder (VAE). We'll use the following notations:
+
+- $(X)$: Input data (binary or multivariate Bernoulli data)
+- $(Z)$: Latent variable
+- $(\theta)$: Parameters of the model
+- $(\mu)$: Mean of the latent variable distribution
+- $(\log(\sigma^2))$: Log-variance of the latent variable distribution
+- $(X_{\text{recon}})$: Reconstructed data
+- $(p(X|Z, \theta))$: Likelihood of the data given latent variable and parameters
+- $(p(Z))$: Prior distribution of the latent variable
+- $(q(Z|X, \theta))$: Approximate posterior distribution of the latent variable given data and parameters
+
+The generative process can be expressed as:
+
+\[Z \sim p(Z)\]
+\[X \sim p(X|Z, \theta)\]
+
+The encoder maps the input data $(X)$ to the distribution over the latent variable $(Z)$:
+
+\[\mu, \log(\sigma^2) = \text{Encoder}(X;\theta)\]
+\[Z \sim q(Z|X, \theta)\]
+
+The decoder reconstructs the data from the latent variable:
+
+\[X_{\text{recon}} = \text{Decoder}(Z;\theta)\]
+
+The loss function consists of two parts: the reconstruction loss and the KL divergence:
+
+\[L(\theta, \phi; X) = -\mathbb{E}_{q(Z|X, \theta)}[\log p(X|Z, \theta)] + \text{KL}(q(Z|X, \theta) || p(Z))\]
+
+Here, $(\text{KL})$ denotes the Kullback-Leibler divergence. The first term encourages the model to reconstruct the input faithfully, while the second term regularizes the latent variable distribution to be close to a prior distribution.
+
+During training, you would aim to minimize this loss with respect to the model parameters $(\theta)$ and $(\phi)$.
+
+
+**An Exmaple in Python Code**:
+
+
+A Deep Latent Variable Model (DLVM) for multivariate Bernoulli data typically involves a generative process that incorporates latent variables to capture the underlying structure of the data. One common example is the Variational Autoencoder (VAE) for binary or multivariate Bernoulli data. Here's a simplified example using PyTorch, assuming a simple neural network architecture:
+
+```python
+import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.distributions import Bernoulli
+from torch.nn.functional import binary_cross_entropy_with_logits as bce_loss
+
+class BernoulliVAE(nn.Module):
+    def __init__(self, input_size, hidden_size, latent_size):
+        super(BernoulliVAE, self).__init__()
+
+        # Encoder
+        self.encoder = nn.Sequential(
+            nn.Linear(input_size, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, latent_size * 2)  # Two times latent_size for mean and log-variance
+        )
+
+        # Decoder
+        self.decoder = nn.Sequential(
+            nn.Linear(latent_size, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, input_size),
+            nn.Sigmoid()  # Sigmoid activation for Bernoulli data
+        )
+
+    def reparameterize(self, mu, log_var):
+        std = torch.exp(0.5 * log_var)
+        eps = torch.randn_like(std)
+        return mu + eps * std
+
+    def forward(self, x):
+        # Encoder
+        enc_output = self.encoder(x)
+        mu, log_var = torch.chunk(enc_output, 2, dim=1)
+        z = self.reparameterize(mu, log_var)
+
+        # Decoder
+        recon_x = self.decoder(z)
+
+        return recon_x, mu, log_var
+
+    def loss_function(self, recon_x, x, mu, log_var):
+        # Reconstruction loss (binary cross-entropy)
+        recon_loss = bce_loss(recon_x, x, reduction='sum')
+
+        # KL divergence between the learned latent distribution and the prior
+        kl_divergence = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())
+
+        # Total loss
+        total_loss = recon_loss + kl_divergence
+
+        return total_loss
+
+# Example usage
+input_size = 784  # Size of input data (e.g., MNIST images)
+hidden_size = 256  # Size of the hidden layer
+latent_size = 32  # Size of the latent variable
+
+model = BernoulliVAE(input_size, hidden_size, latent_size)
+optimizer = optim.Adam(model.parameters(), lr=1e-3)
+
+# Training loop (assuming you have a dataset loader)
+for epoch in range(num_epochs):
+    for batch in data_loader:
+        data = batch.view(batch.size(0), -1)  # Flatten the data if needed
+
+        optimizer.zero_grad()
+        recon_data, mu, log_var = model(data)
+        loss = model.loss_function(recon_data, data, mu, log_var)
+        loss.backward()
+        optimizer.step()
+
+# After training, you can use the decoder to generate new samples
+with torch.no_grad():
+    z_sample = torch.randn(1, latent_size)  # Sample from the prior
+    generated_sample = model.decoder(z_sample)
+```
+
+This example demonstrates a simple Bernoulli VAE for modeling binary data, such as images in MNIST. The model consists of an encoder and a decoder, and the training objective includes both reconstruction loss and KL divergence to encourage the learning of meaningful latent representations.
+
+## Reconstruct The Log-Likelihood Loss for A Factorized Bernoulli Model
+
+In the context of a Variational Autoencoder (VAE), a factorized Bernoulli observation model is a specific choice for the likelihood function that models the distribution of observed data.
+
+The Bernoulli distribution is commonly used when dealing with binary data (where each element can take values 0 or 1). In the case of a factorized Bernoulli observation model, it implies that the observed data $(x)$ is assumed to be generated independently across its dimensions, and each dimension follows a Bernoulli distribution.
+
+For a single data point $(x)$ with $(D)$ dimensions, the probability mass function (PMF) of the factorized Bernoulli distribution is given by:
+
+\[ p(x|p) = \prod_{j=1}^{D} p_j^{x_j} \cdot (1 - p_j)^{1 - x_j} \]
+
+Here, $(p_j)$ is the probability of the $(j)$-th dimension being 1, and $(x_j)$ is the value of the $(j)$-th dimension (0 or 1).
+
+In mathematical notation, the log-likelihood of a single data point $(x)$ under this factorized Bernoulli model can be expressed as:
+
+\[ \log p(x|p) = \sum_{j=1}^{D} x_j \log(p_j) + (1 - x_j) \log(1 - p_j) \]
+
+In the context of a VAE, this expression is often used as the reconstruction loss term $(\log p(x|z))$, where $(z)$ is the latent variable associated with the data point. The goal during training is to minimize this log-likelihood loss, encouraging the VAE to generate data points that closely resemble the observed data.
+
+
+## Comparing Variational Encoder with Mutual Information 
+
+
+
+In the context of Variational Autoencoders (VAEs), there is a connection between the model's objective and the mutual information between the latent variable $( z )$ and the observed data $( x )$.
+
+The objective function for a VAE involves maximizing the Evidence Lower Bound (ELBO), which can be decomposed into two components: the reconstruction loss and the KL divergence. The KL divergence term regularizes the distribution of the latent variable by penalizing deviations from a chosen prior distribution, typically a simple distribution like a standard Gaussian.
+
+The mutual information between $( z )$ and $( x )$ can be related to the KL divergence term. In an ideal scenario, where the posterior distribution $( q(z|x) )$ perfectly matches the prior distribution $( p(z) )$, the KL divergence becomes zero, indicating that the information about $( z )$ provided by $( x )$ is already present in the prior. In other words, the mutual information between $( z )$ and $( x )$ is maximized.
+
+However, maximizing the mutual information is often a challenging problem, and directly optimizing it can be computationally expensive. The use of the ELBO, with the KL divergence term acting as a regularizer, indirectly encourages the model to learn a representation where relevant information about $( z )$ is captured in the latent variable.
+
+In summary, while the direct maximization of mutual information is complex, the regularization effect induced by the KL divergence term in the VAE objective indirectly promotes learning a meaningful representation in the latent space that captures relevant information about the observed data.
