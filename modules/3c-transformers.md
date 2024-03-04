@@ -40,7 +40,7 @@ Transformers have achieved significant success in various NLP tasks, including:
 
 Prominent transformer-based models include BERT (Bidirectional Encoder Representations from Transformers), GPT (Generative Pre-trained Transformer), T5 (Text-To-Text Transfer Transformer), and more. These models are often pre-trained on large corpora and fine-tuned for specific downstream tasks.
 
-## Graphic Representation of The Model Architect
+## Graphic Representation of The Model Architecture
 
 ---
 

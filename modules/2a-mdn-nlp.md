@@ -273,7 +273,7 @@ The meaning of a word is a set of semantic features used to determine its real-w
 
  Researchers have proposed viewing the composite parts of a word as rules, which can be fluid attributes that shift according to context. Cognitive categorization data in psychology suggests that the conditions on word meanings should be understood as '**preferences rules**', operating according to constraints satisfaction and violation. While cognition is central to semantics, this approach is limited in that it's ignoring sentence-level integration.
 
-💭 Two of the researches will be introduced to dive a little deeper in this part of the conversation. TL;DR here, one utilizes mapping mechanism to try to capture Chomskyan phenomenon and another uses a simple neural network back-propagation architect to try to model the conceptual activation in the preposition '_over_'.
+💭 Two of the researches will be introduced to dive a little deeper in this part of the conversation. TL;DR here, one utilizes mapping mechanism to try to capture Chomskyan phenomenon and another uses a simple neural network back-propagation architecture to try to model the conceptual activation in the preposition '_over_'.
 
 ---
 
@@ -344,7 +344,7 @@ The second reason presented by the paper was as described above that to model th
 
 ---
 
-The architect of the network could be broken down as such,
+The architecture of the network could be broken down as such,
 
 ---
 
@@ -468,7 +468,7 @@ Sequence To Sequence:
     Models take one sequence as input and produce another sequence (mostly used for machine translation).
 ```
 
-#### The Encoder-Decoder Architect
+#### The Encoder-Decoder Architecture
 
 All of the information from the input sentence will be summarized by encoders, and the decoder will use the encoder's output to produce the desired output. The encoder's final state transmits information needed to begin decoding. The decoder calculates a new hidden state and word using the previous state and the output. Both the encoder and decoder layers employ a number of RNNs.
 
@@ -490,13 +490,13 @@ _Self-Attention_, or how each word in a sequence is related to other words in th
 
 ℹ️ How does that function? By using the scaled dot products, we may determine the relationship between two vectors.
 
-|    The Transformer Model Architect    |
+|    The Transformer Model Architecture    |
 | :------------------------------------: |
 | ![](../extras/connectionism/trnsfmr.png) |
 
 The mathematical dot product determines how similar two vectors are. In conclusion, two vectors have no correlation if the dot product is 0 and are tightly associated if the dot product is 1 (or -1 in the case of negative correlation).
 
-Our transformer model calculates the attention using a scaled dot-product function. The entire model architect will be detailed in a separate blog, and here it's only introduced briefly to support our discussion. Also other model extensions will be introduced as well such as BERT, GPT, Elmo, CNN, LSTM, VAE, GAN, etc.
+Our transformer model calculates the attention using a scaled dot-product function. The entire model architecture will be detailed in a separate blog, and here it's only introduced briefly to support our discussion. Also other model extensions will be introduced as well such as BERT, GPT, Elmo, CNN, LSTM, VAE, GAN, etc.
 
 ---
 
