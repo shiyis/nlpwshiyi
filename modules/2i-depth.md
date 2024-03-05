@@ -88,7 +88,7 @@ plt.plot(x, y)
 ## The Barron Theorem 
 
 
-The theorem you provided is known as the Barron's Theorem (1992), and it provides a bound on the mean integrated square error between the estimated neural network $(\hat{F})$ and the target function $(f)$. The bound is expressed in terms of the number of training points ($(N)$), the number of neurons ($(q)$), the input dimension ($(p)$), and a measure of the global smoothness of the target function $(\mathcal{C}_f^2)$.
+The theorem provides a bound on the mean integrated square error between the estimated neural network $(\hat{F})$ and the target function $(f)$. The bound is expressed in terms of the number of training points ($(N)$), the number of neurons ($(q)$), the input dimension ($(p)$), and a measure of the global smoothness of the target function $(\mathcal{C}_f^2)$.
 
 Here's a breakdown of the notation and terms in the theorem:
 

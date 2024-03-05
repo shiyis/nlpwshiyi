@@ -48,3 +48,13 @@ Prominent transformer-based models include BERT (Bidirectional Encoder Represent
 
 
 ---
+
+This image depicts the architecture of the Transformer model, which is widely used in natural language processing tasks. Here's a step-by-step analysis:
+
+- **Inputs** are first converted into **Input Embeddings**, and **Positional Encodings** are added to provide sequence information.
+- The **Encoder** consists of $N_x$ identical layers, each with two sub-layers: **Multi-Head Attention** and **Feed Forward** neural network. Each sub-layer has a residual connection around it, followed by layer normalization (**Add & Norm**).
+- The **Decoder** also has $N_x$ identical layers, but with an additional **Masked Multi-Head Attention** layer to prevent positions from attending to subsequent positions. This is crucial for predicting the next word in a sequence.
+- The **Output Embedding** (shifted right) is similarly added with **Positional Encodings** and passed through the decoder layers.
+- The final output of the decoder passes through a **Linear** layer and a **Softmax** function to produce **Output Probabilities**, which can be used for tasks like translation, text generation, etc.
+
+The Transformer model is known for its parallelization capabilities and efficiency in handling long-range dependencies in text.
