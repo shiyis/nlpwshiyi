@@ -23,16 +23,6 @@ def plot_data(ax, X, Y):
 
 from sklearn.datasets import make_moons
 X, Y = make_moons(n_samples=2000, noise=0.1)
-
-%matplotlib inline
-x_min, x_max = -1.5, 2.5
-y_min, y_max = -1, 1.5
-fig, ax = plt.subplots(1, 1, facecolor='#4B6EA9')
-ax.set_xlim(x_min, x_max)
-ax.set_ylim(y_min, y_max)
-plot_data(ax, X, Y)
-plt.show()
-
 ```
 
 ## MLP in Numpy and Define the Grid on Which We Will Evaluate Our Classifier
@@ -288,7 +278,7 @@ class MyReLU_mod(nn.Module):
 
 
 ```
-### Subsequent defines the network using MyLinear_mod, MyReLU_mod and nn.Sigmoid
+**Subsequent section defines the network using MyLinear_mod, MyReLU_mod and nn.Sigmoid**
 
 ```
 from torch import optim
