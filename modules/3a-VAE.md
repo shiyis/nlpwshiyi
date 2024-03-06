@@ -81,7 +81,7 @@ Key points in the passage include:
 
 Overall, the passage highlights the foundational role of probabilistic models in machine learning, emphasizing their use in capturing and understanding uncertain relationships within data. The learning process involves adjusting model parameters to align the model distribution with the true distribution of the observed data.
 
-## Parameterizing a categorical distribution
+## Parameterizing A Categorical Distribution
 
 Parameterizing a categorical distribution refers to expressing the distribution in terms of parameters that define its characteristics. In the context of probability distributions, a categorical distribution is a discrete probability distribution that describes the possible outcomes of a categorical variable, which can take on a finite number of distinct categories.
 
