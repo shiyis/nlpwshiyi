@@ -1,6 +1,6 @@
 @def sequence = ["automatic-diff"]
 
-# Automatic differentiation: What Is It and Why Do We Need It? 
+# Automatic Differentiation: What Is It and Why Do We Need It? 
 
 **Table of Contents**
 
