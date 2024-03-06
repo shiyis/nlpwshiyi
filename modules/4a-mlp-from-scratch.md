@@ -284,14 +284,64 @@ class MyReLU_mod(nn.Module):
         # YOUR CODE HERE
         raise NotImplementedError()
 
-```
 
 
+
 ```
+### Subsequent defines the network using MyLinear_mod, MyReLU_mod and nn.Sigmoid
+
+```
+from torch import optim
+optimizer = optim.SGD(net.parameters(), lr=1e-2)
+
+X_torch = torch.from_numpy(X).float()
+Y_torch = torch.from_numpy(Y).float()
+
+# you should comment the following line if on colab
+%matplotlib notebook
+fig, ax = plt.subplots(1, 1, facecolor='#4B6EA9')
+ax.set_xlim(x_min, x_max)
+ax.set_ylim(y_min, y_max)
+
+losses = []
+criterion = nn.BCELoss()
+for it in range(10000):
+    # pick a random example id 
+    j = np.random.randint(1, len(X))
+
+    # select the corresponding example and label
+    example = X_torch[j:j+1]
+    label = Y_torch[j:j+1].unsqueeze(1)
+
+    # do a forward pass on the example
+    # YOUR CODE HERE
+    raise NotImplementedError()
+
+    # compute the loss according to your output and the label
+    # YOUR CODE HERE
+    raise NotImplementedError()
+
+    # zero the gradients
+    # YOUR CODE HERE
+    raise NotImplementedError()
+
+    # backward pass
+    # YOUR CODE HERE
+    raise NotImplementedError()
+
+    # gradient step
+    # YOUR CODE HERE
+    raise NotImplementedError()
+
+    # draw the current decision boundary every 250 examples seen
+    if it % 250 == 0 : 
+        plot_decision_boundary(ax, X,Y, net)
+        fig.canvas.draw()
+plot_decision_boundary(ax, X,Y, net)
+fig.canvas.draw()
 %matplotlib inline
 plt.plot(losses)
 ```
-
 
 
 <!-- Homework 1 is in the form of a jupyter notebook. You must complete it and submit it on moodle (for students enrolled on this course).
