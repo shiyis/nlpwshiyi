@@ -1,6 +1,6 @@
 @def sequence = ["gan"]
 
-# Module 10 - Generative Adversarial Networks
+# Generative Adversarial Networks
 
 
 **Table of Contents**
