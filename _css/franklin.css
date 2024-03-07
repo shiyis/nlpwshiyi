@@ -474,7 +474,9 @@ body {
   background-color: white;
   padding: 1.5em;
   border-radius: 0;
-  text-wrap: initial;
+  text-wrap: nowrap;
+  display: block;
+  overflow-x: scroll;
 }
 
 pre.code-output {
@@ -706,5 +708,11 @@ img[alt=cky] {
 
 img[alt=skip-gram-demo]{
   width: 360px;
+  text-align: center;
+}
+
+img[alt=vae]{
+
+  width: 300px;
   text-align: center;
 }

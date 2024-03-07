@@ -11,7 +11,7 @@ In this blog, we will go step by step with how to create a mlp from scratch.
 
 ## Some Utility Functions and The Dataset
 
-```
+```python
 # all of these libraries are used for plotting
 import numpy as np
 import matplotlib.pyplot as plt
@@ -27,7 +27,7 @@ X, Y = make_moons(n_samples=2000, noise=0.1)
 
 ## MLP in Numpy and Define the Grid on Which We Will Evaluate Our Classifier
 
-```
+```python
 xx, yy = np.meshgrid(np.arange(x_min, x_max, .1),
                      np.arange(y_min, y_max, .1))
 
@@ -49,7 +49,7 @@ def plot_decision_boundary(ax, X, Y, classifier):
 ```
 
 
-```
+```python
 
 # Define the grid on which we will evaluate our classifier
 xx, yy = np.meshgrid(np.arange(x_min, x_max, .1),
@@ -74,7 +74,7 @@ def plot_decision_boundary(ax, X, Y, classifier):
 ## Implementing the Linear Layer 
 
 
-```
+```python
 class MyReLU(object):
     def forward(self, x):
         # the relu is y_i = max(0, x_i)
@@ -109,7 +109,7 @@ class MySigmoid(object):
         raise NotImplementedError()
 ```
 
-```
+```python
 class MyLinear(object):
     def __init__(self, n_input, n_output):
         # initialize two random matrices for W and b (use np.random.randn)
@@ -151,7 +151,7 @@ class MyLinear(object):
 
 ## Using the BCE loss
 
-```
+```python
 class Sequential(object):
     def __init__(self, layers):
         # YOUR CODE HERE
@@ -182,7 +182,7 @@ class Sequential(object):
         raise NotImplementedError()
 ```
 
-```
+```python
 h=50
 
 # define your network with your Sequential
@@ -194,7 +194,7 @@ h=50
 raise NotImplementedError()
 ```
 
-```
+```python
 
 # unfortunately animation is not working on colab
 # you should comment the following line if on colab
@@ -237,7 +237,7 @@ fig.canvas.draw()
 
 ```
 
-```
+```python
 %matplotlib inline
 plt.plot(losses)
 ```
@@ -247,7 +247,7 @@ plt.plot(losses)
 
 
 ## Using A Pytorch Module 
-```
+```python
 
 import torch
 import torch.nn as nn
@@ -280,7 +280,7 @@ class MyReLU_mod(nn.Module):
 ```
 **Subsequent section defines the network using MyLinear_mod, MyReLU_mod and nn.Sigmoid**
 
-```
+```python
 from torch import optim
 optimizer = optim.SGD(net.parameters(), lr=1e-2)
 

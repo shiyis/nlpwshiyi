@@ -1,4 +1,4 @@
-@def sequence = ["gan"]
+<!-- @def sequence = [gan] -->
 
 # Generative Adversarial Networks
 
@@ -13,8 +13,7 @@ In this section, we play with the GAN described in the lesson on a double moon d
 
 Then we implement a Conditional GAN and an InfoGAN.
 
-```
-
+```python
 # all of these libraries are used for plotting
 import numpy as np
 import matplotlib.pyplot as plt
@@ -38,15 +37,14 @@ plt.show()
 
 
 import torch
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device(cuda:0 if torch.cuda.is_available() else cpu)
 
 print('Using gpu: %s ' % torch.cuda.is_available())
 ```
 ## A Simple GAN
 We start with the simple GAN described in the course.
 
-```
-
+```python
 import torch.nn as nn
 
 z_dim = 32
@@ -66,7 +64,7 @@ net_D = net_D.to(device)
 ```
 **Training loop as described in the course, keeping the losses for the discriminator and the generator.**
 
-```
+```python
 batch_size = 50
 lr = 1e-4
 nb_epochs = 500
@@ -143,8 +141,7 @@ plt.show();
 We are now implementing a conditional GAN. We start by separating the two half moons in two clusters as follows:
 
 
-```
-
+```python
 X, Y = make_moons(n_samples=2000, noise=0.05)
 n_samples = X.shape[0]
 fig, ax = plt.subplots(1, 1, facecolor='#4B6EA9')
@@ -159,7 +156,7 @@ The task is now given a white or black label to generate points in the correspon
 Both the generator and the discriminator take in addition a one hot encoding of the label. The generator will now generate fake points corresponding to the input label. The discriminator, given a pair of sample and label should detect if this is a fake or a real pair.
 
 
-```
+```python
 z_dim = 32
 hidden_dim = 128
 label_dim = 2
@@ -193,7 +190,7 @@ net_CD = discriminator().to(device)
 ```
 You need to code the training loop:
 
-```
+```python
 batch_size = 50
 lr = 1e-3
 nb_epochs = 1000
@@ -240,12 +237,12 @@ for e in range(nb_epochs):
     loss_G_epoch.append(loss_G)
 ```
 
-```
+```python
 plt.plot(loss_D_epoch)
 plt.plot(loss_G_epoch)
 ```
 
-```
+```python
 z = torch.empty(n_samples,z_dim).normal_().to(device)
 label = torch.LongTensor(n_samples,1).random_() % label_dim
 label_onehot = torch.FloatTensor(n_samples, label_dim).zero_()
@@ -260,7 +257,7 @@ Here we implement a simplified version of the algorithm presented in the InfoGAN
 This time, you do not have access to the labels but you know there are two classes. The idea is then to provide as in the conditional GAN a random label to the generator but in opposition to the conditional GAN, the discriminator cannot take as input the label (since they are not provided to us) but instead the discriminator will predict a label and this prediction can be trained on fake samples only!
 
 
-```
+```python   
 import torch.nn.functional as F
 
 z_dim = 32
@@ -297,7 +294,7 @@ net_ID = Idiscriminator().to(device)
 ```
 **Here, we add loss_fn which is the BCELoss to be used for the binary classification task of the discriminator on the fake samples.**
 
-```
+```python
 batch_size = 50
 lr = 1e-3
 nb_epochs = 1000
@@ -347,3 +344,27 @@ fake_samples = net_IG(z, label_onehot)
 fake_data = fake_samples.cpu().data.numpy()
 
 ```
+
+
+# Variational Autoencoders
+
+Consider a latent variable model with a data variable $x\in \mathcal{X}$ and a latent variable $z\in \mathcal{Z}$, $p(z,x) = p(z)p_\theta(x|z)$. Given the data $x_1,\dots, x_n$, we want to train the model by maximizing the marginal log-likelihood:,
+\begin{eqnarray*},
+\mathcal{L} = \mathbf{E}_{p_d(x)}\left[\log p_\theta(x)\right]=\mathbf{E}_{p_d(x)}\left[\log \int_{\mathcal{Z}}p_{\theta}(x|z)p(z)dz\right],\end{eqnarray*}, where $p_d$ denotes the empirical distribution of $X$: $p_d(x) =\frac{1}{n}\sum_{i=1}^n \delta_{x_i}(x)$.
+
+To avoid the (often) difficult computation of the integral above, the idea behind variational methods is to instead maximize a lower bound to the log-likelihood:,
+\begin{eqnarray*},
+
+\mathcal{L} \geq L(p_\theta(x|z),q(z|x)) =\mathbf{E}_{p_d(x)}\left[\mathbf{E}_{q(z|x)}\left[\log p_\theta(x|z)\right]-\mathrm{KL}\left( q(z|x)||p(z)\right)\right].,
+    \end{eqnarray*},
+    Any choice of $q(z|x)$ gives a valid lower bound. Variational autoencoders replace the variational posterior $q(z|x)$ by an inference network $q_{\phi}(z|x)$ that is trained together with $p_{\theta}(x|z)$ to jointly maximize $L(p_\theta,q_\phi)$.,
+    
+The variational posterior $q_{\phi}(z|x)$ is also called the **encoder** and the generative model $p_{\theta}(x|z)$, the **decoder** or generator.,
+
+The first term $\mathbf{E}_{q(z|x)}\left[\log p_\theta(x|z)\right]$ is the negative reconstruction error. Indeed under a gaussian assumption i.e. $p_{\theta}(x|z) = \mathcal{N}(\mu_{\theta}(z), I)$ the term $\log p_\theta(x|z)$ reduces to $\propto \|x-\mu_\theta(z)\|^2$, which is often used in practice. The term $\mathrm{KL}\left( q(z|x)||p(z)\right)$ can be seen as a regularization term, where the variational posterior $q_\phi(z|x)$ should be matched to the prior $p(z)= \mathcal{N}(0, I)$.
+
+Variational Autoencoders were introduced by [Kingma and Welling (2013)](https://arxiv.org/abs/1312.6114), see also [(Doersch, 2016)](https://arxiv.org/abs/1606.05908) for a tutorial.
+
+There are various examples of VAE in PyTorch available [here](https://github.com/pytorch/examples/tree/master/vae) or [here](https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/03-advanced/variational_autoencoder/main.py#L38-L65). The code below is taken from this last source.
+
+![A variational autoencoder.](vae.png)
