@@ -67,12 +67,21 @@ The example used was when we talk about atoms and other physical properties, it 
 ℹ️ In such case, explaining what a weak emergence is, we may ask the question: if we take the view that consciousness does affect our thoughts and behavior, is that view applicable at the level of atoms and particles, or only at the level appropriate for describing human psychology?
 
 
-```
-In answering this question, the article used a different analogy; consider the mechanism that regulates the constriction and dilation of our pupils according to the intensity of the light reaching them. 
+```plaintext
+In answering this question, the article used a different analogy; 
+consider the mechanism that regulates the constriction and 
+dilation of our pupils according to the intensity of the 
+light reaching them. 
 
-We could say that there's a sort of sensor in our eyes or in our visual processing area in the brain that causes our pupils to behave that way, yet at the fundamental level of physics, the knowledge of such a sensory mechanism is not needed to predict (in principle) the behavior of all the particles composing the eye as they interact among themselves and with all the external particles affecting them. 
+We could say that there's a sort of sensor in our eyes or in our 
+visual processing area in the brain that causes our pupils to behave 
+that way, yet at the fundamental level of physics, the knowledge of 
+such a sensory mechanism is not needed to predict (in principle) the 
+behavior of all the particles composing the eye as they interact 
+among themselves and with all the external particles affecting them. 
 
-Still, we wouldn't say that the sensor is merely a byproduct that accomplishes nothing.
+Still, we wouldn't say that the sensor is merely a 
+byproduct that accomplishes nothing.
 ```
 
 Therefore, instead of agreeing on each extreme end of the spectrum, below might help construe and reach the ultimate conclusion.
@@ -126,8 +135,9 @@ He argues against the dualists' and [epiphenomenalism](https://en.wikipedia.org/
 To quote him more specifically,
 
 ```plaintext
-It was believed that it is absurd that everything can be explained by the laws of physics except consciousness.
-In this case, he identifies consciousness with the broad term "sensations".
+It was believed that it is absurd that everything can be explained by 
+the laws of physics except consciousness. In this case, he identifies 
+consciousness with the broad term "sensations".
 ```
 
 Below summarizes scientific approaches and proposals that tackle the mind-body/consciousness problem that reflect the two distinct assumptions explained above,
@@ -194,7 +204,8 @@ The Turing machine also proved the existence of a _Universal Turing Machine_ (UT
 As opposed to type-identity theory, where mental states are brain states, Putnam proposed a different view that mental states are [_multiply realizable_](https://plato.stanford.edu/entries/multiple-realizability/): the same mental state can be realized by diverse physical systems, including not only terrestrial creatures but also hypothetical creatures.
 
 ```
-Functionalism therefore is tailor-made to accommodate multiple realizability.
+Functionalism therefore is tailor-made to accommodate multiple 
+realizability.
 ```
 
 He stresses the importance of _probabilistic automata_, stating that mental states are the machine states of the automaton's central processor.
@@ -266,11 +277,13 @@ RTM is able to accomplish the above by assuming,
 ```plaintext
 Productivity:
 
-a finites set of symbols in natural language and the device could entertain a infinite numbers of logic.
+a finites set of symbols in natural language and the 
+device could entertain a infinite numbers of logic.
 
 Systematicity:
 
-that there are inherent systematic relations between basic cognitive constitutions.
+that there are inherent systematic relations 
+between basic cognitive constitutions.
 ```
 
 More importantly, with a shift in the representation of information toward a sub-symbolic, universally distributed approach. While the specific mention is about solving a philosophical conundrum related to representations of meaning, we can consider how this shift might also address the potential conundrum faced by classicists - the syntactic underpinnings. Here are some ways in which this approach could be relevant:
@@ -314,7 +327,8 @@ Graceful degradation of function, holistic representation of data, spontaneous g
 Yet, hybrid mechanisms were put out by different teams to mediate such clashes. For example, there were papers that drew inspiration from the classical style of information processing (having one module that acts as the memory location or implementing methods that utilize variable binding techniques for symbolic processing that reflects the classical computational way of thinking aka the turing style information processing and storage).
 
 ```plaintext
-Also one interesting discovery about the connectionism representation of information processing inside the brain might have a good give away of how brain actually processes information.
+Also one interesting discovery about the connectionism 
+representation of information processing inside the brain might have a good give away of how brain actually processes information.
 
 That is, instead of a local representation of an individual or specific informational unit, the learning mechanism is more so universally distributed across different (hidden) units.
 

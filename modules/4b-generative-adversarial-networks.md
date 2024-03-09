@@ -367,4 +367,3 @@ Variational Autoencoders were introduced by [Kingma and Welling (2013)](https://
 
 There are various examples of VAE in PyTorch available [here](https://github.com/pytorch/examples/tree/master/vae) or [here](https://github.com/yunjey/pytorch-tutorial/blob/master/tutorials/03-advanced/variational_autoencoder/main.py#L38-L65). The code below is taken from this last source.
 
-![A variational autoencoder.](vae.png)
