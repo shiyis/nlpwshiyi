@@ -6,7 +6,7 @@
 Hi, I’m Shiyi (about [me]()). Welcome to my technical blog. I will be documenting my journey of learning Natural Language Processing here. I will be presenting everything I have learned so far, including important concepts, necessary code snippets, and more. I am by no means an expert in this subject, but I have gone through extensive studies and training in the fields and subfields related to have had a good grasp of what’s important.
 
 
-Areas that I have dabbled and focused in,
+Areas that I have dabbled in,
 
 ```
 → General Linguistics
