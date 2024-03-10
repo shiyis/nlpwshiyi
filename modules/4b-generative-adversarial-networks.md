@@ -346,7 +346,7 @@ fake_data = fake_samples.cpu().data.numpy()
 ```
 
 
-# Variational Autoencoders
+## Variational Autoencoders
 
 Consider a latent variable model with a data variable $x\in \mathcal{X}$ and a latent variable $z\in \mathcal{Z}$, $p(z,x) = p(z)p_\theta(x|z)$. Given the data $x_1,\dots, x_n$, we want to train the model by maximizing the marginal log-likelihood:,
 \begin{eqnarray*},
