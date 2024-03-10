@@ -22,11 +22,17 @@ One pertains to the neurological properties of the mind and body and the other e
 #### Consciousness As The Fundamental Property of Nature
 
 Everything started from the debate about what consciousness and mental representations really are, and it has been going on for centuries.
-In answering the question of why we need consciousness, one of the proposed answers is that consciousness is a fundamental property of nature. It's added that
+In answering the question of why we need consciousness, one of the proposed answers is that consciousness is a fundamental property of nature. It's added that,
 
 ```plaintext
-“We know that a theory of consciousness requires the addition of something fundamental to our ontology, as everything in physical theory is compatible with the absence of consciousness.
-We might add some entirely new nonphysical feature, from which experience can be derived […] we will take experience itself as a fundamental feature of the world, alongside mass, charge, and space-time”.
+“We know that a theory of consciousness requires the addition of 
+something fundamental to our ontology, as everything in physical 
+theory is compatible with the absence of consciousness.
+
+We might add some entirely new nonphysical feature, from which 
+experience can be derived […] we will take experience itself as 
+a fundamental feature of the world, alongside mass, charge, and 
+space-time”.
 ```
 
 This is also known as "fundamental property dualism", which, in David Chalmers' definition, `"regards conscious mental properties as basic constituents of reality on a par with fundamental physical properties such as electromagnetic charge. They may interact in casual and lay-like ways with other fundamental properties such a those of physics, but ontologically  their existence is not dependent upon nor derivative from any other properties".`
@@ -74,14 +80,15 @@ dilation of our pupils according to the intensity of the
 light reaching them. 
 
 We could say that there's a sort of sensor in our eyes or in our 
-visual processing area in the brain that causes our pupils to behave 
-that way, yet at the fundamental level of physics, the knowledge of 
-such a sensory mechanism is not needed to predict (in principle) the 
-behavior of all the particles composing the eye as they interact 
-among themselves and with all the external particles affecting them. 
+visual processing area in the brain that causes our pupils to 
+behave that way, yet at the fundamental level of physics, the 
+knowledge of such a sensory mechanism is not needed to predict 
+(in principle) the behavior of all the particles composing the 
+eye as they interact among themselves and with all the external 
+particles affecting them. 
 
-Still, we wouldn't say that the sensor is merely a 
-byproduct that accomplishes nothing.
+Still, we wouldn't say that the sensor is merely a byproduct 
+that accomplishes nothing.
 ```
 
 Therefore, instead of agreeing on each extreme end of the spectrum, below might help construe and reach the ultimate conclusion.
@@ -135,9 +142,9 @@ He argues against the dualists' and [epiphenomenalism](https://en.wikipedia.org/
 To quote him more specifically,
 
 ```plaintext
-It was believed that it is absurd that everything can be explained by 
-the laws of physics except consciousness. In this case, he identifies 
-consciousness with the broad term "sensations".
+It was believed that it is absurd that everything can be explained 
+by the laws of physics except consciousness. In this case, he 
+identifies consciousness with the broad term "sensations".
 ```
 
 Below summarizes scientific approaches and proposals that tackle the mind-body/consciousness problem that reflect the two distinct assumptions explained above,
@@ -306,7 +313,14 @@ While the passage doesn't explicitly mention syntactic underpinnings, the shift 
 Philosophers only started to become interested in connectionism because it offers an alternative to the classical computational theory of mind.
 
 ```plaintext
-Connectionism is a movement that has been put out in the field of cognitive science in hope to explain and extrapolate the mental processes of a brain. It's composed of a simplified emulation of the actual cognitive compositions of a brain, by having connected neurons or units (the analogs of neurons) within which are assigned weights that measure how strongly the connections are there between units. We could picture these weights as a replica of the synapse in our actual biological brain that link one neuron to each other.
+Connectionism is a movement that has been put out in the field of 
+cognitive science in hope to explain and extrapolate the mental 
+processes of a brain. It's composed of a simplified emulation of 
+the actual cognitive compositions of a brain, by having connected 
+neurons or units (the analogs of neurons) within which are assigned 
+weights that measure how strongly the connections are there between 
+units. We could picture these weights as a replica of the synapse 
+in our actual biological brain that link one neuron to each other.
 ```
 
 The bridging between classicist and connectionist view and the departure from it became that a lot of connectionists view cognitive processing as analog as the computer processing as digital.
@@ -321,20 +335,31 @@ However, many connectionists seek to bridge these two paradigms together instead
 It's also argued by radical connectionists that the traditional or the symbolic way of treating human cognitive information processing should be eliminated because how poorly it reflects these dynamics in human consciousness that could otherwise be materialized through connectionism.
 
 ```plaintext
-Graceful degradation of function, holistic representation of data, spontaneous generalization, appreciation of context, etc.
+Graceful degradation of function, holistic representation 
+of data, spontaneous generalization, appreciation of context, etc.
 ```
 
 Yet, hybrid mechanisms were put out by different teams to mediate such clashes. For example, there were papers that drew inspiration from the classical style of information processing (having one module that acts as the memory location or implementing methods that utilize variable binding techniques for symbolic processing that reflects the classical computational way of thinking aka the turing style information processing and storage).
 
 ```plaintext
 Also one interesting discovery about the connectionism 
-representation of information processing inside the brain might have a good give away of how brain actually processes information.
+representation of information processing inside the brain 
+might have a good give away of how brain actually processes 
+information.
 
-That is, instead of a local representation of an individual or specific informational unit, the learning mechanism is more so universally distributed across different (hidden) units.
+That is, instead of a local representation of an individual 
+or specific informational unit, the learning mechanism is 
+more so universally distributed across different (hidden) units.
 
-To top it off, the new way of representing information's sub-symbolic nature - where there were no intrinsic properties of representations that determine their relationships with other symbols - might solve a philosophical conundrum in representations of meaning.
+To top it off, the new way of representing information's 
+sub-symbolic nature - where there were no intrinsic properties 
+of representations that determine their relationships with 
+other symbols - might solve a philosophical conundrum in 
+representations of meaning.
 
-In contrast, a distributed representation preserves patterns across the net that could allow comparison and good preservation when parts go amok.
+In contrast, a distributed representation preserves patterns 
+across the net that could allow comparison and good preservation 
+when parts go amok.
 ```
 In short, this hybrid architecture might have had a say to how human brains actually process information.
 
