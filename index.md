@@ -15,7 +15,7 @@ Areas that I have dabbled in,
 → State of the Art Large Language Modeling
 ```
 
----
+
 
 ### **The Subject Matter**
 
@@ -31,7 +31,6 @@ What do we mean by Natural Language Processing? If we do a little googling and r
 → Question answering 
 ```
 
----
 
 ### **A Little Bit Of History**
 
