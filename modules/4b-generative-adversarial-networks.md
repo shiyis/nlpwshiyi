@@ -62,7 +62,9 @@ net_G = net_G.to(device)
 net_D = net_D.to(device)
 
 ```
-**Training loop as described in the course, keeping the losses for the discriminator and the generator.**
+
+Training loop as described here, keeping the losses for the discriminator and the generator.
+
 
 ```python
 batch_size = 50
