@@ -24,7 +24,7 @@ helps the general population who is interested in partaking in political activit
 
 Measuring political sentiment and polarization is a common practice in the realm of social science research. However, it may also be applicable to solving business problems, like providing more information about a certain candidate to voters to fill the information gap and facilitate voting processes. 
 
-Website like OpenSecrets provides valuable statistics and educational information to start. This project tries to top it off by retrieving organic information (Tweets) of said candidates and conduct analysis accordingly. 
+Website like [OpenSecrets](https://www.opensecrets.org/) provides valuable statistics and educational information to start. This project tries to top it off by retrieving organic information (Tweets) of said candidates and conduct analysis accordingly. 
 
 ## Model Implementation with NumPyro
 
