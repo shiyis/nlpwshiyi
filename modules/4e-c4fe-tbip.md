@@ -111,26 +111,26 @@ else:
     rng1, rng2 = random.split(rng_seed, 2)
     initial_document_loc = random.normal(rng1, shape=(num_documents, num_topics))
     initial_objective_topic_loc = random.normal(rng2, shape=(num_topics, num_words))
-Perform Inference¶
-We perform inference using variational inference with reparameterization gradients. We provide a brief summary below, but encourage readers to refer to the original paper for a more complete overview.
 
-It is intractable to evaluate the posterior distribution 
-, so we approximate the posterior with a distribution 
-, parameterized by 
-. How do we set the values 
-? We want to minimize the KL-Divergence between 
- and the posterior, which is equivalent to maximizing the ELBO:
+```
 
-We set the variational family to be the mean-field family, meaning the latent variables factorize over documents 
-, topics 
-, and authors 
-:
+# Perform Inference¶
+# We perform inference using variational inference with reparameterization gradients. We provide a brief summary below, but encourage readers to refer to the original paper for a more complete overview.
+
+# It is intractable to evaluate the posterior distribution, so we approximate the posterior with a distribution. How do we set the values? We want to minimize the KL-Divergence between and the posterior, which is equivalent to maximizing the ELBO:
+
+# We set the variational family to be the mean-field family, meaning the latent variables factorize over documents 
+# , topics 
+# , and authors 
+# :
 
  
-We use lognormal factors for the positive variables and Gaussian factors for the real variables:
+# We use lognormal factors for the positive variables and Gaussian factors for the real variables:
 
-Thus, our goal is to maximize the ELBO with respect to 
-.
+# Thus, our goal is to maximize the ELBO with respect to 
+# .
+
+```python
 
 In the cell below, we define the model and the variational family (guide).
 
