@@ -1,5 +1,7 @@
 ## VAE for MNIST Image Classification
 
+\toc
+
 
 In this section, we are going to go through some practical code examples of variational encoding method for MNIST image classification.
 
