@@ -25,7 +25,7 @@ from sklearn.datasets import make_moons
 X, Y = make_moons(n_samples=2000, noise=0.1)
 ```
 
-## MLP in Numpy and Define the Grid on Which We Will Evaluate Our Classifier
+## MLP in NumPy and Define the Grid on Which The Classifier Will Be Evaluated
 
 ```python
 xx, yy = np.meshgrid(np.arange(x_min, x_max, .1),
@@ -333,9 +333,3 @@ fig.canvas.draw()
 plt.plot(losses)
 ```
 
-
-<!-- Homework 1 is in the form of a jupyter notebook. You must complete it and submit it on moodle (for students enrolled on this course).
-
-[The Jupyter notebook](https://github.com/dataflowr/notebooks/blob/master/HW1/hw1_mlp.ipynb)
-
-This homework will run fine on regular CPU (no need for GPU). If you want to run it locally (on your laptop), you can follow the procedure described in [Module 0](/module0/). Note that if you cloned the [GitHub repository](https://github.com/dataflowr/notebooks), the homework will be in the folder `/notebooks/HW1` -->

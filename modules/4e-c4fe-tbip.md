@@ -114,19 +114,47 @@ else:
 
 ```
 
-Perform Inference
-
-We perform inference using variational inference with reparameterization gradients. We provide a brief summary below, but encourage readers to refer to the original paper for a more complete overview.
+The results are inferred using variational inference with reparameterization gradients. We provide a brief summary below, but encourage readers to refer to the original paper for a more complete overview.
 
 It is intractable to evaluate the posterior distribution, so we approximate the posterior with a distribution. How do we set the values? We want to minimize the KL-Divergence between and the posterior, which is equivalent to maximizing the ELBO:
 
-We set the variational family to be the mean-field family, meaning the latent variables factorize over documents, topics ,and authors # :
+Sure, here is the LaTeX representation of the Evidence Lower Bound (ELBO) and the Kullback-Leibler (KL) divergence:
+
+$$
+\text{ELBO} = \mathbb{E}_{q(z|x)}[\log p(x, z) - \log q(z|x)]
+$$
+
+$$
+\text{KL}(q(z|x)||p(z)) = \mathbb{E}_{q(z|x)}[\log q(z|x) - \log p(z)]
+$$
+
+In these equations:
+- $q(z|x)$ represents the approximate posterior distribution over latent variables $z$ given input data $x$ - 
+- $p(x, z)$ is the joint distribution of the observed data $x$ and the latent variables $z$ - it's essentially the likelihood of generating the observed documents given the latent variables - it quantifies how likely it is to see a particular set of documents along with their associated latent representations.
+- $p(z)$ is the prior distribution over latent variables - in the context of document clustering, it can represent the prior distribution of topics over documents, capturing assumptions about the distribution of topics in the dataset.
+- The expectation $\mathbb{E}_{q(z|x)}[\cdot]$ is taken with respect to the approximate posterior $q(z|x)$.
+- The ELBO is the lower bound on the log-likelihood of the observed data $x$, and maximizing it is equivalent to minimizing the KL divergence between the approximate posterior $q(z|x)$ and the true prior $p(z)$.
+
+
+We set the variational family to be the mean-field family, meaning the latent variables factorize over documents, topics ,and authors :
+
+$$ q_\phi(\theta, \beta, \eta, x) = \prod_{d,k,s} q(\theta_d)q(\beta_k)q(\eta_k)q(x_s) $$
 
 
 We use lognormal factors for the positive variables and Gaussian factors for the real variables:
 
+$$q(\theta_d) = \text{LogNormal}_K(\mu_{\theta_d}\sigma^2_{\theta_d})$$
 
-Thus, our goal is to maximize the ELBO with respect to .                    
+        $$q(\beta_k) = \text{LogNormal}_V(\mu_{\beta_k}, \sigma^2_{\beta_k})$$
+
+        $$q(\eta_k) = \mathcal{N}_V(\mu_{\eta_k}, \sigma^2_{\eta_k})$$
+
+        $$q(x_s) = \mathcal{N}(\mu_{x_s}, \sigma^2_{x_s}).$$
+
+
+Thus, our goal is to maximize the ELBO with respect to  $$\phi = \{\mu_\theta, \sigma_\theta, \mu_\beta, \sigma_\beta,\mu_\eta, \sigma_\eta, \mu_x, \sigma_x\}$$.
+
+
 
 ```python
 
