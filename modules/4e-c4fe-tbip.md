@@ -16,7 +16,7 @@ All info is retrievable through the Federal Election Commission's directory. Thi
 
 This project tries to help someone who is interested in voting activities understand the political leaning of a candidate for federal elections. 
 
-draws inspiration from website like OpenSecrets and this paper, where it strives to uncover information of a politician's agenda and activities (campaign-related or financial).
+draws inspiration from website like [OpenSecrets](https://www.opensecrets.org/) and [this paper](https://arxiv.org/abs/2005.04232), where it strives to uncover information of a politician's agenda and activities (campaign-related or financial).
 
 helps the general population who is interested in partaking in political activities understand a politician (or anyone who authors political content)'s leaning/stance by extracting crucial information from relevant political text. 
 
