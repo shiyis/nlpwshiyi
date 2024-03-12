@@ -114,21 +114,19 @@ else:
 
 ```
 
-# Perform Inference¶
-# We perform inference using variational inference with reparameterization gradients. We provide a brief summary below, but encourage readers to refer to the original paper for a more complete overview.
+Perform Inference
 
-# It is intractable to evaluate the posterior distribution, so we approximate the posterior with a distribution. How do we set the values? We want to minimize the KL-Divergence between and the posterior, which is equivalent to maximizing the ELBO:
+We perform inference using variational inference with reparameterization gradients. We provide a brief summary below, but encourage readers to refer to the original paper for a more complete overview.
 
-# We set the variational family to be the mean-field family, meaning the latent variables factorize over documents 
-# , topics 
-# , and authors 
-# :
+It is intractable to evaluate the posterior distribution, so we approximate the posterior with a distribution. How do we set the values? We want to minimize the KL-Divergence between and the posterior, which is equivalent to maximizing the ELBO:
 
- 
-# We use lognormal factors for the positive variables and Gaussian factors for the real variables:
+We set the variational family to be the mean-field family, meaning the latent variables factorize over documents, topics ,and authors # :
 
-# Thus, our goal is to maximize the ELBO with respect to 
-# .
+
+We use lognormal factors for the positive variables and Gaussian factors for the real variables:
+
+
+Thus, our goal is to maximize the ELBO with respect to .                    
 
 ```python
 
