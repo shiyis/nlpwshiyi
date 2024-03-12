@@ -1,5 +1,7 @@
 ## Variational Automatic Encoders 
 
+\toc
+
 Let's introduce the framework of variational autoencoders (VAEs), referencing works by Kingma and Welling (2014), and Rezende et al. (2014). VAEs are a method for learning deep latent-variable models and inference models using stochastic gradient descent. The framework is applicable to various areas such as generative modeling and semi-supervised learning.
 
 We are going to expand on the earlier work done by Kingma and Welling (2014), focusing on explaining the topic in finer detail and discussing important follow-up work. It is noted that the text is not a comprehensive review of all related work and assumes the reader has basic knowledge of algebra, calculus, and probability theory.
