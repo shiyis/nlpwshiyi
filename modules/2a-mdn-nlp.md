@@ -481,7 +481,7 @@ But there are drawbacks to recurrent neural networks.
 >
 > Second, and more frequently, RNNs have disappearing and ballooning gradient issues. The information at the beginning of the sentence is lost when used to solve NLP issues.
 
-💭 In a separate blog, these different architects will be introduced in more detail.
+💭 In a separate blog, these different architectures will be introduced in more detail.
 
 #### Attention Is All You Need
 
