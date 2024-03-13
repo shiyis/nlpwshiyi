@@ -278,7 +278,7 @@ In mathematical notation, the log-likelihood of a single data point $(x)$ under 
 In the context of a VAE, this expression is often used as the reconstruction loss term $(\log p(x|z))$, where $(z)$ is the latent variable associated with the data point. The goal during training is to minimize this log-likelihood loss, encouraging the VAE to generate data points that closely resemble the observed data.
 
 
-## Comparing The Processing Of Optimization through Minimizing KL-Divergence vs SSE in Fitting An Affine Function To Data Points
+## Comparing Optimization through Minimizing KL-Divergence vs SSE in Fitting An Affine Function To Data Points
 
 The process of approximating the posterior distribution in variational inference is conceptually different from fitting an affine function to a set of data points, but there are some similarities in the sense that both involve optimizing parameters to minimize a certain measure of discrepancy.
 

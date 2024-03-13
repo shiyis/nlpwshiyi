@@ -6,11 +6,11 @@ In this one article that touches on this subject, it's known that the computatio
 
 **Table Of Contents**
 
----
+
 
 \toc
 
----
+
 
 ### The Entailment of Human Beings As Conscious Automata and  The Definition of Consciousness
 
@@ -44,7 +44,7 @@ According to this [medium article](https://medium.com/curious/are-we-conscious-a
 
 Each one of them is a hypothesis over the emergence and origin of consciousness, and below is a more detailed breakdown.
 
----
+
 
 @@colbox-blue
 
@@ -68,7 +68,7 @@ The example used was when we talk about atoms and other physical properties, it 
 
 @@ 
 
----
+
 
 ℹ️ In such case, explaining what a weak emergence is, we may ask the question: if we take the view that consciousness does affect our thoughts and behavior, is that view applicable at the level of atoms and particles, or only at the level appropriate for describing human psychology?
 
@@ -102,7 +102,7 @@ In the domain that deals with how the eye works, it's useful and practical to sp
 
 @@
 
----
+
 
 #### The Primal Instincts vs. The Unknown
 
@@ -112,7 +112,8 @@ Lastly, onto the discussions about pain. It seems that the presence of pain is s
 
 According to a prominent English biologist Thomas Henry Huxley (1825-1895), he believed that sensations and feelings are mere byproduct of mechanics of the brain. An epiphenomenon that is not the cause of any behavior. In his essay, "On the Hypothesis that Animals Are Automata, and Its History" he wrote:
 
----
+
+
 
 @@colbox-blue
 
@@ -129,9 +130,10 @@ It is quite true that, to the best of my judgment, the argumentation which appli
 and, therefore, that all states of consciousness in us, as in them, are immediately caused by molecular changes of the brain-substance.
 It seems to me that in men, as in brutes, there is no proof that any state of consciousness is the cause of change in the motion of
 the matter of the organism.
+
 @@
 
----
+
 
 In the same light, this other, in the paper "The 'Mental' and the 'Physical'", this other re-known philosopher J.J.C. Smart (crediting the term to Herbert Feigl) presented his theories about 'is consciousness a brain process?"
 
@@ -149,7 +151,7 @@ identifies consciousness with the broad term "sensations".
 
 Below summarizes scientific approaches and proposals that tackle the mind-body/consciousness problem that reflect the two distinct assumptions explained above,
 
----
+
 
 @@colbox-blue
 
@@ -167,7 +169,7 @@ In short,
 
 @@
 
----
+
 
 The second of the two very important approaches in Cognitive Science helped serve as the foundation for creating the predecessor intelligent systems of the AI we see today.
 
@@ -182,7 +184,7 @@ First, CCTM is better formulated by describing the mind as a “computing system
 
 Second, CCTM is not intended metaphorically. CCTM does not simply hold that the mind is like a computing system. CCTM holds that the mind `literally is a computing system`. The most familiar artificial computing systems are made from silicon chips or similar materials, whereas the human body is made from flesh and blood. But CCTM holds that this difference disguises a more fundamental similarity, which we can capture through a Turing-style computational model.
 
----
+
 
 @@colbox-blue
 
@@ -197,7 +199,7 @@ Second, CCTM is not intended metaphorically. CCTM does not simply hold that the 
 6. human cognitive constraints - lastly, the symbolic system that the Turing computer symbolizes could effectively duplicate it due to our cognitive constraints, which can only yield a certain number of possibilities.
    @@
 
----
+
 
 One important breakthrough invention during the computationalism era was the _Logic Theorist_ computer program (Newell and Simon 1956) which proved 38 of the first 52 theorems from _Principia Mathematica_ (Whitehead and Russell 1925).
 
@@ -217,7 +219,9 @@ realizability.
 
 He stresses the importance of _probabilistic automata_, stating that mental states are the machine states of the automaton's central processor.
 
-In summary, functionalism was introduced to address the functional aspects of mental processes (the functional role of an automaton's central processor; for example to manipulate symbols); the computational theory of mind provides a computational framework to describe such a process (namely the process of manipulating symbols by the central process is considered as a mental process being "computational" ); lastly the type/token-identity theory or physicalism of our cognitive processes defines that similar to a natural language (where a CAT is a type and every appearing instance of the word CAT is a token) defines the mental representations that central processor is able to manipulate, operate on, and make computations/calculations with.
+In summary, functionalism was introduced to address the functional aspects of mental processes (the functional role of an automaton's central processor; for example to manipulate symbols); the computational theory of mind provides a computational framework to describe such a process (namely the process of manipulating symbols by the central process is considered as a mental process being "computational" ).
+
+Lastly, the type/token-identity theory or physicalism of our cognitive processes defines that similar to a natural language (where a CAT is a type and every appearing instance of the word CAT is a token) defines the mental representations that central processor is able to manipulate, operate on, and make computations/calculations with.
 
 
 #### Computationalism vs Functionalism
@@ -247,7 +251,7 @@ One answer to the questions argues that they are not merely physical, it's the n
 
 Another objection to the byproduct hypothesis would be that,
 
----
+
 
 @@colbox-blue
 
@@ -264,7 +268,7 @@ Epiphenomenalists and physicalists would only be left with the option of accepti
 
 @@
 
----
+
 
 Later then came about the renaissance period with the blooming of connectionism grounded in _The Representational Theory of Mind_. RTM was developed to address these limitations. Not only did it not shy away from the traditional rationalism or symbolicist ideals, it incorporated the aspects and was established to addresses these limitations,
 
