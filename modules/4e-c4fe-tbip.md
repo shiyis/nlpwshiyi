@@ -146,11 +146,11 @@ We use lognormal factors for the positive variables and Gaussian factors for the
 
 $$q(\theta_d) = \text{LogNormal}_K(\mu_{\theta_d}\sigma^2_{\theta_d})$$
 
-        $$q(\beta_k) = \text{LogNormal}_V(\mu_{\beta_k}, \sigma^2_{\beta_k})$$
+$$q(\beta_k) = \text{LogNormal}_V(\mu_{\beta_k}, \sigma^2_{\beta_k})$$
 
-        $$q(\eta_k) = \mathcal{N}_V(\mu_{\eta_k}, \sigma^2_{\eta_k})$$
+$$q(\eta_k) = \mathcal{N}_V(\mu_{\eta_k}, \sigma^2_{\eta_k})$$
 
-        $$q(x_s) = \mathcal{N}(\mu_{x_s}, \sigma^2_{x_s}).$$
+$$q(x_s) = \mathcal{N}(\mu_{x_s}, \sigma^2_{x_s}).$$
 
 
 Thus, our goal is to maximize the ELBO with respect to  $$\phi = \{\mu_\theta, \sigma_\theta, \mu_\beta, \sigma_\beta,\mu_\eta, \sigma_\eta, \mu_x, \sigma_x\}$$.
