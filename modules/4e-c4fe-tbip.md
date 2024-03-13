@@ -131,7 +131,7 @@ $$
 $$
 
 In these equations:
-- $q(z|x)$ represents the approximate posterior distribution over latent variables $z$ given input data $x$ - 
+- $q(z|x)$ represents the approximate posterior distribution over latent variables $z$ given input data $x$ 
 - $p(x, z)$ is the joint distribution of the observed data $x$ and the latent variables $z$ - it's essentially the likelihood of generating the observed documents given the latent variables - it quantifies how likely it is to see a particular set of documents along with their associated latent representations.
 - $p(z)$ is the prior distribution over latent variables - in the context of document clustering, it can represent the prior distribution of topics over documents, capturing assumptions about the distribution of topics in the dataset.
 - The expectation $\mathbb{E}_{q(z|x)}[\cdot]$ is taken with respect to the approximate posterior $q(z|x)$.
