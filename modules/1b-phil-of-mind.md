@@ -230,7 +230,8 @@ Lastly, the type/token-identity theory or physicalism of our cognitive processes
 In offering such a model, we prescind from physical details. We attain an abstract computational description that could be physically implemented in diverse ways (e.g., through silicon chips, or neurons, or pulleys and levers). CCTM holds that a `suitable abstract computational model offers a literally true description of core mental processes`.
 
 ```
-As per definition, the mind is the functional organization of the brain, whereas computationalism argues that the functional organization of the brain is computable so namely
+As per definition, the mind is the functional organization 
+of the brain, whereas computationalism argues that the functional organization of the brain is computable so namely
 the mind is computable.
 ```
 
