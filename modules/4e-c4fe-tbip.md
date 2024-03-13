@@ -15,16 +15,15 @@ All info is retrievable through the Federal Election Commission's directory. Thi
 
 ## The Motivation behind This Project 
 
+Measuring political sentiment and polarization is a common practice in the realm of social science research. However, it may also be applicable to solving business problems, like providing more information about a certain candidate to voters to fill the information gap and facilitate voting processes. 
 
 This project tries to help someone who is interested in voting activities understand the political leaning of a candidate for federal elections. 
+
+In this blog, the structure and construct of the model will be explained. Please check out this [repo](https://github.com/shiyis/c4fe-tbip) for a more comprehensive demo of the project and other complementary analysis. 
 
 draws inspiration from website like [OpenSecrets](https://www.opensecrets.org/) and [this paper](https://arxiv.org/abs/2005.04232), where it strives to uncover information of a politician's agenda and activities (campaign-related or financial).
 
 helps the general population who is interested in partaking in political activities understand a politician (or anyone who authors political content)'s leaning/stance by extracting crucial information from relevant political text. 
-
-## Issue 
-
-Measuring political sentiment and polarization is a common practice in the realm of social science research. However, it may also be applicable to solving business problems, like providing more information about a certain candidate to voters to fill the information gap and facilitate voting processes. 
 
 Website like [OpenSecrets](https://www.opensecrets.org/) provides valuable statistics and educational information to start. This project tries to top it off by retrieving organic information (Tweets) of said candidates and conduct analysis accordingly. 
 
