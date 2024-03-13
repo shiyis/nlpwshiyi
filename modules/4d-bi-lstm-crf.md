@@ -1,6 +1,7 @@
 ## Making Dynamic Decisions with Sequence to Sequence Language Processing Tasks
 
-**Bi-LSTM Conditional Random Field Discussion**:
+\toc
+
 
 For this section, we will see a full, complicated example of a Bi-LSTM Conditional Random Field for named-entity recognition. 
 

@@ -1,5 +1,7 @@
 ## The Basic Workflow of an ETL Pipeline 
 
+\toc
+
 This blog will go through some basics and steps of going through a ETL pipeline project. 
 
 Below constitutes what we consider to be a 'best practices' approach to writing ETL jobs using Apache Spark and its Python ('PySpark') APIs. This project addresses the following topics:
