@@ -4,7 +4,7 @@ In this blog, the generalities of Markov Processes will be introduced. The found
 
 The key components of markov processes are listed below,
 
----
+
 
 @@colbox-blue
 
@@ -48,7 +48,7 @@ The key components of markov processes are listed below,
 
 @@
 
----
+
 
 ##### How Are Markov Processes Applicable Theoretically?
 
@@ -73,11 +73,11 @@ In signal processing, sound waves could be sliced up into spectral features and 
 
 Below is a graph demonstration of the workflow,
 
----
+
 
 ![](../extras/hmm/hmm.jpg)
 
----
+
 
 If we take a look at HHM for the word _need_ and a sample observation sequence. Note the differences from the figure above, the observation sequences are now vectors of spectral features representing the speech signal. Next, note that we've also allowed one state to generate multiple copies of the same observation, by having a loop on the state. This loop allows HMMs to model the variable duration of phones; longer phones require more loops through the HMM.
 
@@ -95,7 +95,7 @@ There are many scenarios where Markov processes are applicable in real life due 
 
 Below are listed scenarios where they are applicable,
 
----
+
 
 @@colbox-blue
 
@@ -133,7 +133,7 @@ Below are listed scenarios where they are applicable,
 
 @@
 
----
+
 
 In many cases, Markov processes reach a stationary or steady-state distribution as time  goes to infinity. In this state, the probabilities of being in each state no longer change with time. The stationary distribution provides insights into the long-term behavior of the system.
 
