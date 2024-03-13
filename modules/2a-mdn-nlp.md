@@ -490,9 +490,13 @@ _Self-Attention_, or how each word in a sequence is related to other words in th
 
 ℹ️ How does that function? By using the scaled dot products, we may determine the relationship between two vectors.
 
+
+
 |    The Transformer Model Architecture    |
-| :: |
+| ::: |
 | ![](../extras/connectionism/trnsfmr.png) |
+
+
 
 The mathematical dot product determines how similar two vectors are. In conclusion, two vectors have no correlation if the dot product is 0 and are tightly associated if the dot product is 1 (or -1 in the case of negative correlation).
 
