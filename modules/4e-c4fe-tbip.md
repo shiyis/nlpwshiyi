@@ -116,7 +116,7 @@ else:
 
 ```
 
-The results are inferred using variational inference with reparameterization gradients. We provide a brief summary below, but encourage readers to refer to the original paper for a more complete overview.
+The results are inferred using variational inference with reparameterization gradients. 
 
 It is intractable to evaluate the posterior distribution, so we approximate the posterior with a distribution. How do we set the values? We want to minimize the KL-Divergence between and the posterior, which is equivalent to maximizing the ELBO:
 
