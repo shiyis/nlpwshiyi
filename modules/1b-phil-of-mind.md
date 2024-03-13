@@ -190,14 +190,19 @@ Second, CCTM is not intended metaphorically. CCTM does not simply hold that the 
 
 #### A Turing Style Computational System
 
-1. memory locations: assuming an infinitely long linear structure or system, here is where these symbols might be kept. (In real life scenarios, there are always ways to optimize memory locations and storage space, including through the use of techniques like hashing, because the implementation could not realistically assume infinity).
-2. a central processor, which has a limited number of machine states it can enter.
-3. The central processor's basic actions on symbols include writing and deleting symbols as well as accessing the next memory position in the linear array. (On the tape, veer to the left or right).
-4. two key principles are used in the operation to process the data: the current symbol that is stored at the current memory address, and the scanner's own current machine state.
-5. a machine table, which, based on the central processor's present machine state and the symbol it is currently accessing, determines which elementary operation it will carry out.
-   It also determines how those same circumstances affect the machine state of the central processor.
-6. human cognitive constraints - lastly, the symbolic system that the Turing computer symbolizes could effectively duplicate it due to our cognitive constraints, which can only yield a certain number of possibilities.
-   @@
+- memory locations: assuming an infinitely long linear structure or system, here is where these symbols might be kept. (In real life scenarios, there are always ways to optimize memory locations and storage space, including through the use of techniques like hashing, because the implementation could not realistically assume infinity).
+
+- a central processor, which has a limited number of machine states it can enter.
+
+- The central processor's basic actions on symbols include writing and deleting symbols as well as accessing the next memory position in the linear array. (On the tape, veer to the left or right).
+
+- two key principles are used in the operation to process the data: the current symbol that is stored at the current memory address, and the scanner's own current machine state.
+
+- a machine table, which, based on the central processor's present machine state and the symbol it is currently accessing, determines which elementary operation it will carry out. It also determines how those same circumstances affect the machine state of the central processor.
+
+- human cognitive constraints - lastly, the symbolic system that the Turing computer symbolizes could effectively duplicate it due to our cognitive constraints, which can only yield a certain number of possibilities.
+
+@@
 
 
 
