@@ -84,24 +84,34 @@ The passage discusses the role of probabilistic models in machine learning, emph
 
 Key points in the passage include:
 
-> 1. **Purpose of Probabilistic Models:**
->  - Probabilistic models are employed to learn mathematical descriptions of phenomena from data.
->  - They facilitate understanding, prediction of future unknowns, and various forms of assisted or automated decision-making.
-> 2. **Incorporating Uncertainty:**
->   - Due to incomplete data, uncertainty is inherent in probabilistic models.
->   - The degree and nature of uncertainty are specified using conditional probability distributions.
-> 3. **Variable Types:**
->   - Probabilistic models may involve both continuous and discrete variables.
->   - Complete forms of probabilistic models specify all correlations and higher-order dependencies among variables through a joint probability distribution.
-> 4. **Notation and Observations:**
->   - The vector $(x)$ represents all observed variables in the model.
->   - The observed variable $(x)$ is considered a random sample from an unknown process with an unknown true distribution $(p_{\text{true}}(x))$.
->   - An approximation $(p_{\theta}(x))$ is chosen, where $(\theta)$ represents the parameters, to model the underlying process.
-> 5. **Learning Process:**
->   - Learning involves finding values for the parameters $(\theta)$ that make the model distribution $(p_{\theta}(x))$ closely approximate the true distribution $(p_{\text{true}}(x))$ for any observed $(x)$.
-> 6. **Flexibility and Incorporating Knowledge:**
->   - The model $(p_{\theta}(x))$ should be flexible enough to adapt to the data for accurate modeling.
->   - It should also allow the incorporation of prior knowledge about the data distribution.
+| 1. **Purpose of Probabilistic Models:** | 
+| ::: |
+|   Probabilistic models are employed to learn mathematical descriptions of phenomena from data. |
+|   They facilitate understanding, prediction of future unknowns, and various forms of assisted or automated decision-making. |
+
+| 2. **Incorporating Uncertainty:** |
+| ::: |
+|    Due to incomplete data, uncertainty is inherent in probabilistic models. |
+|    The degree and nature of uncertainty are specified using conditional probability distributions. |
+
+| 3. **Variable Types:** |
+| ::: |
+|  Probabilistic models may involve both continuous and discrete variables. |
+|  Complete forms of probabilistic models specify all correlations and higher-order dependencies among variables through a joint | probability distribution. |
+
+| 4. **Notation and Observations:** | 
+| ::: |
+|   The vector $(x)$ represents all observed variables in the model. |
+|   The observed variable $(x)$ is considered a random sample from an unknown process with an unknown true distribution $(p_{\text |{true}}(x))$. |
+|   An approximation $(p_{\theta}(x))$ is chosen, where $(\theta)$ represents the parameters, to model the underlying process. |
+
+| 5. **Learning Process:** |
+| ::: |
+| Learning involves finding values for the parameters $(\theta)$ that make the model distribution $(p_{\theta}(x))$ closely approximate the true distribution $(p_{\text{true}}(x))$ for any observed $(x)$. |
+
+| 6. **Flexibility and Incorporating Knowledge:** |
+| ::: |
+|   The model $(p_{\theta}(x))$ should be flexible enough to adapt to the data for accurate modeling. It should also allow the incorporation of prior knowledge about the data distribution. |
 
 Overall, the passage highlights the foundational role of probabilistic models in machine learning, emphasizing their use in capturing and understanding uncertain relationships within data. The learning process involves adjusting model parameters to align the model distribution with the true distribution of the observed data.
 
@@ -298,13 +308,26 @@ In summary, while there are similarities in terms of parameter optimization and 
 
 Support Vector Machines (SVMs) and variational inference in the context of probabilistic models are conceptually different methods, but they share some similarities in terms of optimization and finding a decision boundary.
 
-1. **Objective**: SVM aims to find the hyperplane that best separates the classes in the input space, maximizing the margin between the classes. Variational inference, on the other hand, aims to approximate complex posterior distributions using simpler distributions, typically by minimizing the Kullback-Leibler (KL) divergence between them.
 
-2. **Decision Boundary**: In SVM, the decision boundary is the hyperplane that separates the classes, while in variational inference, the decision boundary is the region where the posterior distribution approximated by $ q(z;\lambda) $ transitions between different modes or clusters in the data.
+| 1. **Objective**: |
+| ::: | 
+| SVM aims to find the hyperplane that best separates the classes in the input space, maximizing the margin between the classes. Variational inference, on the other hand, aims to approximate complex posterior distributions using simpler distributions,  typically by minimizing the Kullback-Leibler (KL) divergence between them. |
 
-3. **Optimization**: Both SVM and variational inference involve optimization algorithms to find the optimal parameters. SVM typically uses techniques like gradient descent or quadratic programming to find the optimal hyperplane parameters, while variational inference often uses optimization algorithms like gradient descent or stochastic gradient descent to optimize the parameters of the approximating distribution.
+| 2. **Decision Boundary**: |
+| ::: |
+| In SVM, the decision boundary is the hyperplane that separates the classes, while in variational inference, the decision boundary is the region where the posterior distribution approximated by $ q(z;\lambda) $ transitions between different modes or clusters in the data. |
 
-4. **Iterative Process**: Both methods often involve iterative processes to converge to the optimal solution. In SVM, this involves iteratively updating the hyperplane parameters to maximize the margin and minimize misclassification. In variational inference, it involves iteratively updating the parameters of the approximating distribution to minimize the KL divergence.
+
+| 3. **Optimization**: |
+| ::: |
+| Both SVM and variational inference involve optimization algorithms to find the optimal parameters. SVM typically uses techniques  like gradient descent or quadratic programming to find the optimal hyperplane parameters, while variational inference often uses
+ optimization algorithms like gradient descent or stochastic gradient descent to optimize the parameters of the approximating 
+|distribution. |
+
+| 4. **Iterative Process**: |
+| ::: |
+| Both methods often involve iterative processes to converge to the optimal solution. In SVM, this involves iteratively updating the hyperplane parameters to maximize the margin and minimize misclassification. |
+| In variational inference, it involves iteratively updating the parameters of the approximating distribution to minimize the KL divergence. |
 
 In summary, while SVM and variational inference serve different purposes and operate in different contexts, they both involve optimization techniques to find decision boundaries or approximations that best fit the data or achieve the desired objectives.
 
