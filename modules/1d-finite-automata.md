@@ -68,8 +68,8 @@ See below figure:
 
 | State / Symbol | a             | b       |
 | :------------- | :------------ | :------ |
-| $q_0$        | ${q_0,q_1}$ | $q_0$ |
-| $q_1$        | ?             | ?       |
+| $q_0$          | ${q_0,q_1}$   | $q_0$   |
+| $q_1$          | ?             | ?       |
 
 ---
 
@@ -78,10 +78,6 @@ See below figure:
 ---
 
 One important thing to note is, in NFA, if any path for an input string leads to a final state, then the input string is accepted. For example, in the above NFA, there are multiple paths for the input string `“00”`. Since one of the paths leads to a final state, `“00”` is accepted by the above NFA.
-
-Some Important Points:
-
-- Justification:
 
 Since all the tuples in DFA and NFA are the same except for one of the tuples, which is Transition Function (?)
 

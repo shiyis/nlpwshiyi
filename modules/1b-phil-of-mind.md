@@ -35,7 +35,7 @@ a fundamental feature of the world, alongside mass, charge, and
 space-time”.
 ```
 
-This is also known as "fundamental property dualism", which, in David Chalmers' definition, `"regards conscious mental properties as basic constituents of reality on a par with fundamental physical properties such as electromagnetic charge. They may interact in casual and lay-like ways with other fundamental properties such a those of physics, but ontologically  their existence is not dependent upon nor derivative from any other properties".`
+This is also known as "fundamental property dualism", which, in David Chalmers' definition, `"regards conscious mental properties as basic constituents of reality on a par with fundamental physical properties such as electromagnetic charge. They may interact in casual and lay-like ways with other fundamental properties such as those of physics, but ontologically  their existence is not dependent upon nor derivative from any other properties".`
 
 According to this [medium article](https://medium.com/curious/are-we-conscious-automata-18ba889af20), this idea is also referred to as panpsychism, which "holds that mind or a mind-like aspect is a fundamental and ubiquitous feature of reality". It is also described as a theory that "the mind is a fundamental feature of the world which exists throughout the universe."
 
@@ -106,7 +106,9 @@ In the domain that deals with how the eye works, it's useful and practical to sp
 
 #### The Primal Instincts vs. The Unknown
 
-However, it seems though the importance of consciousness might have been overall exaggerated. A few primal physical responses of humans have indicated that humans could task being an automata without these familiar yet mysterious qualia. For example, humans could drive while talk, have fight-and-flight responses without being aware of it, and blindsight which are sensational responses to visual stimuli without actually experiencing the effects visually.
+However, it seems though the importance of consciousness might have been overall exaggerated. A few primal physical responses of humans have indicated that humans could task being an automata without these familiar yet mysterious qualia. 
+
+For example, humans could drive while talk, have fight-and-flight responses without being aware of it, and blindsight which are sensational responses to visual stimuli without actually experiencing the effects visually.
 
 Lastly, onto the discussions about pain. It seems that the presence of pain is superfluous. We need not to have to experience pain to understand the risk of injury and be avoidance of danger.
 

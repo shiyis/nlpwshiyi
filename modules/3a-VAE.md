@@ -12,32 +12,39 @@ The chapter discussed in the excerpt covers background material on probabilistic
 
 This section discusses the attractiveness and vulnerabilities of generative modeling and its various applications. Here's a summary of the key points:
 
-1. **Expressing Physical Laws and Constraints:**
-   - Generative modeling allows the incorporation of physical laws and constraints into the modeling process. Nuisance variables, or details that are not critical, are treated as noise.
-   - Resulting models are intuitive and interpretable, and by testing them against observations, theories about how the world works can be confirmed or rejected.
+|1. **Expressing Physical Laws and Constraints:** |
+| ::: |
+    Generative modeling allows the incorporation of physical laws and constraints into the modeling process. Nuisance variables, |or details that are not critical, are treated as noise. |
+    Resulting models are intuitive and interpretable, and by testing them against observations, theories about how the world |works |can be confirmed or rejected. |
 
-2. **Expressing Causal Relations:**
-   - Understanding the generative process of data naturally expresses causal relations in the world.
-   - Causal relations generalize better to new situations than mere correlations. Knowledge of the generative process can be applied across different scenarios.
+|2. **Expressing Causal Relations:**|
+| ::: |
+    Understanding the generative process of data naturally expresses causal relations in the world. |
+    Causal relations generalize better to new situations than mere correlations. Knowledge of the generative process can be |applied across different scenarios. |
 
-3. **Generative Model to Discriminator:**
-   - To turn a generative model into a discriminator, Bayes rule is applied. Comparing different generative models can help compute probabilities for events based on observed data.
-   - Applying Bayes rule can be computationally expensive.
+|3. **Generative Model to Discriminator:**|
+| ::: |
+    To turn a generative model into a discriminator, Bayes rule is applied. Comparing different generative models can help |compute |probabilities for events based on observed data. |
+    Applying Bayes rule can be computationally expensive. |
 
-4. **Discriminative Methods:**
-   - Discriminative methods directly learn a mapping for making future predictions.
-   - Unlike generative models, discriminative models map input directly to labels. They may lead to fewer errors in discriminative tasks, especially in situations with a large amount of data.
+| 4. **Discriminative Methods:** |
+| ::: |
+    Discriminative methods directly learn a mapping for making future predictions. |
+    Unlike generative models, discriminative models map input directly to labels. They may lead to fewer errors in discriminative |tasks, especially in situations with a large amount of data. |
 
-5. **Semi-Supervised Learning:**
-   - Generative modeling can guide the training of discriminative models, especially in semi-supervised learning settings with few labeled examples and many unlabeled examples.
+| 5. **SemiSupervised Learning:** |
+| ::: |
+    Generative modeling can guide the training of discriminative models, especially in semisupervised learning settings with few |labeled examples and many unlabeled examples. |
 
-6. **Generative Modeling as an Auxiliary Task:**
-   - Generative modeling can serve as an auxiliary task, helping to predict the immediate future and building useful abstractions of the world.
-   - This quest for disentangled, semantically meaningful, statistically independent, and causal factors is known as unsupervised representation learning.
+| 6. **Generative Modeling as an Auxiliary Task:** |
+| ::: |
+    Generative modeling can serve as an auxiliary task, helping to predict the immediate future and building useful abstractions |of the world. |
+    This quest for disentangled, semantically meaningful, statistically independent, and causal factors is known as unsupervised |representation learning. |
 
-7. **Variational Autoencoder (VAE):**
-   - The VAE is highlighted as a tool extensively employed for unsupervised representation learning.
-   - It is viewed as an implicit form of regularization, biasing the representation to be meaningful for data generation and improving downstream predictions.
+| 7. **Variational Autoencoder (VAE):** |
+| ::: |
+   The VAE is highlighted as a tool extensively employed for unsupervised representation learning. |
+   It is viewed as an implicit form of regularization, biasing the representation to be meaningful for data generation and |improving downstream predictions. |
 
 Overall, the text emphasizes the versatility of generative modeling in expressing physical laws, understanding causal relations, guiding discriminative models, and serving as an auxiliary task for various applications. The VAE is specifically mentioned as a powerful tool in unsupervised representation learning.
 
@@ -46,25 +53,27 @@ Overall, the text emphasizes the versatility of generative modeling in expressin
 
 This section discusses two popular generative modeling paradigms: Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs). VAEs and GANs are seen as having complementary properties. 
 
-The statement below tries to capture some of the characteristics and trade-offs between Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs):
+The statement below tries to capture some of the characteristics and tradeoffs between Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs):
 
-1. **GANs:**
-   - **Strengths:**
-     - GANs are known for generating high perceptual quality images. The samples generated by GANs often look realistic and can be visually appealing.
-     - They leverage a discriminator-generator framework, where a generator produces samples to try and fool a discriminator, leading to a competitive and adversarial training process.
-   - **Limitations:**
-     - GANs may lack full support over the data. This means that the distribution they capture might not cover the entire space of possible data points. There could be regions of the data space where the generator struggles to produce realistic samples.
+| 1. **GANs:** |
+| ::: |
+    **Strengths:** |
+      GANs are known for generating high perceptual quality images. The samples generated by GANs often look realistic and can be |visually appealing. |
+      They leverage a discriminatorgenerator framework, where a generator produces samples to try and fool a discriminator, |leading to a competitive and adversarial training process. |
+    **Limitations:** |
+      GANs may lack full support over the data. This means that the distribution they capture might not cover the entire space of |possible data points. There could be regions of the data space where the generator struggles to produce realistic samples. |
 
-2. **VAEs:**
-   - **Strengths:**
-     - VAEs are likelihood-based models. They provide a probabilistic framework for generative modeling, making them strong density models.
-     - VAEs are better suited for capturing uncertainties in the data and can offer more reliable probability estimates for generated samples.
-   - **Limitations:**
-     - VAEs might generate more dispersed samples. This dispersion refers to the model being less likely to produce highly specific or sharp samples compared to GANs.
+| 2. **VAEs:** |
+| ::: |
+    **Strengths:** | 
+      VAEs are likelihoodbased models. They provide a probabilistic framework for generative modeling, making them strong density | models. |
+      VAEs are better suited for capturing uncertainties in the data and can offer more reliable probability estimates for |generated samples. |
+    **Limitations:** | 
+      VAEs might generate more dispersed samples. This dispersion refers to the model being less likely to produce highly specific | or sharp samples compared to GANs. |
 
-**Trade-offs and Complementary Nature:**
-   - GANs and VAEs often exhibit complementary characteristics. GANs are excellent at capturing high-level features and generating visually impressive samples, while VAEs provide a more comprehensive probabilistic representation of the data.
-   - Researchers have explored hybrid models, like Variational Autoencoder-GANs (VAE-GANs), to combine the strengths of both approaches, aiming for more realistic and diverse sample generation while maintaining a strong probabilistic foundation.
+**Tradeoffs and Complementary Nature:**
+    GANs and VAEs often exhibit complementary characteristics. GANs are excellent at capturing highlevel features and generating visually impressive samples, while VAEs provide a more comprehensive probabilistic representation of the data.
+    Researchers have explored hybrid models, like Variational Autoencoder-GANs (VAE-GANs), to combine the strengths of both approaches, aiming for more realistic and diverse sample generation while maintaining a strong probabilistic foundation.
 
 In summary, the choice between GANs and VAEs depends on the specific requirements of the task, with GANs excelling in perceptual quality and VAEs providing a more robust probabilistic framework.
 
@@ -75,29 +84,24 @@ The passage discusses the role of probabilistic models in machine learning, emph
 
 Key points in the passage include:
 
-1. **Purpose of Probabilistic Models:**
-   - Probabilistic models are employed to learn mathematical descriptions of phenomena from data.
-   - They facilitate understanding, prediction of future unknowns, and various forms of assisted or automated decision-making.
-
-2. **Incorporating Uncertainty:**
-   - Due to incomplete data, uncertainty is inherent in probabilistic models.
-   - The degree and nature of uncertainty are specified using conditional probability distributions.
-
-3. **Variable Types:**
-   - Probabilistic models may involve both continuous and discrete variables.
-   - Complete forms of probabilistic models specify all correlations and higher-order dependencies among variables through a joint probability distribution.
-
-4. **Notation and Observations:**
-   - The vector $(x)$ represents all observed variables in the model.
-   - The observed variable $(x)$ is considered a random sample from an unknown process with an unknown true distribution $(p_{\text{true}}(x))$.
-   - An approximation $(p_{\theta}(x))$ is chosen, where $(\theta)$ represents the parameters, to model the underlying process.
-
-5. **Learning Process:**
-   - Learning involves finding values for the parameters $(\theta)$ that make the model distribution $(p_{\theta}(x))$ closely approximate the true distribution $(p_{\text{true}}(x))$ for any observed $(x)$.
-
-6. **Flexibility and Incorporating Knowledge:**
-   - The model $(p_{\theta}(x))$ should be flexible enough to adapt to the data for accurate modeling.
-   - It should also allow the incorporation of prior knowledge about the data distribution.
+> 1. **Purpose of Probabilistic Models:**
+>  - Probabilistic models are employed to learn mathematical descriptions of phenomena from data.
+>  - They facilitate understanding, prediction of future unknowns, and various forms of assisted or automated decision-making.
+> 2. **Incorporating Uncertainty:**
+>   - Due to incomplete data, uncertainty is inherent in probabilistic models.
+>   - The degree and nature of uncertainty are specified using conditional probability distributions.
+> 3. **Variable Types:**
+>   - Probabilistic models may involve both continuous and discrete variables.
+>   - Complete forms of probabilistic models specify all correlations and higher-order dependencies among variables through a joint probability distribution.
+> 4. **Notation and Observations:**
+>   - The vector $(x)$ represents all observed variables in the model.
+>   - The observed variable $(x)$ is considered a random sample from an unknown process with an unknown true distribution $(p_{\text{true}}(x))$.
+>   - An approximation $(p_{\theta}(x))$ is chosen, where $(\theta)$ represents the parameters, to model the underlying process.
+> 5. **Learning Process:**
+>   - Learning involves finding values for the parameters $(\theta)$ that make the model distribution $(p_{\theta}(x))$ closely approximate the true distribution $(p_{\text{true}}(x))$ for any observed $(x)$.
+> 6. **Flexibility and Incorporating Knowledge:**
+>   - The model $(p_{\theta}(x))$ should be flexible enough to adapt to the data for accurate modeling.
+>   - It should also allow the incorporation of prior knowledge about the data distribution.
 
 Overall, the passage highlights the foundational role of probabilistic models in machine learning, emphasizing their use in capturing and understanding uncertain relationships within data. The learning process involves adjusting model parameters to align the model distribution with the true distribution of the observed data.
 
