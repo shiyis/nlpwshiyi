@@ -320,9 +320,8 @@ Support Vector Machines (SVMs) and variational inference in the context of proba
 
 | 3. **Optimization**: |
 | ::: |
-| Both SVM and variational inference involve optimization algorithms to find the optimal parameters. SVM typically uses techniques  like gradient descent or quadratic programming to find the optimal hyperplane parameters, while variational inference often uses
- optimization algorithms like gradient descent or stochastic gradient descent to optimize the parameters of the approximating 
-|distribution. |
+| Both SVM and variational inference involve optimization algorithms to find the optimal parameters. |
+| SVM typically uses techniques  like gradient descent or quadratic programming to find the optimal hyperplane parameters, while variational inference often uses optimization algorithms like gradient descent or stochastic gradient descent to optimize the parameters of the approximating distribution. |
 
 | 4. **Iterative Process**: |
 | ::: |
