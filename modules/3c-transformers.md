@@ -55,7 +55,7 @@ Prominent transformer-based models include BERT (Bidirectional Encoder Represent
 
 ---
 
-| Transformers Architecture |
+| The Model Architecture |
 | ::: |
 | ![](../extras/connectionism/trnsfmr.png) |
 
