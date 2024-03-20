@@ -157,7 +157,7 @@ Below summarizes scientific approaches and proposals that tackle the mind-body/c
 
 @@colbox-blue
 
-#### Logical Behaviorism vs Type/Token-Identity Theory
+##### Logical Behaviorism vs Type/Token-Identity Theory
 
 Logical behaviorism holds that all thoughts, perceptions, and other mental processes can be classified in the same way that mathematics can be explained in terms of formal logic, using concepts like set theory, and can then be **tested and scientifically explained using behaviorist principles**, according to which everything is made up of **stimulus-response** pairs with various types of origins and reinforcement.
 
