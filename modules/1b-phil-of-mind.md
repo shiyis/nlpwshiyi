@@ -6,7 +6,7 @@ In this one article that touches on this subject, it's known that the computatio
 
 **Table Of Contents**
 
-
+\toc
 
 
 
