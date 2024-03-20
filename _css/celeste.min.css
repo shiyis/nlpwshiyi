@@ -667,7 +667,8 @@ ul,
 ol,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  padding:0.5em 1.5em 0em 1.5em
 }
 
 dt {
