@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/libs/katex/katex.min.css">
+
+  <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700"
+    type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/celeste.min.css">
+
+  <link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+  <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png">
+
+
+  <title>NLPwShiyi - Natural Language Processing with Shiyi</title>
+</head>
+
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+  <nav id="navbar" class="navigation" role="navigation">
+    <input id="toggle1" type="checkbox" />
+    <label class="hamburger1" for="toggle1">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+
+    <nav class="topnav mx-auto" id="myTopnav">
+      <div class="dropdown">
+        <button class="dropbtn">Comp Ling
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/1a-info-theory">Information Theory</a>
+          <a href="/modules/1b-phil-of-mind">Philosophy of Mind</a>
+          <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+          <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+          <a href="/modules/1e-mutual-info">Mutual Information</a>
+          <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+          <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+          <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+          <a href="/modules/1i-cryptanalysis">Cryptography</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">DL / NLP
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/2a-mdn-nlp">Modern NLP</a>
+          <a href="/modules/2b-markov-processes">Markov Processes</a>
+          <a href="/modules/2c-word2vec">Word2Vec</a>
+          <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+          <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+          <a href="/modules/2f-loss-functions">Stochastic GD</a>
+          <a href="/modules/2g-batchnorm">Batchnorm</a>
+          <a href="/modules/2h-dropout">Dropout</a>
+          <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+        </div>
+      </div>
+      <a href="/" class="active">Intro </a>
+      <div class="dropdown">
+        <button class="dropbtn">SOTA
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/3a-VAE">Variational Autoencoders</a>
+          <a href="/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+          <a href="/modules/3c-transformers">Transformers</a>
+          <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Hands-on
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+          <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+          <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+          <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a>
+          <a href="/modules/4e-c4fe-tbip">C4FE-TBIP</a>
+          <a href="/modules/4f-etl-job">DE: Serverless ETL</a>
+
+        </div>
+      </div>
+    </nav>
+  </nav>
+
+  <!-- Content appended here -->
+  <div class="franklin-content">
+    <h1 id="to_continue_our_discussion_on_modeling_random_processes"><a
+        href="#to_continue_our_discussion_on_modeling_random_processes" class="header-anchor">To Continue Our Discussion
+        on Modeling Random Processes</a></h1>
+    <p>In the previous section, we have talked about how a HMM network could be constructed to model spectral features
+      &#40;in acoustic modeling&#41; and also to elicit POS &#40;part-of-speech&#41; tagging in sequence labeling. These
+      are accomplished through the forward algorithm. And to find the optimal sequence in either one of the scenarios,
+      the backward algorithm or the Viterbi algorithm is applied.</p>
+    <p>Breaking down what the backward algorithm entails, below is a brief overview:</p>
+    <ol>
+      <li>
+        <p><strong>Backward Probabilities:</strong> The backward algorithm computes a set of probabilities, often
+          denoted as \(\beta\) values. These probabilities represent the likelihood of observing the remaining part of
+          the sequence, given that the system is in a particular state at a specific time.</p>
+      </li>
+      <li>
+        <p><strong>Calculation Process:</strong> Similar to the forward algorithm, the backward algorithm is computed
+          recursively. It starts from the last observation in the sequence and moves backward in time, updating
+          probabilities for each state. The final result is a set of probabilities representing the likelihood of
+          observing the remaining part of the sequence from each state at each time.</p>
+      </li>
+      <li>
+        <p><strong>Application in HMMs:</strong> The backward probabilities are used in various applications, including:
+        </p>
+        <ul>
+          <li>
+            <p><strong>Likelihood Calculation:</strong> The backward algorithm is crucial for cal culating the
+              likelihood of the observed sequence, which is essential for training HMMs using methods like the
+              Expectation-Maximization &#40;EM&#41; algorithm.</p>
+          </li>
+          <li>
+            <p><strong>Decoding and Inference:</strong> The backward probabilities, combined with the forward
+              probabilities, are used to perform tasks like sequence decoding and finding the most likely state sequence
+              given the observed sequence. This is commonly known as the Viterbi algorithm.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Relationship with Forward Algorithm:</strong> The forward and backward algorithms are related through
+          their combination in the context of HMMs. The forward and backward probabilities are used together to compute
+          the posterior probabilities of being in a particular state at a specific time given the observed sequence.
+          This information is crucial for various tasks, including parameter estimation and decoding.</p>
+      </li>
+    </ol>
+    <p>In summary, the backward algorithm in HMMs calculates probabilities representing the likelihood of observing the
+      rest of the sequence given the system&#39;s state at a specific time. Together with the forward algorithm, it
+      plays a key role in various aspects of HMMs, including training, decoding, and inference.</p>
+    <h6 id="a_graphic_demonstration_of_how_viterbi_is_applied_in_sentence_segmentation"><a
+        href="#a_graphic_demonstration_of_how_viterbi_is_applied_in_sentence_segmentation" class="header-anchor">A
+        Graphic Demonstration of How Viterbi is Applied in Sentence Segmentation</a></h6>
+    <div class="cards">
+      <div class="column">
+        <div class="row">
+          <div class="card">
+            <div class="container">
+              <h2> </h2>
+
+              <div class="content">
+                <table>
+                  <tr>
+                    <th align="center">Viterbi network for a sequence</th>
+                  </tr>
+                  <tr>
+                    <td align="center"><img src="../extras/hmm/viterbi.jpg" alt="img" /></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>Recall that the goal of Viterbi algorithm is to find the best state sequence \(q=(q_{1}q_{2}q_{3}...q_{t})\)
+      given the set of observed phones \(o=(o_{1}o_{2}...o_{t})\). a graph illustration below demonstrates the output of
+      the dynamic programming. Along the y-axis are all the words in the lexicon; inside each word are its states. The
+      x-axis is ordered by time, with one observed the most likely sequence ending at that state. We can find the
+      most-likely state sequence for the entire observation string by looking at the cell in the right-most column that
+      has the highest probability, and tracking back the sequence that produced it.</p>
+    <div class="cards">
+      <div class="column">
+        <div class="row">
+          <div class="card">
+            <div class="container">
+              <h2> </h2>
+
+              <div class="content">
+                <table>
+                  <tr>
+                    <th align="center">Illustration of resulting discovery of the best path</th>
+                  </tr>
+                  <tr>
+                    <td align="center"><img src="../extras/hmm/viterbi2.jpg" alt="img" /></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>More formally, we are searching for the best state sequence \(q_{*} = (q_{1}q_{2}...q_{T})\), given an
+      observation sequence \(o = (o_{1}o_{2}...o_{T})\) and a model &#40;a weighted automaton or &quot;state
+      graph&quot;&#41; \(λ\). Each cell \(viterbi[i,t]\) of the matrix contains the probability of the best path which
+      accounts for the first <em>t</em> observations and ends in state <em>i</em> of the HMM. This is the most-probable
+      path out of all possible sequences of states of length \(t - 1\):</p>
+    \[
+    viterbi[t,i] = \underset{q_{1}, q_{2},...,q_{t-1}}{max} P(q_{1}q_{2}...q_{t-1},q_{t}=i,o_{1},o_{2},...o_{t}|λ)
+    \]
+    <p>In order to compute \(viterbi[t,i]\), the Viterbi algorithm assumes the dynamic programming invariant. This
+      assumption states that if the ultimate best path of the entire observation sequence happens to go through a state
+      \(q_{i}\), that this best path must include the best path up to and including state \(q_{i}\). This doesn&#39;t
+      mean that the best path at any time <em>t</em> is the best path for the whole sequence. A path can look bad at the
+      beginning but turn out to be the best path.</p>
+    <p>In the book <em>Speech and Language Processing</em> &#40;Jurafsky, Martin et al&#41;, it talks about the
+      importance of having the invariant assumption &#40;which is a very important principle in solving problems where
+      dynamic programming is applicable&#41;;</p>
+    <blockquote>
+      <p>it allows us to break down the computation of the optimal path probability in a simple way: each of the best
+        paths at time <em>t</em> is the best extension of each of the paths ending at time <em>t - 1</em>.</p>
+    </blockquote>
+    <p>In other words, the recurrence relation for the best path at time <em>t</em> ending in state <em>j</em>,
+      \(viterbi[t,j]\), is the maximum of the possible extension of every possible previous path from time <em>t -
+        1</em> to time <em>t</em>:</p>
+    \[
+    viterbi[t,j] = \underset{t}{max}(viterbi[t - 1, i]a_{ij})b_{j}(o_{t})
+    \]
+    <p>The algorithm as we describe it in takes a sequence of observations, and a single probabilistic automaton, and
+      returns the optimal path through the automaton.</p>
+    <p>The pseudocode is displayed below</p>
+    <pre><code class="language-julia">function VITERBI&#40;observations of len T, state-graph&#41; return best-path
+
+    num-states &lt;- NUM-OF-STATES&#40;state-graph&#41;
+    Create a path probability matrix viterbi&#91;num-states&#43;2, T&#43;2&#93;
+    viterbi&#91;0,0&#93; &lt;- 1.0
+    for each time step t from 0 to T do
+        for each state s from 0 to num-states do
+            for each transition s&#39; from s specified by state-graph
+                new-score &lt;- viterbi&#91;s,t&#93; * a&#91;s,s&#39;&#93; * b_s&#39;&#40;o_t&#41;
+                if &#40;&#40;viterbi&#91;s&#39;, t&#43;1&#93;&#61;0&#41;&#41; || &#40;new-score &gt; viterbi&#91;s&#39;, t&#43;1&#93;&#41;
+                    then 
+                        viterbi&#91;s&#39;, t&#43;1&#93; &lt;- new-score
+                        back-pointer&#91;s&#39;, t&#43;1&#93; &lt;- s
+
+# Backtrace from highest probability state in the final column of viterbi&#91;&#93; and return path
+# This pseudocode demonstrates how to find the optimal sequence of states in continuous speech recognition, simplified by using phones as inputs 
+# Given an observation sequence of phones and a weighted automaton, the algorithm returns the path through the automaton which has minimum probability and accepts #the observation sequence. a&#91;s,s&#39;&#93; is the transition probability from current state s to next state s&#39; and b_s&#39;&#40;o_t&#41; is the observation likelihood of s&#39; given o_t.</code></pre>
+    <p>💭 Again, the Viterbi algorithm is a dynamic programming algorithm used for finding the most likely sequence of
+      hidden states in a Hidden Markov Model &#40;HMM&#41;. It determines the best path at each state based on the
+      probabilities of transitioning between states and emitting observations.</p>
+    <p>When discussing the &quot;best path at state \(q_{i}\),&quot; it means the most probable sequence of hidden
+      states up to that particular state in the sequence.</p>
+    <h6 id="doesnt_represent_the_best_path_for_the_whole_sequence"><a
+        href="#doesnt_represent_the_best_path_for_the_whole_sequence" class="header-anchor">Doesn&#39;t Represent the
+        Best Path for the Whole Sequence:</a></h6>
+    <p>The statement implies that choosing the best path at each individual state &#40;\(q_{i}\)&#41; doesn&#39;t
+      guarantee that the entire sequence is the globally optimal sequence. It&#39;s possible that a locally optimal
+      choice at one state doesn&#39;t lead to the globally optimal sequence. Connection with Local Maximum in Stochastic
+      Gradient Descent &#40;SGD&#41;:</p>
+    <p>In the context of optimization problems like training machine learning models, SGD is an iterative optimization
+      algorithm. It aims to find the minimum of a loss function by iteratively adjusting model parameters. A local
+      maximum in SGD refers to a situation where the algorithm gets stuck in a suboptimal solution, which may be the
+      best solution in the local vicinity but not globally optimal.</p>
+    <p>Similarly, in the Viterbi algorithm, choosing the best path at each state may lead to a locally optimal sequence
+      but doesn&#39;t ensure that the entire sequence is globally optimal.</p>
+    <h6 id="ultimate_optimal_value"><a href="#ultimate_optimal_value" class="header-anchor">Ultimate Optimal Value:</a>
+    </h6>
+    <p>In both cases, there&#39;s a concern about achieving the ultimate optimal value. In Viterbi, it&#39;s about
+      finding the globally optimal sequence, and in SGD, it&#39;s about reaching the global minimum of the loss function
+      &#40;which we will talk about in a separate blog&#41;.</p>
+    <p>In summary, the connection lies in the challenge of achieving a globally optimal solution when making locally
+      optimal choices at each step. Both Viterbi and SGD face the risk of getting stuck in local optima, and the choices
+      made locally may not collectively lead to the globally optimal solution for the entire sequence or model.</p>
+    <div class="page-foot">
+      <div class="copyright">
+        <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo"
+              src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+        ©️ Last modified: February 07, 2024. Website built with <a
+          href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia
+          programming language</a>.
+      </div>
+    </div>
+  </div><!-- CONTENT ENDS HERE -->
+
+  <script src="/libs/katex/katex.min.js"></script>
+  <script src="/libs/katex/contrib/auto-render.min.js"></script>
+  <script>
+    renderMathInElement(document.body)
+
+  </script>
+
+
+
+  <script src="/libs/highlight/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.configure({
+      tabReplace: '    '
+    });
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/libs/katex/katex.min.css">
+
+
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700"
+    type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/celeste.min.css">
+
+  <link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+  <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png">
+
+
+  <title>NLPwShiyi - Natural Language Processing with Shiyi</title>
+</head>
+
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+  <nav id="navbar" class="navigation" role="navigation">
+    <input id="toggle1" type="checkbox" />
+    <label class="hamburger1" for="toggle1">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+
+    <nav class="topnav mx-auto" id="myTopnav">
+      <div class="dropdown">
+        <button class="dropbtn">Comp Ling
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/1a-info-theory">Information Theory</a>
+          <a href="/modules/1b-phil-of-mind">Philosophy of Mind</a>
+          <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+          <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+          <a href="/modules/1e-mutual-info">Mutual Information</a>
+          <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+          <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+          <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+          <a href="/modules/1i-cryptanalysis">Cryptography</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">DL / NLP
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/2a-mdn-nlp">Modern NLP</a>
+          <a href="/modules/2b-markov-processes">Markov Processes</a>
+          <a href="/modules/2c-word2vec">Word2Vec</a>
+          <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+          <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+          <a href="/modules/2f-loss-functions">Stochastic GD</a>
+          <a href="/modules/2g-batchnorm">Batchnorm</a>
+          <a href="/modules/2h-dropout">Dropout</a>
+          <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+        </div>
+      </div>
+      <a href="/" class="active">Intro </a>
+      <div class="dropdown">
+        <button class="dropbtn">SOTA
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/3a-VAE">Variational Autoencoders</a>
+          <a href="/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+          <a href="/modules/3c-transformers">Transformers</a>
+          <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Hands-on
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+          <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+          <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+          <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a>
+          <a href="/modules/4e-c4fe-tbip">C4FE-TBIP</a>
+          <a href="/modules/4f-etl-job">DE: Serverless ETL</a>
+
+        </div>
+      </div>
+    </nav>
+  </nav>
+
+  <!-- Content appended here -->
+  <div class="franklin-content">
+    <h2 id="the_dnns_an_overview"><a href="#the_dnns_an_overview" class="header-anchor">The DNNs: An Overview</a></h2>
+    <div class="franklin-toc">
+      <ol>
+        <li><a href="#the_dnns_an_overview">The DNNs: An Overview</a></li>
+        <li><a href="#recurrent_neural_networks">Recurrent Neural Networks</a></li>
+        <li><a href="#convolutional_neural_networks">Convolutional Neural Networks</a></li>
+        <li><a href="#lstm_or_the_long_short-term_memory_network">LSTM or The Long Short-Term Memory Network</a></li>
+      </ol>
+    </div>
+    <h2 id="recurrent_neural_networks"><a href="#recurrent_neural_networks" class="header-anchor">Recurrent Neural
+        Networks</a></h2>
+    <p>A network that performs well with sequential data is an RNN. By transferring data from the previous input&#39;s
+      hidden layer to the current input&#39;s hidden layer, they take advantage of the ordering information. As a
+      result, the model can have historical context. </p>
+    <p>For instance, one must be aware of the words that came before a word in order to comprehend its context in a
+      sentence. In order to deal with this, the inputs are organized according to their sequence, and the model
+      additionally receives data from the preceding hidden layer each time an input is sent to it. </p>
+    <p>The similar idea applies to sequences of DNA and RNA in biology, where the orderly arrangement of nucleotides or
+      amino acids is of relevance.</p>
+    <hr />
+    <p><img src="../extras/dnns/rnns.png" alt="" /></p>
+    <hr />
+    <p>But occasionally, historical data isn&#39;t the only knowledge the model can use to its advantage. The model
+      could comprehend the context much more if it had access to future data. If a model understood the words that came
+      before a word when examining it again in a phrase, it might be able to understand the word&#39;s context better.
+    </p>
+    <p>As a result, bidirectional recurrent neural networks &#40;RNNs&#41; were developed, including an extra layer that
+      carried information directed from the current input to the subsequent input. When trained, this enables models to
+      integrate into the output a hidden layer that gets data from earlier levels and a hidden layer that gets data from
+      later layers.</p>
+    <h2 id="convolutional_neural_networks"><a href="#convolutional_neural_networks" class="header-anchor">Convolutional
+        Neural Networks</a></h2>
+    <p>CNNs are frequently applied to photos where the data-related placement of neighboring pixels is relevant. CNNs
+      are a particular kind of feed-forward artificial neural network, with neuronal connection patterns modeled after
+      the structure of the visual cortex. This neural network is made up of several receptive field layers.</p>
+    <p>Consider an octagon as an example. A recognized pattern can be dissected and reconstructed using CNN&#39;s
+      multiple layers feature, allowing it to be recognized as an octagon. The model discovers in the first layer that
+      diagonal, horizontal, and vertical lines are the octagon&#39;s most fundamental shapes. The model then learns how
+      to combine these forms to create the octagon using each successive layer.</p>
+    <hr />
+    <p><img src="../extras/dnns/cnns.png" alt="" /></p>
+    <hr />
+    <p>A CNN learns several kernel weights in order to function. The hidden layer&#39;s output will have a high signal
+      when a particular feature matching the kernel is identified by the kernel matrix, which functions as a sliding
+      window scanning the image. The model aims to train these kernels so that every one of them can identify a distinct
+      feature that is pertinent to the input&#39;s classification.</p>
+    <hr />
+    <p><img src="../extras/dnns/cnns2.png" alt="" /></p>
+    <hr />
+    <p>The result of every convolution layer is a collection of photos since it has to train several kernels. The
+      outcome of each image, or feature map, is obtained by scanning it with the corresponding kernel. Afterwards,
+      pooling is typically utilized to minimize the feature space. The feature maps are combined and fresh kernels are
+      taught for each succeeding convolution layer. </p>
+    <hr />
+    <p><img src="../extras/dnns/cnns3.png" alt="" /></p>
+    <hr />
+    <h2 id="lstm_or_the_long_short-term_memory_network"><a href="#lstm_or_the_long_short-term_memory_network"
+        class="header-anchor">LSTM or The Long Short-Term Memory Network</a></h2>
+    <p>Certainly&#33; The Long Short-Term Memory &#40;LSTM&#41; network is a type of recurrent neural network
+      &#40;RNN&#41; architecture designed to capture and process long-term dependencies in sequential data. It addresses
+      the vanishing gradient problem often encountered in traditional RNNs.</p>
+    <p>Let&#39;s break down the math behind an LSTM unit. An LSTM unit has several components, including a cell state,
+      input gate, forget gate, output gate, and various matrices and vectors.</p>
+    <ol>
+      <li>
+        <p><strong>Input Gate:</strong> The input gate determines how much of the new information should be stored in
+          the cell state.</p>
+      </li>
+    </ol>
+    \[ i_t = \sigma(W_{ii}x_t + b_{ii} + W_{hi}h_{t-1} + b_{hi}) \]
+    <ol start="2">
+      <li>
+        <p><strong>Forget Gate:</strong> The forget gate decides what information from the cell state should be thrown
+          away.</p>
+      </li>
+    </ol>
+    \[ f_t = \sigma(W_{if}x_t + b_{if} + W_{hf}h_{t-1} + b_{hf}) \]
+    <ol start="3">
+      <li>
+        <p><strong>Cell State:</strong> The cell state is updated based on the input, forget, and previous cell state.
+        </p>
+      </li>
+    </ol>
+    \[ g_t = \tanh(W_{ig}x_t + b_{ig} + W_{hg}h_{t-1} + b_{hg}) \]
+    \[ c_t = f_tc_{t-1} + i_tg_t \]
+    <ol start="4">
+      <li>
+        <p><strong>Output Gate:</strong> The output gate decides what the next hidden state should be.</p>
+      </li>
+    </ol>
+    \[ o_t = \sigma(W_{io}x_t + b_{io} + W_{ho}h_{t-1} + b_{ho}) \]
+    \[ h_t = o_t \tanh(c_t) \]
+    <p>Here: \((x_t)\) is the input at time \((t)\), \((h_{t-1})\) is the hidden state from the previous time step,
+      \((\sigma)\) is the sigmoid activation function, \((\tanh)\) is the hyperbolic tangent activation function,
+      \((W)\) and \((b)\) are weight matrices and bias vectors.</p>
+    <p>These equations describe how the LSTM unit updates its cell state and hidden state over time, allowing it to
+      capture long-term dependencies in sequential data. The gates control the flow of information, and the cell state
+      acts as a memory that can be updated or forgotten based on the input and previous states.</p>
+    <p>The image contains a set of equations related to LSTM &#40;Long Short-Term Memory&#41; neural networks, which are
+      a type of recurrent neural network &#40;RNN&#41; architecture used in the field of deep learning. Here are the
+      equations in LaTeX format:</p>
+    \[ \Gamma_u = \sigma(W_{ua}a^{\langle t-1 \rangle} + W_{ux}x^{t} + b_u) \]
+    \[ \Gamma_f = \sigma(W_{fa}a^{\langle t-1 \rangle} + W_{fx}x^{\langle t \rangle} + b_f) \]
+    \[ \Gamma_o = \sigma(W_{oa}a^{\langle t-1 \rangle} + W_{ox}x^{\langle t \rangle} + b_o) \]
+    \[ \tilde{c}^{\langle t \rangle} = \tanh(W_{ca}a^{\langle t-1 \rangle} + W_{cx}x^{\langle t \rangle} + b_c) \]
+    \[ c^{\langle t \rangle} = \Gamma_u \odot \tilde{c}^{\langle t \rangle} + \Gamma_f \odot c^{\langle t-1 \rangle} \]
+    \[ a^{\langle t \rangle} = \Gamma_o \odot \tanh(c^{\langle t \rangle}) \]
+    <p>These equations represent the various gates and state updates within an LSTM cell, including the update gate
+      &#40;\(\Gamma_u\)&#41;, forget gate &#40;\(\Gamma_f\)&#41;, output gate &#40;\(\Gamma_o\)&#41;, candidate cell
+      state &#40;\(\tilde{c}^{\langle t \rangle}\)&#41;, cell state &#40;\(c^{\langle t \rangle}\)&#41;, and the hidden
+      state &#40;\(a^{\langle t \rangle}\)&#41;. The \(\sigma\) represents the sigmoid activation function, and
+      \(\odot\) denotes element-wise multiplication &#40;Hadamard product&#41;.</p>
+    <div class="page-foot">
+      <div class="copyright">
+        <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo"
+              src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+        ©️ Last modified: March 04, 2024. Website built with <a
+          href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia
+          programming language</a>.
+      </div>
+    </div>
+  </div><!-- CONTENT ENDS HERE -->
+
+  <script src="/libs/katex/katex.min.js"></script>
+  <script src="/libs/katex/contrib/auto-render.min.js"></script>
+  <script>
+    renderMathInElement(document.body)
+
+  </script>
+
+
+
+</body>
+
+</html>

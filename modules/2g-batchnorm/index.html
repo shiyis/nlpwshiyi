@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/libs/katex/katex.min.css">
+
+  <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700"
+    type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/celeste.min.css">
+
+  <link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+  <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png">
+
+
+  <title>NLPwShiyi - Natural Language Processing with Shiyi</title>
+</head>
+
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+  <nav id="navbar" class="navigation" role="navigation">
+    <input id="toggle1" type="checkbox" />
+    <label class="hamburger1" for="toggle1">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+
+    <nav class="topnav mx-auto" id="myTopnav">
+      <div class="dropdown">
+        <button class="dropbtn">Comp Ling
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/1a-info-theory">Information Theory</a>
+          <a href="/modules/1b-phil-of-mind">Philosophy of Mind</a>
+          <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+          <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+          <a href="/modules/1e-mutual-info">Mutual Information</a>
+          <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+          <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+          <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+          <a href="/modules/1i-cryptanalysis">Cryptography</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">DL / NLP
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/2a-mdn-nlp">Modern NLP</a>
+          <a href="/modules/2b-markov-processes">Markov Processes</a>
+          <a href="/modules/2c-word2vec">Word2Vec</a>
+          <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+          <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+          <a href="/modules/2f-loss-functions">Stochastic GD</a>
+          <a href="/modules/2g-batchnorm">Batchnorm</a>
+          <a href="/modules/2h-dropout">Dropout</a>
+          <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+        </div>
+      </div>
+      <a href="/" class="active">Intro </a>
+      <div class="dropdown">
+        <button class="dropbtn">SOTA
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/3a-VAE">Variational Autoencoders</a>
+          <a href="/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+          <a href="/modules/3c-transformers">Transformers</a>
+          <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Hands-on
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+          <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+          <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+          <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a>
+          <a href="/modules/4e-c4fe-tbip">C4FE-TBIP</a>
+          <a href="/modules/4f-etl-job">DE: Serverless ETL</a>
+
+        </div>
+      </div>
+    </nav>
+  </nav>
+
+  <!-- Content appended here -->
+  <div class="franklin-content">
+    <h1 id="batchnorm_or_batch_renormalization"><a href="#batchnorm_or_batch_renormalization"
+        class="header-anchor">Batchnorm or Batch Renormalization</a></h1>
+    <p><strong>Table of Contents</strong></p>
+    <div class="franklin-toc">
+      <ol>
+        <li><a href="#batchnorm">Batchnorm</a></li>
+        <li><a href="#data_normalization">Data Normalization </a>
+          <ol>
+            <li><a href="#step_1_understand_the_need_for_normalization">Step 1: Understand the Need for
+                Normalization</a></li>
+            <li><a href="#step_2_compute_mean_and_standard_deviation_for_each_feature">Step 2: Compute Mean and Standard
+                Deviation for Each Feature</a></li>
+            <li><a href="#step_3_standardize_each_feature">Step 3: Standardize Each Feature</a></li>
+            <li><a href="#step_4_understand_the_result">Step 4: Understand the Result</a></li>
+            <li><a href="#step_5_apply_normalization_during_training_and_inference">Step 5: Apply Normalization During
+                Training and Inference</a></li>
+            <li><a href="#example_in_python_using_scikit-learn">Example in Python &#40;Using Scikit-Learn&#41;</a></li>
+          </ol>
+        </li>
+        <li><a href="#batch_normalization_process">Batch Normalization Process </a></li>
+        <li><a href="#performing_back-propagation_for_batch_normalization_at_inferenceruntime">Performing
+            Back-Propagation for Batch Normalization at Inference/Runtime </a>
+          <ol>
+            <li><a href="#forward_pass">Forward Pass</a>
+              <ol>
+                <li><a href="#input_transformation">
+                    <ol>
+                      <li>
+                        <p>Input Transformation</p>
+                      </li>
+                    </ol>
+                  </a></li>
+              </ol>
+            </li>
+            <li><a href="#backward_pass">Backward Pass</a>
+              <ol>
+                <li><a href="#gradients_with_respect_to_z">
+                    <ol>
+                      <li>
+                        <p>Gradients with Respect to \(( z )\)</p>
+                      </li>
+                    </ol>
+                  </a></li>
+                <li><a href="#ol_start2_gradients_with_respect_to_gamma_and_beta">
+                    <ol start="2">
+                      <li>
+                        <p>Gradients with Respect to \(( \gamma )\) and \(( \beta )\)</p>
+                      </li>
+                    </ol>
+                  </a></li>
+                <li><a href="#ol_start3_gradients_with_respect_to_hatx">
+                    <ol start="3">
+                      <li>
+                        <p>Gradients with Respect to \(( \hat{x} )\)</p>
+                      </li>
+                    </ol>
+                  </a></li>
+                <li><a href="#ol_start4_gradients_with_respect_to_sigma2_and_mu">
+                    <ol start="4">
+                      <li>
+                        <p>Gradients with Respect to \(( \sigma^2 )\) and \(( \mu )\)</p>
+                      </li>
+                    </ol>
+                  </a></li>
+                <li><a href="#ol_start5_gradients_with_respect_to_x">
+                    <ol start="5">
+                      <li>
+                        <p>Gradients with Respect to \(( x )\)</p>
+                      </li>
+                    </ol>
+                  </a></li>
+              </ol>
+            </li>
+            <li><a href="#update_parameters">Update Parameters</a></li>
+            <li><a href="#in_the_context_of_a_batch_normalized_set_of_weights">In The Context of A Batch Normalized Set
+                of Weights </a></li>
+          </ol>
+        </li>
+        <li><a href="#the_comparison_between_these_two_scenarios">The Comparison Between These Two Scenarios</a></li>
+      </ol>
+    </div>
+    <h2 id="batchnorm"><a href="#batchnorm" class="header-anchor">Batchnorm</a></h2>
+    <p>Machine learning enthusiasts are looking for smarter ways to craft <a href="">weight initialization</a>
+      techniques. Batch re-normalization was introduced to force the activation statistics during the forward pass by
+      re-normalizing the initial weights. </p>
+    <p>To quote,</p>
+    <p>&quot;Training Deep Neural Network is complicated by the fact that the distribution of each layer&#39;s inputs
+      changes during training, as the parameters of the previous layers change. This slows down the training by
+      requiring lower learning rates and careful parameter initialization...&quot;</p>
+    <h2 id="data_normalization"><a href="#data_normalization" class="header-anchor">Data Normalization </a></h2>
+    <p>Weight initialization strategies aim to preserve the activation variance constant across layers, under the
+      initial assumption that the input feature variances are the same.</p>
+    <p>Normalization, specifically standardizing input data feature-wise, is a common preprocessing step in machine
+      learning to ensure that different features have comparable scales. This process helps algorithms converge faster
+      and makes models less sensitive to the scale of input features. Let&#39;s break down the steps involved in
+      standardizing input data feature-wise:</p>
+    <h3 id="step_1_understand_the_need_for_normalization"><a href="#step_1_understand_the_need_for_normalization"
+        class="header-anchor">Step 1: Understand the Need for Normalization</a></h3>
+    <p>Different features in your dataset might have different scales, which can lead to issues when training machine
+      learning models. For example, features with larger scales might dominate the learning process, making it difficult
+      for the model to effectively use information from features with smaller scales. Normalization addresses this by
+      scaling all features to have similar ranges.</p>
+    <h3 id="step_2_compute_mean_and_standard_deviation_for_each_feature"><a
+        href="#step_2_compute_mean_and_standard_deviation_for_each_feature" class="header-anchor">Step 2: Compute Mean
+        and Standard Deviation for Each Feature</a></h3>
+    <p>For each feature, calculate its mean &#41;\(\mu\)&#41; and standard deviation &#41;\(\sigma\)&#41; from the
+      entire dataset. These values will be used to standardize the data.</p>
+    \[ \mu_i = \frac{1}{m} \sum_{j=1}^{m} x_{ij} \]
+    \[ \sigma_i = \sqrt{\frac{1}{m} \sum_{j=1}^{m} (x_{ij} - \mu_i)^2} \]
+    <p>Here, \((x_{ij})\) represents the value of feature \((i)\) for the \((j)\)-th data point, and \((m)\) is the
+      number of data points.</p>
+    <h3 id="step_3_standardize_each_feature"><a href="#step_3_standardize_each_feature" class="header-anchor">Step 3:
+        Standardize Each Feature</a></h3>
+    <p>For each feature \((i)\) and each data point \((j(\), apply the standardization formula:</p>
+    \[ x'_{ij} = \frac{x_{ij} - \mu_i}{\sigma_i} \]
+    <p>Here, \((x'_{ij})\) is the standardized value of feature \((i)\) for the \((j)\)-th data point.</p>
+    <h3 id="step_4_understand_the_result"><a href="#step_4_understand_the_result" class="header-anchor">Step 4:
+        Understand the Result</a></h3>
+    <p>After normalization, each feature will have a mean of 0 and a standard deviation of 1. This ensures that all
+      features are centered around zero and have a comparable scale.</p>
+    <h3 id="step_5_apply_normalization_during_training_and_inference"><a
+        href="#step_5_apply_normalization_during_training_and_inference" class="header-anchor">Step 5: Apply
+        Normalization During Training and Inference</a></h3>
+    <p>When training a machine learning model, normalize the input features using the computed mean and standard
+      deviation from the training set. During inference, use the same mean and standard deviation values for
+      normalization.</p>
+    <h3 id="example_in_python_using_scikit-learn"><a href="#example_in_python_using_scikit-learn"
+        class="header-anchor">Example in Python &#40;Using Scikit-Learn&#41;</a></h3>
+    <pre><code class="language-python">from sklearn.preprocessing import StandardScaler
+
+# Assuming X is your input data matrix
+scaler &#61; StandardScaler&#40;&#41;
+X_normalized &#61; scaler.fit_transform&#40;X&#41;</code></pre>
+    <p>In this example, <code>X_normalized</code> will contain the standardized version of your input data.</p>
+    <p>Normalization is an essential preprocessing step, especially when using algorithms that are sensitive to the
+      scale of input features, such as gradient-based optimization methods in neural networks or support vector
+      machines.</p>
+    <p>Or in a more simplified notation, we see in visualization format that,</p>
+    <p><img src="../extras/batch_norm/stndrd_scaling.png" alt="" /></p>
+    <h2 id="batch_normalization_process"><a href="#batch_normalization_process" class="header-anchor">Batch
+        Normalization Process </a></h2>
+    <p>Below explains the batch normalization process used in machine learning, specifically in the context of neural
+      networks. Here&#39;s a step-by-step breakdown:</p>
+    <ul>
+      <li>
+        <p><strong>Batch Normalization</strong>: A technique to improve the speed, performance, and stability of
+          artificial neural networks.</p>
+      </li>
+      <li>
+        <p><strong>Mini-batch</strong>: A subset of the training data, denoted by \(\mathbf{u}_b \in \mathbb{R}^D\) for
+          \(b = 1, \ldots, B\), where \(B\) is the batch size and \(D\) is the number of features.</p>
+      </li>
+      <li>
+        <p><strong>Mean and Variance Calculation</strong>:</p>
+        <ul>
+          <li>
+            <p>Mean: \(\hat{\mu}_{\text{batch}} = \frac{1}{B} \sum_{b=1}^B \mathbf{u}_b\)</p>
+          </li>
+          <li>
+            <p>Variance: \(\hat{\sigma}^2_{\text{batch}} = \frac{1}{B} \sum_{b=1}^B (\mathbf{u}_b -
+              \hat{\mu}_{\text{batch}})^2\)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Component-wise Normalization</strong>: The input \(\mathbf{u}_b\) is normalized to
+          \(\hat{\mathbf{u}}_b\) using the computed mean and variance:</p>
+        <ul>
+          <li>
+            <p>\(\hat{\mathbf{u}}_b = \frac{(\mathbf{u}_b -
+              \hat{\mu}_{\text{batch}})}{\sqrt{\hat{\sigma}^2_{\text{batch}} + \epsilon}}\)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Standardization</strong>: The normalized value \(\hat{\mathbf{u}}_b\) is then linearly transformed to
+          \(y_b\):</p>
+        <ul>
+          <li>
+            <p>\(y_b = \gamma \odot \hat{\mathbf{u}}_b + \beta\)</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Parameters</strong>: \(\gamma\) and \(\beta\) are learnable parameters of the model, and \(y_b\) is
+          the output after applying batch normalization.</p>
+      </li>
+    </ul>
+    <p>This process is used to normalize the inputs of each layer so that they have a mean of zero and a variance of
+      one, which helps to stabilize the learning process and reduce the number of training epochs required. The
+      \(\epsilon\) is a small constant added for numerical stability to avoid division by zero.</p>
+    <h2 id="performing_back-propagation_for_batch_normalization_at_inferenceruntime"><a
+        href="#performing_back-propagation_for_batch_normalization_at_inferenceruntime" class="header-anchor">Performing
+        Back-Propagation for Batch Normalization at Inference/Runtime </a></h2>
+    <p>Performing backpropagation with batch normalization involves computing gradients with respect to the input, scale
+      &#40;gamma&#41;, and shift &#40;beta&#41; parameters. Let&#39;s break down the steps for backpropagation through a
+      component-wise affine transformation, considering batch normalization.</p>
+    <p>Assume you have input \(( x )\), scale parameter \(( \gamma )\), shift parameter \(( \beta )\), normalized input
+      \(( \hat{x} )\), and batch statistics \(( \mu )\) &#40;mean&#41; and \(( \sigma^2 )\) &#40;variance&#41;.</p>
+    <h3 id="forward_pass"><a href="#forward_pass" class="header-anchor">Forward Pass</a></h3>
+    <h4 id="input_transformation"><a href="#input_transformation" class="header-anchor">
+        <ol>
+          <li>
+            <p>Input Transformation</p>
+          </li>
+        </ol>
+      </a></h4>
+    \[ \text{Affine Transformation } z = \gamma \hat{x} + \beta \]
+    <ul>
+      <li>
+        <p>\(( z )\) is the output of the component-wise affine transformation.</p>
+      </li>
+    </ul>
+    <h3 id="backward_pass"><a href="#backward_pass" class="header-anchor">Backward Pass</a></h3>
+    <h4 id="gradients_with_respect_to_z"><a href="#gradients_with_respect_to_z" class="header-anchor">
+        <ol>
+          <li>
+            <p>Gradients with Respect to \(( z )\)</p>
+          </li>
+        </ol>
+      </a></h4>
+    \[ \frac{\partial L}{\partial z} \]
+    <ul>
+      <li>
+        <p>Compute the gradient of the loss \(( L )\) with respect to \(( z )\).</p>
+      </li>
+    </ul>
+    <h4 id="ol_start2_gradients_with_respect_to_gamma_and_beta"><a
+        href="#ol_start2_gradients_with_respect_to_gamma_and_beta" class="header-anchor">
+        <ol start="2">
+          <li>
+            <p>Gradients with Respect to \(( \gamma )\) and \(( \beta )\)</p>
+          </li>
+        </ol>
+      </a></h4>
+    \[ \frac{\partial L}{\partial \gamma} = \sum \frac{\partial L}{\partial z} \cdot \hat{x} \]
+    \[ \frac{\partial L}{\partial \beta} = \sum \frac{\partial L}{\partial z} \]
+    <h4 id="ol_start3_gradients_with_respect_to_hatx"><a href="#ol_start3_gradients_with_respect_to_hatx"
+        class="header-anchor">
+        <ol start="3">
+          <li>
+            <p>Gradients with Respect to \(( \hat{x} )\)</p>
+          </li>
+        </ol>
+      </a></h4>
+    \[ \frac{\partial L}{\partial \hat{x}} = \frac{\partial L}{\partial z} \cdot \gamma \]
+    <h4 id="ol_start4_gradients_with_respect_to_sigma2_and_mu"><a
+        href="#ol_start4_gradients_with_respect_to_sigma2_and_mu" class="header-anchor">
+        <ol start="4">
+          <li>
+            <p>Gradients with Respect to \(( \sigma^2 )\) and \(( \mu )\)</p>
+          </li>
+        </ol>
+      </a></h4>
+    \[ \frac{\partial L}{\partial \sigma^2} = \sum \frac{\partial L}{\partial z} \cdot (\hat{x} - \mu) \cdot
+    \frac{-1}{2} \cdot (\sigma^2 + \epsilon)^{-\frac{3}{2}} \]
+    \[ \frac{\partial L}{\partial \mu} = \sum \frac{\partial L}{\partial z} \cdot \frac{-1}{\sqrt{\sigma^2 + \epsilon}}
+    + \frac{\partial L}{\partial \sigma^2} \cdot \frac{\sum -2 (\hat{x} - \mu)}{m} \]
+    <h4 id="ol_start5_gradients_with_respect_to_x"><a href="#ol_start5_gradients_with_respect_to_x"
+        class="header-anchor">
+        <ol start="5">
+          <li>
+            <p>Gradients with Respect to \(( x )\)</p>
+          </li>
+        </ol>
+      </a></h4>
+    \[ \frac{\partial L}{\partial x} = \frac{\partial L}{\partial \hat{x}} \cdot \frac{1}{\sqrt{\sigma^2 + \epsilon}} +
+    \frac{\partial L}{\partial \sigma^2} \cdot \frac{2 (\hat{x} - \mu)}{m} + \frac{\partial L}{\partial \mu} \cdot
+    \frac{1}{m} \]
+    <h3 id="update_parameters"><a href="#update_parameters" class="header-anchor">Update Parameters</a></h3>
+    <p>Update the parameters using the computed gradients during backpropagation.</p>
+    <pre><code class="language-python"># Assuming gamma, beta, x, mean, variance, and gradient_loss are known
+# epsilon is a small constant for numerical stability
+
+# Gradients
+dL_dz &#61; gradient_loss
+dL_dgamma &#61; np.sum&#40;dL_dz * normalized_x, axis&#61;0&#41;
+dL_dbeta &#61; np.sum&#40;dL_dz, axis&#61;0&#41;
+dL_dnormalized_x &#61; dL_dz * gamma
+
+# Gradients for variance and mean
+dL_dvariance &#61; np.sum&#40;dL_dz * &#40;x - mean&#41; * &#40;-1 / 2&#41; * &#40;variance &#43; epsilon&#41;**&#40;-3 / 2&#41;, axis&#61;0&#41;
+dL_dmean &#61; np.sum&#40;dL_dz * &#40;-1 / np.sqrt&#40;variance &#43; epsilon&#41;&#41;, axis&#61;0&#41; &#43; dL_dvariance * np.sum&#40;-2 * &#40;x - mean&#41;&#41; / len&#40;x&#41;
+
+# Gradient for x
+dL_dx &#61; dL_dnormalized_x / np.sqrt&#40;variance &#43; epsilon&#41; &#43; dL_dvariance * 2 * &#40;x - mean&#41; / len&#40;x&#41; &#43; dL_dmean / len&#40;x&#41;
+
+# Update gamma and beta
+gamma -&#61; learning_rate * dL_dgamma
+beta -&#61; learning_rate * dL_dbeta
+
+# Update other parameters as needed &#40;e.g., in the case of an optimizer&#41;</code></pre>
+    <p>Note: This is a simplified explanation, and actual implementations might involve additional considerations, such
+      as the choice of optimizer, learning rate scheduling, and the specific architecture of your neural network.</p>
+    <h3 id="in_the_context_of_a_batch_normalized_set_of_weights"><a
+        href="#in_the_context_of_a_batch_normalized_set_of_weights" class="header-anchor">In The Context of A Batch
+        Normalized Set of Weights </a></h3>
+    <p>Let&#39;s break down the components of this expression:</p>
+    <ul>
+      <li>
+        <p>\(( y )\): The output of the batch normalization layer.</p>
+      </li>
+      <li>
+        <p>\(( \gamma )\): Scale parameter.</p>
+      </li>
+      <li>
+        <p>\(( u )\): The input to the batch normalization layer.</p>
+      </li>
+      <li>
+        <p>\(( \mu_{\text{stat}} )\): Batch mean.</p>
+      </li>
+      <li>
+        <p>\(( \sigma_{\text{stat}}^2 )\): Batch variance.</p>
+      </li>
+      <li>
+        <p>\(( \epsilon )\): A small constant for numerical stability.</p>
+      </li>
+      <li>
+        <p>\(( \beta )\): Shift parameter.</p>
+      </li>
+    </ul>
+    <p>Here&#39;s the breakdown:</p>
+    \[ y = \gamma \odot \left( \frac{u - \mu_{\text{stat}}}{\sqrt{\sigma_{\text{stat}}^2 + \epsilon}} \right) + \beta \]
+    <ul>
+      <li>
+        <p>\(( \odot )\) represents element-wise &#40;component-wise&#41; multiplication.</p>
+      </li>
+      <li>
+        <p>\(( \frac{u - \mu_{\text{stat}}}{\sqrt{\sigma_{\text{stat}}^2 + \epsilon}} )\): Normalizing the input \(( u
+          )\) by subtracting the batch mean \(( \mu_{\text{stat}} )\) and dividing by the square root of the batch
+          variance \(( \sigma_{\text{stat}}^2 + \epsilon )\) for numerical stability.</p>
+      </li>
+      <li>
+        <p>\(( \gamma \odot )\): Scaling the normalized input by the learnable scale parameter \(( \gamma )\).</p>
+      </li>
+      <li>
+        <p>\(( + \beta )\): Shifting the scaled and normalized input by the learnable shift parameter \(( \beta )\).</p>
+      </li>
+    </ul>
+    <p>This formulation is characteristic of batch normalization, a technique used to improve the training of deep
+      neural networks by normalizing the input of each layer. The scale and shift parameters \(( \gamma )\) and \((
+      \beta )\) are learnable parameters that allow the model to adjust the normalization based on the data.</p>
+    <p>During training, \(( \mu_{\text{stat}} )\) and \(( \sigma_{\text{stat}}^2 )\) are computed based on the
+      statistics of the current mini-batch, and during inference, running averages of these statistics are typically
+      used.</p>
+    <h2 id="the_comparison_between_these_two_scenarios"><a href="#the_comparison_between_these_two_scenarios"
+        class="header-anchor">The Comparison Between These Two Scenarios</a></h2>
+    <p>The expression you&#39;ve provided is actually very similar to the general form of the batch normalization layer
+      that I explained earlier. Let&#39;s break down the similarities and differences:</p>
+    <p>Your expression:</p>
+    \[ y = \gamma \odot \left( \frac{u - \mu_{\text{stat}}}{\sqrt{\sigma_{\text{stat}}^2 + \epsilon}} \right) + \beta \]
+    <p>General batch normalization expression:</p>
+    \[ z = \gamma \hat{x} + \beta \]
+    <p>Here, \(( y )\) and \(( z )\) play the same role as the output of the batch normalization layer. Both expressions
+      involve scaling \(( \gamma )\) and shifting \(( \beta )\) the normalized input. Let&#39;s break down the terms:
+    </p>
+    <ul>
+      <li>
+        <p>\(( \frac{u - \mu_{\text{stat}}}{\sqrt{\sigma_{\text{stat}}^2 + \epsilon}} )\): This is the normalized input,
+          which is the result of subtracting the batch mean \(( \mu_{\text{stat}} )\) and dividing by the square root of
+          the batch variance \(( \sigma_{\text{stat}}^2 + \epsilon )\).</p>
+      </li>
+      <li>
+        <p>\(( \gamma )\): This is the scale parameter, which is multiplied element-wise with the normalized input.</p>
+      </li>
+      <li>
+        <p>\(( \beta )\): This is the shift parameter, which is added element-wise to the scaled and normalized input.
+        </p>
+      </li>
+    </ul>
+    <p>The key differences are in the notation used, but conceptually, they represent the same idea of normalizing the
+      input, scaling it, and then shifting it. Both formulations are part of the batch normalization process in neural
+      networks, where the goal is to stabilize and speed up training by normalizing the input of each layer. The
+      specific notation and parameter names might vary, but the underlying principles are consistent.</p>
+    <div class="page-foot">
+      <div class="copyright">
+        <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo"
+              src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+        ©️ Last modified: February 26, 2024. Website built with <a
+          href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia
+          programming language</a>.
+      </div>
+    </div>
+  </div><!-- CONTENT ENDS HERE -->
+
+  <script src="/libs/katex/katex.min.js"></script>
+  <script src="/libs/katex/contrib/auto-render.min.js"></script>
+  <script>
+    renderMathInElement(document.body)
+
+  </script>
+
+
+
+  <script src="/libs/highlight/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.configure({
+      tabReplace: '    '
+    });
+
+  </script>
+
+
+</body>
+
+</html>

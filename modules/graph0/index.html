@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/celeste.min.css">
+
+<link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+<!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png">
+
+
+   <title>NLPwShiyi - Natural Language Processing with Shiyi</title>  
+</head>
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+<nav id="navbar" class="navigation" role="navigation">
+  <input id="toggle1" type="checkbox" />
+  <label class="hamburger1" for="toggle1">
+    <div class="top"></div>
+    <div class="meat"></div>
+    <div class="bottom"></div>
+  </label>
+
+  <nav class="topnav mx-auto" id="myTopnav">
+    <div class="dropdown">
+      <button class="dropbtn">Comp Ling
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/modules/1a-info-theory">Information Theory</a>
+        <a href="/modules/1b-phil-of-mind">Philosophy of Mind</a>
+        <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+        <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+        <a href="/modules/1e-mutual-info">Mutual Information</a>
+        <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+        <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+        <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+        <a href="/modules/1i-cryptanalysis">Cryptography</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >DL / NLP
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/modules/2a-mdn-nlp">Modern NLP</a>
+        <a href="/modules/2b-markov-processes">Markov Processes</a>
+        <a href="/modules/2c-word2vec">Word2Vec</a>
+        <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+        <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+        <a href="/modules/2f-loss-functions">Stochastic GD</a>
+        <a href="/modules/2g-batchnorm">Batchnorm</a>
+        <a href="/modules/2h-dropout">Dropout</a>
+        <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+      </div>
+    </div>
+    <a href="/" class="active">Intro </a>
+    <div class="dropdown">
+      <button class="dropbtn" >SOTA
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/modules/3a-VAE">Variational Autoencoders</a>
+        <a href="/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+        <a href="/modules/3c-transformers">Transformers</a>
+        <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >Hands-on
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+        <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+        <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+        <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a>
+        <a href="/modules/4e-c4fe-tbip">C4FE-TBIP</a>
+        <a href="/modules/4f-etl-job">DE: Serverless ETL</a>
+
+      </div>
+    </div>
+  </nav>
+</nav>
+
+<!-- Content appended here -->
+<div class="franklin-content"><h1 id="module_-_deep_learning_on_graphs"><a href="#module_-_deep_learning_on_graphs" class="header-anchor">Module - Deep Learning on graphs </a></h1>
+<p><strong>Table of Contents</strong></p>
+<div class="franklin-toc"><ol><li><a href="#introduction">Introduction</a></li><li><a href="#node_embedding">Node embedding</a></li><li><a href="#signal_processing_on_graphs">Signal processing on graphs</a></li><li><a href="#graph_embedding">Graph embedding</a></li><li><a href="#more_advanced_material">More advanced material</a></li></ol></div>
+<h2 id="introduction"><a href="#introduction" class="header-anchor">Introduction</a></h2>
+<ul>
+<li><p>Slides for a short <a href="https://dataflowr.github.io/slides/deep_graph_0.html">overview</a> </p>
+</li>
+</ul>
+<h2 id="node_embedding"><a href="#node_embedding" class="header-anchor">Node embedding</a></h2>
+<ul>
+<li><p>Course: <a href="https://dataflowr.github.io/slides/deep_graph_1.html">Node embedding</a></p>
+</li>
+</ul>
+<h2 id="signal_processing_on_graphs"><a href="#signal_processing_on_graphs" class="header-anchor">Signal processing on graphs</a></h2>
+<ul>
+<li><p>Course: <a href="https://dataflowr.github.io/slides/deep_graph_2.html">Signal processing on graphs</a></p>
+</li>
+<li><p>Related post: <a href="https://dataflowr.github.io/website/modules/extras/GCN_inductivebias_spectral/">Inductive bias in GCN: a spectral perspective</a></p>
+</li>
+</ul>
+<h2 id="graph_embedding"><a href="#graph_embedding" class="header-anchor">Graph embedding</a></h2>
+<ul>
+<li><p>Course:<a href="https://dataflowr.github.io/slides/deep_graph_3.html">Graph embedding</a></p>
+</li>
+<li><p>Related post: <a href="https://dataflowr.github.io/website/modules/extras/invariant_equivariant/">Invariant and equivariant layers with applications to GNN, PointNet and Transformers</a></p>
+</li>
+</ul>
+<h2 id="more_advanced_material"><a href="#more_advanced_material" class="header-anchor">More advanced material</a></h2>
+<ul>
+<li><p><a href="https://dataflowr.github.io/website/modules/extras/graph_invariant">Exploiting Graph Invariants in Deep Learning</a></p>
+</li>
+</ul>
+<div class="page-foot">
+    <div class="copyright">
+      <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+       ©️ Last modified: January 28, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+    </div>
+  </div>
+  </div><!-- CONTENT ENDS HERE -->
+    
+    
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/libs/katex/katex.min.css">
+
+  <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+
+  <link rel="stylesheet" href="/css/franklin.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700"
+    type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/celeste.min.css">
+
+  <link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+  <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png">
+
+
+  <title>NLPwShiyi - Natural Language Processing with Shiyi</title>
+</head>
+
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+  <nav id="navbar" class="navigation" role="navigation">
+    <input id="toggle1" type="checkbox" />
+    <label class="hamburger1" for="toggle1">
+      <div class="top"></div>
+      <div class="meat"></div>
+      <div class="bottom"></div>
+    </label>
+
+    <nav class="topnav mx-auto" id="myTopnav">
+      <div class="dropdown">
+        <button class="dropbtn">Comp Ling
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/1a-info-theory">Information Theory</a>
+          <a href="/modules/1b-phil-of-mind">Philosophy of Mind</a>
+          <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+          <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+          <a href="/modules/1e-mutual-info">Mutual Information</a>
+          <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+          <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+          <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+          <a href="/modules/1i-cryptanalysis">Cryptography</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">DL / NLP
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/2a-mdn-nlp">Modern NLP</a>
+          <a href="/modules/2b-markov-processes">Markov Processes</a>
+          <a href="/modules/2c-word2vec">Word2Vec</a>
+          <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+          <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+          <a href="/modules/2f-loss-functions">Stochastic GD</a>
+          <a href="/modules/2g-batchnorm">Batchnorm</a>
+          <a href="/modules/2h-dropout">Dropout</a>
+          <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+        </div>
+      </div>
+      <a href="/" class="active">Intro </a>
+      <div class="dropdown">
+        <button class="dropbtn">SOTA
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/3a-VAE">Variational Autoencoders</a>
+          <a href="/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+          <a href="/modules/3c-transformers">Transformers</a>
+          <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Hands-on
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+          <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+          <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+          <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a>
+          <a href="/modules/4e-c4fe-tbip">C4FE-TBIP</a>
+          <a href="/modules/4f-etl-job">DE: Serverless ETL</a>
+
+        </div>
+      </div>
+    </nav>
+  </nav>
+
+  <!-- Content appended here -->
+  <div class="franklin-content">
+    <h1 id="automatic_differentiation_vjp_and_more_on_jax"><a href="#automatic_differentiation_vjp_and_more_on_jax"
+        class="header-anchor">Automatic Differentiation: VJP and More on JAX</a></h1>
+    <p><strong>Table of Contents</strong></p>
+    <div class="franklin-toc">
+      <ol>
+        <li><a href="#the_jacobian_matrix">The Jacobian Matrix</a></li>
+        <li><a href="#taylor_expansion">Taylor Expansion </a></li>
+        <li><a href="#chain_composition">Chain composition</a>
+          <ol>
+            <li><a href="#jacobian_vector_product">Jacobian Vector Product </a></li>
+          </ol>
+        </li>
+        <li><a href="#implementation">Implementation</a>
+          <ol>
+            <li><a href="#backprop_the_functional_way">Backprop The Functional Way</a></li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+    <h1 id="autodiff_and_backpropagation"><a href="#autodiff_and_backpropagation" class="header-anchor">Autodiff and
+        Backpropagation</a></h1>
+    <h2 id="the_jacobian_matrix"><a href="#the_jacobian_matrix" class="header-anchor">The Jacobian Matrix</a></h2>
+    <p>Below is the Jacobian matrix of the vector-valued function \(( \mathbf{f}(\mathbf{x}) )\) expressed in terms of
+      partial derivatives and gradients. Let&#39;s break down each part:</p>
+    <ol>
+      <li>
+        <p><strong>Jacobian Matrix Definition:</strong></p>
+        <ul>
+          <li>
+            <p>The Jacobian matrix \(( J_{\mathbf{f}}(\mathbf{x}) )\) is defined as an \(( m \times n )\) matrix, where
+              each entry represents the partial derivative of a component of \(( \mathbf{f} )\) with respect to a
+              variable \(( x_i )\).</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    \[\frac{\partial \mathbf{f}}{\partial \mathbf{x}} = J_{\mathbf{f}}(\mathbf{x}) = \left( \begin{array}{ccc}
+    \frac{\partial f_1}{\partial x_1}&\dots& \frac{\partial f_1}{\partial x_n}\\
+    \vdots&&\vdots\\
+    \frac{\partial f_m}{\partial x_1}&\dots& \frac{\partial f_m}{\partial x_n}
+    \end{array}\right)\]
+    <ol start="2">
+      <li>
+        <p><strong>Vectorized Form:</strong></p>
+        <ul>
+          <li>
+            <p>The Jacobian matrix can also be expressed in a vectorized form by stacking the gradients of the
+              individual components of \(( \mathbf{f} )\).</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    \[\frac{\partial \mathbf{f}}{\partial \mathbf{x}} = J_{\mathbf{f}}(\mathbf{x}) = \left( \frac{\partial
+    \mathbf{f}}{\partial x_1}, \dots, \frac{\partial \mathbf{f}}{\partial x_n} \right)\]
+    <ol start="3">
+      <li>
+        <p><strong>Gradient Representation:</strong></p>
+        <ul>
+          <li>
+            <p>Each row of the Jacobian matrix corresponds to the transpose of the gradient of a component of \((
+              \mathbf{f} )\) with respect to \(( \mathbf{x} )\).</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    \[\frac{\partial \mathbf{f}}{\partial \mathbf{x}} = J_{\mathbf{f}}(\mathbf{x}) = \left( \begin{array}{c}
+    \nabla f_1(\mathbf{x})^T\\
+    \vdots\\
+    \nabla f_m(\mathbf{x})^T
+    \end{array}\right)\]
+    <p>In summary, the Jacobian matrix provides a linear approximation of the function \(( \mathbf{f}(\mathbf{x}) )\)
+      near the point \(( \mathbf{x} )\). It captures the sensitivity of each component of \(( \mathbf{f} )\) to small
+      changes in the variables \(( x_i )\). The vectorized form and the representation using gradients offer different
+      perspectives on the same mathematical concept.</p>
+    <h2 id="taylor_expansion"><a href="#taylor_expansion" class="header-anchor">Taylor Expansion </a></h2>
+    <p>The above expressions involve concepts that are related to the Taylor expansion. Let me clarify the connection
+      between the provided expression and the Taylor expansion.</p>
+    <p>The Taylor expansion of a function \(( \mathbf{f}(\mathbf{x}) )\) around a point \(( \mathbf{x}_0 )\) is given
+      by:</p>
+    \[ \mathbf{f}(\mathbf{x}_0 + \mathbf{v}) = \mathbf{f}(\mathbf{x}_0) + J_{\mathbf{f}}(\mathbf{x}_0)\mathbf{v} +
+    o(\|\mathbf{v}\|) \]
+    <p>Now, let&#39;s relate this to the provided expression:</p>
+    \[ J_{\mathbf{f}}(\mathbf{x}) = \left( \frac{\partial \mathbf{f}}{\partial x_1}, \dots, \frac{\partial
+    \mathbf{f}}{\partial x_n} \right) \]
+    <p>This expression represents the Jacobian matrix \(( J_{\mathbf{f}}(\mathbf{x}) )\) as a row vector of partial
+      derivatives. The Taylor expansion involves the Jacobian matrix \(( J_{\mathbf{f}}(\mathbf{x}_0) )\) &#40;similar
+      to \(( J_{\mathbf{f}}(\mathbf{x}) )\)&#41;, the perturbation vector \(( \mathbf{v} )\) &#40;similar to \(( \Delta
+      \mathbf{x} )\)&#41;, and the higher-order terms \(( o(\|\mathbf{v}\|) )\) &#40;similar to \(( o(h) )\)&#41;.</p>
+    <p>To show the connection more explicitly, consider a small perturbation \(( \Delta \mathbf{x} )\) around the point
+      \(( \mathbf{x}_0 )\):</p>
+    \[ \mathbf{f}(\mathbf{x}_0 + \Delta \mathbf{x}) = \mathbf{f}(\mathbf{x}_0) + J_{\mathbf{f}}(\mathbf{x}_0)\Delta
+    \mathbf{x} + o(\|\Delta \mathbf{x}\|) \]
+    <p>Here, \(( J_{\mathbf{f}}(\mathbf{x}_0) )\) is the Jacobian matrix evaluated at \(( \mathbf{x}_0 )\), and \((
+      \Delta \mathbf{x} )\) is the perturbation vector. This is a form of the Taylor expansion, where the first term is
+      the function value at \(( \mathbf{x}_0 )\), the second term is the linear approximation &#40;Jacobian matrix
+      multiplied by the perturbation&#41;, and the third term represents higher-order terms.</p>
+    <p>So, while the provided expression itself is not the Taylor expansion, it involves the concept of partial
+      derivatives and gradients, which are fundamental to understanding and deriving the Taylor expansion of a
+      multivariate function.</p>
+    <p>Hence the Jacobian \(J_{\mathbf{f}}(\mathbf{x})\in \mathbb{R}^{m\times n}\) is a linear map from \(\mathbb{R}^n\)
+      to \(\mathbb{R}^m\) such that for \(\mathbf{x},\mathbf{v} \in \mathbb{R}^n\) and \(h\in \mathbb{R}\):</p>
+    <div class="nonumber">\[\begin{aligned}
+      \mathbf{f}(\mathbf{x}+h\mathbf{v}) = \mathbf{f}(\mathbf{x}) + h J_{\mathbf{f}}(\mathbf{x})\mathbf{v} +o(h).
+      \end{aligned}\]</div>
+    <p>The term \(J_{\mathbf{f}}(\mathbf{x})\mathbf{v}\in \mathbb{R}^m\) is a Jacobian Vector Product
+      &#40;<strong>JVP</strong>&#41;, corresponding to the interpretation where the Jacobian is the linear map:
+      \(J_{\mathbf{f}}(\mathbf{x}):\mathbb{R}^n \to \mathbb{R}^m\), where
+      \(J_{\mathbf{f}}(\mathbf{x})(\mathbf{v})=J_{\mathbf{f}}(\mathbf{x})\mathbf{v}\).</p>
+    <p>The last part is emphasizing the interpretation of the Jacobian matrix \((J_{\mathbf{f}}(\mathbf{x}))\) as a
+      linear map that transforms vectors. The expression \((J_{\mathbf{f}}(\mathbf{x})\mathbf{v})\) represents the
+      result of applying this linear map to the vector \((\mathbf{v})\).</p>
+    <p>Here&#39;s a breakdown:</p>
+    <ul>
+      <li>
+        <p>\((J_{\mathbf{f}}(\mathbf{x}))\) is the Jacobian matrix, which contains the partial derivatives of each
+          component of the vector-valued function \((\mathbf{f}(\mathbf{x}))\) with respect to each element of
+          \((\mathbf{x})\). It has dimensions \((m \times n)\).</p>
+      </li>
+      <li>
+        <p>\((\mathbf{v})\) is a vector in \((\mathbb{R}^n)\).</p>
+      </li>
+      <li>
+        <p>The product \((J_{\mathbf{f}}(\mathbf{x})\mathbf{v})\) represents the result of multiplying the Jacobian
+          matrix by the vector \((\mathbf{v})\).</p>
+      </li>
+      <li>
+        <p>The result is a vector in \((\mathbb{R}^m)\), and it can be interpreted as the change in the output of the
+          function \((\mathbf{f}(\mathbf{x}))\) due to a small change \((\mathbf{v})\) in the input.</p>
+      </li>
+    </ul>
+    <p>So, in summary, \((J_{\mathbf{f}}(\mathbf{x})\mathbf{v})\) is a Jacobian vector product &#40;JVP&#41; that
+      quantifies the linear transformation of the input vector \((\mathbf{v})\) by the Jacobian matrix
+      \((J_{\mathbf{f}}(\mathbf{x}))\). This interpretation is in line with the understanding of the Jacobian as a
+      linear map from \((\mathbb{R}^n)\) to \((\mathbb{R}^m)\).</p>
+    <p>Above explains a mathematical representation of the first-order Taylor expansion of the function \((
+      \mathbf{f}(\mathbf{x}) )\) around the point \(( \mathbf{x} )\). Let&#39;s break down the key components and
+      understand why this expansion is valid:</p>
+    <ol>
+      <li>
+        <p><strong>Taylor Expansion:</strong></p>
+        <ul>
+          <li>
+            <p>The Taylor expansion of a function \(( \mathbf{f}(\mathbf{x}) )\) around a point \(( \mathbf{x}_0 )\) is
+              given by:</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    \[ \mathbf{f}(\mathbf{x}_0 + \mathbf{v}) = \mathbf{f}(\mathbf{x}_0) + J_{\mathbf{f}}(\mathbf{x}_0)\mathbf{v} +
+    o(\|\mathbf{v}\|) \]
+    <ul>
+      <li>
+        <p>Here, \(( J_{\mathbf{f}}(\mathbf{x}_0) )\) is the Jacobian matrix of \(( \mathbf{f} )\) at the point \((
+          \mathbf{x}_0 )\), and \(( o(\|\mathbf{v}\|) )\) represents a term that goes to zero faster than \((
+          \|\mathbf{v}\| )\) as \(( \|\mathbf{v}\| )\) approaches zero.</p>
+      </li>
+    </ul>
+    <ol start="2">
+      <li>
+        <p><strong>Jacobian Matrix \(( J_{\mathbf{f}}(\mathbf{x}) )\):</strong></p>
+        <ul>
+          <li>
+            <p>The Jacobian matrix \(( J_{\mathbf{f}}(\mathbf{x}) )\) represents the linearization of the function \((
+              \mathbf{f} )\) around the point \(( \mathbf{x} )\). It contains the partial derivatives of each component
+              of \(( \mathbf{f} )\) with respect to each variable \(( x_i )\).</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Linear Map Interpretation:</strong></p>
+        <ul>
+          <li>
+            <p>The Jacobian matrix \(( J_{\mathbf{f}}(\mathbf{x}) )\) can be viewed as a linear map that transforms
+              small changes in the input vector \(( \mathbf{v} )\) to small changes in the output vector \(( \mathbf{f}
+              )\).</p>
+          </li>
+          <li>
+            <p>The linear approximation \(( J_{\mathbf{f}}(\mathbf{x})\mathbf{v} )\) represents the change in \((
+              \mathbf{f} )\) resulting from a small change \(( \mathbf{v} )\) in the input.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Higher-Order Terms:</strong></p>
+        <ul>
+          <li>
+            <p>The term \(( o(\|\mathbf{v}\|) )\) represents the higher-order terms in the Taylor expansion that capture
+              the behavior beyond the linear approximation. As \(( \|\mathbf{v}\| )\) approaches zero, these terms
+              become negligible compared to the linear term.</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <p>In summary, the expression you provided is a way to approximate the function \(( \mathbf{f} )\) near the point
+      \(( \mathbf{x} )\) using a linear map &#40;the Jacobian&#41; and accounting for higher-order terms that become
+      negligible as the input perturbation \(( \mathbf{v} )\) becomes small. This is a fundamental concept in calculus
+      and optimization, providing a local linear approximation to a function.</p>
+    <h2 id="chain_composition"><a href="#chain_composition" class="header-anchor">Chain composition</a></h2>
+    <p>The gradient of the loss function with respect to the parameters is computed in machine learning. In particular,
+      if the parameters are high-dimensional, the loss is a real number. Hence, consider a real-valued function
+      \(\mathbf{f}:\mathbb{R}^n\stackrel{\mathbf{g}_1}{\to}\mathbb{R}^m
+      \stackrel{\mathbf{g}_2}{\to}\mathbb{R}^d\stackrel{h}{\to}\mathbb{R}\), so that \(\mathbf{f}(\mathbf{x}) =
+      h(\mathbf{g}_2(\mathbf{g}_1(\mathbf{x})))\in \mathbb{R}\). We have</p>
+    <div class="nonumber">\[\begin{aligned}
+      \underbrace{\nabla\mathbf{f}(\mathbf{x})}_{n\times 1}=\underbrace{J_{\mathbf{g}_1}(\mathbf{x})^T}_{n\times
+      m}\underbrace{J_{\mathbf{g}_2}(\mathbf{g}_1(\mathbf{x}))^T}_{m\times d}\underbrace{\nabla
+      h(\mathbf{g}_2(\mathbf{g}_1(\mathbf{x})))}_{d\times 1}.
+      \end{aligned}\]</div>
+    <p>In order to perform this computation, if we begin at the right and work our way down to a vector &#40;of size
+      \(m\)&#41;, we will need to perform \(O(nm+md)\) operations to create another matrix times a vector. \(O(nmd+nd)\)
+      operations result from performing matrix-matrix multiplication from the left. Thus, it is evident that beginning
+      from the right is far more efficient as soon as \(m\approx d\). It should be noted, however, that in order to do
+      the computation from right to left, the values of \(\mathbf{g}_1(\mathbf{x})\in\mathbb{R}^m\) and
+      \(\mathbf{x}\in\mathbb{R}^n\) must be kept in memory.</p>
+    <p>An effective method for calculating the gradient &quot;from the right to the left,&quot; or backward, is
+      <strong>backpropagation</strong>. Specifically, we will have to calculate amounts in the following format: This
+      may be expressed as \(\mathbf{u}^T J_{\mathbf{f}}(\mathbf{x})\), which is a Vector Jacobian Product
+      &#40;<strong>VJP</strong>&#41;, corresponding to the interpretation where the Jacobian is the linear map:
+      \(J_{\mathbf{f}}(\mathbf{x})^T\mathbf{u} \in \mathbb{R}^n\) with \(\mathbf{u} \in\mathbb{R}^m\). Composed with the
+      linear map \(J_{\mathbf{f}}(\mathbf{x}):\mathbb{R}^n \to \mathbb{R}^m\) In order for
+      \(\mathbf{u}^TJ_{\mathbf{f}}(\mathbf{x}) = \mathbf{u} \circ J_{\mathbf{f}}(\mathbf{x})\) to be true,
+      \(\mathbf{u}:\mathbb{R}^m\to \mathbb{R}\).</p>
+    <h3 id="jacobian_vector_product"><a href="#jacobian_vector_product" class="header-anchor">Jacobian Vector Product
+      </a></h3>
+    <p>The Jacobian-vector product &#40;JVP&#41; is a concept in calculus and linear algebra, particularly relevant in
+      the context of automatic differentiation and optimization. It involves computing the product of the Jacobian
+      matrix of a function with a given vector. The Jacobian matrix represents the partial derivatives of a
+      vector-valued function with respect to its input variables, and the JVP allows you to efficiently compute the
+      effect of a small perturbation in the input space on the function&#39;s output.</p>
+    <p>For a function \(( f: \mathbb{R}^n \rightarrow \mathbb{R}^m )\), the Jacobian matrix \(( J )\) is an \(( m \times
+      n )\) matrix where each entry \(( J_{ij} )\) is the partial derivative of the \(( i )\)-th output with respect to
+      the \(( j )\)-th input.</p>
+    <p>The Jacobian-vector product is computed as follows: Given a vector \(( v )\) in the output space \(( \mathbb{R}^m
+      )\), the JVP of \(( f )\) with respect to \(( v )\) at a point \(( x )\) in the input space is denoted as \(( J(v)
+      )\) and is computed as:</p>
+    \[ J(v) = J \cdot v \]
+    <p>Mathematically, the JVP is the matrix-vector product of the Jacobian matrix \(( J )\) and the vector \(( v )\).
+      The resulting vector \(( J(v) )\) represents the directional derivative of the function \(( f )\) at the point \((
+      x )\) in the direction of the vector \(( v )\).</p>
+    <p>In the context of automatic differentiation libraries like JAX, which supports JVP, this concept is essential for
+      efficiently calculating gradients and optimizing functions. JVPs are particularly useful when dealing with
+      vectorized operations and optimization algorithms that require information about the direction and magnitude of
+      changes in the function&#39;s output concerning changes in the input.</p>
+    <p><strong>Example:</strong> let \(\mathbf{f}(\mathbf{x}, W) = \mathbf{x} W\in \mathbb{R}^b\) where \(W\in
+      \mathbb{R}^{a\times b}\) and \(\mathbf{x}\in \mathbb{R}^a\). We clearly have</p>
+    \[
+    J_{\mathbf{f}}(\mathbf{x}) = W^T.
+    \]
+    <p>Note that here, we are slightly abusing notations and considering the partial function \(\mathbf{x}\mapsto
+      \mathbf{f}(\mathbf{x}, W)\). To see this, we can write \(f_j = \sum_{i}x_iW_{ij}\) so that </p>
+    \[
+    \frac{\partial \mathbf{f}}{\partial x_i}= \left( W_{i1}\dots W_{ib}\right)^T
+    \]
+    <p>Then recall from definitions that</p>
+    \[
+    J_{\mathbf{f}}(\mathbf{x}) = \left( \frac{\partial \mathbf{f}}{\partial x_1},\dots, \frac{\partial
+    \mathbf{f}}{\partial x_n}\right)=W^T.
+    \]
+    <p>Now we clearly have</p>
+    \[
+    J_{\mathbf{f}}(W) = \begin{bmatrix} \mathbf{x} \\ \vdots \\ \mathbf{x} \end{bmatrix} \]
+    \[ \text{ since, } \mathbf{f}(\mathbf{x}, W+\Delta W) = \mathbf{f}(\mathbf{x}, W) + \mathbf{x} \Delta W.
+    \]
+    <p>Note that multiplying \(\mathbf{x}\) on the left is actually convenient when using broadcasting, i.e. we can take
+      a batch of input vectors of shape \(\text{bs}\times a\) without modifying the math above. </p>
+    <p>In short, what the above did was ,</p>
+    <p>explaining the concept of computing the gradient of a loss function with respect to parameters in machine
+      learning. The text describes the mathematical process of calculating the gradient of a composite function, which
+      is an essential part of training machine learning models, particularly neural networks. The process involves
+      applying the chain rule to compute the derivatives of nested functions.</p>
+    <p>Key points from the above:</p>
+    <ol>
+      <li>
+        <p>The function \(f(x)\) is defined as the composition of three functions, \(f: \mathbb{R}^n \xrightarrow{g_1}
+          \mathbb{R}^m \xrightarrow{g_2} \mathbb{R}^d \xrightarrow{h} \mathbb{R}\).</p>
+      </li>
+      <li>
+        <p>The gradient \(\nabla f(x)\) is computed using the chain rule as \(\nabla f(x) =
+          J_{g_1}(x)^TJ_{g_2}(g_1(x))^T\nabla h(g_2(g_1(x)))\), where \(J_{g_1}(x)\) and \(J_{g_2}(g_1(x))\) are
+          Jacobian matrices of the functions \(g_1\) and \(g_2\) at respective points.</p>
+      </li>
+      <li>
+        <p>It mentions that computing the gradient from right to left, also known as backpropagation, is more efficient,
+          especially when the dimensions \(m\) and \(d\) are approximately equal.</p>
+      </li>
+      <li>
+        <p>The concept of Vector Jacobian Product &#40;VJP&#41; is introduced, which is expressed as \(u^TJ_f(x)\) and
+          allows for efficient computation of the gradient.</p>
+      </li>
+      <li>
+        <p>An example is provided with a function \(f(x, W) = xW\) for vectors \(x \in \mathbb{R}^a\) and matrices \(W
+          \in \mathbb{R}^{a \times b}\), where the Jacobian of \(f\) with respect to \(x\) is \(J_f(x) = W^T\).</p>
+      </li>
+      <li>
+        <p>The text also explains a slight abuse of notation when considering the partial function \(x \mapsto f(x,
+          W)\), where the gradient of each component of the function with respect to \(x_i\) is represented by the
+          column vector of \(W\).</p>
+      </li>
+      <li>
+        <p>Finally, it points out the convenience of multiplying by \(x\) on the left when using broadcasting, which is
+          a technique used in programming to perform operations on arrays of different shapes.</p>
+      </li>
+    </ol>
+    <h2 id="implementation"><a href="#implementation" class="header-anchor">Implementation</a></h2>
+    <p><code>torch.autograd</code> in PyTorch offers functions and classes that implement automated differentiation of
+      any arbitrary scalar-valued function. Use the <code>forward&#40;&#41;</code> and <code>backward&#40;&#41;</code>
+      static methods to construct a custom <a
+        href="https://pytorch.org/docs/stable/autograd.html#torch.autograd.Function">autograd.Function</a> by
+      subclassing this class. Here&#39;s an illustration:</p>
+    <pre><code class="language-python">class Exp&#40;Function&#41;:
+    @staticmethod
+    def forward&#40;ctx, i&#41;:
+        result &#61; i.exp&#40;&#41;
+        ctx.save_for_backward&#40;result&#41;
+        return result
+    @staticmethod
+    def backward&#40;ctx, grad_output&#41;:
+        result, &#61; ctx.saved_tensors
+        return grad_output * result
+# Use it by calling the apply method:
+output &#61; Exp.apply&#40;input&#41;</code></pre>
+    <h3 id="backprop_the_functional_way"><a href="#backprop_the_functional_way" class="header-anchor">Backprop The
+        Functional Way</a></h3>
+    <p>Here we will implement in <code>numpy</code> a different approach mimicking the functional approach of <a
+        href="https://jax.readthedocs.io/en/latest/index.html">JAX</a> see <a
+        href="https://jax.readthedocs.io/en/latest/notebooks/autodiff_cookbook.html#">The Autodiff Cookbook</a>.</p>
+    <p>Two arguments will be required for each function: the parameters &#123;w&#125; and the input &#123;x&#125;. In
+      order to get \(J_{\mathbf{f}}(\mathbf{x})\) and \(J_{\mathbf{f}}(\mathbf{w})\), we construct two
+      <strong>vjp</strong> functions for each function, each of which takes a gradient \(\mathbf{u}\) as an argument.
+      These functions then return \(J_{\mathbf{f}}(\mathbf{x})^T \mathbf{u}\) and \(J_{\mathbf{f}}(\mathbf{w})^T
+      \mathbf{u}\), respectively. In summary, for \(\mathbf{x} \in \mathbb{R}^n\), \(\mathbf{w} \in \mathbb{R}^d\), and
+      \(\mathbf{f}(\mathbf{x},\mathbf{w}) \in \mathbb{R}^m\),</p>
+    <div class="nonumber">\[\begin{aligned}
+      {\bf vjp}_\mathbf{x}(\mathbf{u}) &= J_{\mathbf{f}}(\mathbf{x})^T \mathbf{u}, \text{ with }
+      J_{\mathbf{f}}(\mathbf{x})\in\mathbb{R}^{m\times n}, \mathbf{u}\in \mathbb{R}^m\\
+      {\bf vjp}_\mathbf{w}(\mathbf{u}) &= J_{\mathbf{f}}(\mathbf{w})^T \mathbf{u}, \text{ with }
+      J_{\mathbf{f}}(\mathbf{w})\in\mathbb{R}^{m\times d}, \mathbf{u}\in \mathbb{R}^m
+      \end{aligned}\]</div>
+    <p>Then backpropagation is simply done by first computing the gradient of the loss and then composing the
+      <strong>vjp</strong> functions in the right order.</p>
+    <p>The expressions and functions described in the provided approach using <code>numpy</code> mimic the functionality
+      of JAX&#39;s automatic differentiation. Let&#39;s break down the key components and their meanings:</p>
+    <ol>
+      <li>
+        <p><strong>Function \(( \mathbf{f}(\mathbf{x}, \mathbf{w}) )\):</strong></p>
+        <ul>
+          <li>
+            <p>This is the target function that takes two sets of parameters, \((\mathbf{x})\) and \((\mathbf{w})\), and
+              produces an output.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Jacobian-Vector Product Functions \(({\bf vjp}_\mathbf{x}(\mathbf{u}))\) and \(({\bf
+            vjp}_\mathbf{w}(\mathbf{u}))\):</strong></p>
+        <ul>
+          <li>
+            <p>These functions compute the Jacobian-vector product of the function \(( \mathbf{f} )\) with respect to
+              \((\mathbf{x})\) and \((\mathbf{w})\), respectively.</p>
+          </li>
+          <li>
+            <p>\(({\bf vjp}_\mathbf{x}(\mathbf{u}))\) computes \((J_{\mathbf{f}}(\mathbf{x})^T \mathbf{u})\), where
+              \((J_{\mathbf{f}}(\mathbf{x}))\) is the Jacobian matrix of \(( \mathbf{f} )\) with respect to
+              \((\mathbf{x})\).</p>
+          </li>
+          <li>
+            <p>\(({\bf vjp}_\mathbf{w}(\mathbf{u}))\) computes \((J_{\mathbf{f}}(\mathbf{w})^T \mathbf{u})\), where
+              \((J_{\mathbf{f}}(\mathbf{w}))\) is the Jacobian matrix of \(( \mathbf{f} )\) with respect to
+              \((\mathbf{w})\).</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Loss Function \(( \text{loss\_function}(\mathbf{x}, \mathbf{w}) )\):</strong></p>
+        <ul>
+          <li>
+            <p>This is a function that takes \((\mathbf{x})\) and \((\mathbf{w})\) as inputs and computes a scalar loss.
+              The example provided uses a simple quadratic loss.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Compute Gradients Function:</strong></p>
+        <ul>
+          <li>
+            <p>The <code>compute_gradients</code> function is responsible for computing the gradients of the loss with
+              respect to \((\mathbf{x})\) and \((\mathbf{w})\) using the Jacobian-vector product functions.</p>
+          </li>
+          <li>
+            <p>It initializes a gradient &#40;\((\mathbf{u}_{\text{loss}})\)&#41; for the loss and then computes the
+              Jacobian-vector products \(({\bf vjp}_\mathbf{x}(\mathbf{u}_{\text{loss}}))\) and \(({\bf
+              vjp}_\mathbf{w}(\mathbf{u}_{\text{loss}}))\).</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Example Usage:</strong></p>
+        <ul>
+          <li>
+            <p>The example usage demonstrates how to compute gradients for a specific \((\mathbf{x})\) and
+              \((\mathbf{w})\) using the <code>compute_gradients</code> function.</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <p>In summary, this approach allows for the computation of gradients using the concept of Jacobian-vector products.
+      By defining functions that mimic the behavior of JAX&#39;s <code>vjp</code> functions, you can perform
+      backpropagation to compute gradients efficiently. The provided example is a simplified illustration, and in
+      practice, this methodology can be extended to more complex functions and scenarios.</p>
+    <p>To implement the described approach using <code>numpy</code>, we can define functions that compute the
+      Jacobian-vector products &#40;\(({\bf vjp}_\mathbf{x}(\mathbf{u}))\) and \(({\bf
+      vjp}_\mathbf{w}(\mathbf{u}))\)&#41; for a given function \((\mathbf{f}(\mathbf{x}, \mathbf{w}))\). Then, we can
+      use these functions to perform backpropagation for a given loss.</p>
+    <p>Here&#39;s a simple example:</p>
+    <pre><code class="language-python">import numpy as np
+
+# Define the function f&#40;x, w&#41;
+def my_function&#40;x, w&#41;:
+    return np.dot&#40;x, w&#41;
+
+# Define the vjp functions
+def vjp_x&#40;u, x, w&#41;:
+    return np.outer&#40;u, w&#41;
+
+def vjp_w&#40;u, x, w&#41;:
+    return np.outer&#40;u, x&#41;
+
+# Define a loss function
+def loss_function&#40;x, w&#41;:
+    y &#61; my_function&#40;x, w&#41;
+    return np.sum&#40;y**2&#41;
+
+# Compute the gradients using vjp functions
+def compute_gradients&#40;x, w&#41;:
+    u_loss &#61; np.ones_like&#40;my_function&#40;x, w&#41;&#41;  # Gradient of the loss w.r.t. my_function&#40;x, w&#41;
+    vjp_x_result &#61; vjp_x&#40;u_loss, x, w&#41;
+    vjp_w_result &#61; vjp_w&#40;u_loss, x, w&#41;
+    return vjp_x_result, vjp_w_result
+
+# Example usage
+x_val &#61; np.array&#40;&#91;1.0, 2.0, 3.0&#93;&#41;
+w_val &#61; np.array&#40;&#91;0.1, 0.2, 0.3&#93;&#41;
+
+grad_x, grad_w &#61; compute_gradients&#40;x_val, w_val&#41;
+
+print&#40;&quot;Gradient with respect to x:&quot;, grad_x&#41;
+print&#40;&quot;Gradient with respect to w:&quot;, grad_w&#41;</code></pre>
+    <p>In this example, <code>my_function</code> is a simple linear function, and <code>loss_function</code> is a
+      quadratic loss. The <code>vjp_x</code> and <code>vjp_w</code> functions compute the Jacobian-vector products with
+      respect to <code>x</code> and <code>w</code>, respectively. The <code>compute_gradients</code> function then uses
+      these vjp functions to compute the gradients of the loss.</p>
+    <p>This is a basic illustration, and in practice, you might want to generalize these functions for more complex
+      scenarios and functions.</p>
+    <div class="page-foot">
+      <div class="copyright">
+        <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo"
+              src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+        ©️ Last modified: February 27, 2024. Website built with <a
+          href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia
+          programming language</a>.
+      </div>
+    </div>
+  </div><!-- CONTENT ENDS HERE -->
+
+  <script src="/libs/katex/katex.min.js"></script>
+  <script src="/libs/katex/contrib/auto-render.min.js"></script>
+  <script>
+    renderMathInElement(document.body)
+
+  </script>
+
+
+
+  <script src="/libs/highlight/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.configure({
+      tabReplace: '    '
+    });
+
+  </script>
+
+
+</body>
+
+</html>
