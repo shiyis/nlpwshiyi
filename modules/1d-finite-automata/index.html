@@ -1,231 +1,66 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/libs/katex/katex.min.css">
-
-  <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
-
-  <link rel="stylesheet" href="/css/franklin.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700"
-    type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/celeste.min.css">
-
-  <link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
-  <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png">
-
-
-  <title>NLPwShiyi - Natural Language Processing with Shiyi</title>
-</head>
-
-<body>
-  <!-- Latest compiled and minified CSS -->
-
-  <nav id="navbar" class="navigation" role="navigation">
-    <input id="toggle1" type="checkbox" />
-    <label class="hamburger1" for="toggle1">
-      <div class="top"></div>
-      <div class="meat"></div>
-      <div class="bottom"></div>
-    </label>
-
-    <nav class="topnav mx-auto" id="myTopnav">
-      <div class="dropdown">
-        <button class="dropbtn">Comp Ling
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/1a-info-theory">Information Theory</a>
-          <a href="/modules/1b-phil-of-mind">Philosophy of Mind</a>
-          <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
-          <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
-          <a href="/modules/1e-mutual-info">Mutual Information</a>
-          <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
-          <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
-          <a href="/modules/1h-semantics">Logic and Problem Solving</a>
-          <a href="/modules/1i-cryptanalysis">Cryptography</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">DL / NLP
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/2a-mdn-nlp">Modern NLP</a>
-          <a href="/modules/2b-markov-processes">Markov Processes</a>
-          <a href="/modules/2c-word2vec">Word2Vec</a>
-          <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
-          <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
-          <a href="/modules/2f-loss-functions">Stochastic GD</a>
-          <a href="/modules/2g-batchnorm">Batchnorm</a>
-          <a href="/modules/2h-dropout">Dropout</a>
-          <a href="/modules/2i-depth">Depth: Pros and Cons</a>
-        </div>
-      </div>
-      <a href="/" class="active">Intro </a>
-      <div class="dropdown">
-        <button class="dropbtn">SOTA
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/3a-VAE">Variational Autoencoders</a>
-          <a href="/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
-          <a href="/modules/3c-transformers">Transformers</a>
-          <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Hands-on
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
-          <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
-          <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
-          <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a>
-          <a href="/modules/4e-c4fe-tbip">C4FE-TBIP</a>
-          <a href="/modules/4f-etl-job">DE: Serverless ETL</a>
-
-        </div>
-      </div>
-    </nav>
-  </nav>
-
-  <!-- Content appended here -->
-  <div class="franklin-content">
-    <h1 id="finite_state_machine_and_automata"><a href="#finite_state_machine_and_automata" class="header-anchor">Finite
-        State Machine and Automata</a></h1>
-    <p>A finite automaton is the most basic machine capable of pattern recognition &#40;FA&#41;. It is used to describe
-      a Regular Language, just like in <code>/baa&#43;&#33;/</code>.</p>
-    <p>It is also used to recognize and evaluate Natural Language Expressions. There are five parts, or tuples, to the
-      abstract machine called the finite automata or finite state machine. Its various states and the rules for
-      transitioning between them are contingent upon the input symbol that is utilized.</p>
-    <p>Depending on the states and the regulations, the input string may be accepted or denied. It is essentially a
-      model of an abstract digital computer that interprets an input string and adjusts its internal state based on the
-      input symbol that is being received at that moment.</p>
-    <p>The following characteristics of automata in the aforementioned figure are</p>
-    <hr />
-    <p><img src="../extras/finite_automata/fig1.png" alt="finite_fig1" /></p>
-    <hr />
-    <p>Input Output States of automata State relation Output relation A Finite Automata consists of the following:</p>
-    <pre><code class="language-julia">Q : Finite set of states.       
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/nlpwme/libs/katex/katex.min.css"> <link rel=stylesheet  href="/nlpwme/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/nlpwme/css/franklin.css"> <link rel=stylesheet  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css"> <link rel=stylesheet  href="/nlpwme/css/font-awesome.min.css"> <link rel=stylesheet  href="/nlpwme/css/celeste.min.css"> <link rel=icon  type="image/png" sizes=200x200  href="/nlpwme/assets/robot.png"> <link rel=apple-touch-icon-precomposed  sizes=152x152  href="/nlpwme/assets/apple-touch-icon.png"> <title>NLPwShiyi - Natural Language Processing with Shiyi</title> <nav id=navbar  class=navigation  role=navigation > <input id=toggle1  type=checkbox  /> <label class=hamburger1  for=toggle1 > <div class=top ></div> <div class=meat ></div> <div class=bottom ></div> </label> <nav class="topnav mx-auto" id=myTopnav > <div class=dropdown > <button class=dropbtn >Comp Ling <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/1a-info-theory">Information Theory</a> <a href="/nlpwme/modules/1b-phil-of-mind">Philosophy of Mind</a> <a href="/nlpwme/modules/1c-noisy-channel-model">The Noisy Channel Model</a> <a href="/nlpwme/modules/1d-finite-automata">FSAs and FSTs</a> <a href="/nlpwme/modules/1e-mutual-info">Mutual Information</a> <a href="/nlpwme/modules/1f-cky-algorithm">CKY Algorithm</a> <a href="/nlpwme/modules/1g-viterbi">Viterbi Algorithm</a> <a href="/nlpwme/modules/1h-semantics">Logic and Problem Solving</a> <a href="/nlpwme/modules/1i-cryptanalysis">Cryptography</a> </div> </div> <div class=dropdown > <button class=dropbtn  >DL / NLP <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/2a-mdn-nlp">Modern NLP</a> <a href="/nlpwme/modules/2b-markov-processes">Markov Processes</a> <a href="/nlpwme/modules/2c-word2vec">Word2Vec</a> <a href="/nlpwme/modules/2d-automatic-differentiation">Automatic Differentiation</a> <a href="/nlpwme/modules/2e-jax">Jacobian Matrices Derivation</a> <a href="/nlpwme/modules/2f-loss-functions">Stochastic GD</a> <a href="/nlpwme/modules/2g-batchnorm">Batchnorm</a> <a href="/nlpwme/modules/2h-dropout">Dropout</a> <a href="/nlpwme/modules/2i-depth">Depth: Pros and Cons</a> </div> </div> <a href="/nlpwme/" class=active >Intro </a> <div class=dropdown > <button class=dropbtn  >SOTA <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/3a-VAE">Variational Autoencoders</a> <a href="/nlpwme/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a> <a href="/nlpwme/modules/3c-transformers">Transformers</a> </div> </div> <div class=dropdown > <button class=dropbtn  >Hands-on <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/4a-mlp-from-scratch">MLP from Scratch</a> <a href="/nlpwme/modules/4b-generative-adversarial-networks">GAN Example </a> <a href="/nlpwme/modules/4c-vae-mnist">VAE for MNIST</a> <a href="/nlpwme/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a> <a href="/nlpwme/modules/4e-c4fe-tbip">C4FE-TBIP</a> <a href="/nlpwme/modules/4f-etl-job">DE: Serverless ETL</a> </div> </div> </nav> </nav> <div class=franklin-content ><h1 id=finite_state_machine_and_automata ><a href="#finite_state_machine_and_automata" class=header-anchor >Finite State Machine and Automata</a></h1> <p>A finite automaton is the most basic machine capable of pattern recognition &#40;FA&#41;. It is used to describe a Regular Language, just like in <code>/baa&#43;&#33;/</code>.</p> <p>It is also used to recognize and evaluate Natural Language Expressions. There are five parts, or tuples, to the abstract machine called the finite automata or finite state machine. Its various states and the rules for transitioning between them are contingent upon the input symbol that is utilized.</p> <p>Depending on the states and the regulations, the input string may be accepted or denied. It is essentially a model of an abstract digital computer that interprets an input string and adjusts its internal state based on the input symbol that is being received at that moment.</p> <p>The following characteristics of automata in the aforementioned figure are</p> <hr /> <p><img src="../extras/finite_automata/fig1.png" alt=finite_fig1  /></p> <hr /> <p>Input Output States of automata State relation Output relation A Finite Automata consists of the following:</p> <pre><code class="julia hljs">Q : Finite set of states.       
 Σ : set of Input Symbols.       
 q : Initial state.       
 F : set of Final States.       
-δ : Transition Function.</code></pre>
-    <p>Formal specification of machine is</p>
-    <pre><code class="language-julia">&#123; Q, Σ, q, F, δ &#125;</code></pre>
-    <ol>
-      <li>
-        <p>Deterministic Finite Automata &#40;DFA&#41;:</p>
-      </li>
-    </ol>
-    <pre><code class="language-python">DFA consists of 5 tuples &#123;Q, Σ, q, F, δ&#125;.
-Q : set of all states.
-Σ : set of input symbols. &#40; Symbols which machine takes as input &#41;
-q : Initial state. &#40; Starting state of a machine &#41;
-F : set of final state.
-δ : Transition Function, defined as δ : Q X Σ --&gt; Q.</code></pre>
-    <p>In a DFA, the machine only enters one state for a specific input character. For every input symbol, a transition
-      function is defined for each state. Additionally, DFA does not support null &#40;or&#41; moves, meaning that it
-      cannot change its state without an input character.</p>
-    <pre><code class="language-python">Create a DFA that, for instance, only accepts strings that end in &#39;a&#39;.
+δ : Transition <span class=hljs-built_in >Function</span>.</code></pre> <p>Formal specification of machine is</p> <pre><code class="julia hljs">{ Q, Σ, q, F, δ }</code></pre>
+<ol>
+<li><p>Deterministic Finite Automata &#40;DFA&#41;:</p>
 
-    Assumed: Σ &#61; &#123;a,b&#125;, q &#61; &#123;q0&#125;, F&#61;&#123;q1&#125;, Q &#61; &#123;q0, q1&#125;
+</ol>
+<pre><code class="python hljs">DFA consists of <span class=hljs-number >5</span> tuples {Q, Σ, q, F, δ}.
+Q : <span class=hljs-built_in >set</span> of <span class=hljs-built_in >all</span> states.
+Σ : <span class=hljs-built_in >set</span> of <span class=hljs-built_in >input</span> symbols. ( Symbols which machine takes <span class=hljs-keyword >as</span> <span class=hljs-built_in >input</span> )
+q : Initial state. ( Starting state of a machine )
+F : <span class=hljs-built_in >set</span> of final state.
+δ : Transition Function, defined <span class=hljs-keyword >as</span> δ : Q X Σ --&gt; Q.</code></pre>
+<p>In a DFA, the machine only enters one state for a specific input character. For every input symbol, a transition function is defined for each state. Additionally, DFA does not support null &#40;or&#41; moves, meaning that it cannot change its state without an input character.</p>
+<pre><code class="python hljs">Create a DFA that, <span class=hljs-keyword >for</span> instance, only accepts strings that end <span class=hljs-keyword >in</span> <span class=hljs-string >&#x27;a&#x27;</span>.
 
-If you want to create a state transition diagram that is accurate, you should first take into account a language set of all the potential acceptable strings.
+    Assumed: Σ = {a,b}, q = {q0}, F={q1}, Q = {q0, q1}
 
-    L &#61; &#123;a, a, a, a, a, aa, aaa, aaaa, ba, bba, bbbaa, aba, abba, aaba, abaa&#125;
+If you want to create a state transition diagram that <span class=hljs-keyword >is</span> accurate, you should first take into account a language <span class=hljs-built_in >set</span> of <span class=hljs-built_in >all</span> the potential acceptable strings.
 
-The list above is just a small portion of all possible acceptable strings; there are many other strings that contain the letters &quot;a&quot; and &quot;b&quot;.</code></pre>
-    <p>See below figure: As you can see in the transition function is for any input including null &#40;or ?&#41;, NFA
-      can go to any state number of states. For example, below is an NFA for the above problem.</p>
-    <table>
-      <tr>
-        <th align="left">State / Symbol</th>
-        <th align="left">a</th>
-        <th align="left">b</th>
-      </tr>
-      <tr>
-        <td align="left">\(q_0\)</td>
-        <td align="left">\({q_0,q_1}\)</td>
-        <td align="left">\(q_0\)</td>
-      </tr>
-      <tr>
-        <td align="left">\(q_1\)</td>
-        <td align="left">?</td>
-        <td align="left">?</td>
-      </tr>
-    </table>
-    <hr />
-    <p><img src="../extras/finite_automata/fig2.png" alt="finite_fig2" /></p>
-    <hr />
-    <p>One important thing to note is, in NFA, if any path for an input string leads to a final state, then the input
-      string is accepted. For example, in the above NFA, there are multiple paths for the input string
-      <code>“00”</code>. Since one of the paths leads to a final state, <code>“00”</code> is accepted by the above NFA.
-    </p>
-    <p>Since all the tuples in DFA and NFA are the same except for one of the tuples, which is Transition Function
-      &#40;?&#41;</p>
-    <pre><code class="language-julia">In case of DFA
+    L = {a, a, a, a, a, aa, aaa, aaaa, ba, bba, bbbaa, aba, abba, aaba, abaa}
+
+The <span class=hljs-built_in >list</span> above <span class=hljs-keyword >is</span> just a small portion of <span class=hljs-built_in >all</span> possible acceptable strings; there are many other strings that contain the letters <span class=hljs-string >&quot;a&quot;</span> <span class=hljs-keyword >and</span> <span class=hljs-string >&quot;b&quot;</span>.</code></pre>
+<p>See below figure:     As you can see in the transition function is for any input including null &#40;or ?&#41;, NFA can go to any state number of states. For example, below is an NFA for the above problem.</p>
+<table><tr><th align=left >State / Symbol<th align=left >a<th align=left >b<tr><td align=left ><span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">q_0</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.625em;vertical-align:-0.1944em;"></span><span class=mord ><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><td align=left ><span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub><mo separator=true >,</mo><msub><mi>q</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">{q_0,q_1}</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.625em;vertical-align:-0.1944em;"></span><span class=mord ><span class=mord ><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span><span class=mpunct >,</span><span class=mspace  style="margin-right:0.1667em;"></span><span class=mord ><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><td align=left ><span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">q_0</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.625em;vertical-align:-0.1944em;"></span><span class=mord ><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><tr><td align=left ><span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>q</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">q_1</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.625em;vertical-align:-0.1944em;"></span><span class=mord ><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class=msupsub ><span class="vlist-t vlist-t2"><span class=vlist-r ><span class=vlist  style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class=vlist-s >​</span></span><span class=vlist-r ><span class=vlist  style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><td align=left >?<td align=left >?</table>
+<hr />
+<p><img src="../extras/finite_automata/fig2.png" alt=finite_fig2  /></p>
+<hr />
+<p>One important thing to note is, in NFA, if any path for an input string leads to a final state, then the input string is accepted. For example, in the above NFA, there are multiple paths for the input string <code>“00”</code>. Since one of the paths leads to a final state, <code>“00”</code> is accepted by the above NFA.</p>
+<p>Since all the tuples in DFA and NFA are the same except for one of the tuples, which is Transition Function &#40;?&#41;</p>
+<pre><code class="julia hljs">In case of DFA
 ? : Q X ? --&gt; Q
 In case of NFA
-? : Q X ? --&gt; &#36;2^Q&#36;</code></pre>
-    <p>ℹ️ Now if you observe you’ll find out <code>Q X ? –&gt; Q</code> is part of <code>Q X ? –&gt; 2 ^ Q</code>.</p>
-    <p>On the RHS side, Q is the subset of \(2^Q\) which indicates Q is contained in \(2^Q\) or Q is a part of \(2^Q\),
-      however, the reverse isn’t true. So mathematically, we can conclude that every DFA is NFA but not vice-versa. Yet
-      there is a way to convert an NFA to DFA, so there exists an equivalent DFA for every NFA.</p>
-    <ul>
-      <li>
-        <p>Both NFA and DFA have the same power and each NFA can be translated into a DFA.</p>
-      </li>
-      <li>
-        <p>There can be multiple final states in both DFA and NFA.</p>
-      </li>
-      <li>
-        <p>NFA is more of a theoretical concept.</p>
-      </li>
-      <li>
-        <p>DFA is used in Lexical Analysis in Compiler.</p>
-      </li>
-      <li>
-        <p>If the number of states in the NFA is N then, its DFA can have maximum \(2^N\) number of states.</p>
-      </li>
-    </ul>
-    <div class="page-foot">
-      <div class="copyright">
-        <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo"
-              src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
-        ©️ Last modified: March 14, 2024. Website built with <a
-          href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia
-          programming language</a>.
-      </div>
+? : Q X ? --&gt; $<span class=hljs-number >2</span>^Q$</code></pre>
+<p>ℹ️ Now if you observe you’ll find out <code>Q X ? –&gt; Q</code> is part of <code>Q X ? –&gt; 2 ^ Q</code>.</p>
+<p>On the RHS side, Q is the subset of <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>Q</mi></msup></mrow><annotation encoding="application/x-tex">2^Q</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.8413em;"></span><span class=mord ><span class=mord >2</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">Q</span></span></span></span></span></span></span></span></span></span></span> which indicates Q is contained in <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>Q</mi></msup></mrow><annotation encoding="application/x-tex">2^Q</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.8413em;"></span><span class=mord ><span class=mord >2</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">Q</span></span></span></span></span></span></span></span></span></span></span> or Q is a part of <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>Q</mi></msup></mrow><annotation encoding="application/x-tex">2^Q</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.8413em;"></span><span class=mord ><span class=mord >2</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">Q</span></span></span></span></span></span></span></span></span></span></span>, however, the reverse isn’t true. So mathematically, we can conclude that every DFA is NFA but not vice-versa. Yet there is a way to convert an NFA to DFA, so there exists an equivalent DFA for every NFA.</p>
+<ul>
+<li><p>Both NFA and DFA have the same power and each NFA can be translated into a DFA.</p>
+
+<li><p>There can be multiple final states in both DFA and NFA.</p>
+
+<li><p>NFA is more of a theoretical concept.</p>
+
+<li><p>DFA is used in Lexical Analysis in Compiler.</p>
+
+<li><p>If the number of states in the NFA is N then, its DFA can have maximum <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">2^N</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.8413em;"></span><span class=mord ><span class=mord >2</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span></span></span></span></span></span></span></span> number of states.</p>
+
+</ul>
+<div class=page-foot >
+    <div class=copyright >
+      <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a>
+       ©️ Last modified: March 20, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
     </div>
-  </div><!-- CONTENT ENDS HERE -->
-
-  <script src="/libs/katex/katex.min.js"></script>
-  <script src="/libs/katex/contrib/auto-render.min.js"></script>
-  <script>
-    renderMathInElement(document.body)
-
-  </script>
+  </div>
+  </div>
+    
+        
 
 
 
-  <script src="/libs/highlight/highlight.min.js"></script>
-  <script>
-    hljs.highlightAll();
-    hljs.configure({
-      tabReplace: '    '
-    });
-
-  </script>
-
-
-</body>
-
-</html>
+    
+    
+        <script src="/nlpwme/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>

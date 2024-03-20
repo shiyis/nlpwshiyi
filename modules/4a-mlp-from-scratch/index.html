@@ -1,413 +1,255 @@
-<!doctype html>
-<html lang="en">
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/nlpwme/libs/highlight/styles/github.min.css"> <link rel=stylesheet  href="/nlpwme/css/franklin.css"> <link rel=stylesheet  href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css"> <link rel=stylesheet  href="/nlpwme/css/font-awesome.min.css"> <link rel=stylesheet  href="/nlpwme/css/celeste.min.css"> <link rel=icon  type="image/png" sizes=200x200  href="/nlpwme/assets/robot.png"> <link rel=apple-touch-icon-precomposed  sizes=152x152  href="/nlpwme/assets/apple-touch-icon.png"> <title>NLPwShiyi - Natural Language Processing with Shiyi</title> <nav id=navbar  class=navigation  role=navigation > <input id=toggle1  type=checkbox  /> <label class=hamburger1  for=toggle1 > <div class=top ></div> <div class=meat ></div> <div class=bottom ></div> </label> <nav class="topnav mx-auto" id=myTopnav > <div class=dropdown > <button class=dropbtn >Comp Ling <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/1a-info-theory">Information Theory</a> <a href="/nlpwme/modules/1b-phil-of-mind">Philosophy of Mind</a> <a href="/nlpwme/modules/1c-noisy-channel-model">The Noisy Channel Model</a> <a href="/nlpwme/modules/1d-finite-automata">FSAs and FSTs</a> <a href="/nlpwme/modules/1e-mutual-info">Mutual Information</a> <a href="/nlpwme/modules/1f-cky-algorithm">CKY Algorithm</a> <a href="/nlpwme/modules/1g-viterbi">Viterbi Algorithm</a> <a href="/nlpwme/modules/1h-semantics">Logic and Problem Solving</a> <a href="/nlpwme/modules/1i-cryptanalysis">Cryptography</a> </div> </div> <div class=dropdown > <button class=dropbtn  >DL / NLP <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/2a-mdn-nlp">Modern NLP</a> <a href="/nlpwme/modules/2b-markov-processes">Markov Processes</a> <a href="/nlpwme/modules/2c-word2vec">Word2Vec</a> <a href="/nlpwme/modules/2d-automatic-differentiation">Automatic Differentiation</a> <a href="/nlpwme/modules/2e-jax">Jacobian Matrices Derivation</a> <a href="/nlpwme/modules/2f-loss-functions">Stochastic GD</a> <a href="/nlpwme/modules/2g-batchnorm">Batchnorm</a> <a href="/nlpwme/modules/2h-dropout">Dropout</a> <a href="/nlpwme/modules/2i-depth">Depth: Pros and Cons</a> </div> </div> <a href="/nlpwme/" class=active >Intro </a> <div class=dropdown > <button class=dropbtn  >SOTA <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/3a-VAE">Variational Autoencoders</a> <a href="/nlpwme/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a> <a href="/nlpwme/modules/3c-transformers">Transformers</a> </div> </div> <div class=dropdown > <button class=dropbtn  >Hands-on <i class="fa fa-caret-down"></i> </button> <div class=dropdown-content > <a href="/nlpwme/modules/4a-mlp-from-scratch">MLP from Scratch</a> <a href="/nlpwme/modules/4b-generative-adversarial-networks">GAN Example </a> <a href="/nlpwme/modules/4c-vae-mnist">VAE for MNIST</a> <a href="/nlpwme/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a> <a href="/nlpwme/modules/4e-c4fe-tbip">C4FE-TBIP</a> <a href="/nlpwme/modules/4f-etl-job">DE: Serverless ETL</a> </div> </div> </nav> </nav> <div class=franklin-content ><h1 id=the_downstream_of_a_mlp_from_scratch ><a href="#the_downstream_of_a_mlp_from_scratch" class=header-anchor >The Downstream of A MLP from Scratch </a></h1> <p>In this blog, we will go step by step with how to create a mlp from scratch. </p> <div class=franklin-toc ><ol><li><a href="#some_utility_functions_and_the_dataset">Some Utility Functions and The Dataset</a><li><a href="#mlp_in_numpy_and_define_the_grid_on_which_the_classifier_will_be_evaluated">MLP in NumPy and Define the Grid on Which The Classifier Will Be Evaluated</a><li><a href="#implementing_the_linear_layer">Implementing the Linear Layer </a><li><a href="#using_the_bce_loss">Using the BCE loss</a><li><a href="#using_a_pytorch_module">Using A Pytorch Module </a></ol></div> <h2 id=some_utility_functions_and_the_dataset ><a href="#some_utility_functions_and_the_dataset" class=header-anchor >Some Utility Functions and The Dataset</a></h2> <pre><code class="python hljs"><span class=hljs-comment ># all of these libraries are used for plotting</span>
+<span class=hljs-keyword >import</span> numpy <span class=hljs-keyword >as</span> np
+<span class=hljs-keyword >import</span> matplotlib.pyplot <span class=hljs-keyword >as</span> plt
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<span class=hljs-comment ># Plot the dataset</span>
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">plot_data</span>(<span class=hljs-params >ax, X, Y</span>):
+    plt.axis(<span class=hljs-string >&#x27;off&#x27;</span>)
+    ax.scatter(X[:, <span class=hljs-number >0</span>], X[:, <span class=hljs-number >1</span>], s=<span class=hljs-number >1</span>, c=Y, cmap=<span class=hljs-string >&#x27;bone&#x27;</span>)
 
-  <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+<span class=hljs-keyword >from</span> sklearn.datasets <span class=hljs-keyword >import</span> make_moons
+X, Y = make_moons(n_samples=<span class=hljs-number >2000</span>, noise=<span class=hljs-number >0.1</span>)</code></pre> <h2 id=mlp_in_numpy_and_define_the_grid_on_which_the_classifier_will_be_evaluated ><a href="#mlp_in_numpy_and_define_the_grid_on_which_the_classifier_will_be_evaluated" class=header-anchor >MLP in NumPy and Define the Grid on Which The Classifier Will Be Evaluated</a></h2> <pre><code class="python hljs">xx, yy = np.meshgrid(np.arange(x_min, x_max, <span class=hljs-number >.1</span>),
+                     np.arange(y_min, y_max, <span class=hljs-number >.1</span>))
 
-  <link rel="stylesheet" href="/css/franklin.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700"
-    type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/celeste.min.css">
+to_forward = np.array(<span class=hljs-built_in >list</span>(<span class=hljs-built_in >zip</span>(xx.ravel(), yy.ravel())))
 
-  <link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
-  <!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/apple-touch-icon.png">
+<span class=hljs-comment ># plot the decision boundary of our classifier</span>
 
 
-  <title>NLPwShiyi - Natural Language Processing with Shiyi</title>
-</head>
-
-<body>
-  <!-- Latest compiled and minified CSS -->
-
-  <nav id="navbar" class="navigation" role="navigation">
-    <input id="toggle1" type="checkbox" />
-    <label class="hamburger1" for="toggle1">
-      <div class="top"></div>
-      <div class="meat"></div>
-      <div class="bottom"></div>
-    </label>
-
-    <nav class="topnav mx-auto" id="myTopnav">
-      <div class="dropdown">
-        <button class="dropbtn">Comp Ling
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/1a-info-theory">Information Theory</a>
-          <a href="/modules/1b-phil-of-mind">Philosophy of Mind</a>
-          <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
-          <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
-          <a href="/modules/1e-mutual-info">Mutual Information</a>
-          <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
-          <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
-          <a href="/modules/1h-semantics">Logic and Problem Solving</a>
-          <a href="/modules/1i-cryptanalysis">Cryptography</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">DL / NLP
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/2a-mdn-nlp">Modern NLP</a>
-          <a href="/modules/2b-markov-processes">Markov Processes</a>
-          <a href="/modules/2c-word2vec">Word2Vec</a>
-          <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
-          <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
-          <a href="/modules/2f-loss-functions">Stochastic GD</a>
-          <a href="/modules/2g-batchnorm">Batchnorm</a>
-          <a href="/modules/2h-dropout">Dropout</a>
-          <a href="/modules/2i-depth">Depth: Pros and Cons</a>
-        </div>
-      </div>
-      <a href="/" class="active">Intro </a>
-      <div class="dropdown">
-        <button class="dropbtn">SOTA
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/3a-VAE">Variational Autoencoders</a>
-          <a href="/modules/3b-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
-          <a href="/modules/3c-transformers">Transformers</a>
-          <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Hands-on
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
-          <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
-          <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
-          <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF S2S</a>
-          <a href="/modules/4e-c4fe-tbip">C4FE-TBIP</a>
-          <a href="/modules/4f-etl-job">DE: Serverless ETL</a>
-
-        </div>
-      </div>
-    </nav>
-  </nav>
-
-  <!-- Content appended here -->
-  <div class="franklin-content">
-    <h1 id="the_downstream_of_a_mlp_from_scratch"><a href="#the_downstream_of_a_mlp_from_scratch"
-        class="header-anchor">The Downstream of A MLP from Scratch </a></h1>
-    <p>In this blog, we will go step by step with how to create a mlp from scratch. </p>
-    <div class="franklin-toc">
-      <ol>
-        <li><a href="#some_utility_functions_and_the_dataset">Some Utility Functions and The Dataset</a></li>
-        <li><a href="#mlp_in_numpy_and_define_the_grid_on_which_the_classifier_will_be_evaluated">MLP in NumPy and
-            Define the Grid on Which The Classifier Will Be Evaluated</a></li>
-        <li><a href="#implementing_the_linear_layer">Implementing the Linear Layer </a></li>
-        <li><a href="#using_the_bce_loss">Using the BCE loss</a></li>
-        <li><a href="#using_a_pytorch_module">Using A Pytorch Module </a></li>
-      </ol>
-    </div>
-    <h2 id="some_utility_functions_and_the_dataset"><a href="#some_utility_functions_and_the_dataset"
-        class="header-anchor">Some Utility Functions and The Dataset</a></h2>
-    <pre><code class="language-python"># all of these libraries are used for plotting
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Plot the dataset
-def plot_data&#40;ax, X, Y&#41;:
-    plt.axis&#40;&#39;off&#39;&#41;
-    ax.scatter&#40;X&#91;:, 0&#93;, X&#91;:, 1&#93;, s&#61;1, c&#61;Y, cmap&#61;&#39;bone&#39;&#41;
-
-from sklearn.datasets import make_moons
-X, Y &#61; make_moons&#40;n_samples&#61;2000, noise&#61;0.1&#41;</code></pre>
-    <h2 id="mlp_in_numpy_and_define_the_grid_on_which_the_classifier_will_be_evaluated"><a
-        href="#mlp_in_numpy_and_define_the_grid_on_which_the_classifier_will_be_evaluated" class="header-anchor">MLP in
-        NumPy and Define the Grid on Which The Classifier Will Be Evaluated</a></h2>
-    <pre><code class="language-python">xx, yy &#61; np.meshgrid&#40;np.arange&#40;x_min, x_max, .1&#41;,
-                     np.arange&#40;y_min, y_max, .1&#41;&#41;
-
-to_forward &#61; np.array&#40;list&#40;zip&#40;xx.ravel&#40;&#41;, yy.ravel&#40;&#41;&#41;&#41;&#41;
-
-# plot the decision boundary of our classifier
-
-
-def plot_decision_boundary&#40;ax, X, Y, classifier&#41;:
-    # forward pass on the grid, then convert to numpy for plotting
-    Z &#61; classifier.forward&#40;to_forward&#41;
-    Z &#61; Z.reshape&#40;xx.shape&#41;
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">plot_decision_boundary</span>(<span class=hljs-params >ax, X, Y, classifier</span>):
+    <span class=hljs-comment ># forward pass on the grid, then convert to numpy for plotting</span>
+    Z = classifier.forward(to_forward)
+    Z = Z.reshape(xx.shape)
     
-    # plot contour lines of the values of our classifier on the grid
-    ax.contourf&#40;xx, yy, Z&gt;0.5, cmap&#61;&#39;Blues&#39;&#41;
+    <span class=hljs-comment ># plot contour lines of the values of our classifier on the grid</span>
+    ax.contourf(xx, yy, Z&gt;<span class=hljs-number >0.5</span>, cmap=<span class=hljs-string >&#x27;Blues&#x27;</span>)
     
-    # then plot the dataset
-    plot_data&#40;ax, X,Y&#41;</code></pre>
-    <pre><code class="language-python"># Define the grid on which we will evaluate our classifier
-xx, yy &#61; np.meshgrid&#40;np.arange&#40;x_min, x_max, .1&#41;,
-                     np.arange&#40;y_min, y_max, .1&#41;&#41;
+    <span class=hljs-comment ># then plot the dataset</span>
+    plot_data(ax, X,Y)</code></pre> <pre><code class="python hljs"><span class=hljs-comment ># Define the grid on which we will evaluate our classifier</span>
+xx, yy = np.meshgrid(np.arange(x_min, x_max, <span class=hljs-number >.1</span>),
+                     np.arange(y_min, y_max, <span class=hljs-number >.1</span>))
 
-to_forward &#61; np.array&#40;list&#40;zip&#40;xx.ravel&#40;&#41;, yy.ravel&#40;&#41;&#41;&#41;&#41;
+to_forward = np.array(<span class=hljs-built_in >list</span>(<span class=hljs-built_in >zip</span>(xx.ravel(), yy.ravel())))
 
-# plot the decision boundary of our classifier
-def plot_decision_boundary&#40;ax, X, Y, classifier&#41;:
-    # forward pass on the grid, then convert to numpy for plotting
-    Z &#61; classifier.forward&#40;to_forward&#41;
-    Z &#61; Z.reshape&#40;xx.shape&#41;
+<span class=hljs-comment ># plot the decision boundary of our classifier</span>
+<span class=hljs-keyword >def</span> <span class="hljs-title function_">plot_decision_boundary</span>(<span class=hljs-params >ax, X, Y, classifier</span>):
+    <span class=hljs-comment ># forward pass on the grid, then convert to numpy for plotting</span>
+    Z = classifier.forward(to_forward)
+    Z = Z.reshape(xx.shape)
     
-    # plot contour lines of the values of our classifier on the grid
-    ax.contourf&#40;xx, yy, Z&gt;0.5, cmap&#61;&#39;Blues&#39;&#41;
+    <span class=hljs-comment ># plot contour lines of the values of our classifier on the grid</span>
+    ax.contourf(xx, yy, Z&gt;<span class=hljs-number >0.5</span>, cmap=<span class=hljs-string >&#x27;Blues&#x27;</span>)
     
-    # then plot the dataset
-    plot_data&#40;ax, X,Y&#41;</code></pre>
-    <h2 id="implementing_the_linear_layer"><a href="#implementing_the_linear_layer" class="header-anchor">Implementing
-        the Linear Layer </a></h2>
-    <pre><code class="language-python">class MyReLU&#40;object&#41;:
-    def forward&#40;self, x&#41;:
-        # the relu is y_i &#61; max&#40;0, x_i&#41;
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># then plot the dataset</span>
+    plot_data(ax, X,Y)</code></pre> <h2 id=implementing_the_linear_layer ><a href="#implementing_the_linear_layer" class=header-anchor >Implementing the Linear Layer </a></h2> <pre><code class="python hljs"><span class=hljs-keyword >class</span> <span class="hljs-title class_">MyReLU</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, x</span>):
+        <span class=hljs-comment ># the relu is y_i = max(0, x_i)</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
         
     
-    def backward&#40;self, grad_output&#41;:
-        # the gradient is 1 for the inputs that were above 0, 0 elsewhere
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">backward</span>(<span class=hljs-params >self, grad_output</span>):
+        <span class=hljs-comment ># the gradient is 1 for the inputs that were above 0, 0 elsewhere</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    def step&#40;self, learning_rate&#41;:
-        # no need to do anything here, since ReLU has no parameters
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">step</span>(<span class=hljs-params >self, learning_rate</span>):
+        <span class=hljs-comment ># no need to do anything here, since ReLU has no parameters</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
 
-class MySigmoid&#40;object&#41;:
-    def forward&#40;self, x&#41;:
-        # the sigmoid is y_i &#61; 1./&#40;1&#43;exp&#40;-x_i&#41;&#41;
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+<span class=hljs-keyword >class</span> <span class="hljs-title class_">MySigmoid</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, x</span>):
+        <span class=hljs-comment ># the sigmoid is y_i = 1./(1+exp(-x_i))</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    def backward&#40;self, grad_output&#41;:
-        # the partial derivative is e^-x / &#40;e^-x &#43; 1&#41;^2
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">backward</span>(<span class=hljs-params >self, grad_output</span>):
+        <span class=hljs-comment ># the partial derivative is e^-x / (e^-x + 1)^2</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    def step&#40;self, learning_rate&#41;:
-        # no need to do anything here since Sigmoid has no parameters
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;</code></pre>
-    <pre><code class="language-python">class MyLinear&#40;object&#41;:
-    def __init__&#40;self, n_input, n_output&#41;:
-        # initialize two random matrices for W and b &#40;use np.random.randn&#41;
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">step</span>(<span class=hljs-params >self, learning_rate</span>):
+        <span class=hljs-comment ># no need to do anything here since Sigmoid has no parameters</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()</code></pre> <pre><code class="python hljs"><span class=hljs-keyword >class</span> <span class="hljs-title class_">MyLinear</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, n_input, n_output</span>):
+        <span class=hljs-comment ># initialize two random matrices for W and b (use np.random.randn)</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    def forward&#40;self, x&#41;:
-        # save a copy of x, you&#39;ll need it for the backward
-        # return xW &#43; b
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, x</span>):
+        <span class=hljs-comment ># save a copy of x, you&#x27;ll need it for the backward</span>
+        <span class=hljs-comment ># return xW + b</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    def backward&#40;self, grad_output&#41;:
-        # y_i &#61; \sum_j x_j W_&#123;j,i&#125;  &#43; b_i
-        # d y_i / d W_&#123;j, i&#125; &#61; x_j
-        # d loss / d y_i &#61; grad_output&#91;i&#93;
-        # so d loss / d W_&#123;j,i&#125; &#61; x_j * grad_output&#91;i&#93;  &#40;by the chain rule&#41;
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">backward</span>(<span class=hljs-params >self, grad_output</span>):
+        <span class=hljs-comment ># y_i = \sum_j x_j W_{j,i}  + b_i</span>
+        <span class=hljs-comment ># d y_i / d W_{j, i} = x_j</span>
+        <span class=hljs-comment ># d loss / d y_i = grad_output[i]</span>
+        <span class=hljs-comment ># so d loss / d W_{j,i} = x_j * grad_output[i]  (by the chain rule)</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
         
-        # d y_i / d b_i &#61; 1
-        # d loss / d y_i &#61; grad_output&#91;i&#93;
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+        <span class=hljs-comment ># d y_i / d b_i = 1</span>
+        <span class=hljs-comment ># d loss / d y_i = grad_output[i]</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
         
-        # now we need to compute the gradient with respect to x to continue the back propagation
-        # d y_i / d x_j &#61; W_&#123;j, i&#125;
-        # to compute the gradient of the loss, we have to sum over all possible y_i in the chain rule
-        # d loss / d x_j &#61; \sum_i &#40;d loss / d y_i&#41; &#40;d y_i / d x_j&#41;
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+        <span class=hljs-comment ># now we need to compute the gradient with respect to x to continue the back propagation</span>
+        <span class=hljs-comment ># d y_i / d x_j = W_{j, i}</span>
+        <span class=hljs-comment ># to compute the gradient of the loss, we have to sum over all possible y_i in the chain rule</span>
+        <span class=hljs-comment ># d loss / d x_j = \sum_i (d loss / d y_i) (d y_i / d x_j)</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    def step&#40;self, learning_rate&#41;:
-        # update self.W and self.b in the opposite direction of the stored gradients, for learning_rate
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;</code></pre>
-    <h2 id="using_the_bce_loss"><a href="#using_the_bce_loss" class="header-anchor">Using the BCE loss</a></h2>
-    <pre><code class="language-python">class Sequential&#40;object&#41;:
-    def __init__&#40;self, layers&#41;:
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">step</span>(<span class=hljs-params >self, learning_rate</span>):
+        <span class=hljs-comment ># update self.W and self.b in the opposite direction of the stored gradients, for learning_rate</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()</code></pre> <h2 id=using_the_bce_loss ><a href="#using_the_bce_loss" class=header-anchor >Using the BCE loss</a></h2> <pre><code class="python hljs"><span class=hljs-keyword >class</span> <span class="hljs-title class_">Sequential</span>(<span class="hljs-title class_ inherited__">object</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, layers</span>):
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
         
-    def forward&#40;self, x&#41;:
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, x</span>):
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    def compute_loss&#40;self, out, label&#41;:
-        # use the BCE loss
-        # -&#40;label * log&#40;output&#41; &#43; &#40;1-label&#41; * log&#40;1-output&#41;&#41;
-        # save the gradient, and return the loss      
-        # beware of dividing by zero in the gradient.
-        # split the computation in two cases, one where the label is 0 and another one where the label is 1
-        # add a small value &#40;1e-10&#41; to the denominator
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">compute_loss</span>(<span class=hljs-params >self, out, label</span>):
+        <span class=hljs-comment ># use the BCE loss</span>
+        <span class=hljs-comment ># -(label * log(output) + (1-label) * log(1-output))</span>
+        <span class=hljs-comment ># save the gradient, and return the loss      </span>
+        <span class=hljs-comment ># beware of dividing by zero in the gradient.</span>
+        <span class=hljs-comment ># split the computation in two cases, one where the label is 0 and another one where the label is 1</span>
+        <span class=hljs-comment ># add a small value (1e-10) to the denominator</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    def backward&#40;self&#41;:
-        # apply backprop sequentially, starting from the gradient of the loss
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">backward</span>(<span class=hljs-params >self</span>):
+        <span class=hljs-comment ># apply backprop sequentially, starting from the gradient of the loss</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    def step&#40;self, learning_rate&#41;:
-        # take a gradient step for each layers
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;</code></pre>
-    <pre><code class="language-python">h&#61;50
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">step</span>(<span class=hljs-params >self, learning_rate</span>):
+        <span class=hljs-comment ># take a gradient step for each layers</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()</code></pre> <pre><code class="python hljs">h=<span class=hljs-number >50</span>
 
-# define your network with your Sequential
-# it should be a linear layer with 2 inputs and h outputs, followed by a ReLU
-# then a linear layer with h inputs and 1 outputs, followed by a sigmoid
-# feel free to try other architectures
+<span class=hljs-comment ># define your network with your Sequential</span>
+<span class=hljs-comment ># it should be a linear layer with 2 inputs and h outputs, followed by a ReLU</span>
+<span class=hljs-comment ># then a linear layer with h inputs and 1 outputs, followed by a sigmoid</span>
+<span class=hljs-comment ># feel free to try other architectures</span>
 
-# YOUR CODE HERE
-raise NotImplementedError&#40;&#41;</code></pre>
-    <pre><code class="language-python"># unfortunately animation is not working on colab
-# you should comment the following line if on colab
-&#37;matplotlib notebook
-fig, ax &#61; plt.subplots&#40;1, 1, facecolor&#61;&#39;#4B6EA9&#39;&#41;
-ax.set_xlim&#40;x_min, x_max&#41;
-ax.set_ylim&#40;y_min, y_max&#41;
-losses &#61; &#91;&#93;
-learning_rate &#61; 1e-2
-for it in range&#40;10000&#41;:
-    # pick a random example id
-    j &#61; np.random.randint&#40;1, len&#40;X&#41;&#41;
+<span class=hljs-comment ># YOUR CODE HERE</span>
+<span class=hljs-keyword >raise</span> NotImplementedError()</code></pre> <pre><code class="python hljs"><span class=hljs-comment ># unfortunately animation is not working on colab</span>
+<span class=hljs-comment ># you should comment the following line if on colab</span>
+%matplotlib notebook
+fig, ax = plt.subplots(<span class=hljs-number >1</span>, <span class=hljs-number >1</span>, facecolor=<span class=hljs-string >&#x27;#4B6EA9&#x27;</span>)
+ax.set_xlim(x_min, x_max)
+ax.set_ylim(y_min, y_max)
+losses = []
+learning_rate = <span class=hljs-number >1e-2</span>
+<span class=hljs-keyword >for</span> it <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >10000</span>):
+    <span class=hljs-comment ># pick a random example id</span>
+    j = np.random.randint(<span class=hljs-number >1</span>, <span class=hljs-built_in >len</span>(X))
 
-    # select the corresponding example and label
-    example &#61; X&#91;j:j&#43;1&#93;
-    label &#61; Y&#91;j&#93;
+    <span class=hljs-comment ># select the corresponding example and label</span>
+    example = X[j:j+<span class=hljs-number >1</span>]
+    label = Y[j]
 
-    # do a forward pass on the example
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># do a forward pass on the example</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    # compute the loss according to your output and the label
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># compute the loss according to your output and the label</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    # backward pass
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># backward pass</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
     
-    # gradient step
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># gradient step</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    # draw the current decision boundary every 250 examples seen
-    if it &#37; 250 &#61;&#61; 0 : 
-        plot_decision_boundary&#40;ax, X,Y, net&#41;
-        fig.canvas.draw&#40;&#41;
-plot_decision_boundary&#40;ax, X,Y, net&#41;
-fig.canvas.draw&#40;&#41;</code></pre>
-    <pre><code class="language-python">&#37;matplotlib inline
-plt.plot&#40;losses&#41;</code></pre>
-    <h2 id="using_a_pytorch_module"><a href="#using_a_pytorch_module" class="header-anchor">Using A Pytorch Module </a>
-    </h2>
-    <pre><code class="language-python">import torch
-import torch.nn as nn
+    <span class=hljs-comment ># draw the current decision boundary every 250 examples seen</span>
+    <span class=hljs-keyword >if</span> it % <span class=hljs-number >250</span> == <span class=hljs-number >0</span> : 
+        plot_decision_boundary(ax, X,Y, net)
+        fig.canvas.draw()
+plot_decision_boundary(ax, X,Y, net)
+fig.canvas.draw()</code></pre> <pre><code class="python hljs">%matplotlib inline
+plt.plot(losses)</code></pre> <h2 id=using_a_pytorch_module ><a href="#using_a_pytorch_module" class=header-anchor >Using A Pytorch Module </a></h2> <pre><code class="python hljs"><span class=hljs-keyword >import</span> torch
+<span class=hljs-keyword >import</span> torch.nn <span class=hljs-keyword >as</span> nn
 
-# y &#61; xw &#43; b
-class MyLinear_mod&#40;nn.Module&#41;:
-    def __init__&#40;self, n_input, n_output&#41;:
-        super&#40;MyLinear_mod, self&#41;.__init__&#40;&#41;
-        # define self.A and self.b the weights and biases
-        # initialize them with a normal distribution
-        # use nn.Parameters
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+<span class=hljs-comment ># y = xw + b</span>
+<span class=hljs-keyword >class</span> <span class="hljs-title class_">MyLinear_mod</span>(nn.Module):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, n_input, n_output</span>):
+        <span class=hljs-built_in >super</span>(MyLinear_mod, self).__init__()
+        <span class=hljs-comment ># define self.A and self.b the weights and biases</span>
+        <span class=hljs-comment ># initialize them with a normal distribution</span>
+        <span class=hljs-comment ># use nn.Parameters</span>
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    def forward&#40;self, x&#41;:
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, x</span>):
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()
         
-class MyReLU_mod&#40;nn.Module&#41;:
-    def __init__&#40;self&#41;:
-        super&#40;MyReLU_mod, self&#41;.__init__&#40;&#41;
+<span class=hljs-keyword >class</span> <span class="hljs-title class_">MyReLU_mod</span>(nn.Module):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self</span>):
+        <span class=hljs-built_in >super</span>(MyReLU_mod, self).__init__()
         
-    def forward&#40;self, x&#41;:
-        # YOUR CODE HERE
-        raise NotImplementedError&#40;&#41;</code></pre>
-    <p><strong>Subsequent section defines the network using MyLinear<em>mod, MyReLU</em>mod and nn.Sigmoid</strong></p>
-    <pre><code class="language-python">from torch import optim
-optimizer &#61; optim.SGD&#40;net.parameters&#40;&#41;, lr&#61;1e-2&#41;
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, x</span>):
+        <span class=hljs-comment ># YOUR CODE HERE</span>
+        <span class=hljs-keyword >raise</span> NotImplementedError()</code></pre> <p><strong>Subsequent section defines the network using MyLinear<em>mod, MyReLU</em>mod and nn.Sigmoid</strong></p> <pre><code class="python hljs"><span class=hljs-keyword >from</span> torch <span class=hljs-keyword >import</span> optim
+optimizer = optim.SGD(net.parameters(), lr=<span class=hljs-number >1e-2</span>)
 
-X_torch &#61; torch.from_numpy&#40;X&#41;.float&#40;&#41;
-Y_torch &#61; torch.from_numpy&#40;Y&#41;.float&#40;&#41;
+X_torch = torch.from_numpy(X).<span class=hljs-built_in >float</span>()
+Y_torch = torch.from_numpy(Y).<span class=hljs-built_in >float</span>()
 
-# you should comment the following line if on colab
-&#37;matplotlib notebook
-fig, ax &#61; plt.subplots&#40;1, 1, facecolor&#61;&#39;#4B6EA9&#39;&#41;
-ax.set_xlim&#40;x_min, x_max&#41;
-ax.set_ylim&#40;y_min, y_max&#41;
+<span class=hljs-comment ># you should comment the following line if on colab</span>
+%matplotlib notebook
+fig, ax = plt.subplots(<span class=hljs-number >1</span>, <span class=hljs-number >1</span>, facecolor=<span class=hljs-string >&#x27;#4B6EA9&#x27;</span>)
+ax.set_xlim(x_min, x_max)
+ax.set_ylim(y_min, y_max)
 
-losses &#61; &#91;&#93;
-criterion &#61; nn.BCELoss&#40;&#41;
-for it in range&#40;10000&#41;:
-    # pick a random example id 
-    j &#61; np.random.randint&#40;1, len&#40;X&#41;&#41;
+losses = []
+criterion = nn.BCELoss()
+<span class=hljs-keyword >for</span> it <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >10000</span>):
+    <span class=hljs-comment ># pick a random example id </span>
+    j = np.random.randint(<span class=hljs-number >1</span>, <span class=hljs-built_in >len</span>(X))
 
-    # select the corresponding example and label
-    example &#61; X_torch&#91;j:j&#43;1&#93;
-    label &#61; Y_torch&#91;j:j&#43;1&#93;.unsqueeze&#40;1&#41;
+    <span class=hljs-comment ># select the corresponding example and label</span>
+    example = X_torch[j:j+<span class=hljs-number >1</span>]
+    label = Y_torch[j:j+<span class=hljs-number >1</span>].unsqueeze(<span class=hljs-number >1</span>)
 
-    # do a forward pass on the example
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># do a forward pass on the example</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    # compute the loss according to your output and the label
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># compute the loss according to your output and the label</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    # zero the gradients
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># zero the gradients</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    # backward pass
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># backward pass</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    # gradient step
-    # YOUR CODE HERE
-    raise NotImplementedError&#40;&#41;
+    <span class=hljs-comment ># gradient step</span>
+    <span class=hljs-comment ># YOUR CODE HERE</span>
+    <span class=hljs-keyword >raise</span> NotImplementedError()
 
-    # draw the current decision boundary every 250 examples seen
-    if it &#37; 250 &#61;&#61; 0 : 
-        plot_decision_boundary&#40;ax, X,Y, net&#41;
-        fig.canvas.draw&#40;&#41;
-plot_decision_boundary&#40;ax, X,Y, net&#41;
-fig.canvas.draw&#40;&#41;
-&#37;matplotlib inline
-plt.plot&#40;losses&#41;</code></pre>
-    <div class="page-foot">
-      <div class="copyright">
-        <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo"
-              src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
-        ©️ Last modified: March 12, 2024. Website built with <a
-          href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia
-          programming language</a>.
-      </div>
-    </div>
-  </div><!-- CONTENT ENDS HERE -->
-
-
-  <script src="/libs/highlight/highlight.min.js"></script>
-  <script>
-    hljs.highlightAll();
-    hljs.configure({
-      tabReplace: '    '
-    });
-
-  </script>
-
-
-</body>
-
-</html>
+    <span class=hljs-comment ># draw the current decision boundary every 250 examples seen</span>
+    <span class=hljs-keyword >if</span> it % <span class=hljs-number >250</span> == <span class=hljs-number >0</span> : 
+        plot_decision_boundary(ax, X,Y, net)
+        fig.canvas.draw()
+plot_decision_boundary(ax, X,Y, net)
+fig.canvas.draw()
+%matplotlib inline
+plt.plot(losses)</code></pre> <div class=page-foot > <div class=copyright > <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a> ©️ Last modified: March 20, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> <script src="/nlpwme/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
