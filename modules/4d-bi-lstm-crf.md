@@ -34,12 +34,11 @@ $$ \text{Score}(x, y) = \sum_{i} \log \psi_{\text{EMIT}}(y_i \rightarrow x_i) + 
 
 $$= \sum_{i} h_i[y_i] + P_{y_i,y_{i-1}}$$
 
-The text also mentions that the potentials must only look at local features to make the partition function tractable and that the transition scores are stored in a matrix $P$, where $P_{j,k}$ is the score of transitioning to tag $j$ from tag $k$.
+Additionally, the text states that in order to make the partition function tractable, the potentials must only consider local features. The transition scores are kept in a matrix $P$, where the score of transitioning from tag k to tag j is represented by the symbol $P_{j,k}$.
 
-The example below implements the forward algorithm in log space to compute the partition function, and the viterbi algorithm to decode. Backpropagation will compute the gradients automatically for us. We don’t have to do anything by hand.
+The following example uses the viterbi algorithm for decoding and the forward method in log space to calculate the partition function. The gradients will be computed automatically for us via backpropagation. Nothing needs to be done by hand.
 
-The implementation is not optimized. If you understand what is going on, you’ll probably quickly see that iterating over the next tag in the forward algorithm could probably be done in one big operation. I wanted to code to be more readable. If you want to make the relevant change, you could probably use this tagger for real tasks.
-
+There is inefficiency in the implementation. If you comprehend what's happening, you'll undoubtedly notice quite soon that the forward algorithm's iteration over the next tag may potentially be completed in a single large operation.
 
 ```python
 
