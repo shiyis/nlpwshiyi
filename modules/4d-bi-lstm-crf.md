@@ -3,25 +3,23 @@
 \toc
 
 
-For this section, we will see a full, complicated example of a Bi-LSTM Conditional Random Field for named-entity recognition. 
+We will examine a comprehensive, intricate example of a Bi-LSTM Conditional Random Field for named-entity recognition in this section.
 
-The LSTM tagger above is typically sufficient for part-of-speech tagging, but a sequence model like the CRF is really essential for strong performance on NER. 
+For part-of-speech tagging, the LSTM tagger mentioned above is usually adequate; but, for good performance on NER, a sequence model such as the CRF is truly necessary.
 
-Familiarity with CRF’s is assumed. Although this name sounds scary, all the model is a CRF but where an LSTM provides the features. 
+Knowledge of CRFs is presumed. Despite the ominous moniker, this model is really a CRF with features provided by an LSTM.
 
-This is an advanced model though, far more complicated than any earlier model in this tutorial. If you want to skip it, that is fine. To see if you’re ready, see if you can:
+However, compared to the previous models in this tutorial, this one is far more complex and intricate. It's okay if you choose not to participate. Try the following to see whether you're ready:
 
-Write the recurrence for the viterbi variable at step i for tag k.
+- At step I for tag K, write the recurrence for the viterbi variable.
 
-Modify the above recurrence to compute the forward variables instead.
+- To compute the forward variables, alter the recurrence above.
 
-Modify again the above recurrence to compute the forward variables in log-space (hint: log-sum-exp)
+- To calculate the forward variables in log-space, modify the aforementioned recurrence one more (hint: log-sum-exp).
 
-If you can do those three things, you should be able to understand the code below. Recall that the CRF computes a conditional probability. Let 
-$y$ be a tag sequence and 
-$x$ an input sequence of words. Then we compute
+The code below should make sense to you if you can accomplish those three tasks. Remember that a conditional probability is computed by the CRF. Let x be the word input sequence and y be the tag sequence. 
 
-The image contains mathematical equations and explanations related to a Conditional Random Field (CRF) model used in conjunction with a Bi-LSTM neural network for sequence tagging tasks. Here are the equations presented in LaTeX:
+The graphic is composed of mathematical formulas and explanations pertaining to a Bi-LSTM neural network and Conditional Random Field (CRF) model used for sequence tagging tasks. The LaTeX formulae are as follows:
 
 1. The conditional probability of a tag sequence $y$ given an input sequence $x$ is computed as:
 $$ P(y|x) = \frac{\exp(\text{Score}(x, y))}{\sum_{y'} \exp(\text{Score}(x, y'))} $$
