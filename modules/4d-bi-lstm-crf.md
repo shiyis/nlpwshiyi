@@ -34,7 +34,7 @@ $$ \text{Score}(x, y) = \sum_{i} \log \psi_{\text{EMIT}}(y_i \rightarrow x_i) + 
 
 $$= \sum_{i} h_i[y_i] + P_{y_i,y_{i-1}}$$
 
-Additionally, the text states that in order to make the partition function tractable, the potentials must only consider local features. The transition scores are kept in a matrix $P$, where the score of transitioning from tag k to tag j is represented by the symbol $P_{j,k}$.
+Additionally, the text states that in order to make the partition function tractable, the potentials must only consider local features. The transition scores are kept in a matrix $P$, where the score of transitioning from tag $k$ to tag $j$ is represented by the symbol $P_{j,k}$.
 
 The following example uses the viterbi algorithm for decoding and the forward method in log space to calculate the partition function. The gradients will be computed automatically for us via backpropagation. Nothing needs to be done by hand.
 
