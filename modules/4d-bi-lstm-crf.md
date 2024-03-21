@@ -11,7 +11,7 @@ Knowledge of CRFs is presumed. Despite the ominous moniker, this model is really
 
 However, compared to the previous models in this tutorial, this one is far more complex and intricate. It's okay if you choose not to participate. Try the following to see whether you're ready:
 
-- At step I for tag K, write the recurrence for the viterbi variable.
+- At step $I$ for tag $K$, write the recurrence for the viterbi variable.
 
 - To compute the forward variables, alter the recurrence above.
 
