@@ -14,4 +14,4 @@ Beyond my professional pursuits, I find solace and inspiration in the company of
 
 Here is a photo of him! 
 
-![link](./extras/about_me/oreo.jpeg)
+![link](./modules/extras/about_me/oreo.jpeg)
