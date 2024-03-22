@@ -1,4 +1,6 @@
-Greetings! I'm Shiyi, and I'm deeply passionate about the intricate dance between data and innovation. With a fervent zeal for leveraging technology to extract insights and create meaningful impact, I've embarked on a journey that spans the realms of data science, research, and creative expression.
+# Hello There!
+
+I'm Shiyi, and I'm deeply passionate about the intricate dance between data and innovation. With a fervent zeal for leveraging technology to extract insights and create meaningful impact, I've embarked on a journey that spans the realms of data science, research, and creative expression.
 
 At the heart of my endeavors lies a profound appreciation for machine learning, deep learning, and natural language processing. As an advocate for data-driven decision-making, I thrive on unraveling the complexities of algorithms and patterns, harnessing their power to transform raw data into actionable intelligence. From predictive modeling in finance to image recognition tasks using deep learning architectures, I relish the challenge of pushing the boundaries of what's possible with data.
 
