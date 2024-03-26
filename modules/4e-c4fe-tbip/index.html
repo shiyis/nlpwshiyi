@@ -144,9 +144,9 @@ num_documents, num_words = counts.shape</code></pre> <pre><code class="python hl
                 <span class=hljs-number >1</span>,
             )
 
-            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;v&quot;</span>, size=self.V, dim=-<span class=hljs-number >1</span>):
-                <span class=hljs-comment ># Sample observed words</span>
-                sample(<span class=hljs-string >&quot;Y_batch&quot;</span>, dist.Poisson(P), obs=Y_batch)
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;v&quot;</span>, size=self.V, dim=-<span class=hljs-number >1</span>):
+            <span class=hljs-comment ># Sample observed words</span>
+            sample(<span class=hljs-string >&quot;Y_batch&quot;</span>, dist.Poisson(P), obs=Y_batch)
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">guide</span>(<span class=hljs-params >self, Y_batch, d_batch, i_batch</span>):
         <span class=hljs-comment ># This defines variational family. Notice that each of the latent variables</span>
