@@ -18,6 +18,7 @@ One pertains to the neurological properties of the mind and body and the other e
 #### Consciousness As The Fundamental Property of Nature
 
 Everything started from the debate about what consciousness and mental representations really are, and it has been going on for centuries.
+
 In answering the question of why we need consciousness, one of the proposed answers is that consciousness is a fundamental property of nature. It's added that,
 
 ```plaintext
