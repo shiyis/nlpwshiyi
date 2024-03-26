@@ -211,9 +211,9 @@ class TBIP:
                 1,
             )
 
-            with plate("v", size=self.V, dim=-1):
-                # Sample observed words
-                sample("Y_batch", dist.Poisson(P), obs=Y_batch)
+        with plate("v", size=self.V, dim=-1):
+            # Sample observed words
+            sample("Y_batch", dist.Poisson(P), obs=Y_batch)
 
     def guide(self, Y_batch, d_batch, i_batch):
         # This defines variational family. Notice that each of the latent variables
