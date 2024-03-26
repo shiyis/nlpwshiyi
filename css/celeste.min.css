@@ -852,13 +852,13 @@ pre {
   font-family: "Source Code Pro", monospace
 }
 
-code {
-  padding: .25em .5em;
+code{
+  padding: 0em 0.5em 0 0.25em;
   font-size: 85%;
   text-wrap: pretty;
   color: #6962d2;
-  background-color: #f9f9f9;
-  border-radius: 3px
+  background-color: gainsboro;
+  border-radius: 2px;
 }
 
 pre {
