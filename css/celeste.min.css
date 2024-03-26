@@ -595,9 +595,11 @@ th {
   text-align: left
 }
 
-tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) td {
+  background-color: grey;
+}
 tbody tr:nth-child(odd) th {
-  background-color: white;
+  background-color: darkslategray;
 }
 
 .container,
@@ -660,7 +662,7 @@ p {
 }
 
 strong {
-  color:hsl(0, 0%, 94%);
+  /* color:hsl(0, 0%, 94%); */
 
 }
 
