@@ -101,28 +101,28 @@ Assume you have input $( x )$, scale parameter $( \gamma )$, shift parameter $( 
 
 ### Forward Pass
 
-#### 1. Input Transformation
+#### Input Transformation
    \[ \text{Affine Transformation } z = \gamma \hat{x} + \beta \]
    - $( z )$ is the output of the component-wise affine transformation.
 
 ### Backward Pass
 
-#### 1. Gradients with Respect to $( z )$
+#### Gradients with Respect to $( z )$
 \[ \frac{\partial L}{\partial z} \]
 - Compute the gradient of the loss $( L )$ with respect to $( z )$.
 
-#### 2. Gradients with Respect to $( \gamma )$ and $( \beta )$
+#### Gradients with Respect to $( \gamma )$ and $( \beta )$
 \[ \frac{\partial L}{\partial \gamma} = \sum \frac{\partial L}{\partial z} \cdot \hat{x} \]
 \[ \frac{\partial L}{\partial \beta} = \sum \frac{\partial L}{\partial z} \]
 
-#### 3. Gradients with Respect to $( \hat{x} )$
+#### Gradients with Respect to $( \hat{x} )$
 \[ \frac{\partial L}{\partial \hat{x}} = \frac{\partial L}{\partial z} \cdot \gamma \]
 
-#### 4. Gradients with Respect to $( \sigma^2 )$ and $( \mu )$
+#### Gradients with Respect to $( \sigma^2 )$ and $( \mu )$
 \[ \frac{\partial L}{\partial \sigma^2} = \sum \frac{\partial L}{\partial z} \cdot (\hat{x} - \mu) \cdot \frac{-1}{2} \cdot (\sigma^2 + \epsilon)^{-\frac{3}{2}} \]
 \[ \frac{\partial L}{\partial \mu} = \sum \frac{\partial L}{\partial z} \cdot \frac{-1}{\sqrt{\sigma^2 + \epsilon}} + \frac{\partial L}{\partial \sigma^2} \cdot \frac{\sum -2 (\hat{x} - \mu)}{m} \]
 
-#### 5. Gradients with Respect to $( x )$
+#### Gradients with Respect to $( x )$
 \[ \frac{\partial L}{\partial x} = \frac{\partial L}{\partial \hat{x}} \cdot \frac{1}{\sqrt{\sigma^2 + \epsilon}} + \frac{\partial L}{\partial \sigma^2} \cdot \frac{2 (\hat{x} - \mu)}{m} + \frac{\partial L}{\partial \mu} \cdot \frac{1}{m} \]
 
 ### Update Parameters
