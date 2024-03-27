@@ -86,13 +86,25 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2k-VAE/index.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2l-dnns/index.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/graph2/index.html</loc>
     <lastmod>2024-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3b-dnns/index.html</loc>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3c-roberta/index.html</loc>
     <lastmod>2024-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -230,6 +242,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3b-xlnet/index.html</loc>
+    <lastmod>2024-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2h-dropout/index.html</loc>
     <lastmod>2024-03-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -242,7 +260,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3c-transformers/index.html</loc>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3a-transformers/index.html</loc>
     <lastmod>2024-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -309,12 +327,6 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1h-semantics/index.html</loc>
-    <lastmod>2024-03-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3a-VAE/index.html</loc>
     <lastmod>2024-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
