@@ -1,4 +1,4 @@
-## Transformers: A Lightweight Introduction 
+## Generative Pre-trained Transformer: A Lightweight Introduction 
 
 \toc
 
