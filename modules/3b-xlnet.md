@@ -18,13 +18,13 @@ Here's a breakdown of XLNet along with necessary formulas, explanations, and pot
 
 3. **Training Objective**: XLNet uses a modified version of the autoregressive training objective used in models like GPT. The objective is to maximize the expected log-likelihood of the target sequence given the input sequence. Mathematically, it can be represented as:
 
-    \[ \max_{\theta} \mathbb{E}_{(x,y) \sim \mathcal{D}} \sum_{t=1}^{T_y} \log P(y_t | x, y_{<t}; \theta) \]
+    $$ \max_{\theta} \mathbb{E}_{(x,y) \sim \mathcal{D}} \sum_{t=1}^{T_y} \log P(y_t | x, y_{<t}; \theta) $$
 
     Where:
-    - \( (x, y) \) represents a training example consisting of an input sequence \( x \) and its corresponding target sequence \( y \).
-    - \( T_y \) is the length of the target sequence.
-    - \( \theta \) represents the model parameters.
-    - \( P(y_t | x, y_{<t}; \theta) \) is the conditional probability of the target token \( y_t \) given the input sequence \( x \) and previously generated tokens \( y_{<t} \).
+    - $ (x, y) $ represents a training example consisting of an input sequence $ x $ and its corresponding target sequence $ y $.
+    - $ T_y $ is the length of the target sequence.
+    - $ \theta $ represents the model parameters.
+    - $ P(y_t | x, y_{<t}; \theta) $ is the conditional probability of the target token $ y_t $ given the input sequence $ x $ and previously generated tokens $ y_{<t} $.
 
 4. **Implementation**: XLNet can be implemented using various deep learning frameworks such as TensorFlow or PyTorch. Below is a simplified PyTorch code snippet demonstrating how to use XLNet for text generation:
 
