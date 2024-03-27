@@ -1,7 +1,7 @@
 ## Perplexity and How It's Applied in Natural Language Processing 
 
 
-Certainly! Perplexity is a measure used in natural language processing (NLP) to evaluate the performance of a language model. It quantifies how well the model predicts a sample of text.
+Perplexity is a measure used in natural language processing (NLP) to evaluate the performance of a language model. It quantifies how well the model predicts a sample of text.
 
 Here's a breakdown of perplexity:
 
