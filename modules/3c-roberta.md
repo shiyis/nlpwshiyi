@@ -10,15 +10,15 @@ RoBERTa is pre-trained using a masked language modeling (MLM) objective. In MLM,
 RoBERTa is built upon the transformer architecture, consisting of stacked self-attention layers and feed-forward neural networks.
 
 ### Formula for Masked Language Modeling Objective:
-Given an input sequence \( X = (x_1, x_2, ..., x_n) \), where \( x_i \) represents the i-th token, the objective is to predict the masked tokens \( X_{\text{masked}} = (x_{m1}, x_{m2}, ..., x_{mk}) \), where \( m \) represents the indices of masked tokens.
+Given an input sequence $ X = (x_1, x_2, ..., x_n) $, where $ x_i $ represents the i-th token, the objective is to predict the masked tokens $ X_{\text{masked}} = (x_{m1}, x_{m2}, ..., x_{mk}) $, where $ m $ represents the indices of masked tokens.
 
-The probability of predicting each masked token \( x_{mi} \) is calculated using softmax over the vocabulary:
-\[ P(x_{mi} | X_{\text{context}}) = \text{softmax}(Wx_{mi} + b) \]
+The probability of predicting each masked token $ x_{mi} $ is calculated using softmax over the vocabulary:
+$$ P(x_{mi} | X_{\text{context}}) = \text{softmax}(Wx_{mi} + b) $$
 
 Where:
-- \( W \) is the weight matrix of the final layer of the transformer.
-- \( b \) is the bias vector.
-- \( X_{\text{context}} \) represents the context tokens in the input sequence, excluding the masked token.
+- $ W $ is the weight matrix of the final layer of the transformer.
+- $ b $ is the bias vector.
+- $ X_{\text{context}} $ represents the context tokens in the input sequence, excluding the masked token.
 
 ### Simple Coding Example:
 
