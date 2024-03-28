@@ -13,15 +13,15 @@ Perplexity measures how well a probability model predicts a sample. It reflects 
 
 Perplexity is calculated as the inverse probability of the test set, normalized by the number of words:
 
-\[ \text{Perplexity}(w_1^N) = \sqrt[N]{\frac{1}{P(w_1^N)}} \]
+$$ \text{Perplexity}(w_1^N) = \sqrt[N]{\frac{1}{P(w_1^N)}} $$
 
 Where:
-- \( N \) is the number of words in the test set.
-- \( P(w_1^N) \) is the probability of the test set under the model.
+- $ N $ is the number of words in the test set.
+- $ P(w_1^N) $ is the probability of the test set under the model.
 
 Alternatively, you may see it represented using the log probability:
 
-\[ \text{Perplexity}(w_1^N) = \exp\left(-\frac{1}{N} \sum_{i=1}^{N} \log P(w_i | w_1^{i-1})\right) \]
+$$ \text{Perplexity}(w_1^N) = \exp\left(-\frac{1}{N} \sum_{i=1}^{N} \log P(w_i | w_1^{i-1})\right) $$
 
 This formula calculates the geometric mean of the inverse probability of the words in the test set.
 
