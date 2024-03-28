@@ -187,7 +187,7 @@ These theories represent diverse perspectives on the nature of consciousness and
 
 ### Computationalism and The Classical Computational Theory of Mind
 
-In a similar light, CCTM or the Classical Computational Theory of Mind was established without addressing the qualitative or subjective aspects of mental processes.
+In a similar light, CCTM or the Classical Computational Theory of Mind was established in accordance with functionalism without addressing the qualitative or subjective aspects of mental processes.
 
 According to CCTM, the mind is a computational system similar in important respects to a Turing machine, and core mental processes (e.g., reasoning, decision-making, and problem solving) are computations similar in important respects to computations executed by a Turing machine.
 
