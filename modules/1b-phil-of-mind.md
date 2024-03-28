@@ -148,29 +148,39 @@ by the laws of physics except consciousness. In this case, he
 identifies consciousness with the broad term "sensations".
 ```
 
-Below summarizes scientific approaches and proposals that tackle the mind-body/consciousness problem that reflect the two distinct assumptions explained above,
+Below summarizes theories that tackle the mind-body/consciousness problem that reflect the two distinct assumptions explained above,
 
 
 
 @@colbox-blue
 
-##### Logical Behaviorism vs Type/Token-Identity Theory
+##### Theories That Address The Mind-Body Problem 
 
-Logical behaviorism holds that all thoughts, perceptions, and other mental processes can be classified in the same way that mathematics can be explained in terms of formal logic, using concepts like set theory, and can then be **tested and scientifically explained using behaviorist principles**, according to which everything is made up of **stimulus-response** pairs with various types of origins and reinforcement.
+Here's a list of various theories in the philosophy of mind, along with a brief contrast regarding their approaches to addressing consciousness:
 
-According to type/token-identity theory, the experience of something is considered to be a brain process that is occurring not merely as a mental state. Identity theorists additionally contend that brain states are just **physical**, which contradicts the irreducible non-physical aspects known as "qualia" of the brain, such as desires and beliefs.
+1. **Mind-Body Dualism**:
+   - **Approach to Consciousness**: Mind-body dualism typically posits that consciousness is a non-physical or immaterial aspect of reality. It suggests that consciousness exists independently of physical processes and may have properties that cannot be fully explained in terms of material phenomena.
+   - **Contrast**: Dualism contrasts with physicalist theories by maintaining a fundamental ontological distinction between mental and physical phenomena. It addresses consciousness by asserting the existence of a non-physical substance (mind or soul) that is capable of experiencing subjective states.
 
-In short,
+2. **Type/Token Identity Theory**:
+   - **Approach to Consciousness**: Type/token identity theory proposes that consciousness and other mental states are identical to specific physical states or processes in the brain. It suggests that subjective experiences and consciousness are ultimately reducible to patterns of neural activity.
+   - **Contrast**: Unlike dualism, type/token identity theory denies the existence of distinct mental substances and seeks to explain consciousness solely in terms of physical processes. It addresses consciousness by attempting to bridge the gap between mental and physical phenomena through identity relations.
 
-* Logical behaviorism focuses on the relationship between mental states and observable behavior or external responses (behaviorism) and is more aligned with mind-body dualism.
-* Type/token identity theory focuses on the relationship between mental states and physical states of the brain and is more aligned with physicalism or materialism.
+3. **Eliminative Materialism**:
+   - **Approach to Consciousness**: Eliminative materialism suggests that current folk psychology and common-sense understandings of mental states, including consciousness, are fundamentally flawed and may be eliminated or revised in light of future scientific understanding.
+   - **Contrast**: Eliminative materialism challenges traditional conceptions of consciousness by suggesting that our everyday concepts and language about consciousness may not accurately reflect the underlying reality. It proposes a radical reevaluation of how we understand and talk about conscious experience.
 
+4. **Functionalism**:
+   - **Approach to Consciousness**: Functionalism defines consciousness in terms of functional roles within a system, emphasizing the causal relations between inputs, outputs, and other mental states. Consciousness is seen as arising from the functional organization of the brain.
+   - **Contrast**: Functionalism focuses on the functional aspects of consciousness and mental states, rather than their specific physical realization. It addresses consciousness by emphasizing the roles and functions it plays in cognitive processes and behavior.
+
+5. **Neutral Monism**:
+   - **Approach to Consciousness**: Neutral monism proposes that consciousness and physical phenomena are different manifestations of a neutral substance or property underlying reality. Consciousness is neither purely mental nor purely physical but emerges from a more fundamental neutral substrate.
+   - **Contrast**: Neutral monism offers an alternative to both dualism and physicalism by suggesting that consciousness is part of a unified, neutral reality that transcends traditional distinctions between mental and physical. It addresses consciousness by positing a more inclusive ontological framework that encompasses both mental and physical aspects of reality.
+
+These theories represent diverse perspectives on the nature of consciousness and its relationship to the mind and body. They offer contrasting approaches and frameworks for understanding one of the most complex and fundamental aspects of human experience and pave the way for designing novel and inspirational cognitive systems. 
 
 @@
-
-
-
-The second of the two very important approaches in Cognitive Science helped serve as the foundation for creating the predecessor intelligent systems of the AI we see today.
 
 
 ### Computationalism and The Classical Computational Theory of Mind
