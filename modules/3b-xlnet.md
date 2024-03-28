@@ -8,11 +8,11 @@ Here's a breakdown of XLNet along with necessary formulas, explanations, and pot
 
 1. **Transformer Architecture**: XLNet utilizes the Transformer architecture as its backbone. The key components of the Transformer architecture include:
 
-    a. **Self-Attention Mechanism**: This mechanism allows the model to weigh the importance of each word/token in the context of the entire sequence. It computes attention scores between all pairs of words in a sequence and uses these scores to create context-aware representations for each word.
+   a. **Self-Attention Mechanism**: This mechanism allows the model to weigh the importance of each word/token in the context of the entire sequence. It computes attention scores between all pairs of words in a sequence and uses these scores to create context-aware representations for each word.
 
-    b. **Positional Encoding**: Since Transformers do not inherently understand the order of words in a sequence, positional encodings are added to the input embeddings to provide positional information to the model.
+   b. **Positional Encoding**: Since Transformers do not inherently understand the order of words in a sequence, positional encodings are added to the input embeddings to provide positional information to the model.
 
-    c. **Feedforward Neural Networks**: After obtaining contextualized representations through self-attention, Transformer layers typically pass the representations through feedforward neural networks to capture more complex patterns.
+   c. **Feedforward Neural Networks**: After obtaining contextualized representations through self-attention, Transformer layers typically pass the representations through feedforward neural networks to capture more complex patterns.
 
 2. **Permutation Language Modeling (PLM)**: XLNet introduces Permutation Language Modeling, which differs from traditional autoregressive language modeling used in models like GPT (Generative Pre-trained Transformer). In PLM, instead of conditioning on previous words sequentially, the model conditions on all permutations of the input tokens. This allows XLNet to learn bidirectional relationships between tokens.
 
