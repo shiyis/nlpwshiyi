@@ -1,4 +1,5 @@
-Certainly! Let's start with the basic components and concepts of RoBERTa:
+## RoBERTa or 
+Let's start with the basic components and concepts of RoBERTa:
 
 ### 1. Self-Attention Mechanism:
 The self-attention mechanism in RoBERTa allows the model to weigh the importance of different words in a sentence when encoding them into contextual embeddings. It computes attention scores between all pairs of words in a sentence.
