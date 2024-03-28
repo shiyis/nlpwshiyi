@@ -247,8 +247,9 @@ In offering such a model, we prescind from physical details. We attain an abstra
 
 ```
 As per definition, the mind is the functional organization 
-of the brain, whereas computationalism argues that the functional organization of the brain is computable so namely
-the mind is computable.
+of the brain, whereas computationalism argues that the functional 
+organization of the brain is computable so namely the mind 
+is computable.
 ```
 
 However, this line of thinking imposed a serious challenge on the early development of AI and nearly sent the field into a dead end and a period of stagnation called the winter period. The weakness of this thought lies in the fact that human cognition has limitations and couldn't entertain infinite amount of propositions and rules, which entails that it reflects poorly the productivity of these mental processes. On top of that there are some other major limitations,
@@ -328,6 +329,27 @@ More importantly, with a shift in the representation of information toward a sub
 
 While the passage doesn't explicitly mention syntactic underpinnings, the shift toward a sub-symbolic, universally distributed representation seems to open up possibilities for addressing challenges related to syntactic representation and processing. By embracing a more dynamic and contextually adaptive approach, this mechanism may provide a framework for capturing syntactic information in a manner that aligns with the overall goals of the system.
 
+@@colbox-blue
+
+#### What Are Syntactic Underpinnings?
+
+To recall, the _syntactic underpinnings_ refer to the foundational principles and structures that dictate the formation of sentences and phrases in a language. These include rules for word order, phrase structure, grammatical categories, syntactic dependencies, and syntactic hierarchies.
+
+Here are a few strategies that could be employed to directly address syntactic underpinnings:
+
+- Grammar Formalisms: Utilizing formal grammatical frameworks such as Chomsky's generative grammar, dependency grammar, or tree-adjoining grammar to explicitly model syntactic structures and rules.
+
+- Parsing Techniques: Developing parsing algorithms and models that analyze input text to extract syntactic structures and relationships, such as constituency parsing or dependency parsing.
+
+- Rule-Based Systems: Building systems that apply explicit syntactic rules to generate and analyze sentences, ensuring adherence to grammatical principles.
+
+- Linguistic Resources: Leveraging linguistic resources such as annotated corpora, lexicons, and grammatical resources to inform syntactic analysis and modeling.
+
+Machine Learning Approaches: Employing machine learning techniques, such as deep learning models trained on syntactically annotated data, to automatically learn syntactic patterns and structures from large text corpora.
+
+These approaches directly target the study and understanding of syntactic structures and rules within a language, aiming to develop systems capable of accurately representing and processing the syntactic aspects of natural language.
+
+@@
 
 ### Tying Everything Together and Connecting The Dots
 
