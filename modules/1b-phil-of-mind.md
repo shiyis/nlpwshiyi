@@ -158,25 +158,27 @@ Below summarizes theories that tackle the mind-body/consciousness problem that r
 
 Here's a list of various theories in the philosophy of mind, along with a brief contrast regarding their approaches to addressing consciousness:
 
-1. **Mind-Body Dualism**:
-   - **Approach to Consciousness**: Mind-body dualism typically posits that consciousness is a non-physical or immaterial aspect of reality. It suggests that consciousness exists independently of physical processes and may have properties that cannot be fully explained in terms of material phenomena.
-   - **Contrast**: Dualism contrasts with physicalist theories by maintaining a fundamental ontological distinction between mental and physical phenomena. It addresses consciousness by asserting the existence of a non-physical substance (mind or soul) that is capable of experiencing subjective states.
 
-2. **Type/Token Identity Theory**:
+1. **Type/Token Identity Theory**:
    - **Approach to Consciousness**: Type/token identity theory proposes that consciousness and other mental states are identical to specific physical states or processes in the brain. It suggests that subjective experiences and consciousness are ultimately reducible to patterns of neural activity.
    - **Contrast**: Unlike dualism, type/token identity theory denies the existence of distinct mental substances and seeks to explain consciousness solely in terms of physical processes. It addresses consciousness by attempting to bridge the gap between mental and physical phenomena through identity relations.
 
-3. **Eliminative Materialism**:
+2. **Eliminative Materialism**:
    - **Approach to Consciousness**: Eliminative materialism suggests that current folk psychology and common-sense understandings of mental states, including consciousness, are fundamentally flawed and may be eliminated or revised in light of future scientific understanding.
    - **Contrast**: Eliminative materialism challenges traditional conceptions of consciousness by suggesting that our everyday concepts and language about consciousness may not accurately reflect the underlying reality. It proposes a radical reevaluation of how we understand and talk about conscious experience.
 
-4. **Functionalism**:
+3. **Functionalism**:
    - **Approach to Consciousness**: Functionalism defines consciousness in terms of functional roles within a system, emphasizing the causal relations between inputs, outputs, and other mental states. Consciousness is seen as arising from the functional organization of the brain.
    - **Contrast**: Functionalism focuses on the functional aspects of consciousness and mental states, rather than their specific physical realization. It addresses consciousness by emphasizing the roles and functions it plays in cognitive processes and behavior.
 
-5. **Neutral Monism**:
+4. **Neutral Monism**:
    - **Approach to Consciousness**: Neutral monism proposes that consciousness and physical phenomena are different manifestations of a neutral substance or property underlying reality. Consciousness is neither purely mental nor purely physical but emerges from a more fundamental neutral substrate.
    - **Contrast**: Neutral monism offers an alternative to both dualism and physicalism by suggesting that consciousness is part of a unified, neutral reality that transcends traditional distinctions between mental and physical. It addresses consciousness by positing a more inclusive ontological framework that encompasses both mental and physical aspects of reality.
+
+5. **Mind-Body Dualism**:
+   - **Approach to Consciousness**: Mind-body dualism typically posits that consciousness is a non-physical or immaterial aspect of reality. It suggests that consciousness exists independently of physical processes and may have properties that cannot be fully explained in terms of material phenomena.
+   - **Contrast**: Dualism contrasts with physicalist theories by maintaining a fundamental ontological distinction between mental and physical phenomena. It addresses consciousness by asserting the existence of a non-physical substance (mind or soul) that is capable of experiencing subjective states.
+
 
 These theories represent diverse perspectives on the nature of consciousness and its relationship to the mind and body. They offer contrasting approaches and frameworks for understanding one of the most complex and fundamental aspects of human experience and pave the way for designing novel and inspirational cognitive systems. 
 
