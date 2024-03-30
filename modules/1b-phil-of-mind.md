@@ -148,7 +148,7 @@ by the laws of physics except consciousness. In this case, he
 identifies consciousness with the broad term "sensations".
 ```
 
-Below summarizes theories that tackle the mind-body/consciousness problem that reflect the two distinct assumptions explained above,
+Below summarizes theories that tackle the mind-body/consciousness problem that reflect the assumptions explained above,
 
 
 
