@@ -10,7 +10,7 @@ Because it can assess non-linear relationships as well as linear ones, the mutua
 
 Pointwise mutual information (PMI), sometimes known as point mutual information, is a measure of association used in statistics, probability theory, and information theory. It contrasts the likelihood of two events happening simultaneously with the likelihood of the same events occurring independently.
 
-PMI, particularly in its positive pointwise mutual information variant, has been referred to as `one of the most important concepts in NLP` sbecause it draws on the intuition that
+PMI, particularly in its positive pointwise mutual information variant, has been referred to as `one of the most important concepts in NLP` because it draws on the intuition that
 
 > the best way to weigh the association between two words is to ask how much more the two words co-occur in a corpus than we would have expected them to appear by chance.
 
