@@ -78,7 +78,7 @@ Together RTT + COMP + CCTM (The Representational Theory of Thought, The Composit
 
 However, the system considers only the syntactic importance without the presence of semantic significance.
 
-In the modern era, CCTM is however excluded in the discussion. Only RTT + COMP is included. This is the original spawning of a new school of computational theory of mind grounded in connectionism.
+In the modern era, CCTM is however excluded in the discussion. Only RTT + COMP is included. This is the original spawning of a new school of LOT or research into mental processes grounded in connectionism.
 
 
 
