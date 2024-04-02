@@ -2,6 +2,21 @@
 
 In this blog, the generalities of Markov Processes will be introduced. The foundation of Markov Processes dewells on the idea that there are states and events. The future behavior of the system depends only on its current state and not on the sequence of events that preceded it. This property is often referred to as the memoryless property.
 
+
+
+##### How Are Markov Processes Applicable Theoretically?
+
+Markov Processes are powerful statistical framework and ideas that could be applied in many different theoretical contexts. The most fundamental would be an investigation of these processes and measures in a mathematical analysis, such as how a limit is met (convergence or stability) while time approaches infinity. This is called the **limit theorem**.
+
+ℹ️ What are limit theorems and how are they related to stability and convergence?
+
+The theorem describes the distribution of the sum(or average) of a large number of independent, identically distributed random variables. For Markov processes, understanding how the process converges to a particular distribution over time is crucial.
+
+The limit theorem states in the context of Markov processes, the law of large numbers where as the number of trials (or time steps in the case of a Markov process) increases, the average behavior of the process converges to the expected value. In the long run, the observed behavior becomes more predictable.
+
+More on stability and convergence; _the behavior of a Markov process as time approaches infinity is often characterized by stability and convergence properties_. These properties help in understanding the long-term dynamics and equilibrium states of the process.
+
+
 The key components of markov processes are listed below,
 
 
@@ -48,19 +63,6 @@ The key components of markov processes are listed below,
 
 @@
 
-
-
-##### How Are Markov Processes Applicable Theoretically?
-
-Markov Processes are powerful statistical framework and ideas that could be applied in many different theoretical contexts. The most fundamental would be an investigation of these processes and measures in a mathematical analysis, such as how a limit is met (convergence or stability) while time approaches infinity. This is called the **limit theorem**.
-
-ℹ️ What are limit theorems and how are they related to stability and convergence?
-
-The theorem describes the distribution of the sum(or average) of a large number of independent, identically distributed random variables. For Markov processes, understanding how the process converges to a particular distribution over time is crucial.
-
-The limit theorem states in the context of Markov processes, the law of large numbers where as the number of trials (or time steps in the case of a Markov process) increases, the average behavior of the process converges to the expected value. In the long run, the observed behavior becomes more predictable.
-
-More on stability and convergence; _the behavior of a Markov process as time approaches infinity is often characterized by stability and convergence properties_. These properties help in understanding the long-term dynamics and equilibrium states of the process.
 
 
 ##### How Are Markov Processes Applicable in The Context of NLP?
