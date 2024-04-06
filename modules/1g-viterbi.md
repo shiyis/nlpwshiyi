@@ -70,25 +70,56 @@ The algorithm as we describe it in takes a sequence of observations, and a singl
 
 The pseudocode is displayed below
 
-```
-function VITERBI(observations of len T, state-graph) return best-path
+```python
+function VITERBI(observations of length T, state-graph) 
+    return best-path
 
     num-states <- NUM-OF-STATES(state-graph)
-    Create a path probability matrix viterbi[num-states+2, T+2]
-    viterbi[0,0] <- 1.0
-    for each time step t from 0 to T do
-        for each state s from 0 to num-states do
-            for each transition s' from s specified by state-graph
-                new-score <- viterbi[s,t] * a[s,s'] * b_s'(o_t)
-                if ((viterbi[s', t+1]=0)) || (new-score > viterbi[s', t+1])
-                    then 
-                        viterbi[s', t+1] <- new-score
-                        back-pointer[s', t+1] <- s
+    
+    # Create a path probability matrix viterbi[num-states, T]
+    Create a path probability matrix viterbi[num-states, T]
+    
+    # Initialize the first column of viterbi with initial probabilities
+    for each state s from 0 to num-states do
+        viterbi[s,0] <- initial probability of state s
+    
+    # Initialize the back-pointer matrix
+    Create a back-pointer matrix back-pointer[num-states, T]
 
-# Backtrace from highest probability state in the final column of viterbi[] and return path
-# This pseudocode demonstrates how to find the optimal sequence of states in continuous speech recognition, simplified by using phones as inputs 
-# Given an observation sequence of phones and a weighted automaton, the algorithm returns the path through the automaton which has minimum probability and accepts #the observation sequence. a[s,s'] is the transition probability from current state s to next state s' and b_s'(o_t) is the observation likelihood of s' given o_t.
+    # Forward pass: fill the viterbi matrix
+    for each time step t from 1 to T do
+        for each state s' from 0 to num-states do
+            max-prob <- 0
+            max-state <- -1
+            for each state s from 0 to num-states do
+                score <- viterbi[s, t-1] * transition probability 
+                from s to s' * emission probability of s' for 
+                observation o_t
+
+                if score > max-prob then
+                    max-prob <- score
+                    max-state <- s
+            viterbi[s', t] <- max-prob
+            back-pointer[s', t] <- max-state
+    
+    # Backtrace to find the best path
+    best-path <- list of length T
+
+    max-prob <- maximum probability in the last column of viterbi
+    
+    last-state <- state with maximum probability in the last 
+    column of viterbi
+    
+    best-path[T] <- last-state
+    
+    for t from T-1 down to 1 do
+        best-path[t] <- state pointed to by 
+        back-pointer[best-path[t+1], t+1]
+    
+    return best-path
 ```
+
+This code includes proper initialization of the Viterbi matrix, correct indexing, and proper backtracking to find the best path.
 
 💭 Again, the Viterbi algorithm is a dynamic programming algorithm used for finding the most likely sequence of hidden states in a Hidden Markov Model (HMM). It determines the best path at each state based on the probabilities of transitioning between states and emitting observations.
 

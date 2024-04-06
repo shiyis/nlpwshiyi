@@ -364,6 +364,10 @@ code {
   border-radius: 10px;
 }
 
+.hljs-meta .hljs-string, .hljs-regexp, .hljs-string {
+  color:#8482e6
+}
+
 .hljs-meta {
   font-weight: bold;
 }

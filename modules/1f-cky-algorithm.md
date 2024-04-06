@@ -9,10 +9,15 @@ The standard version of the algorithm operates on context-free grammars given in
 
 ```
 let the input be a string I consisting of n characters: a1 ... an.
-let the grammar contain r nonterminal symbols R1 ... Rr, with start symbol R1.
-let P[n,n,r] be an array of booleans. Initialize all elements of P to false.
-let back[n,n,r] be an array of lists of backpointing triples. Initialize all 
-elements of back to the empty list.
+
+let the grammar contain r nonterminal symbols R1 ... Rr, with 
+start symbol R1.
+
+let P[n,n,r] be an array of booleans. Initialize all elements of 
+P to false.
+
+let back[n,n,r] be an array of lists of backpointing triples. 
+Initialize all elements of back to the empty list.
 
 for each s = 1 to n
     for each unit production Rv → as
@@ -29,7 +34,8 @@ for each l = 2 to n :-- Length of span
 if P[n,1,1] is true then
     I is member of language
     return back :-- by retracing the steps through back, 
-    one can easily construct all possible parse trees of the string.
+    one can easily construct all possible parse trees 
+    of the string.
 else
     return "not a member of language"
 
