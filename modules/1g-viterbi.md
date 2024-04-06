@@ -119,8 +119,6 @@ function VITERBI(observations of length T, state-graph)
     return best-path
 ```
 
-This code includes proper initialization of the Viterbi matrix, correct indexing, and proper backtracking to find the best path.
-
 💭 Again, the Viterbi algorithm is a dynamic programming algorithm used for finding the most likely sequence of hidden states in a Hidden Markov Model (HMM). It determines the best path at each state based on the probabilities of transitioning between states and emitting observations.
 
 When discussing the "best path at state $q_{i}$," it means the most probable sequence of hidden states up to that particular state in the sequence.
