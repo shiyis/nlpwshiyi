@@ -1,6 +1,5 @@
 {
   "dependencies": {
     "highlight.js": "^11.9.0",
-    "python3":"^3.11.0"
   }
 }
