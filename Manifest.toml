@@ -2,7 +2,7 @@
 
 julia_version = "1.9.3"
 manifest_format = "2.0"
-project_hash = "e46ea876d4ec13bacc25b9fae3dea17da5957212"
+project_hash = "c01813a615149ddb3b3d133f33de29d642fbe57b"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -275,7 +275,6 @@ uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 [[deps.TranscodingStreams]]
 git-tree-sha1 = "71509f04d045ec714c4748c785a59045c3736349"
 uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
-version = "0.10.7"
 weakdeps = ["Random", "Test"]
 
     [deps.TranscodingStreams.extensions]
