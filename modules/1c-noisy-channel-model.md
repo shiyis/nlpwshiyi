@@ -61,7 +61,7 @@ To calculate the probability, we are going to use an important mathematical law,
 $$p(\text{e|f}) = \frac{p(\textbf{f|e})p(\textbf{e})}{\textbf{f}} $$
 
 
-We will be talking about this God of an equation indepedently in another blog, but here we could understand that we are able to calculate the above noisy channel model through using the Bayes's law. And the three components available in the equation will allow us to do this. 
+We will be talking about this God of an equation indepedently in another blog, but here we could understand that we are able to calculate the above noisy channel model through using the Bayes' law. And the three components available in the equation will allow us to do this. 
 
 The posterior function which is intuitively the outcome function $p(\text{e|f})$ is derived from the likelihood function which is the probability of `e` given `f` or $p(\text{f|e})$ and the prior distributions $p(e)$ together divided by the prior distribution of $p(f)$.
 
