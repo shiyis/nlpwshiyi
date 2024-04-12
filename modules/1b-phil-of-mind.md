@@ -50,13 +50,13 @@ referred to as panpsychism, which "holds that mind or a mind-like aspect is a fu
 reality". It is also described as a theory that "the mind is a fundamental feature of the world which exists throughout
 the universe."
 
-#### Consciousness As Weak/Strong/Normal Emergence
+#### Consciousness As A Weak/Strong/Normal Emergence
 
 Each one of them is a hypothesis over the emergence and origin of consciousness, and below is a more detailed breakdown.
 
 @@colbox-blue
 
-**Strong Emergence**: This is the position that is too good to be true and therefore argued against. As it's not very
+**A Strong Emergence**: This is the position that is too good to be true and therefore argued against. As it's not very
 much plausible that it's the downward causal direction, where the emergence of consciousness caused the microscopic and
 molecular changes happening at a lower-level.
 
@@ -69,7 +69,7 @@ levels can be directly influenced (causally acted upon) by what is happening at 
 The idea, in other words, that you can’t really understand the microscopic behavior without knowing something about the
 macroscopic.
 
-**Weak Emergence**: Instead of being a strong emergence, maybe in reality consciousness might just be a weak emergence
+**A Weak Emergence**: Instead of being a strong emergence, maybe in reality consciousness might just be a weak emergence
 instead as proposed.
 
 The so-called “weak” emergence suggests that higher-level notions like the fluidity or solidity of a material substance
@@ -110,7 +110,7 @@ Therefore, instead of agreeing on each extreme end of the spectrum, below might 
 conclusion.
 
 @@colbox-blue
-**Normal Emergence**: The visual sensor is obviously affecting the behavior of the pupil, yet it doesn't follow that
+**A Normal Emergence**: The visual sensor is obviously affecting the behavior of the pupil, yet it doesn't follow that
 it's affecting the behavior of the underlying atoms in a way that contradicts or is incompatible with our understanding
 of how atoms behave.
 
