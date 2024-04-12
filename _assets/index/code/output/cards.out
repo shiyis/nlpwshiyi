@@ -9,13 +9,13 @@ Instrumental phonetics and the development of the sound spectrograph established
 
 @@row
   \card{Foundational Insights: 1940s - 1950s}{
- Using Shannon's work as inspiration, Chomsky (1956) originally studied finite-state machines as a way to characterize a grammar before defining a finite-state language as a language produced by a finite-state grammar.
+ Using Shannon's work as inspiration, Chomsky (1956-7) originally studied finite-state machines as a way to characterize a grammar before defining a finite-state language as a language produced by a finite-state grammar.
 
-These pioneering theories paved the way for formal language theory, which defines formal languages as sequences of symbols using algebra and set theory. Meanwhile, in the realm of theoretical linguistics, Chomsky (1956) postulated transformational and context free grammar which helped establish paradigms for describing natural language syntax.
+These pioneering theories paved the way for formal language theory, which defines formal languages as sequences of symbols using algebra and set theory. Meanwhile, in the realm of theoretical linguistics, Chomsky (1957) postulated transformational and context free grammar which helped establish paradigms for describing natural language syntax.
 
-The work of Turing, the founding father of computer science, first resulted in the development of a computing component that was more close to propositional logic. After that, regular expressions and finite state automata were created by Kleene in 1951 and 1956.
+The work of Turing, the founding father of computer science, first resulted in the development of a computing component that was more close to propositional logic. After that, regular expressions and finite state automata were created by Stephen Kleene, inspired by the work of Emil Post in 1951 and 1956.
 
-Then, probabilistic models of Markov processes also helped the automation and formalization of a natural language.}
+Then, probabilistic models, such as Markov processes, have indeed played a significant role in automating and formalizing natural language processing. They provide a probabilistic framework for understanding language structure and have been widely used in various language processing tasks.}
 @@
 
 
