@@ -1169,6 +1169,10 @@ img[alt=intro] {
   width: 125px;
 }
 
+img[alt=info1]{
+  background-color: white;
+}
+
 img[alt=cky_tbl] {
   width: 360px;
   display: block;
