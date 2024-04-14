@@ -75,7 +75,9 @@ Below is a graph demonstration of the workflow,
 
 
 
-![](../extras/hmm/hmm.jpg)
+A HMM Pronunciation Network |
+---: |
+![](../extras/hmm/hmm.jpg) |
 
 
 
