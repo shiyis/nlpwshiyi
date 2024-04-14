@@ -40,11 +40,11 @@ In order to produce the best accurate predictions, the algorithm maximizes a los
 
 After reviewing these ideas, it appears that entropy has something to do with the conversion of heterogeneity to homogeneity, and the decision tree algorithm is doing just that.
 
----
+\\
 
 ![info1](../extras/info_theory/out.png)
 
----
+\\
 
 However, a general framework for entropy is not sufficient enough, particularly for decision-making that invariably incorporates uncertainty.
 
@@ -55,7 +55,7 @@ The aim of a decision tree is to as much as possible reduce the uncertainty or "
 By further breaking down the tree, the objective function, which in this case is the decision tree algorithm, reduces the data impurity. Entropy and Gini are two metrics used to quantify this impurity.
 
 
----
+
 
 ### The Chi-Square Formula
 
@@ -146,7 +146,7 @@ This equation is graphically depicted by a symmetric curve as shown below. On th
 
 A derived proof is listed [here](http://premmi.github.io/bernoulli-distribution-mean-variance-entropy#:~:text=Proposition%204%20The%20entropy%20H,n(1%E2%88%92%CE%B8))
 
----
+
 
 ```
 using PyPlot
@@ -168,11 +168,11 @@ savefig(joinpath(@OUTPUT, "ent1.svg")) # hide
 
 Below is the graph for a Bernoulli trial ($X={0,1}$) the graph of entropy vs. $Pr(X=1)$. The highest $H(X) = 1 = log(2)$
 
----
+\\
 
 \fig{ent1}
 
----
+\\
 
 The $\text{log}_{2} \text{p}_{i}$ has a very unique property that is when there are only two outcomes say probability of the event $\text{p}_{i}$ is either 1 or 0.50 then in such scenario $\text{log}_{2}  \text{p}_{i}$ takes the following values (ignoring the negative term):
 
@@ -201,12 +201,12 @@ savefig(joinpath(@OUTPUT, "ent2.svg")) # hide
 
 
 ```
+The output graph is below,
 
----
 
 \fig{ent2}
 
----
+\\
 
 Due to the properties of log, When the probability, $\text{p}_{i}$ becomes 0, then the value of $\text{log}_{2}  \, \text{p}_{0}$ moves towards infinity and the curve changes its shape to:
 
@@ -227,12 +227,12 @@ ylabel("H(x)")
 savefig(joinpath(@OUTPUT, "ent3.svg")) # hide
 
 ```
+The final graph is below,
 
----
 
 \fig{ent3}
 
----
+\\
 
 The entropy or the impurity measure can only take value from 0 to 1 as the probability ranges from 0 to 1 and hence, we do not want the above situation. So, to make the curve and the value of  $\text{log}_{2} \text{p}_{i}$ back to zero, we multiply $\text{log}_{2}  \text{p}_{i}$ with the probability i.e. with $\text{p}_{i}$ itself.
 
@@ -334,11 +334,11 @@ $$
 \text{Gain} = 1 - (3/4 * 0.9184) - (1/4 *0) = 0.3112
 $$
 
----
+\
 
 ![](../extras/info_theory/resize_4.png)
 
----
+\
 
 ### How Is Entropy Important to Our Discussion?
 

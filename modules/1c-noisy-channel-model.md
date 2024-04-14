@@ -17,7 +17,6 @@ Hi there, if you have come across this blog and have the patience to go through 
 
 {{youtube_placeholder noisy-channel}}
 
----
 
 ### What Exactly Is A Noisy Channel Model?
 
