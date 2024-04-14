@@ -29,7 +29,7 @@ on for centuries.
 In answering the question of why we need consciousness, one of the proposed answers is that consciousness is a
 fundamental property of nature. It's added that,
 
-```plaintext
+@@colbox-blue
 “We know that a theory of consciousness requires the addition of
 something fundamental to our ontology, as everything in physical
 theory is compatible with the absence of consciousness.
@@ -38,12 +38,15 @@ We might add some entirely new nonphysical feature, from which
 experience can be derived […] we will take experience itself as
 a fundamental feature of the world, alongside mass, charge, and
 space-time”.
-```
+@@
 
-This is also known as "fundamental property dualism", which, in David Chalmers' definition, `"regards conscious mental
-properties as basic constituents of reality on a par with fundamental physical properties such as electromagnetic
-charge. They may interact in casual and lay-like ways with other fundamental properties such as those of physics, but
-ontologically their existence is not dependent upon nor derivative from any other properties".`
+This is also known as "fundamental property dualism", which, in David Chalmers' definition, regards conscious mental properties as,
+
+> basic constituents of reality on a par with fundamental physical properties such as electromagnetic
+> charge. They may interact in casual and lay-like ways with other fundamental properties such as those of physics, but
+> ontologically their existence is not dependent upon nor derivative from any other properties".
+
+\\
 
 According to this [medium article](https://medium.com/curious/are-we-conscious-automata-18ba889af20), this idea is also
 referred to as panpsychism, which "holds that mind or a mind-like aspect is a fundamental and ubiquitous feature of
@@ -88,23 +91,24 @@ will, but under the philosophical discussions about human consciousness, motivat
 does affect our thoughts and behavior, is that view applicable at the level of atoms and particles, or only at the level
 appropriate for describing human psychology?
 
-```plaintext
-In answering this question, the article used a different analogy;
-consider the mechanism that regulates the constriction and
-dilation of our pupils according to the intensity of the
-light reaching them.
 
-We could say that there's a sort of sensor in our eyes or in our
-visual processing area in the brain that causes our pupils to
-behave that way, yet at the fundamental level of physics, the
-knowledge of such a sensory mechanism is not needed to predict
-(in principle) the behavior of all the particles composing the
-eye as they interact among themselves and with all the external
-particles affecting them.
+>In answering this question, the article used a different analogy;
+> consider the mechanism that regulates the constriction and
+> dilation of our pupils according to the intensity of the
+> light reaching them.
 
-Still, we wouldn't say that the sensor is merely a byproduct
-that accomplishes nothing.
-```
+> We could say that there's a sort of sensor in our eyes or in our
+> visual processing area in the brain that causes our pupils to
+> behave that way, yet at the fundamental level of physics, the
+> knowledge of such a sensory mechanism is not needed to predict
+> (in principle) the behavior of all the particles composing the
+> eye as they interact among themselves and with all the external
+> particles affecting them.
+
+> Still, we wouldn't say that the sensor is merely a byproduct
+> that accomplishes nothing.
+
+\\
 
 Therefore, instead of agreeing on each extreme end of the spectrum, below might help construe and reach the ultimate
 conclusion.
@@ -176,11 +180,11 @@ actually are in a more scientific and established system.
 
 To quote him more specifically,
 
-```plaintext
-It was believed that it is absurd that everything can be explained
-by the laws of physics except consciousness. In this case, he
-identifies consciousness with the broad term "sensations".
-```
+> It was believed that it is absurd that everything can be explained
+> by the laws of physics except consciousness. In this case, he
+> identifies consciousness with the broad term "sensations".
+
+\\
 
 Below summarizes theories that tackle the mind-body/consciousness problem that reflect the assumptions explained above,
 
@@ -248,10 +252,11 @@ As opposed to type-identity theory, where mental states are brain states, Putnam
 states are [_multiply realizable_](https://plato.stanford.edu/entries/multiple-realizability/): the same mental state
 can be realized by diverse physical systems, including not only terrestrial creatures but also hypothetical creatures.
 
-```
-Functionalism therefore is tailor-made to accommodate multiple
-realizability.
-```
+
+> Functionalism therefore is tailor-made to accommodate multiple
+> realizability.
+
+\\
 
 He stresses the importance of _probabilistic automata_, stating that mental states are the machine states of the
 automaton's central processor.
@@ -271,12 +276,14 @@ In offering such a model, we prescind from physical details. We attain an abstra
 be physically implemented in diverse ways (e.g., through silicon chips, or neurons, or pulleys and levers). CCTM holds
 that a `suitable abstract computational model offers a literally true description of core mental processes`.
 
-```
+@@colbox-blue
+
 As per definition, the mind is the functional organization
 of the brain, whereas computationalism argues that the functional
 organization of the brain is computable so namely the mind
 is computable.
-```
+
+@@
 
 However, this line of thinking imposed a serious challenge on the early development of AI and nearly sent the field into
 a dead end and a period of stagnation called the winter period. The weakness of this thought lies in the fact that human
@@ -288,6 +295,8 @@ reflects poorly the productivity of these mental processes. On top of that there
 > **Qualia and Consciousness**: CTM has difficulty explaining subjective experiences (qualia) and consciousness. It tends to focus on functional aspects without addressing the qualitative nature of mental states.
 
 > **Flexibility and Adaptability**: CTM often assumes rigid rule-based processing, which may not fully capture the flexible and adaptive nature of human cognition.
+
+\\
 
 Coming back to the important discussion around consciousness. Now we could ask that,
 
@@ -328,20 +337,21 @@ or symbolicist ideals, it incorporated the aspects and was established to addres
 
 > **Flexibility in Cognitive Processing**: RTM allows for more flexibility in cognitive processing by recognizing that mental representations can be dynamic and context-dependent.
 
+\\
+
 RTM is able to accomplish the above by assuming,
-f
-```plaintext
+
+@@colbox-blue
+
 Productivity:
 
-a finites set of symbols in natural language and the device could 
-entertain a infinite numbers of logic.
+- a finites set of symbols in natural language and the device could entertain a infinite numbers of logic.
 
-Systematicity:
+Systematicity: 
 
-that there are inherent systematic relations between basic 
-cognitive constitutions.
+- that there are inherent systematic relations between basic cognitive constitutions.
 
-```
+@@
 
 More importantly, with a shift in the representation of information toward a sub-symbolic, universally distributed approach. While the specific mention is about solving a philosophical conundrum related to representations of meaning, we can consider how this shift might also address the potential conundrum faced by classicists - the syntactic underpinnings. Here are some ways in which this approach could be relevant:
 
@@ -352,6 +362,8 @@ More importantly, with a shift in the representation of information toward a sub
 > **Syntax-Aware Pretraining**: Some recent research has focused on developing distributional representation models that are explicitly trained to capture syntactic information. These models incorporate linguistic knowledge about syntax into the training process, resulting in embeddings that are specifically tailored to represent syntactic structures.
 
 > **Syntactic Analysis**: Distributional representations can also be used as features for downstream syntactic analysis tasks, such as parsing and part-of-speech tagging. By leveraging the syntactic information implicitly encoded in these representations, AI models can improve their performance on these tasks.
+
+\\
 
 The shift toward a sub-symbolic, universally distributed representation seems to open up possibilities for addressing challenges related to syntactic representation and processing. By embracing a more dynamic and contextually adaptive approach, this mechanism may provide a framework for capturing syntactic information in a manner that aligns with the overall goals of the system.
 
@@ -382,7 +394,7 @@ These approaches directly target the study and understanding of syntactic struct
 Philosophers only started to become interested in connectionism because it offers an alternative to the classical
 computational theory of mind.
 
-```plaintext
+@@colbox-blue
 Connectionism is a movement that has been put out in the field of
 cognitive science in hope to explain and extrapolate the mental
 processes of a brain. It's composed of a simplified emulation of
@@ -391,10 +403,10 @@ neurons or units (the analogs of neurons) within which are assigned
 weights that measure how strongly the connections are there between
 units. We could picture these weights as a replica of the synapse
 in our actual biological brain that link one neuron to each other.
-```
+@@
 
-The bridging between classicist and connectionist view and the departure from it became that a lot of connectionists
-view cognitive processing as analog as the computer processing as digital.
+The bridging between classicist and connectionist view and the departure from \\
+it became that a lot of connectionists view cognitive processing as analog as the computer processing as digital.
 
 Many connectionists argue that weight units that are dynamic, continuous, and analogous in nature which therefore
 reflect better the way that human brain processes information through different mental states.
@@ -412,17 +424,18 @@ It's also argued by radical connectionists that the traditional or the symbolic 
 information processing should be eliminated because how poorly it reflects these dynamics in human consciousness that
 could otherwise be materialized through connectionism.
 
-```plaintext
-Graceful degradation of function, holistic representation
-of data, spontaneous generalization, appreciation of context, etc.
-```
+
+> Graceful degradation of function, holistic representation
+> of data, spontaneous generalization, appreciation of context, etc.
+
+\\
 
 Yet, hybrid mechanisms were put out by different teams to mediate such clashes. For example, there were papers that drew
 inspiration from the classical style of information processing (having one module that acts as the memory location or
 implementing methods that utilize variable binding techniques for symbolic processing that reflects the classical
 computational way of thinking aka the turing style information processing and storage).
 
-```plaintext
+@@colbox-blue
 Also one interesting discovery about the connectionism
 representation of information processing inside the brain
 might have a good give away of how brain actually processes
@@ -441,7 +454,7 @@ representations of meaning.
 In contrast, a distributed representation preserves patterns
 across the net that could allow comparison and good preservation
 when parts go amok.
-```
+@@
 In short, this hybrid architecture might have had a say to how human brains actually process information.
 
 **References**
