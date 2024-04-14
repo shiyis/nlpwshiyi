@@ -8,6 +8,8 @@ On the other hand cryptanalysis is,
 
 > the science and art of breaking cryptographic systems and understanding their weaknesses. Cryptanalysts use various methods including mathematical analysis, computational algorithms, and pattern recognition to decipher encrypted messages without having access to the decryption key. The goal of cryptanalysis is to uncover vulnerabilities in cryptographic systems and improve their security.
 
+\\
+
 In summary, cryptography aims to secure communication and data through encryption techniques, while cryptanalysis focuses on breaking these encryption methods to uncover potential weaknesses. These two fields are interconnected and continually evolve as new cryptographic algorithms are developed and existing ones are analyzed for vulnerabilities.
 
 ### Why Is Cryptography Important in Our Discussion of NLP?
