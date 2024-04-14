@@ -11,9 +11,11 @@ Automatic differentiation (AD) is a crucial technique in the field of machine le
 > **Efficient Gradient Computation**: 
 > Autodiff allows you to compute gradients efficiently without manually deriving and implementing them.
 
-Sample python code: 
+\\
 
-```python
+Sample Python code: 
+
+```Python
 import tensorflow as tf
 
 x = tf.constant(2.0)
@@ -31,7 +33,9 @@ print(dy_dx.numpy())  # Output: 4.0
 
 > **Higher-order Gradients**: Autodiff can easily compute higher-order derivatives without much additional effort.
 
-Sample python code: 
+\\
+
+Sample Python code: 
 
 ```
 import tensorflow as tf
@@ -52,7 +56,9 @@ print(d2y_dx2.numpy())  # Output: 12.0
 
 > **Optimization with Gradient Descent**: Autodiff facilitates gradient-based optimization algorithms like gradient descent.
 
-Sample python code:
+\\
+
+Sample Python code:
 
 ```
 import tensorflow as tf
@@ -76,7 +82,9 @@ print(x.numpy())  # Output: close to 0.0 (minimum of y=x^2)
 
 > **Neural Network Training**: Autodiff is essential for training neural networks efficiently by computing gradients for the backpropagation algorithm.
 
-Sample python code:
+\\
+
+Sample Python code:
 
 ```
 import tensorflow as tf
@@ -181,7 +189,7 @@ and then we run several epochs.
 
 Initializing Random Weights for Our Example
 
-```python
+```Python
 # randomly initialize learnable weights and bias
 w_init = random(2)
 b_init = random(1)
@@ -193,7 +201,7 @@ print("initial values of the parameters:", w, b )
 ```
 
 
-```python
+```Python
 # our model forward pass
 def forward(x):
     return x.dot(w)+b
@@ -230,7 +238,7 @@ print("estimation of the parameters:", w, b)
 
 ## Linear Regression with Autograd 
 
-```python
+```Python
 
 # Setting requires_grad=True indicates that we want to compute gradients with
 # respect to these Tensors during the backward pass.
@@ -247,7 +255,7 @@ An implementation of (Batch) Gradient Descent without computing explicitly the g
 
 
 
-```python 
+```Python 
 
 for epoch in range(10):
     y_pred = x_t.mm(w_v)+b_v
@@ -284,7 +292,7 @@ print("estimation of the parameters:", w_v.data, b_v.data.t() )
 An implementation of **(Batch) Gradient Descent** using the nn package. Here we have a super simple model with only one layer and no activation function!
 
 
-```python
+```Python
 
 # Use the nn package to define our model as a sequence of layers. nn.Sequential
 # is a Module which contains other Modules, and applies them in sequence to
@@ -346,7 +354,7 @@ for param in model.parameters():
 Last step, we update the weights and bias. 
 
 
-```python
+```Python
 
 model = torch.nn.Sequential(
     torch.nn.Linear(2, 1),
@@ -384,7 +392,7 @@ for param in model.parameters():
 
 Change the number of samples and see what happens. 
 
-```python
+```Python
 
 x = random((300,2))
 y = np.dot(x, [2., -3.]) + 1.
