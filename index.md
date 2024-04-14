@@ -28,7 +28,8 @@ What do we mean by Natural Language Processing? If we do a little googling and r
 → Word-sense disambiguation 
 → Named-entity recognition 
 → Topic modeling 
-→ Document classification 
+→ Text classification 
+→ Document Classification 
 → Question answering 
 ```
 
