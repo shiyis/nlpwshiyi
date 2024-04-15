@@ -10,6 +10,8 @@ Above may be manifested in a natural language as propositional attitudes. The sc
 
 > X believes that p iff X believes that S which is a mental representation and p is the actual manifestation of S.
 
+\\
+
 That being said, the language that we used to describe our mental experience is only a representation of what in actuality the thing is inside our brain. This representation could bear a semantic property, be it a denotation or a truth-condition.
 
 **Table of Contents**
