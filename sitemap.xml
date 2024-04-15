@@ -38,6 +38,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4g-etl-job/index.html</loc>
+    <lastmod>2024-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4a-mlp-from-scratch/index.html</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -57,6 +63,12 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4d-bi-lstm-crf/index.html</loc>
+    <lastmod>2024-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4f-server-build/index.html</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -147,6 +159,12 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1g-viterbi/index.html</loc>
+    <lastmod>2024-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4h-pyspark-sql/index.html</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -284,19 +302,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4g-pyspark-sql/index.html</loc>
-    <lastmod>2024-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2c-word2vec/index.html</loc>
-    <lastmod>2024-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4f-etl-job/index.html</loc>
     <lastmod>2024-04-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
