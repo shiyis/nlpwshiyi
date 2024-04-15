@@ -92,11 +92,12 @@ does affect our thoughts and behavior, is that view applicable at the level of a
 appropriate for describing human psychology?
 
 
->In answering this question, the article used a different analogy;
+> In answering this question, the article used a different analogy;
 > consider the mechanism that regulates the constriction and
 > dilation of our pupils according to the intensity of the
 > light reaching them.
-
+> \\
+> \\
 > We could say that there's a sort of sensor in our eyes or in our
 > visual processing area in the brain that causes our pupils to
 > behave that way, yet at the fundamental level of physics, the
@@ -104,7 +105,8 @@ appropriate for describing human psychology?
 > (in principle) the behavior of all the particles composing the
 > eye as they interact among themselves and with all the external
 > particles affecting them.
-
+> \\
+> \\
 > Still, we wouldn't say that the sensor is merely a byproduct
 > that accomplishes nothing.
 
