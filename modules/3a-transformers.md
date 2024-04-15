@@ -53,14 +53,12 @@ Prominent transformer-based models include BERT (Bidirectional Encoder Represent
 
 ## Graphic Representation of The Model Architecture
 
----
 
 | The Model Architecture |
 | ::: |
 | ![](../extras/connectionism/trnsfmr.png) |
 
 
----
 
 This image depicts the architecture of the Transformer model, which is widely used in natural language processing tasks. Here's a step-by-step analysis:
 
