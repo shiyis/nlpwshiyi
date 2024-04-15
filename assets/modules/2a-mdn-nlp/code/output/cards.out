@@ -1,7 +1,4 @@
-@@cards @@column
-
-@@row
-\card{}{The Non-Overlap Constraint|
+The non-overlap constraint |
  :-------------------------:|
 Says that chains may not overlap. Every unit in the chain map has an excitatory link to the corresponding unit in the non-overlap map. (This type of linking between the units in two maps is called lateral linking). |
 |
@@ -12,13 +9,12 @@ In diagonal linking every unit in the source map is linked to its counter part i
 A diagonal, non-lateral connection is the same as a diagonal connection except that the link to the directly corresponding unit is absent. |
 |
 The connections from an active unit in the non-overlap map to the chain map prevent the activation of any other node in the corresponding diagonal in the chain map, enforcing the constraint. (Nodes in the same diagonal represent the same syntactic marker and if two units both get activated and had moved to the same place, it will violate the non-overlap constraint).|}
-@@
 
 
 
 
-@@row
-\card{}{
+
+
 chain map with activated units on the right and d-structure on the left| 
 :-------------------------:|
 ![](../extras/connectionism/structure-map.jpg)| 
@@ -30,11 +26,11 @@ non-overlap constraints satisfactory map|
 
 case-marking prohibition activation map|
 :-------------------------:|
-![](../extras/connectionism/case-marking-prohibition.png)|}
-@@
+![](../extras/connectionism/case-marking-prohibition.png)|
 
-@@row
-\card{}{ The Case Filter Constraint | 
+
+
+The Case Filter Constraint | 
  :-------------------------:|
 Two major requirements need to be addressed to satisfy fully this constraint: All lexical NPs be case-marked and no multiply case-marked NPs meaning they can only be case-marked once. |
 |
@@ -50,7 +46,4 @@ The units in the case-marked row which correspond to lexical NPs are initially a
 |
 This has the effect of promoting movement of lexical NPs. As connections from it to the flood row turn off the corresponding units in the row. |
 |
-This has the effect of removing the incentive to movement of case-marked units, which is in accordance with the principle of the case filter.|}
-@@
-
-@@ @@
+This has the effect of removing the incentive to movement of case-marked units, which is in accordance with the principle of the case filter.|
