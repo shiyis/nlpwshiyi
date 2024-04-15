@@ -14,6 +14,8 @@ PMI, particularly in its positive pointwise mutual information variant, has been
 
 > the best way to weigh the association between two words is to ask how much more the two words co-occur in a corpus than we would have expected them to appear by chance.
 
+\\
+
 Robert Fano first proposed the idea in 1961 under the label "mutual information," however the phrase is now more commonly used to refer to a related measure of reliance between random variables: The average PMI of all potential events is referred to as the mutual information (MI) of two discrete random variables.
 
 
