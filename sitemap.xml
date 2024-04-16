@@ -164,12 +164,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4h-pyspark-sql/index.html</loc>
-    <lastmod>2024-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/11c-batches-with-sequences/index.html</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -314,12 +308,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4j-ocr-data-aug/index.html</loc>
-    <lastmod>2024-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/optimization-for-deep-learning/index.html</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>monthly</changefreq>
@@ -333,6 +321,12 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/extras/Convolutions_first/index.html</loc>
+    <lastmod>2024-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4h-ocr-data-aug/index.html</loc>
     <lastmod>2024-04-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
