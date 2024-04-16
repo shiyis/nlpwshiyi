@@ -48,6 +48,45 @@ In case of NFA
 <li><p>If the number of states in the NFA is N then, its DFA can have maximum <span class=katex ><span class=katex-mathml ><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">2^N</annotation></semantics></math></span><span class=katex-html  aria-hidden=true ><span class=base ><span class=strut  style="height:0.8413em;"></span><span class=mord ><span class=mord >2</span><span class=msupsub ><span class=vlist-t ><span class=vlist-r ><span class=vlist  style="height:0.8413em;"><span style="top:-3.063em;margin-right:0.05em;"><span class=pstrut  style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.10903em;">N</span></span></span></span></span></span></span></span></span></span></span> number of states.</p>
 
 </ul>
+<h1 id=onto_the_discussion_about_determinism ><a href="#onto_the_discussion_about_determinism" class=header-anchor >Onto the Discussion about Determinism</a></h1>
+<p>The concept of deterministic versus non-deterministic automata is fundamental in computer science, particularly in the theory of computation and formal language theory. Here are some areas where this concept is applied:</p>
+<ol>
+<li><p><strong>Finite Automata</strong>: Deterministic Finite Automata &#40;DFA&#41; and Non-deterministic Finite Automata &#40;NFA&#41; are used to recognize regular languages. DFAs have a single unique transition from each state for each input symbol, while NFAs can have multiple transitions for the same input symbol from a single state.</p>
+
+<li><p><strong>Regular Expressions</strong>: Regular expressions are often used to describe patterns in strings. There are algorithms to convert between regular expressions and NFAs, and between NFAs and DFAs.</p>
+
+<li><p><strong>Compiler Design</strong>: Lexical analysis, which is the first phase of compilation, often involves converting regular expressions describing the language&#39;s tokens into NFAs or DFAs for efficient processing.</p>
+
+<li><p><strong>Network Protocol Specification</strong>: Automata theory is used to model and verify network protocols. Deterministic and non-deterministic finite automata are used to represent the behavior of the protocols.</p>
+
+<li><p><strong>Model Checking</strong>: Model checking is a technique used to verify whether a system meets a given specification. Automata are used to model the system&#39;s behavior, and determining whether it&#39;s deterministic or non-deterministic can affect the complexity of the verification process.</p>
+
+<li><p><strong>Software Verification</strong>: Automata are used in software verification techniques such as symbolic execution and abstract interpretation to analyze and verify the behavior of software systems.</p>
+
+<li><p><strong>Natural Language Processing</strong>: Automata theory can be applied to tasks like tokenization and morphological analysis in natural language processing.</p>
+
+<li><p><strong>Database Query Optimization</strong>: Finite automata are used in database query optimization, particularly in pattern matching and indexing.</p>
+
+</ol>
+<p>These are just a few examples of where the concepts of deterministic versus non-deterministic automata find applications. They form a foundational part of theoretical computer science and are applied in various fields where formal language and computational models are relevant.</p>
+<h1 id=what_does_being_a_deterministic_vs_non-deterministic_machine_entail ><a href="#what_does_being_a_deterministic_vs_non-deterministic_machine_entail" class=header-anchor >What Does Being A Deterministic vs Non-deterministic Machine Entail?</a></h1>
+<p>In the context of automata theory and computational theory, &quot;deterministic&quot; and &quot;non-deterministic&quot; refer to two different types of machines: deterministic machines and non-deterministic machines. These terms describe how these machines make decisions and transitions between states.</p>
+<ol>
+<li><p><strong>Deterministic</strong>: A deterministic machine is one where, given a particular state and input symbol, there is only one possible next state. In other words, the behavior of the machine is entirely determined by its current state and the input it receives. There are no ambiguities or choices in the transitions between states. Deterministic Finite Automata &#40;DFA&#41; are examples of deterministic machines.</p>
+
+<li><p><strong>Non-deterministic</strong>: A non-deterministic machine is one where, given a particular state and input symbol, there can be multiple possible next states. This means that the machine can &quot;guess&quot; which state to transition to based on the current state and input. Non-deterministic Finite Automata &#40;NFA&#41; are examples of non-deterministic machines.</p>
+
+</ol>
+<p>Here are some key differences between deterministic and non-deterministic machines:</p>
+<ul>
+<li><p><strong>Transitions</strong>: Deterministic machines have exactly one possible transition for each state and input symbol pair, while non-deterministic machines may have multiple possible transitions.</p>
+
+<li><p><strong>Decision Making</strong>: Deterministic machines make decisions based solely on their current state and the input symbol they receive, whereas non-deterministic machines can make &quot;guesses&quot; about which state to transition to.</p>
+
+<li><p><strong>Ambiguity</strong>: Deterministic machines have no ambiguity in their transitions, whereas non-deterministic machines may have ambiguity due to multiple possible transitions.</p>
+
+</ul>
+<p>In summary, deterministic machines follow a single, predictable path of execution based on their current state and input, while non-deterministic machines have the ability to explore multiple paths simultaneously or make non-deterministic choices during computation.</p>
 <div class=page-foot >
     <div class=copyright >
       <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a>
