@@ -142,8 +142,7 @@ Put into a chart,
 
 `Numbers indicate order in which symbol was entered into table.`
 
----
-
+@@colbox-blue
 _**Setting up the CKY algorithm**_
 
 - For an input of length=n, crate a matrix `(n + 1 x n + 1)`
@@ -152,7 +151,7 @@ _**Setting up the CKY algorithm**_
 - The alforithm forces you to fill in the table in the most efficient way.
 - Process cells left to right (across columns), bottom to top (backwards across rows).
 
----
+@@
 
 _**CKY Assumptions**_
 
@@ -160,12 +159,13 @@ _**CKY Assumptions**_
 
 > •0 The •1 Brown •2 Dog •3
 
----
+\\
 
+@@colbox-blue
 - K = 1: possible consitituents are `[0,1]` and `[1,3]`
 - K = 2: possible constituent  are `[0,2]` and `[2,3]`
+@@
 
----
 
 #### Simple grammar
 
