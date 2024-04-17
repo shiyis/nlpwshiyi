@@ -451,7 +451,7 @@ of representations that determine their relationships with
 other symbols - might solve a philosophical conundrum in
 representations of meaning.
 
-In contrast, a distributed representation preserves patterns
+In essence, a distributed representation preserves patterns
 across the net that could allow comparison and good preservation
 when parts go amok.
 @@
