@@ -412,21 +412,18 @@ In all cases, the three main requirements below are the development of probabili
 
 @@colbox-blue
 
-In modeling:
+1. **Modeling**:
+   - **Generative vs. Discriminative Models**: These models differ in how they learn and generate data. Generative models aim to understand the underlying distribution of the data, while discriminative models focus on learning the boundary between classes.
+   - **Parametric vs. Non-Parametric Models**: Parametric models make assumptions about the form of the underlying distribution and have a fixed number of parameters, whereas non-parametric models adapt their complexity based on the amount of training data.
 
-- Generative vs. Discriminative Models;
-- Parametric vs. Non-Parametric Models;
+2. **Learning from Data**:
+   - **Maximum Likelihood Estimation**: A method used to estimate the parameters of a statistical model by maximizing the likelihood function.
+   - **Maximum Entropy and Expectation Maximization**: Techniques used for modeling complex data distributions and iteratively refining model parameters, respectively.
+   - **Supervised versus Unsupervised Learning**: In supervised learning, models are trained on labeled data, while unsupervised learning involves discovering patterns or structures in unlabeled data.
 
-Learning from data:
-
-- Maximum Likelihood Estimation;
-- Maximum Entropy and Expectation Maximization;
-- Supervised versus Unsupervised Learning;
-
-In output computation:
-
-- Dynamic Programming;
-- Unique Output vs. Distribution of Output;
+3. **Output Computation**:
+   - **Dynamic Programming**: A method for efficiently solving problems by breaking them down into simpler subproblems.
+   - **Unique Output vs. Distribution of Output**: This refers to whether the model generates a single output or a distribution of possible outputs, which can be crucial depending on the application.
 
 @@
 
@@ -480,10 +477,6 @@ The k-Nearest Neighbor (kNN) method assigns class labels based on the majority v
 MaxEnt models, also known as Maximum Entropy models or polynomial logistic regression, handle continuous features and provide a flexible framework for classification. Support Vector Machines (SVMs) allow for the distinction of arbitrary class configurations by projecting original class vectors into a higher-dimensional space where classes are linearly divisible. SVMs are mediated by a kernel function, which measures similarity between pairs of vectors, but they do not expand the classification criteria.
 
 In summary, each method for text classification has its advantages and disadvantages, depending on factors such as parameter selection, probabilistic model development, and the characteristics of the dataset. Understanding the strengths and weaknesses of each method is crucial for selecting the most appropriate technique for a given NLP task.
-
---- 
-
-This structured approach provides a clearer understanding of the various aspects of text classification and their applications in natural language processing.
 
 
 ### Extending to Large Language Models and Deep Neural Networks in the 20th Century
