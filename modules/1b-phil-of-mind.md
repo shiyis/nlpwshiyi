@@ -455,7 +455,6 @@ In contrast, a distributed representation preserves patterns
 across the net that could allow comparison and good preservation
 when parts go amok.
 @@
-In short, this hybrid architecture might have had a say to how human brains actually process information.
 
 **References**
 
