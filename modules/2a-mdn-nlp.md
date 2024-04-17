@@ -172,7 +172,7 @@ And there are two categories that represent such a "functional role":
 
 💭 _MOLECULAR_ vs _HOLIST_.
 
-Molecular theory treats separately the relations borne out between symbols; on the other hand, the holist theory is more fine-grained. In other words,
+Molecular theory extracts the canonical or typical relations between symbols through demarcation; on the other hand, the holist is more fine-grained in the sense that every different type is tokened. In other words, no two entities will have the same mental processes, or
 
 > e and e* belong to the same primitive Mentalese type iff they have the same (canonical if adopted) functional role under MT and iff they have the same total functional role under HT.
 
@@ -180,7 +180,7 @@ Molecular theory treats separately the relations borne out between symbols; on t
 
 To explain in simpler terms as I understood it, looking at a natural language say we have the simple term _word_ and _words_ in English serving as a basic unit or lexical item; they would belong to the same primitive type WORD as the same token under MT and different under HT.
 
-However it's concerned under MT that it might have violated the _publicity constraint_ as propositional attitudes are shareable. And in contemporary literature through the inferential judgement that in a natural language, there's a vague and arbitrary sense of denotation (The English word "cat" denotes cats, but could denote something had the linguistic convention presumes so), one can also conclude that in a _Mentalese_, such a case is applicable.
+However it's concerned under HT that it might have violated the _publicity constraint_ as propositional attitudes are shareable. And in contemporary literature through the inferential judgement that in a natural language, there's a vague and arbitrary sense of denotation (The English word "cat" denotes cats, but could denote something had the linguistic convention presumes so), one can also conclude that in a _Mentalese_, such a case is applicable.
 
 Yet, historical literature suggests an alternative view that addresses an distinction that _Mentalese_ is essentially semantically permeated meaning that they are not arbitrary as a natural language is and at least to some extent they have a fixed denotation.
 
