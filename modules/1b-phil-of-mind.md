@@ -46,7 +46,7 @@ This is also known as "fundamental property dualism", which, in David Chalmers' 
 > charge. They may interact in casual and lay-like ways with other fundamental properties such as those of physics, but
 > ontologically their existence is not dependent upon nor derivative from any other properties".
 
-\\
+
 
 According to this [medium article](https://medium.com/curious/are-we-conscious-automata-18ba889af20), this idea is also
 referred to as panpsychism, which "holds that mind or a mind-like aspect is a fundamental and ubiquitous feature of
@@ -71,6 +71,7 @@ levels can be directly influenced (causally acted upon) by what is happening at 
 
 The idea, in other words, that you can’t really understand the microscopic behavior without knowing something about the
 macroscopic.
+
 
 **A Weak Emergence**: Instead of being a strong emergence, maybe in reality consciousness might just be a weak emergence
 instead as proposed.
@@ -108,7 +109,7 @@ light reaching them.
 > Still, we wouldn't say that the sensor is merely a byproduct
 > that accomplishes nothing.
 
-\\
+
 
 Therefore, instead of agreeing on each extreme end of the spectrum, below might help construe and reach the ultimate
 conclusion.
@@ -184,7 +185,7 @@ To quote him more specifically,
 > by the laws of physics except consciousness. In this case, he
 > identifies consciousness with the broad term "sensations".
 
-\\
+
 
 Below summarizes theories that tackle the mind-body/consciousness problem that reflect the assumptions explained above,
 
@@ -256,7 +257,6 @@ can be realized by diverse physical systems, including not only terrestrial crea
 > Functionalism therefore is tailor-made to accommodate multiple
 > realizability.
 
-\\
 
 He stresses the importance of _probabilistic automata_, stating that mental states are the machine states of the
 automaton's central processor.
@@ -296,7 +296,7 @@ reflects poorly the productivity of these mental processes. On top of that there
 
 > **Flexibility and Adaptability**: CTM often assumes rigid rule-based processing, which may not fully capture the flexible and adaptive nature of human cognition.
 
-\\
+
 
 Coming back to the important discussion around consciousness. Now we could ask that,
 
@@ -337,19 +337,19 @@ or symbolicist ideals, it incorporated the aspects and was established to addres
 
 > **Flexibility in Cognitive Processing**: RTM allows for more flexibility in cognitive processing by recognizing that mental representations can be dynamic and context-dependent.
 
-\\
+
 
 RTM is able to accomplish the above by assuming,
 
 @@colbox-blue
 
-Productivity:
+**Productivity**:
 
-- a finites set of symbols in natural language and the device could entertain a infinite numbers of logic.
+A finites set of symbols in natural language and the device could entertain a infinite numbers of logic.
 
-Systematicity: 
+**Systematicity**: 
 
-- that there are inherent systematic relations between basic cognitive constitutions.
+That there are inherent systematic relations between basic cognitive constitutions.
 
 @@
 
@@ -363,7 +363,7 @@ More importantly, with a shift in the representation of information toward a sub
 
 > **Syntactic Analysis**: Distributional representations can also be used as features for downstream syntactic analysis tasks, such as parsing and part-of-speech tagging. By leveraging the syntactic information implicitly encoded in these representations, AI models can improve their performance on these tasks.
 
-\\
+
 
 The shift toward a sub-symbolic, universally distributed representation seems to open up possibilities for addressing challenges related to syntactic representation and processing. By embracing a more dynamic and contextually adaptive approach, this mechanism may provide a framework for capturing syntactic information in a manner that aligns with the overall goals of the system.
 
@@ -403,9 +403,10 @@ neurons or units (the analogs of neurons) within which are assigned
 weights that measure how strongly the connections are there between
 units. We could picture these weights as a replica of the synapse
 in our actual biological brain that link one neuron to each other.
+
 @@
 
-The bridging between classicist and connectionist view and the departure from \\
+The bridging between classicist and connectionist view and the departure from 
 it became that a lot of connectionists view cognitive processing as analog as the computer processing as digital.
 
 Many connectionists argue that weight units that are dynamic, continuous, and analogous in nature which therefore
@@ -428,7 +429,7 @@ could otherwise be materialized through connectionism.
 > Graceful degradation of function, holistic representation
 > of data, spontaneous generalization, appreciation of context, etc.
 
-\\
+
 
 Yet, hybrid mechanisms were put out by different teams to mediate such clashes. For example, there were papers that drew
 inspiration from the classical style of information processing (having one module that acts as the memory location or
