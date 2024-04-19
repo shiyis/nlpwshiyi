@@ -267,7 +267,7 @@ computational framework to describe such a process (namely the process of manipu
 considered as a mental process being "computational" ).
 
 Lastly, the type/token-identity theory or physicalism of our cognitive processes defines that similar to a natural
-language (where a CAT is a type and every appearing instance of the word CAT is a token) defines the mental
+language (where a CAT is a type and every appearing instance of the word CAT is a token), _Mentalese_ defines the mental
 representations that central processor is able to manipulate, operate on, and make computations/calculations with.
 
 #### Computationalism vs Functionalism
