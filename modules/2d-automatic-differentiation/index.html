@@ -87,8 +87,10 @@ learning_rate = <span class=hljs-number >1e-2</span>
     <span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;progress:&quot;</span>, <span class=hljs-string >&quot;epoch:&quot;</span>, epoch, <span class=hljs-string >&quot;loss&quot;</span>,l[<span class=hljs-number >0</span>])
 
 <span class=hljs-comment ># After training</span>
-<span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;estimation of the parameters:&quot;</span>, w, b)</code></pre> <h2 id=linear_regression_with_autograd ><a href="#linear_regression_with_autograd" class=header-anchor >Linear Regression with Autograd </a></h2> <pre><code class="Python hljs"><span class=hljs-comment ># Setting requires_grad=True indicates that we want to compute gradients with</span>
-<span class=hljs-comment ># respect to these Tensors during the backward pass.</span>
+<span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;estimation of the parameters:&quot;</span>, w, b)</code></pre> <h2 id=linear_regression_with_autograd ><a href="#linear_regression_with_autograd" class=header-anchor >Linear Regression with Autograd </a></h2> <pre><code class="Python hljs"><span class=hljs-comment ># Setting requires_grad=True indicates that we want to compute </span>
+<span class=hljs-comment ># gradients with respect to these Tensors during the backward </span>
+<span class=hljs-comment ># pass.</span>
+
 w_v = w_init_t.clone().unsqueeze(<span class=hljs-number >1</span>)
 w_v.requires_grad_(<span class=hljs-literal >True</span>)
 b_v = b_init_t.clone().unsqueeze(<span class=hljs-number >1</span>)
