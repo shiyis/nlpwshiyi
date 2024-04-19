@@ -240,8 +240,10 @@ print("estimation of the parameters:", w, b)
 
 ```Python
 
-# Setting requires_grad=True indicates that we want to compute gradients with
-# respect to these Tensors during the backward pass.
+# Setting requires_grad=True indicates that we want to compute 
+# gradients with respect to these Tensors during the backward 
+# pass.
+
 w_v = w_init_t.clone().unsqueeze(1)
 w_v.requires_grad_(True)
 b_v = b_init_t.clone().unsqueeze(1)
@@ -249,12 +251,7 @@ b_v.requires_grad_(True)
 print("initial values of the parameters:", w_v.data, b_v.data )
 
 ```
-
 An implementation of (Batch) Gradient Descent without computing explicitly the gradient and using autograd instead. 
-
-
-
-
 ```Python 
 
 for epoch in range(10):
