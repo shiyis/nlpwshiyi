@@ -276,14 +276,13 @@ In offering such a model, we prescind from physical details. We attain an abstra
 be physically implemented in diverse ways (e.g., through silicon chips, or neurons, or pulleys and levers). CCTM holds
 that a `suitable abstract computational model offers a literally true description of core mental processes`.
 
-@@colbox-blue
 
-As per definition, the mind is the functional organization
-of the brain, whereas computationalism argues that the functional
-organization of the brain is computable so namely the mind
-is computable.
+> As per definition, the mind is the functional organization
+> of the brain, whereas computationalism argues that the functional
+> organization of the brain is computable so namely the mind
+> is computable.
 
-@@
+
 
 However, this line of thinking imposed a serious challenge on the early development of AI and nearly sent the field into
 a dead end and a period of stagnation called the winter period. The weakness of this thought lies in the fact that human
@@ -345,7 +344,8 @@ RTM is able to accomplish the above by assuming,
 
 **Productivity**:
 
-A finites set of symbols in natural language and the device could entertain a infinite numbers of logic.
+A finites set of symbols in natural language and the device could \\
+entertain a infinite numbers of logic.
 
 **Systematicity**: 
 
@@ -394,17 +394,15 @@ These approaches directly target the study and understanding of syntactic struct
 Philosophers only started to become interested in connectionism because it offers an alternative to the classical
 computational theory of mind.
 
-@@colbox-blue
-Connectionism is a movement that has been put out in the field of
-cognitive science in hope to explain and extrapolate the mental
-processes of a brain. It's composed of a simplified emulation of
-the actual cognitive compositions of a brain, by having connected
-neurons or units (the analogs of neurons) within which are assigned
-weights that measure how strongly the connections are there between
-units. We could picture these weights as a replica of the synapse
-in our actual biological brain that link one neuron to each other.
+> Connectionism is a movement that has been put out in the field of
+> cognitive science in hope to explain and extrapolate the mental
+> processes of a brain. It's composed of a simplified emulation of
+> the actual cognitive compositions of a brain, by having connected
+> neurons or units (the analogs of neurons) within which are assigned
+> weights that measure how strongly the connections are there between
+> units. We could picture these weights as a replica of the synapse
+> in our actual biological brain that link one neuron to each other.
 
-@@
 
 The bridging between classicist and connectionist view and the departure from 
 it became that a lot of connectionists view cognitive processing as analog as the computer processing as digital.
