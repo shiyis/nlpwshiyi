@@ -67,7 +67,6 @@ Ancient LOT proponents used syllogism and propositional logic to analyze the sem
 
 > A Mentalese contains primitive words - including predicates, singular terms, and logical connectives - and these words combine to form complex sentences governed by something like the semantics of the predicate calculus.
 
-\\
 
 Logical structure only constitutes partly the complex representations, accompanied with other non-sentential formats including graphs, maps, diagrams, etc. They could also be manifested as ideas and imagistic forms. In fact, logic plays no role in such constructions only loosely connected structures did. 
 
@@ -89,15 +88,11 @@ Now we could finally come back to discuss deep learning and the neural network m
 
 > the idea is that instead of treating the mental states as having memory access locations with a central processor and a bunch of strings and symbols ready to be manipulated, the connectionist approach treats them as more primitive.
 
-\\
-
 That said, under such condition, there are activations of neurons or so called "weight units" distributed and connected across the system, functioning analogously to the real synapses to our brain.
 
 These newer and modern systems were built in hope that they could emulate the actual brain activity and could appreciate that
 
 > brain states are representational, so a good explanatory model should be able to capture that; second, thought processes are productive and systematic, which is manifested in the ability to conduct inferential reasoning.
-
-\\
 
 To accept this position, connectionism has to accept RTT + COMP. Eliminativist connectionists might completely reject this position, and on the other hand implementationist connectionism might accept it in order to endorse the Turing style computational model.
 
@@ -108,8 +103,6 @@ Some literature later debated around the necessity of commitment to productivity
 The connectionists contend that instead of a concatenated structure, distributed representations could well capture the integral parts of LOT. However, doubt was raised around the idea that if we consider concatenative constituency structure is only one of the realizations of the _productivity_ and _systematicity_ of the LOT, then these schools of neural models would still be considered as part of the classicism.
 
 > broadly speaking, classicists would appreciate the structural representations while the connectionists would appreciate the more distributed representations. 
-
-\\
 
 ### Naturalizing Intentionality Through HF Over Natural Language _Learning_ vs _Understanding_
 
@@ -125,8 +118,6 @@ In such a case, it's very important to explain what it means by understanding a 
 
 
 > A Mentalese is a direct medium of the thought process and not the object of interpretation, as we face the conundrum of having to represent it through a meta-language which suffers the logic fallacy of ad infinitum; put differently, "we face the infinite regress of a meta-language". Therefore, it's not perceived or interpreted. One cannot say that they understood the mental language the same way as they understood a natural language.
-
-\\
 
 similarly to words (lexical items in a natural language), we can hardly define what a primitive expression's semantic properties exactly are. 
 
@@ -151,15 +142,11 @@ By treating these mental processes as type-token relations, we are able to provi
 
 > e and e* are tokens of the same _Mentalese_ type iff R(e,e*). And individuated in neurological terms it becomes that e and e* are the tokens of the same primitive Mentalese type iff e and e* are tokens of the same neural type.
 
-\\
-
 This is the process of naturalizing intentionality and individuating it through pure neurology. However above schema faces a challenge as it could not address the issue of _multiple realizability_, as it is defined heterogeneously in the realm of neuroscience, physics, and biology. 
 
 In lieu of which, a functional definition is carried out and goes as,
 
 > e and e* are tokens of the same primitive Mentalese type iff e and e* have the same functional role.
-
-\\
 
 The below strategy gains popularity as it facilitates the Turing style model treating mental processes as a "computational role" subscribing the "functional role" to Turing style computationalism formalism. 
 
@@ -171,8 +158,6 @@ Molecular theory extracts the canonical or typical relations between symbols thr
 
 > e and e* belong to the same primitive Mentalese type iff they have the same (canonical if adopted) functional role under MT and iff they have the same total functional role under HT.
 
-\\
-
 To explain in simpler terms as I understood it, looking at a natural language say we have the simple term _word_ and _words_ in English serving as a basic unit or lexical item; they would belong to the same primitive type WORD as the same token under MT and different under HT.
 
 However it's concerned under HT that it might have violated the _publicity constraint_ as propositional attitudes are shareable. And in contemporary literature through the inferential judgement that in a natural language, there's a vague and arbitrary sense of denotation (The English word "cat" denotes cats, but could denote something had the linguistic convention presumes so), one can also conclude that in a _Mentalese_, such a case is applicable.
@@ -182,8 +167,6 @@ Yet, historical literature suggests an alternative view that addresses an distin
 This view is confirmed by the fact that different from a natural language, their intrinsic attribute is schematic and typical, meaning that they are types (if one may ask what ensures such a fixed position?) Therefore, CAT in a _Mentalese_ would have denoted cat by its inherent nature and this _semantically permeated approach_ adopts a classificatory scheme that allows the tokens getting categorized adopt semantic values. Finally, the denotation individuation approach goes as,
 
 > e and e* are the same primitive types iff they bear the same denotation.
-
-\\
 
 However, this approach also faces some challenge. First, it violates the original LOTH's aim to naturalize intentionality in non-representational computational models, as this approach does not take into account the _formal-syntactic types manipulated during mental computation_.
 
@@ -381,7 +364,6 @@ The details introduced here is very important, as it's required to discuss how t
 
 > some input items are similar to others in some contexts but not in other contexts.
 
-\\
 
 For example, some hidden units might learn to adapt to the similarities between a _plane_ and a _car_, and the differences between a _plane_ and a _person_.
 
@@ -499,7 +481,6 @@ But there are drawbacks to recurrent neural networks.
 >
 > Second, and more frequently, RNNs have disappearing and ballooning gradient issues. The information at the beginning of the sentence is lost when used to solve NLP issues.
 
-\\
 
 💭 In a separate blog, these different architectures will be introduced in more detail.
 
