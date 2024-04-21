@@ -10,8 +10,6 @@ Above may be manifested in a natural language as propositional attitudes. The sc
 
 > X believes that p iff X believes that S which is a mental representation and p is the actual manifestation of S.
 
-\\
-
 That being said, the language that we used to describe our mental experience is only a representation of what in actuality the thing is inside our brain. This representation could bear a semantic property, be it a denotation or a truth-condition.
 
 **Table of Contents**
@@ -34,13 +32,10 @@ This might be fundamental for inferential reasoning, assuming the importance of 
 
 > Someone who *believes* S stands in a psychologically important relation to the proposition expressed by S.
 
-\\
-
 Another important point to bring up here pertaining to the discussion of systematically theorizing The Representational Theory of Thought or what constitutes as a mental language is that token-and-type has to come into play. To be more specific,
 
 > The **type** is the mental representation itself (repeatable), and the tokens are reflected as the mental events or could be neurological. And thought processes are casual sequences of **tokenings** of mental representations.
 
-\\
 
 So, to talk about the actualization of a mental image in such case, the process goes as,
 
@@ -236,8 +231,6 @@ _Deep vs. Surface Phrasal Structure_ - below is an example of a "passive transfo
 > a. d-structure: [$_{NP}$] INFL see-en BILL
 
 > b. s-structure: Bill INFL seen-en e
-
-\\
 
 Here the letter _e_ represents the empty category that fulfills the empty category principle constraint
 
