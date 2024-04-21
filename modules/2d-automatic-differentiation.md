@@ -8,8 +8,6 @@
 
 Automatic differentiation (AD) is a crucial technique in the field of machine learning for optimizing models through the training process. Here are some reasons why automatic differentiation is essential in this context:
 
-\\
-
 > **Efficient Gradient Computation**: 
 > Autodiff allows you to compute gradients efficiently without manually deriving and implementing them.
 
@@ -31,7 +29,7 @@ print(dy_dx.numpy())  # Output: 4.0
 ```
 
 
-\\
+
 
 > **Higher-order Gradients**: Autodiff can easily compute higher-order derivatives without much additional effort.
 
@@ -54,7 +52,7 @@ print(d2y_dx2.numpy())  # Output: 12.0
 
 ```
 
-\\
+
 
 > **Optimization with Gradient Descent**: Autodiff facilitates gradient-based optimization algorithms like gradient descent.
 
@@ -80,7 +78,7 @@ print(x.numpy())  # Output: close to 0.0 (minimum of y=x^2)
 
 ```
 
-\\
+
 
 > **Neural Network Training**: Autodiff is essential for training neural networks efficiently by computing gradients for the backpropagation algorithm.
 
