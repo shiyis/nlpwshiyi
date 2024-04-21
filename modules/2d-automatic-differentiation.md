@@ -4,14 +4,14 @@
 
 **Table of Contents**
 
-\toc
+toc
 
 Automatic differentiation (AD) is a crucial technique in the field of machine learning for optimizing models through the training process. Here are some reasons why automatic differentiation is essential in this context:
 
 > **Efficient Gradient Computation**: 
 > Autodiff allows you to compute gradients efficiently without manually deriving and implementing them.
 
-\\
+
 
 Sample Python code: 
 
@@ -33,7 +33,7 @@ print(dy_dx.numpy())  # Output: 4.0
 
 > **Higher-order Gradients**: Autodiff can easily compute higher-order derivatives without much additional effort.
 
-\\
+
 
 Sample Python code: 
 
@@ -56,7 +56,7 @@ print(d2y_dx2.numpy())  # Output: 12.0
 
 > **Optimization with Gradient Descent**: Autodiff facilitates gradient-based optimization algorithms like gradient descent.
 
-\\
+
 
 Sample Python code:
 
@@ -82,7 +82,7 @@ print(x.numpy())  # Output: close to 0.0 (minimum of y=x^2)
 
 > **Neural Network Training**: Autodiff is essential for training neural networks efficiently by computing gradients for the backpropagation algorithm.
 
-\\
+
 
 Sample Python code:
 
@@ -139,45 +139,45 @@ Say we are dealing with the model function below.
 
 Our model is:
 $$
-y_t = 2x^1_t-3x^2_t+1, \quad t\in\{1,\dots,30\}
+y_t = 2x^1_t-3x^2_t+1, quad tin{1,dots,30}
 $$
 
-Our task is given the 'observations' $(x_t,y_t)_{t\in\{1,\dots,30\}}$ to recover the weights $w^1=2, w^2=-3$ and the bias $b = 1$.
+Our task is given the 'observations' $(x_t,y_t)_{tin{1,dots,30}}$ to recover the weights $w^1=2, w^2=-3$ and the bias $b = 1$.
 
 In order to do so, we will solve the following optimization problem:
 $$
-\underset{w^1,w^2,b}{\operatorname{argmin}} \sum_{t=1}^{30} \left(w^1x^1_t+w^2x^2_t+b-y_t\right)^2
+underset{w^1,w^2,b}{operatorname{argmin}} sum_{t=1}^{30} left(w^1x^1_t+w^2x^2_t+b-y_tright)^2
 $$
 
 In vector form, we define:
 $$
-\hat{y}_t = {\bf w}^T{\bf x}_t+b
+hat{y}_t = {bf w}^T{bf x}_t+b
 $$
 and we want to minimize the loss given by:
 $$
-loss = \sum_t\underbrace{\left(\hat{y}_t-y_t \right)^2}_{loss_t}.
+loss = sum_tunderbrace{left(hat{y}_t-y_t right)^2}_{loss_t}.
 $$
 
 To minimize the loss we first compute the gradient of each $loss_t$:
-\begin{eqnarray*}
-\frac{\partial{loss_t}}{\partial w^1} &=& 2x^1_t\left({\bf w}^T{\bf x}_t+b-y_t \right)\\
-\frac{\partial{loss_t}}{\partial w^2} &=& 2x^2_t\left({\bf w}^T{\bf x}_t+b-y_t \right)\\
-\frac{\partial{loss_t}}{\partial b} &=& 2\left({\bf w}^T{\bf x}_t+b-y_t \right)
-\end{eqnarray*}
+begin{eqnarray*}
+frac{partial{loss_t}}{partial w^1} &=& 2x^1_tleft({bf w}^T{bf x}_t+b-y_t right)
+frac{partial{loss_t}}{partial w^2} &=& 2x^2_tleft({bf w}^T{bf x}_t+b-y_t right)
+frac{partial{loss_t}}{partial b} &=& 2left({bf w}^T{bf x}_t+b-y_t right)
+end{eqnarray*}
 
 Note that the actual gradient of the loss is given by:
 $$
-\frac{\partial{loss}}{\partial w^1} =\sum_t \frac{\partial{loss_t}}{\partial w^1},\quad
-\frac{\partial{loss}}{\partial w^2} =\sum_t \frac{\partial{loss_t}}{\partial w^2},\quad
-\frac{\partial{loss}}{\partial b} =\sum_t \frac{\partial{loss_t}}{\partial b}
+frac{partial{loss}}{partial w^1} =sum_t frac{partial{loss_t}}{partial w^1},quad
+frac{partial{loss}}{partial w^2} =sum_t frac{partial{loss_t}}{partial w^2},quad
+frac{partial{loss}}{partial b} =sum_t frac{partial{loss_t}}{partial b}
 $$
 
 For one epoch, **(Batch) Gradient Descent** updates the weights and bias as follows:
-\begin{eqnarray*}
-w^1_{new}&=&w^1_{old}-\alpha\frac{\partial{loss}}{\partial w^1} \\
-w^2_{new}&=&w^2_{old}-\alpha\frac{\partial{loss}}{\partial w^2} \\
-b_{new}&=&b_{old}-\alpha\frac{\partial{loss}}{\partial b},
-\end{eqnarray*}
+begin{eqnarray*}
+w^1_{new}&=&w^1_{old}-alphafrac{partial{loss}}{partial w^1} 
+w^2_{new}&=&w^2_{old}-alphafrac{partial{loss}}{partial w^2} 
+b_{new}&=&b_{old}-alphafrac{partial{loss}}{partial b},
+end{eqnarray*}
 
 and then we run several epochs.
 
