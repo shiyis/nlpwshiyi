@@ -24,26 +24,5 @@ non-overlap constraints satisfactory map|
 :-------------------------:|
 ![](../extras/connectionism/case-filter-map-annotated.jpg)| 
 
-case-marking prohibition activation map|
-:-------------------------:|
-![](../extras/connectionism/case-marking-prohibition.png)|
 
 
-
-The Case Filter Constraint | 
- :-------------------------:|
-Two major requirements need to be addressed to satisfy fully this constraint: All lexical NPs be case-marked and no multiply case-marked NPs meaning they can only be case-marked once. |
-|
-The chain map and the case-marked row both have excitatory lateral and diagonal priming links respectively to the case-A map. Together they activate the corresponding units in case-A map.|
-|
-Case-A map has columnar excitatory non-lateral links to case-B map as indicated in the third graph above. The case-marked row also has excitatory diagonal connections to the case-B map to show all the case-marked positions.|
-|
-Case-B map has inhibitory links to the chain map in order to turn off the second case-marked unit/node in the column which already contains one (as indicated in the second graph above).|
-|
-The enforcement of the other stipulation, that all lexical NPs be case-marked, relies on the interaction between the "flood" row and the case-A map. |
-|
-The units in the case-marked row which correspond to lexical NPs are initially active and through their columnar connections to the chain map they try to activate units in the chain map (they may not succeed). |
-|
-This has the effect of promoting movement of lexical NPs. As connections from it to the flood row turn off the corresponding units in the row. |
-|
-This has the effect of removing the incentive to movement of case-marked units, which is in accordance with the principle of the case filter.|
