@@ -304,7 +304,7 @@ If there were intermediate steps in the movement, multiple units will be active 
 
 Most of the maps in the system are not used to represent sentence structure; rather, they are used to enforce the constraints on movement. They do this through their excitatory and inhibitory links to other maps.
 
-The remainder of this section describes the use of maps to enforce four constraints: the non-overlap constraint, the case filter, the $\theta$-role, and the empty category principle.
+The remainder of this section describes one of the use of maps to enforce the four constraints: the non-overlap constraint, the case filter, the $\theta$-role, and the empty category principle.
 
 \textoutput{cards}
 

@@ -159,7 +159,6 @@ _**CKY Assumptions**_
 
 > •0 The •1 Brown •2 Dog •3
 
-\\
 
 @@colbox-blue
 - K = 1: possible consitituents are `[0,1]` and `[1,3]`
@@ -167,7 +166,7 @@ _**CKY Assumptions**_
 @@
 
 
-#### Simple grammar
+#### Simple Grammar
 
 ```
 S → NP VBZ; DT → the
