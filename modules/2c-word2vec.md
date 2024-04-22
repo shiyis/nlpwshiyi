@@ -95,7 +95,7 @@ $$ \prod_{t=1}^{T} \prod_{-m \leq j \leq m,\ j \neq 0} \mathbb{P}(w^{(t+j)} \mid
 
 After the training, for any word in the dictionary with index $i$, we are going to get its two word vector sets $\boldsymbol{v}_i$ and $\boldsymbol{u}_i$.  In applications of natural language processing (NLP), the central target word vector in the skip-gram model is generally used as the representation vector of a word.
 
-### A Comparison Between These Two Model 
+### A Comparison Between These Two Models
 
 The Skip-gram model in Word2Vec does not use a fixed sliding window in the same way as the Continuous Bag of Words (CBOW) model. Instead, the Skip-gram model considers each word-context pair in the training data separately.
 

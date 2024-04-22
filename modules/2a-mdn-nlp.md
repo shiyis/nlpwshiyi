@@ -354,7 +354,9 @@ The network was given the task of mapping input patterns of the form "trajector 
 
 _The output layer_. The output layer consists of six units, one for each of the three schemas, and three to indicate whether the landmark and trajector make 'contact', meaning whether if the path has an 'end-point' or 'upward' component.
 
-_The input layer_. The input layer is reduced to only cover the necessary schema for the network, so a vocab of 18 trajectors, 15 verbs, and 15 landmarks. Also, notably no semantic information was given to the model of the sentence that could be constructed under the schema as a whole (represented in a localist fashion; means encoding each individual piece of information as a distinct and separate unit, rather than embedding it within a larger context or structure. In the context of neural networks, this often involves representing each element of a set (such as words in a vocabulary or components of a schema) as its own distinct vector or activation). That being said, they were preprocessed as separate units (activated in the vector) in hope that the model could capture some independent inference.
+_The input layer_. The input layer is reduced to only cover the necessary schema for the network, so a vocab of 18 trajectors, 15 verbs, and 15 landmarks. Also, notably no semantic information was given to the model of the sentence that could be constructed under the schema as a whole (represented in a localist fashion; means encoding each individual piece of information as a distinct and separate unit, rather than embedding it within a larger context or structure. 
+
+In the context of neural networks, this often involves representing each element of a set (such as words in a vocabulary or components of a schema) as its own distinct vector or activation). That being said, they were preprocessed as separate units (activated in the vector) in hope that the model could capture some independent inference.
 
 @@
 
