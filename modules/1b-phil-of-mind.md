@@ -404,8 +404,7 @@ computational theory of mind.
 > in our actual biological brain that link one neuron to each other.
 
 
-The bridging between classicist and connectionist view and the departure from 
-it became that a lot of connectionists view cognitive processing as analog as the computer processing as digital.
+The bridging and departure between classicist and connectionist's view became that a lot of connectionists view cognitive processing as analog whereas classicist view them as digital.
 
 Many connectionists argue that weight units that are dynamic, continuous, and analogous in nature which therefore
 reflect better the way that human brain processes information through different mental states.
