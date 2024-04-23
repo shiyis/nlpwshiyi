@@ -371,7 +371,7 @@ The shift toward a sub-symbolic, universally distributed representation seems to
 
 #### What Are Syntactic Underpinnings?
 
-To recall, the _syntactic underpinnings_ refer to the foundational principles and structures that dictate the formation of sentences and phrases in a language. These include rules for word order, phrase structure, grammatical categories, syntactic dependencies, and syntactic hierarchies.
+To recall, the _syntactic underpinnings_ refer to the foundational principles and structures that dictate the formation of sentences and phrases in a language. These include rules for word order, phrase structure, grammatical categories, syntactic dependencies and hierarchies.
 
 Here are a few strategies that could be employed to directly address syntactic underpinnings:
 
