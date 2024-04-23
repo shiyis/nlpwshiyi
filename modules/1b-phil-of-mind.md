@@ -241,7 +241,7 @@ One important breakthrough invention during the computationalism era was the _Lo
 and Simon 1956) which proved 38 of the first 52 theorems from _Principia Mathematica_ (Whitehead and Russell 1925).
 
 Since the discrete nature of the system, it's concerned with its competency of whether it could model the continuous
-nature of human cognition. There's between the _digital_ paradigm behind the system with _analog_ system.
+nature of human cognition.
 
 The Turing machine also proved the existence of a _Universal Turing Machine_ (UTM), which results in the ultimate
 development of current computer logic and system. More importantly, a personal computer can mimic any Turing machine
