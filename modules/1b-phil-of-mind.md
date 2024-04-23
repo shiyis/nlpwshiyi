@@ -209,15 +209,15 @@ These theories represent diverse perspectives on the nature of consciousness and
 
 @@
 
-### Computationalism and The Classical Computational Theory of Mind
+### Computationalism and The Computational Theory of Mind
 
-In a similar light, CCTM or the Classical Computational Theory of Mind was established in accordance with functionalism without addressing the qualitative or subjective aspects of mental processes.
+In a similar light, CTM or the Computational Theory of Mind was established in accordance with functionalism without addressing the qualitative or subjective aspects of mental processes.
 
-According to CCTM, the mind is a computational system similar in important respects to a Turing machine, and core mental processes (e.g., reasoning, decision-making, and problem solving) are computations similar in important respects to computations executed by a Turing machine.
+According to CTM, the mind is a computational system similar in important respects to a Turing machine, and core mental processes (e.g., reasoning, decision-making, and problem solving) are computations similar in important respects to computations executed by a Turing machine.
 
-First, CCTM is better formulated by describing the mind as a “computing system” or a “computational system” rather than a “computer”. As David Chalmers - an Australian philosopher and cognitive scientist specializing in the areas of philosophy of mind and philosophy of language - (2011) notes, describing a system as a “computer” strongly suggests that the system is programmable. As Chalmers also notes, one need not claim that the mind is programmable simply because one regards it as a Turing-style computational system.
+First, CTM is better formulated by describing the mind as a “computing system” or a “computational system” rather than a “computer”. As David Chalmers - an Australian philosopher and cognitive scientist specializing in the areas of philosophy of mind and philosophy of language - (2011) notes, describing a system as a “computer” strongly suggests that the system is programmable. As Chalmers also notes, one need not claim that the mind is programmable simply because one regards it as a Turing-style computational system.
 
-Second, CCTM is not intended metaphorically. CCTM does not simply hold that the mind is like a computing system. CCTM holds that the mind `literally is a computing system`. The most familiar artificial computing systems are made from silicon chips or similar materials, whereas the human body is made from flesh and blood. But CCTM holds that this difference disguises a more fundamental similarity, which we can capture through a Turing-style computational model.
+Second, CTM is not intended metaphorically. CTM does not simply hold that the mind is like a computing system. CTM holds that the mind `literally is a computing system`. The most familiar artificial computing systems are made from silicon chips or similar materials, whereas the human body is made from flesh and blood. But CTM holds that this difference disguises a more fundamental similarity, which we can capture through a Turing-style computational model.
 
 @@colbox-blue
 
@@ -247,7 +247,7 @@ The Turing machine also proved the existence of a _Universal Turing Machine_ (UT
 development of current computer logic and system. More importantly, a personal computer can mimic any Turing machine
 _until it exhausts its limited memory supply_.
 
-### The Classical Computational vs The Representational Theory of Mind
+### The Computational vs The Representational Theory of Mind
 
 As opposed to type-identity theory, where mental states are brain states, Putnam proposed a different view that mental
 states are [_multiply realizable_](https://plato.stanford.edu/entries/multiple-realizability/): the same mental state
@@ -273,7 +273,7 @@ representations that central processor is able to manipulate, operate on, and ma
 #### Computationalism vs Functionalism
 
 In offering such a model, we prescind from physical details. We attain an abstract computational description that could
-be physically implemented in diverse ways (e.g., through silicon chips, or neurons, or pulleys and levers). CCTM holds
+be physically implemented in diverse ways (e.g., through silicon chips, or neurons, or pulleys and levers). CTM holds
 that a `suitable abstract computational model offers a literally true description of core mental processes`.
 
 
