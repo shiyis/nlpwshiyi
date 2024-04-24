@@ -1130,6 +1130,10 @@ pre code {
 
 @media screen and (max-width: 1024px) {
 
+  .card{
+    background-color: black;
+  }
+
   .card {
     .container {
       padding: 3px 10px 3px 10px;
@@ -1182,6 +1186,9 @@ img[alt=intro] {
   }
 }
 
+.card{
+  background-color: black;
+}
 
 
 img[alt=intro] {
