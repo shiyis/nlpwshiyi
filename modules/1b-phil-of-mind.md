@@ -299,8 +299,8 @@ reflects poorly the productivity of these mental processes. On top of that there
 
 Coming back to the important discussion around consciousness. Now we could ask that,
 
-ℹ️ why isn't this indication enough for such a phenomenon enough to explain what these "nomologically dangling" ideas?
-And what exactly is the purpose of and function of consciousness? or the importance of qualia?
+ℹ️ why isn't this indication enough for such a phenomenon to explain what these "nomologically dangling" ideas are?
+And what exactly is the purpose of consciousness? or the importance of qualia?
 
 One answer to the questions argues that they are not merely physical, it's the nature's decision bestowed upon us with
 free will. It lets us to decide with this warning sign. It's more so a trade-off handed over to our free will. We
