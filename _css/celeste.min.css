@@ -545,7 +545,7 @@ html {
 
 body {
   color: hsl(0, 0%, 94%);
-  background-color:hsl(from color h s l);
+  background-color: hsl(from color h s l);
   /* border-top: 5px solid #0A3b76 */
 }
 
@@ -571,10 +571,10 @@ footer,
 }
 
 img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 table {
@@ -598,6 +598,7 @@ th {
 tbody tr:nth-child(odd) td {
   background-color: grey;
 }
+
 tbody tr:nth-child(odd) th {
   background-color: darkslategray;
 }
@@ -671,7 +672,7 @@ ol,
 dl {
   margin-top: 0;
   margin-bottom: 1rem;
-  padding:0em 1em 0em 2em
+  padding: 0em 1em 0em 2em
 }
 
 dt {
@@ -693,7 +694,7 @@ hr {
 abbr {
   font-size: 85%;
   font-weight: bold;
-  color:hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 94%);
   text-transform: uppercase
 }
 
@@ -705,7 +706,7 @@ abbr[title] {
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
-  color:hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 94%);
   border-left: .25rem solid #e5e5e5
 }
 
@@ -852,7 +853,7 @@ pre {
   font-family: "Source Code Pro", monospace
 }
 
-code{
+code {
   padding: 0em 0.5em 0 0.25em;
   font-size: 85%;
   text-wrap: pretty;
@@ -939,7 +940,7 @@ pre code {
   overflow: hidden;
 }
 
-#toggle1{
+#toggle1 {
   display: none;
 }
 
@@ -1020,7 +1021,7 @@ pre code {
 }
 
 
-.dropdown .dropbtn{
+.dropdown .dropbtn {
   width: 132px;
 }
 
@@ -1032,9 +1033,9 @@ pre code {
 }
 
 
-@media screen and (max-width: 765px)  {
+@media screen and (max-width: 765px) {
 
-  .topnav{
+  .topnav {
 
     display: none;
   }
@@ -1044,11 +1045,11 @@ pre code {
     color: #fff;
     text-decoration: none;
   }
-  
-  .p-menu1{
-     height: 100%;
+
+  .p-menu1 {
+    height: 100%;
   }
-  
+
   /* Hamburger */
   .hamburger1 {
     background-color: #8482e6;
@@ -1061,7 +1062,7 @@ pre code {
     justify-items: center;
     z-index: 120;
   }
-  
+
   .hamburger1 div {
     background-color: ivory;
     position: relative;
@@ -1072,36 +1073,36 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
 
-  .dropdown:hover .dropbtn{
+  .dropdown:hover .dropbtn {
     width: 100%;
   }
-  
+
   #toggle1 {
     display: none;
   }
-  
-  #toggle1:checked + .hamburger1 .top {
+
+  #toggle1:checked+.hamburger1 .top {
     -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
+    transform: rotate(-45deg);
     margin-top: 13.5px;
   }
-  
-  #toggle1:checked + .hamburger1 .meat {
+
+  #toggle1:checked+.hamburger1 .meat {
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
     margin-top: -3px;
   }
-  
-  #toggle1:checked + .hamburger1 .bottom {
+
+  #toggle1:checked+.hamburger1 .bottom {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
   }
-  
-  #toggle1:checked ~ .topnav {
+
+  #toggle1:checked~.topnav {
     height: auto;
   }
-  
-  
+
+
   /* Menu */
   .topnav {
     width: 100%;
@@ -1122,7 +1123,8 @@ pre code {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-    /* Your styles for iPads in landscape orientation */
+
+  /* Your styles for iPads in landscape orientation */
 
 }
 
@@ -1164,20 +1166,20 @@ img[alt=intro] {
 
 
 @media screen and (max-width: 500px) {
-    img[alt=intro] {
-      width: 30%;
-      opacity: 0.95;
+  img[alt=intro] {
+    width: 30%;
+    opacity: 0.95;
 
-    }
+  }
 
-    code {
-      text-wrap: pretty;
-    }
+  code {
+    text-wrap: pretty;
+  }
 
-    .active{
-      order: -2;
-      background-color: #8482e6;
-    }
+  .active {
+    order: -2;
+    background-color: #8482e6;
+  }
 }
 
 
@@ -1187,7 +1189,7 @@ img[alt=intro] {
   width: 125px;
 }
 
-img[alt=info1]{
+img[alt=info1] {
   background-color: white;
 }
 

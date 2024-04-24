@@ -364,8 +364,10 @@ code {
   border-radius: 10px;
 }
 
-.hljs-meta .hljs-string, .hljs-regexp, .hljs-string {
-  color:#8482e6
+.hljs-meta .hljs-string,
+.hljs-regexp,
+.hljs-string {
+  color: #8482e6
 }
 
 .hljs-meta {
@@ -398,7 +400,6 @@ code {
   margin-right: 10px;
   margin-bottom: 30px;
   border: dotted
-  
 }
 
 
@@ -481,8 +482,8 @@ body {
   /* opacity: 0.3; */
   background-color: black;
   padding: 1.5em;
-  margin-left:5px;
-  margin-right:5px;
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 0;
   text-wrap: pretty;
   display: block;
@@ -649,21 +650,21 @@ h2 {
   }
 }
 
-  @media (min-width:500px) {
-    .row {
-      width: 97%;
-      display: block;
-    }
+@media (min-width:500px) {
+  .row {
+    width: 97%;
+    display: block;
+  }
+}
+
+.card {
+  .container {
+    padding: 3px 10px 3px 10px;
+    background-color: black;
   }
 
-  .card {
-    .container {
-      padding: 3px 10px 3px 10px;
-      background-color: black;
-    }
-
-    box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
-  }
+  box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
+}
 
 .card img {
 
@@ -691,21 +692,12 @@ h2 {
   margin-left: 0.5em;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  /* Your styles for iPads in landscape orientation */
-  .card {
-    .container {
-      padding: 3px 10px 3px 10px;
-      background-color: black;
-    }
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
 
-    box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
-  }
-}
 .card img {
 
   padding-left: 0;
-  width: 100%;    
+  width: 100%;
 }
 
 
@@ -719,12 +711,12 @@ img[alt=cky] {
 
 
 
-img[alt=skip-gram-demo]{
+img[alt=skip-gram-demo] {
   width: 360px;
   text-align: center;
 }
 
-img[alt=vae]{
+img[alt=vae] {
 
   width: 300px;
   text-align: center;
