@@ -303,7 +303,7 @@ Coming back to the important discussion around consciousness. Now we could ask t
 And what exactly is the purpose of consciousness? or the importance of qualia?
 
 One answer to the questions argues that they are not merely physical, it's the nature's decision bestowed upon us with
-free will. It lets us to decide with this warning sign. It's more so a trade-off handed over to our free will. We
+free will. It lets us decide with this warning sign. It's more so a trade-off handed over to our free will. We
 experience discomfort caused by external stimulation and then we are given the option to consciously decide what we are
 going to do with it.
 
