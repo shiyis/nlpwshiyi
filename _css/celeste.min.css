@@ -1032,7 +1032,7 @@ pre code {
 }
 
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 765px)  {
 
   .topnav{
 
@@ -1122,8 +1122,21 @@ pre code {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
   }
-  
- 
+    /* Your styles for iPads in landscape orientation */
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  .card {
+    .container {
+      padding: 3px 10px 3px 10px;
+      background-color: black;
+    }
+
+    box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
+  }
+
 }
 
 blockquote {
