@@ -691,14 +691,17 @@ h2 {
   margin-left: 0.5em;
 }
 
-.card {
-  .container {
-    padding: 3px 15px 3px 10px;
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Your styles for iPads in landscape orientation */
+  .card {
+    .container {
+      padding: 3px 10px 3px 10px;
+      background-color: black;
+    }
+
+    box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
   }
-
-  box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
 }
-
 .card img {
 
   padding-left: 0;
