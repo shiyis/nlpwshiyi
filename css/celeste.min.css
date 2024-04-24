@@ -1160,6 +1160,11 @@ img[alt=intro] {
     code {
       text-wrap: pretty;
     }
+
+    .active{
+      order: -2;
+      background-color: #8482e6;
+    }
 }
 
 
