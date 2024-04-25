@@ -383,7 +383,7 @@ Here are a few strategies that could be employed to directly address syntactic u
 
 - **Linguistic Resources**: Leveraging linguistic resources such as annotated corpora, lexicons, and grammatical resources to inform syntactic analysis and modeling.
 
-Machine/Deep Learning Approaches: Employing machine and/or deep learning techniques, such as machine/deep learning models trained on syntactically annotated data, to automatically learn syntactic patterns and structures from large text corpora.
+- **ML/DL Approaches**: Employing machine and/or deep learning techniques, such as machine/deep learning models trained on syntactically annotated data, to automatically learn syntactic patterns and structures from large text corpora.
 
 These approaches directly target the study and understanding of syntactic structures and rules within a language, aiming to develop systems capable of accurately representing and processing the syntactic aspects of a natural language.
 
