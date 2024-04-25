@@ -68,6 +68,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1b-info-theory/index.html</loc>
+    <lastmod>2024-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4f-server-build/index.html</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -188,12 +194,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1a-info-theory/index.html</loc>
-    <lastmod>2024-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/9a-autoencoders/index.html</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -213,6 +213,12 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2b-markov-processes/index.html</loc>
+    <lastmod>2024-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1a-phil-of-mind/index.html</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -303,12 +309,6 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2c-word2vec/index.html</loc>
-    <lastmod>2024-04-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1b-phil-of-mind/index.html</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
