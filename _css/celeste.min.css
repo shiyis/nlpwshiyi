@@ -1143,6 +1143,11 @@ pre code {
     box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
   }
 
+  .active {
+    order: -2;
+    background-color: #8482e6;
+  }
+
 }
 
 blockquote {
