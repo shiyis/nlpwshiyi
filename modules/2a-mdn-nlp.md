@@ -236,7 +236,7 @@ _Movement-$\alpha$_ - During transformation, the d-structure turns into the s-st
 
 ℹ️ Why is this important to bring up here?
 
-As I have understood it, this is exactly a functionalism reductionism approach of mapping a natural language, in the sense that the constituent parts of an entire phrasal structure is the simpler reduction of the entire sentence as a whole.
+As I have understood it, this is exactly a functionalism reductionism approach of mapping a natural language, in the sense that the constituent parts of an entire phrasal structure are the reduced parts of the entire sentence.
 
 And the correspondences between cognitive linguistics and connectionism are intriguing. Cognitive linguists view grammar as a schematic coding system that is induced from a very large number of pairings of form with meaning. The account of polysemy points to the need for a mechanism that can induce categories from a set of examples, learn to extract rules from rule-governed data, and resolve conflicts in rules by constraint satisfaction.
 
