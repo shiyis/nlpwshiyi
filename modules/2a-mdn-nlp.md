@@ -1,10 +1,8 @@
 # What Is Modern Natural Language Processing About?
 
+To answer this major question, it's important to draw inference from some of the important concepts in psychology. The first one is _The Language of Thought Hypothesis_ and the second one _The Representational Theory of Mind_. 
 
-
-To answer this major question, it's important to draw inference from some of the important concepts in psychology. The first one is _The Language of Thought Hypothesis_ and the second one _The Representational Theory of Thought_. 
-
-The first one touches on the importance of how our brain has a schema when it comes to producing language of thought, or called _Mentalese_. The _Representational Theory of Thought_ on the other hand touches on our cognitive abilities to be able to make conscious decisions, solve problems, and reason. 
+The first one touches on the importance of how our brain has a schema when it comes to producing language of thought, or called _Mentalese_. The _Representational Theory of Mind_ on the other hand touches on our cognitive abilities to be able to make conscious decisions, solve problems, and reason. 
 
 Above may be manifested in a natural language as propositional attitudes. The schema goes as,
 
@@ -22,7 +20,7 @@ That being said, the language that we used to describe our mental experience is 
 
 ### What Does It Mean To Have A Mental Language?
 
-Continuing the discussion of LOTH or the _The Language of Thought Hypothesis_, again one can postulate that it's closely correlated with the mental representation (drawing reference from _the Representational Theory of Thought_), and also as per the context of current discussions around understanding how the brain actually works (at least w.r.t the folk psychology).
+Continuing the discussion of LOTH or the _The Language of Thought Hypothesis_, again one can postulate that it's closely correlated with the mental representation (drawing reference from _the Representational Theory of Mind_), and also as per the context of current discussions around understanding how the brain actually works (at least w.r.t the folk psychology).
 
 It confirms that _Mentalese_ exists within the scope of research. Aside from the physical aspects (the basic ability to identify, match, and represent the objective and physical reality), researches of these "mental representations" strive to incorporate subjective and qualitative dimensions, for example, consciousness and propositional attitudes specifically borne out in the form of a natural language as feelings, beliefs, desires, intentions, and fears.
 
@@ -31,11 +29,6 @@ The exactness of a mental language or a mental state is yet unknown. However, in
 This might be fundamental for inferential reasoning, assuming the importance of how it's tied to relevant actions. The mental representations S here are put into "boxes" (a "belief box" or a "desire box"). That being said,
 
 > Someone who *believes* S stands in a psychologically important relation to the proposition expressed by S.
-
-Another important point to bring up here pertaining to the discussion of systematically theorizing The Representational Theory of Thought or what constitutes as a mental language is that token-and-type has to come into play. To be more specific,
-
-> The **type** is the mental representation itself (repeatable), and the tokens are reflected as the mental events or could be neurological. And thought processes are casual sequences of **tokenings** of mental representations.
-
 
 So, to talk about the actualization of a mental image in such case, the process goes as,
 
@@ -49,68 +42,37 @@ So, to talk about the actualization of a mental image in such case, the process 
 
 @@
 
-
-
-However, it's also brought to attention that according to discussion, RTT requires qualification, meaning it needs context to be thoroughly discussed. Put simply, the mind could postulate an infinite amount of thoughts, but the important ones are qualified or vetted through propositional attitudes that are able to have an effect. Or intentional causation could only come about where there's an explicit representation.
-
-In a nutshell, to discuss in more seriousness, it's important to distinguish sharply between mental representations and rules governing the manipulation of mental representations. Similarly applicable to deductive reasoning where we often follow rules of deductive inference without explicitly representing the rules. Or we often as native speakers of a language follow its inherent syntax without explicitly stating the rules that govern it.
-
-
-
-### How Are Above Premises Important To Our Discussions of Current Natural Language Processing Research?
-
 Natural languages are compositional meaning that complex sentences are formed through simple linguistic expressions. In the same light, a mental language could be compositional and consist of symbols amenable to semantic analysis. This would be introduced as the COMP or _The Compositionality of Mental Processes_.
 
-LOT claims that mental states typically have constiuent structures. That said, the mental state of intending something bears weight and complexity on its own not including their propositional objects or mental representations. Combined together the RTT + COMP builds the foundation for LOTH.
+LOTH claims that mental states typically have constiuent structures. That said, the mental state of intending something bears weight and complexity on its own not including their propositional objects or mental representations.
 
-Ancient LOT proponents used syllogism and propositional logic to analyze the semantics of _Mentalese_. Current researchers instead use predicate calculus, which was established in the late 18th century and optimized in the 30s. The premise was that,
+Ancient LOTH proponents used syllogism and propositional logic to analyze the semantics of _Mentalese_. Current researchers instead use predicate calculus, which was established in the late 18th century and optimized in the 30s. The premise was that,
 
 > A Mentalese contains primitive words - including predicates, singular terms, and logical connectives - and these words combine to form complex sentences governed by something like the semantics of the predicate calculus.
-
 
 Logical structure only constitutes partly the complex representations, accompanied with other non-sentential formats including graphs, maps, diagrams, etc. They could also be manifested as ideas and imagistic forms. In fact, logic plays no role in such constructions only loosely connected structures did. 
 
 Schematic mental maps in relation to actual concrete maps best describe these kinds of mental images and representations. Therefore, pluralism was adopted by some to analyze thoughts, including but not limited to those non-sentential formats mentioned above.
 
-However illogical these perceptual mental representations are compositional and complex. They also display systematicity. Supporters of LOT will posit that _The Computational Theory of Mind_ serves to produce the language of thought. 
+However illogical these perceptual mental representations are compositional and complex, and they also display _systematicity_. 
 
-Together RTT + COMP + CCTM (The Representational Theory of Thought, The Compositionality of Mental Processes, and The Classical Computational Theory of Mind) forges the LOTH. And our cognitive inferential systematicities provide the space for the above hypothesis to stand. 
+Though, the mind could postulate an infinite amount of thoughts and displays _productivity_ (which is another important attribute of _Mentalese_), but the important ones are qualified or vetted through propositional attitudes that are able to have an effect. Or intentional causation could only come about where there's an explicit representation.
 
-However, the system considers only the syntactic importance without the presence of semantic significance.
-
-In the modern era, CCTM is however excluded in the discussion. Only RTT + COMP is included. This is the original spawning of a new school of LOT or research into mental processes grounded in `connectionism`.
+In a nutshell, to discuss in more seriousness, it's important to distinguish sharply between mental representations and rules governing the manipulation of mental representations. Similarly applicable to deductive reasoning where we often follow rules of deductive inference without explicitly representing the rules. Or we often as native speakers of a language follow its inherent syntax without explicitly stating the rules that govern it.
 
 
+#### Naturalizing Intentionality Through Hypothesis Formulation and Concept Acquisition in Language _Learning_ and _Understanding_
 
-### Deep Learning and Neural Networks Continued
+This part of the discussion is very important as it's pertaining to how we acquire _Mentalese_.
 
-Now we could finally come back to discuss deep learning and the neural network models. In the 1980s, connectionism gained traction as an alternative to the Turing style computational model.
+A huge part of the NLP/NLU research is related to naturalizing the intentionality behind a language (discourse analysis, corpus linguistics, formal semantics, syntactic analysis, etc). This ties back to the understanding of _concept acquisition_, and the innateness of toddlers to be able to adopt new things into their _Mentalese_.
 
-> the idea is that instead of treating the mental states as having memory access locations with a central processor and a bunch of strings and symbols ready to be manipulated, the connectionist approach treats them as more primitive.
 
-That said, under such condition, there are activations of neurons or so called "weight units" distributed and connected across the system, functioning analogously to the real synapses to our brain.
+One approach is through hypothesis formulation in that, 
 
-These newer and modern systems were built in hope that they could emulate the actual brain activity and could appreciate that
+>  Infants are thought to form hypotheses about the world based on their observations and experiences. Through interactions with their environment, infants test these hypotheses and update their understanding of the world accordingly. For example, when an  infant observes objects falling to the ground, they may form a hypothesis about the concept of gravity and test it by dropping different objects to see if they fall.
 
-> brain states are representational, so a good explanatory model should be able to capture that; second, thought processes are productive and systematic, which is manifested in the ability to conduct inferential reasoning.
-
-To accept this position, connectionism has to accept RTT + COMP. Eliminativist connectionists might completely reject this position, and on the other hand implementationist connectionism might accept it in order to endorse the Turing style computational model.
-
-Some literature later debated around the necessity of commitment to productivity and systematicity of thoughts. Supporters still seek to illuminate the traditional style of computational system.
-
-    However, objections in entirety go against the need of adopting the representational theory. Another stream of objections go against the fact that the productivity and systematicity nature of language of thought had been greatly exaggerated. The last streak of objections posits that one can still create models that reflect the compositionality and the internal structures without adopting the Turing style model.
-
-The connectionists contend that instead of a concatenated structure, distributed representations could well capture the integral parts of LOT. However, doubt was raised around the idea that if we consider concatenative constituency structure is only one of the realizations of the _productivity_ and _systematicity_ of the LOT, then these schools of neural models would still be considered as part of the classicism.
-
-> broadly speaking, classicists would appreciate the structural representations while the connectionists would appreciate the more distributed representations. 
-
-### Naturalizing Intentionality Through HF Over Natural Language _Learning_ vs _Understanding_
-
-This part of the discussion is very important as it's pertaining to the origins and departures of these two schools of LOTH: rationalism vs empiricism or the classicism vs the connectionism.
-
-The argument ties back to researches conducted around _concept acquisition_, and the innateness of toddlers to be able to adopt new things into their _Mentalese_.
-
-The hypothesis formulation and model testing done around the argument has suffered two logic fallacies: _ad infinitum_ and _the pain of circularity_, as children could not possibly develop a meta-meta-language to explain a meta-language nor could they have the ability to represent something unless the concept is already known, which is through the required inductive reasoning in a hypothesis formulation about the denotation of _Mentalese_.
+The hypothesis formulation and model testing done around the argument has however suffered two logic fallacies: _ad infinitum_ and _the pain of circularity_, as children could not possibly develop a meta-meta-language to explain a meta-language nor could they have the ability to represent something unless the concept is already known, which is through the required inductive reasoning in a hypothesis formulation about the denotation of _Mentalese_.
 
 Therefore, it bears that there's no such a thing as concept learning. And the conclusion was that concepts are unlearned in fact they are innate.
 
@@ -123,7 +85,7 @@ similarly to words (lexical items in a natural language), we can hardly define w
 
 Though it's easy to illustrate the relations between complex expressions formed from these primitive expressions, researchers sought to create paradigms that could well capture the semantic properties of them. 
 
-Here the strategy was to adopt functionalism (where _mind is the functional organization of the brain_). Therefore, the effort of categorizing what exactly it means by saying `"X A's that p iff there is a mental representation S such that X bears A* to S and S means that P"` gets broken down into two steps,
+One of the strategies was to adopt functionalism (where _mind is the functional organization of the brain_). Therefore, the effort of categorizing what exactly it means by saying `"X A's that p iff there is a mental representation S such that X bears A* to S and S means that P"` gets broken down into two steps,
 
 ```plaintext
 1. to explain in naturalistically acceptable terms 
@@ -134,11 +96,9 @@ representation S.
 what it is for mental representation S to mean that p.
 ```
 
-
+Another strategy is by treating these mental processes as type-token relations. 
 
 #### On the Type-Token Relation of Mental Representations
-
-By treating these mental processes as type-token relations, we are able to provide a solution.
 
 > e and e* are tokens of the same _Mentalese_ type iff R(e,e*). And individuated in neurological terms it becomes that e and e* are the tokens of the same primitive Mentalese type iff e and e* are tokens of the same neural type.
 
@@ -176,20 +136,45 @@ This may be carried out in the FCS or the formal-syntactic concept of computatio
 
 In a nutshell, above individuation theories might not be adequate to account for the entirety of LOTH. More investigation is needed.
 
-
-
-#### How Are The Above Premises Important to Establishing the Framework of Natural Language Understanding?
+### How Are The Above Premises Important to Establishing the Framework of Natural Language Processing?
 
 To answer this question, we might need to discuss the important researches done in the realm around the 80s to 90s. As we have mentioned in previous paragraphs of the scientists' attempts to address the issues with representing a _Mentalese_ in the realm of cognitive science.
 
-In the same light, around the 90s emerging researches under the name _Connection Science_ has sparked a unique route to addressing issues with representation (e.g. distributed vs. localist representations, classical vs. uniquely connectionist representation, type/token vs. part/whole hierarchies).
+Around the 90s emerging researches under the name _Connection Science_ has sparked a unique route to addressing issues with representation (e.g. distributed vs. localist representations, classical vs. uniquely connectionist representation, type/token vs. part/whole hierarchies).
 
-In this section and the subsequent sections, I will go through the Chomskyan Transformation Grammar Theory; we now may call it TG. The importance is that natural language modeling and understanding tasks often want to seek solutions that extract the underlying complex syntactic structure of a natural language. And oftentimes at least in _Connection Science_ this is done through a more generally functionalist approach (we will get into this in more detail later).
+As we have introduced in previous sections, together RTM + COMP + CTM (The Representational Theory of Mind, The Compositionality of Mental Processes, plus The Computational Theory of Mind) forges the LOTH. And our cognitive inferential systematicities provide the space for the above hypothesis to stand. 
 
-In order to capture more complex syntactic structures that lie in a natural language sentence, the researchers of LOTH have put a great deal of effort in developing distributed representational models with endowment of some kind of compositionality abide to the COMP law (the Compositionality of Mental Processes).
+Here CTM is excluded in the discussion because we want to discuss current research in the field of NLP/NLU/NLG. Only RTM + COMP is included. This is the original spawning of a new school of LOTH or research into mental processes grounded in `connectionism`. However, we will talk about the importance researches grounded in symbolicism.
+
+#### Connectionism and The Representational Theory of Mind Continued
+
+In the 1980s, connectionism gained traction in various fields, including natural language processing, as an alternative to the Turing style computational model or the Computational Theory of Mind or the CTM. This break through is the very manifestation of the representational theory of mental processes.
+
+> the idea is that instead of treating the mental states as having memory access locations with a central processor and a bunch of strings and symbols ready to be manipulated, the connectionist approach treats them as more primitive.
+
+That said, under such condition, there are activations of neurons or so called "weight units" distributed and connected across the system, functioning analogously to the real synapses to our brain.
+
+These newer and modern systems were built in hope that they could emulate the actual brain activity and could appreciate that
+
+> brain states are representational, so a good explanatory model should be able to capture that; second, thought processes are productive and systematic, which is manifested in the ability to conduct inferential reasoning.
+
+To accept this position, connectionism has to accept RTM + COMP. Eliminativist connectionists might completely reject this position, and on the other hand implementationist connectionism might accept it in order to endorse the Turing style computational model.
+
+Some literature later debated around the necessity of commitment to productivity and systematicity of thoughts. Supporters still seek to illuminate the traditional style of computational system.
+
+    However, objections in entirety go against the need of adopting the representational theory. Another stream of objections go against the fact that the productivity and systematicity nature of language of thought had been greatly exaggerated. The last streak of objections posits that one can still create models that reflect the compositionality and the internal structures without adopting the Turing style model.
+
+The connectionists contend that instead of a concatenated structure, distributed representations could well capture the integral parts of LOTH. However, doubt was raised around the idea that if we consider concatenative constituency structure is only one of the realizations of the _productivity_ and _systematicity_ of the LOTH, then these schools of neural models would still be considered as part of the classicism.
+
+> broadly speaking, classicists would appreciate the structural representations while the connectionists would appreciate the more distributed representations. 
+
+Connectionist models, based on neural networks, nonetheless offered an alternative to traditional symbolic or computational models, such as those associated with the Computational Theory of Mind (CTM). These connectionist models were often seen as more biologically plausible and capable of capturing complex, distributed patterns of information processing.
+
+#### The Compositionality of Mental Representations Addressed in Syntactic Analysis of a Natural Language
+
+In this section and the subsequent sections, I will go through the Chomskyan Transformation Grammar Theory to demonstrate how researchers address compositionality through symbolicism. The importance is that natural language modeling and understanding tasks often want to seek solutions that extract the underlying complex syntactic structure of a natural language. This is associated with the fact that natural languages display compositionality similar to a _Mentalese_.
 
 The Schema of a Chomsky hierarchy is demonstrated below,
-
 
 
 @@colbox-blue
@@ -204,8 +189,6 @@ Formally, a content-free phrase-structure grammar is a 4-tuple $G=(N, \Sigma, P,
 - For stochastic grammars, each of the productions has an associated probability, with the constraint that the probabilities of all the RHSs for any given LHSs must sum to one.
   
 @@
-
-
 
 It is often useful to allow more than one start symbol, perhaps one for each pattern class. The set of all possible strings derivable (denoted by $\Rightarrow^{*}$) from S is denoted $L(G)$, i.e. the language generated by $G$, where a non-terminal can be rewritten in more than one way, we use the disjunction symbol '|', e.g. $A \rightarrow BC|CD$ means $A \rightarrow BC, A \rightarrow CD$.
 
@@ -236,10 +219,15 @@ _Movement-$\alpha$_ - During transformation, the d-structure turns into the s-st
 
 ℹ️ Why is this important to bring up here?
 
+<<<<<<< HEAD
 As I have understood it, this is exactly a functionalism reductionism approach of mapping a natural language, in the sense that the constituent parts of an entire phrasal structure are the reduced parts of the entire sentence.
 
 And the correspondences between cognitive linguistics and connectionism are intriguing. Cognitive linguists view grammar as a schematic coding system that is induced from a very large number of pairings of form with meaning. The account of polysemy points to the need for a mechanism that can induce categories from a set of examples, learn to extract rules from rule-governed data, and resolve conflicts in rules by constraint satisfaction.
+=======
+Transformational grammar posits that the structure of sentences in natural language can be generated through a series of transformations applied to underlying structures. These transformations allow for the derivation of various surface forms from a single underlying representation, providing a systematic way to account for the diversity of sentences in a language.
+>>>>>>> 943f44c (franklin-update)
 
+Compositionality, on the other hand, refers to the principle that the meaning of complex expressions is determined by the meanings of their constituent parts and the rules used to combine them. In the context of natural language, compositionality suggests that the meaning of a sentence can be derived from the meanings of its individual words and the syntactic rules that govern their combination.
 
 
 ##### Addressing The Issues with Non-Autonomy Of Syntax And Non-compositionality of Semantics
@@ -254,7 +242,7 @@ Under this interpretation of a grammar, all grammatical forms have a conceptual 
 
 One typical example will be to use "peripheral constructions" to cover idiosyncratic expressions like idioms and conventionalized expressions.
 
-###### The Intuitive Imposition in Semantics
+##### The Intuitive Imposition in Semantics
 
 On the other hand, the non-compositionality of semantics indicate that the meaning of an utterance is the mental conceptualization it evokes.
 
@@ -316,7 +304,7 @@ In the discussion section, it was noted that AI connectionist approaches seldom 
 
 However, GB theory imposes constraints globally on resulting structures and can provide insight into ways to model syntax in connectionist systems. Therefore, this research serves as a steppingstone to more interesting approaches and discoveries.
 
-In fact, a few papers accomplished in the 1980s put effort into addressing this compositionality through coding the syntactic elements of the inputs at a higher level with a simple MLP neural network to train such a model and accomplish subsequent lower level parsing tasks.
+In fact, a few papers accomplished in the 1980s put effort into addressing this RTM + COMP through coding the syntactic elements of the inputs at a higher level with a simple MLP neural network to train such a model and accomplish subsequent lower level parsing tasks.
 
 ##### Simple Distributed Representations (Such As A Simple MLP Network) To Map Syntactic Structures.
 
