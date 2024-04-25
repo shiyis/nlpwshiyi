@@ -387,34 +387,35 @@ In all cases, the three main requirements below are the development of probabili
 
 
 
-#### Different Kinds of Text Processing Techniques Summarized
+#### Different Kinds of Text Processing and Probabilistic Techniques Summarized
 
 For the first two decades or so, the main goal of statistical NLP has been to assign tags, tag sequences, syntactic trees, or use statistical language translations as linguistic inputs to models trained on large corpora of observed linguistic usage.
 
 More fully, the types of tasks addressed can be roughly grouped as follows (where additional keywords indicate typical applications):
 
-```plaintext
-Text and document categorization: 
-    - authorship, news categories, sentiment analysis;
+@@colbox-blue
+**Text and Document Categorization**: 
+- authorship, news categories, sentiment analysis;
 
-Categorization of selected words or phrases' broader contexts: 
-    - lexical disambiguation, named entity recognition, multi-word expression recognition;
+**Context Categorization of Selected Text**: 
+- lexical disambiguation, named entity recognition, multi-word expression recognition;
 
-Sequence tagging: 
-    - cell phones → acoustic features → phonemes → words → POS tags;
+**Sequence Tagging**: 
+- cell phones → acoustic features → phonemes → words → POS tags;
 
-Structural assignment of sentences: 
-    - parsing, semantic role labeling, quantifier scoping;
+**Structural Assignment of Sentences**: 
+- parsing, semantic role labeling, quantifier scoping;
 
-Sentence transduction: 
-    - machine translation, low-frequency computation;
+**Sentence Transduction**: 
+- machine translation, low-frequency computation;
 
-Structural assignment of multi-sentence texts: 
-    - discourse relationships, recall, plan recognition;
+**Structural Assignment of Multi-Sentence Texts**: 
+- discourse relationships, recall, plan recognition;
 
-Large-scale relational extraction: 
-    - knowledge extraction, paraphrase and implication relations;
-```
+**Large-Scale Relational Extraction**:
+- knowledge extraction, paraphrase and implication relations;
+
+@@
 
 **TF-IDF Normalization:**
 In text classification, one common technique for normalizing word frequencies is TF-IDF (Term Frequency-Inverse Document Frequency). TF-IDF assigns weights to words based on their frequency in the document and their rarity across the entire corpus. Preprocessing steps such as removing stop words and punctuation are often applied before calculating TF-IDF scores to improve accuracy.
@@ -424,9 +425,6 @@ A simple Bayesian approach to text classification assumes that each class genera
 
 **Sequence Models and HMMs:**
 Sequence markers play a crucial role in text classification by influencing the classification of neighboring words. Generative sequence models like Hidden Markov Models (HMMs) are used to capture these dependencies. For tasks such as part-of-speech (POS) tagging, HMMs estimate the probability of observing a sequence of POS tags given a sequence of words, allowing for more accurate classification.
-
-**Annotation Limitations:**
-Building large training corpora for word disambiguation tasks can be challenging, especially for polysemous words. Annotations are often limited to a block of words or phrases in the context, rather than the entire text block. Features are chosen based on the target word or phrase's characteristics and its relation to its context, and supervised learning and classification methods are applied accordingly.
 
 **kNN Method and Decision Trees:**
 The k-Nearest Neighbor (kNN) method assigns class labels based on the majority vote of the k nearest neighbors in the feature space. Decision trees use information theoretic techniques to select classes and branches, providing insight into important features. While decision trees tend to converge to a non-global optimum, this limitation can be mitigated by decision forests.
