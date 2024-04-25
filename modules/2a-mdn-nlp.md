@@ -219,16 +219,9 @@ _Movement-$\alpha$_ - During transformation, the d-structure turns into the s-st
 
 ℹ️ Why is this important to bring up here?
 
-<<<<<<< HEAD
-As I have understood it, this is exactly a functionalism reductionism approach of mapping a natural language, in the sense that the constituent parts of an entire phrasal structure are the reduced parts of the entire sentence.
-
-And the correspondences between cognitive linguistics and connectionism are intriguing. Cognitive linguists view grammar as a schematic coding system that is induced from a very large number of pairings of form with meaning. The account of polysemy points to the need for a mechanism that can induce categories from a set of examples, learn to extract rules from rule-governed data, and resolve conflicts in rules by constraint satisfaction.
-=======
 Transformational grammar posits that the structure of sentences in natural language can be generated through a series of transformations applied to underlying structures. These transformations allow for the derivation of various surface forms from a single underlying representation, providing a systematic way to account for the diversity of sentences in a language.
->>>>>>> 943f44c (franklin-update)
 
 Compositionality, on the other hand, refers to the principle that the meaning of complex expressions is determined by the meanings of their constituent parts and the rules used to combine them. In the context of natural language, compositionality suggests that the meaning of a sentence can be derived from the meanings of its individual words and the syntactic rules that govern their combination.
-
 
 ##### Addressing The Issues with Non-Autonomy Of Syntax And Non-compositionality of Semantics
 
