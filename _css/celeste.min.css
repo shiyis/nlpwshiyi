@@ -1126,11 +1126,16 @@ pre code {
 
   /* Your styles for iPads in landscape orientation */
 
+  .active {
+    order: -2;
+    background-color: #8482e6;
+  }
+
 }
 
 @media screen and (max-width: 1024px) {
 
-  .card{
+  .card {
     background-color: black;
   }
 
@@ -1143,10 +1148,7 @@ pre code {
     box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
   }
 
-  .active {
-    order: -2;
-    background-color: #8482e6;
-  }
+
 
 }
 
@@ -1191,7 +1193,7 @@ img[alt=intro] {
   }
 }
 
-.card{
+.card {
   padding: 3px 10px 20px 10px;
   background-color: black;
   box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
