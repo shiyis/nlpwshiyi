@@ -948,7 +948,7 @@ pre code {
 
 .topnav a {
   display: inline-block;
-  color: #f2f2f2;
+  color: ivory;
   /* text-align: center; */
   padding: 10px 14px;
   text-decoration: none;
@@ -1056,7 +1056,7 @@ pre code {
     height: 53px;
     display: -ms-grid;
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 0.4fr);
     padding-top: 0.7rem;
     padding-bottom: auto;
     justify-items: center;
@@ -1109,9 +1109,9 @@ pre code {
     background-color: #8482e6;
     display: -ms-grid;
     display: grid;
-    grid-template-rows: 1fr repeat(3, 1fr);
+    grid-template-rows: 1fr repeat(5, 0.02fr);
     /* grid-row-gap: 5px; */
-    padding: 0;
+    padding: auto;
     list-style: none;
     clear: both;
     width: auto;
@@ -1124,11 +1124,19 @@ pre code {
     transition: all 0.3s ease;
   }
 
+  .topnav.active{
+    padding: 0px 0px 1px 0px;
+  }
   /* Your styles for iPads in landscape orientation */
 
   .active {
     order: -2;
     background-color: #8482e6;
+    font-size: 19px;
+    /* width: 132px;
+    margin: auto; */
+    color: ivory;
+    /* margin: auto; */
   }
 
 }
@@ -1148,7 +1156,9 @@ pre code {
     box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
   }
 
-
+  .topnav a{
+    font-size: 19px;
+  }
 
 }
 
@@ -1190,6 +1200,11 @@ img[alt=intro] {
   .active {
     order: -2;
     background-color: #8482e6;
+    padding: 14px 16px;
+  }
+
+  .topnav a {
+    font-size: 19px;
   }
 }
 
