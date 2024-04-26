@@ -1053,10 +1053,10 @@ pre code {
   /* Hamburger */
   .hamburger1 {
     background-color: #8482e6;
-    height: 53px;
+    height: 49px;
     display: -ms-grid;
     display: grid;
-    grid-template-rows: repeat(6, 0.4fr);
+    grid-template-rows: repeat(3, 0.01fr);
     padding-top: 0.7rem;
     padding-bottom: auto;
     justify-items: center;
@@ -1158,6 +1158,110 @@ pre code {
 
   .topnav a{
     font-size: 19px;
+  }
+
+  .topnav {
+
+    display: none;
+  }
+
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .p-menu1 {
+    height: 100%;
+  }
+
+  /* Hamburger */
+  .hamburger1 {
+    background-color: #8482e6;
+    height: 49px;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: repeat(3, 0.01fr);
+    padding-top: 0.7rem;
+    padding-bottom: auto;
+    justify-items: center;
+    z-index: 120;
+  }
+
+  .hamburger1 div {
+    background-color: ivory;
+    position: relative;
+    width: 25px;
+    height: 3px;
+    margin-top: 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .dropdown:hover .dropbtn {
+    width: 100%;
+  }
+
+  #toggle1 {
+    display: none;
+  }
+
+  #toggle1:checked+.hamburger1 .top {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-top: 13.5px;
+  }
+
+  #toggle1:checked+.hamburger1 .meat {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -3px;
+  }
+
+  #toggle1:checked+.hamburger1 .bottom {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  #toggle1:checked~.topnav {
+    height: auto;
+  }
+
+
+  /* Menu */
+  .topnav {
+    width: 100%;
+    background-color: #8482e6;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: 1fr repeat(5, 0.02fr);
+    /* grid-row-gap: 5px; */
+    padding: auto;
+    list-style: none;
+    clear: both;
+    width: auto;
+    text-align: center;
+    overflow: hidden;
+    height: 0px;
+    transition: height .4s ease;
+    z-index: 120;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .topnav.active{
+    padding: 0px 0px 1px 0px;
+  }
+  /* Your styles for iPads in landscape orientation */
+
+  .active {
+    order: -2;
+    background-color: #8482e6;
+    font-size: 19px;
+    /* width: 132px;
+    margin: auto; */
+    color: ivory;
+    /* margin: auto; */
   }
 
 }
