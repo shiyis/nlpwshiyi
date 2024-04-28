@@ -16,7 +16,10 @@
 }
 
 .highlight .k {
-  color: #069
+  color: #069    "-moz-transform": "scale(0.9)", 
+    "-ms-transform": "scale(0.9)", 
+    "-webkit-transform": "scale(0.9)", 
+    "transform": "scale(0.9)"
 }
 
 .highlight .o {
@@ -419,7 +422,8 @@ sup {
 img {
   width: 560px;
   align-items: center;
-  border-style: none
+  border-style: none;
+  border-radius: 7px
 }
 
 input,
