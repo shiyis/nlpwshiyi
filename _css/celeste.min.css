@@ -605,9 +605,8 @@ tbody tr:nth-child(odd) th {
 
 .container,
 .franklin-content {
-  max-width: 38rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -960,6 +959,7 @@ pre code {
   left: 50%;
   background-color: #04AA6D;
   color: ivory;
+  width: 100px;
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -1022,7 +1022,7 @@ pre code {
 
 
 .dropdown .dropbtn {
-  width: 132px;
+  width: 162px;
 }
 
 
@@ -1137,6 +1137,7 @@ pre code {
     margin: auto; */
     color: ivory;
     /* margin: auto; */
+    width: auto;
   }
 
 }
@@ -1262,6 +1263,7 @@ pre code {
     margin: auto; */
     color: ivory;
     /* margin: auto; */
+    width: auto;
   }
 
 }
@@ -1315,7 +1317,10 @@ img[alt=intro] {
 .card {
   padding: 3px 10px 20px 10px;
   background-color: black;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
   box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
+  border-radius: 7px;
 }
 
 
