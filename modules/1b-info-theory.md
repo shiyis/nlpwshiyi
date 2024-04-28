@@ -348,7 +348,11 @@ Entropy can be used by decision tree models to choose the optimal plots for maki
 
 #### Conclusion
 
-The amount of surprise (or uncertainty) associated with the value of a random variable or the result of a random process is measured by information entropy, often known as Shannon's entropy. Its importance in the decision tree comes from the fact that it enables us to calculate the heterogeneity or impurity of the target variable. The child nodes are then formed in such a way that their combined entropy must be lower than that of the parent node in order to obtain the highest possible level of homogeneity in the response variable.
+The amount of surprise (or uncertainty) associated with the value of a random variable or the result of a random process is measured by information entropy, often known as Shannon's entropy. 
+
+Its importance in the decision tree comes from the fact that it enables us to calculate the heterogeneity or impurity of the target variable. 
+
+The child nodes are then formed in such a way that their combined entropy must be lower than that of the parent node in order to obtain the highest possible level of homogeneity in the response variable.
 
 
 <!-- 
