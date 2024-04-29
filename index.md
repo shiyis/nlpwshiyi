@@ -1,7 +1,4 @@
 
-@include partial_script.jl
-
-
 ![intro](./assets/nlpwshiyi.png)
 
 # Understanding Natural Language Processing with Me!
