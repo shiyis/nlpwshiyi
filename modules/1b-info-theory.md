@@ -148,7 +148,7 @@ A derived proof is listed [here](http://premmi.github.io/bernoulli-distribution-
 
 
 
-```julia: ./code/plot1
+```
 using PyPlot
 figure(figsize=(8, 6))
 
@@ -161,7 +161,6 @@ yticks(range(0,1,length=5))
 plot(x, f(x))
 xlabel("Pr(x)=1")
 ylabel("H(x)")
-grid("off")
 scatter([0.5],[1])
 savefig(joinpath(@OUTPUT, "ent1.svg")) 
 ```
@@ -182,8 +181,8 @@ The $\text{log}_{2} \text{p}_{i}$ has a very unique property that is when there 
 
 Now, the above values of the probability and $\text{log}_{2} \text{p}_{i}$  are depicted in the following manner:
 
-```julia: ./code/plot2
-# hideall
+```
+
 using PyPlot
 figure(figsize=(8, 6))
 
@@ -197,7 +196,6 @@ yticks(range(0,1,length=5))
 plot(x, f(x))
 
 ylabel("H(x)")
-grid("off")
 savefig(joinpath(@OUTPUT, "ent2.svg"))
 ```
 The output graph is below,
@@ -211,7 +209,7 @@ Due to the properties of log, When the probability, $\text{p}_{i}$ becomes 0, th
 
 
 
-```julia: ./code/plot3  
+```
 
 using PyPlot
 figure(figsize=(8, 6))
@@ -219,7 +217,7 @@ figure(figsize=(8, 6))
 x = range(0,0.5,length=1000)
 y = range(0.5,1,length=1000)
 
-f(x) =  (x .* log2.(x) .+ (1 .- x) .* log2.(1 .- x)) 
+f(x) =  (x .* log2.(x) .+ (1 .- x) .* log2.(1 .- x)) .+ 0.66
 g(y) = (.- f(y)) 
 
 plot(x, f(x) , y, g(y))
