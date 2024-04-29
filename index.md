@@ -1,4 +1,7 @@
 
+@include partial_script.jl
+
+
 ![intro](./assets/nlpwshiyi.png)
 
 # Understanding Natural Language Processing with Me!
@@ -8,6 +11,11 @@ Hi, I’m Shiyi (about [me](https://shiyis.github.io/nlpwme/aboutme/)). Welcome 
 
 
 Areas that I have dabbled in,
+
+
+
+### Plaintext Example:
+
 
 ```
 → General Linguistics
