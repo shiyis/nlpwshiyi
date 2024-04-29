@@ -68,6 +68,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1b-info-theory/index.html</loc>
+    <lastmod>2024-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4f-server-build/index.html</loc>
     <lastmod>2024-04-29</lastmod>
     <changefreq>monthly</changefreq>
