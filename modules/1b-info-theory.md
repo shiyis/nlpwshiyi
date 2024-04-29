@@ -211,7 +211,7 @@ Due to the properties of log, When the probability, $\text{p}_{i}$ becomes 0, th
 
 
 
-```julia: ./code/plot3
+```julia: ./code/plot3  
 
 using PyPlot
 figure(figsize=(8, 6))
