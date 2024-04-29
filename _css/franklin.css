@@ -653,13 +653,6 @@ h2 {
   }
 }
 
-@media (min-width:500px) {
-  .row {
-    width: 97%;
-    display: block;
-  }
-}
-
 .card {
   .container {
     padding: 3px 10px 3px 10px;
@@ -694,8 +687,6 @@ h2 {
 .sidebar img {
   margin-left: 0.5em;
 }
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {}
 
 .card img {
 

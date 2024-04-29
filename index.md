@@ -48,7 +48,10 @@ Before diving in, first we have to ask ourselves what exactly is artificial inte
 Well, according to the official definition extracted out of John McCarthy's 2004 [paper](https://www-formal.stanford.edu/jmc/whatisai.pdf) listed on IBM's [website](https://www.ibm.com/topics/artificial-intelligence),
 
 ```plaintext
-🤖️ "It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable."
+🤖️ "It is the science and engineering of making intelligent machines,
+ especially intelligent computer programs. It is related to the similar 
+ task of using computers to understand human intelligence, but AI does 
+ not have to confine itself to methods that are biologically observable."
 ```
 
 So if it's to understand human intelligence, we need to know humans gain information and how human intelligence, or the brain, really works both through physiology and psychology,
