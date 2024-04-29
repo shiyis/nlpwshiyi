@@ -1037,6 +1037,7 @@ pre code {
 }
 
 
+
 @media screen and (max-width: 765px) {
 
   .topnav {
@@ -1144,9 +1145,34 @@ pre code {
     width: auto;
   }
 
+  .container, .franklin-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-wrap: pretty;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media screen and (min-width: 765px) and (max-width: 940px){
+  .container, .franklin-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-wrap: pretty;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 @media screen and (max-width: 1024px) {
+
+
 
   .card {
     background-color: black;
@@ -1315,6 +1341,14 @@ img[alt=intro] {
 
   .topnav a {
     font-size: 19px;
+  }
+
+  .container, .franklin-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-wrap: pretty;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
