@@ -88,12 +88,9 @@ Though it's easy to illustrate the relations between complex expressions formed 
 One of the strategies was to adopt functionalism (where _mind is the functional organization of the brain_). Therefore, the effort of categorizing what exactly it means by saying `"X A's that p iff there is a mental representation S such that X bears A* to S and S means that P"` gets broken down into two steps,
 
 ```plaintext
-1. to explain in naturalistically acceptable terms 
-what it is to bear psychological relation A* to mental 
-representation S.
+1. to explain in naturalistically acceptable terms that it is to bear psychological relation A* to mental representation S.
 
-2. to explain in naturalistically acceptable terms 
-what it is for mental representation S to mean that p.
+2. to explain in naturalistically acceptable terms that it is for mental representation S to mean that p.
 ```
 
 Another strategy is by treating these mental processes as type-token relations. 
