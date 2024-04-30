@@ -232,58 +232,6 @@ function hfun_bar(vname)
   end
 
 
-function copy_code_from_code_window(code_window_content)
-# Find the start and end indices of the code block
-start_index = findfirst(r"```", code_window_content)
-if start_index === nothing
-    println("No code block found.")
-    return
-end
-end_index = findnext(r"```", code_window_content, start_index + 3)
-if end_index === nothing
-    println("Invalid code block.")
-    return
-end
-
-# Extract the code from the code block
-code = code_window_content[start_index + 3:end_index - 1]
-
-# Write the code to a temporary file
-temp_file = tempname() * ".jl"
-open(temp_file, "w") do file
-    write(file, code)
-end
-
-# Run system command to copy the code to the clipboard
-run("cat $temp_file | pbcopy")
-
-println("Code copied to clipboard:")
-println(code)
-
-# Remove the temporary file
-rm(temp_file)
-end
-
-function create_code_window()
-win = Gtk.Window("Code Window")
-textview = Gtk.TextView()
-buffer = Gtk.TextBuffer()
-Gtk.text_buffer_set_text(buffer, "Example code", -1)
-Gtk.text_view_set_buffer(textview, buffer)
-
-# Create a button to copy code
-copy_button = Gtk.Button("Copy Code")
-signal_connect(copy_button, "clicked") do widget
-    code_window_content = Gtk.text_buffer_get_text(buffer, Gtk.TextIter(), Gtk.TextIter(), true)
-    copy_code_from_code_window(code_window_content)
-end
-
-vbox = Gtk.VBox()
-push!(vbox, textview)
-push!(vbox, copy_button)
-setproperty!(win, :child, vbox)
-showall(win)
-end
 
 
   
