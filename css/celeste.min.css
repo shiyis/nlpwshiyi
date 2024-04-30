@@ -1146,8 +1146,8 @@ pre code {
   }
 
   .container, .franklin-content {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-wrap: pretty;
     margin-left: auto;
     margin-right: auto;
@@ -1161,8 +1161,8 @@ pre code {
 
 @media screen and (min-width: 765px) and (max-width: 940px){
   .container, .franklin-content {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-wrap: pretty;
     margin-left: auto;
     margin-right: auto;
@@ -1342,8 +1342,8 @@ img[alt=intro] {
   }
 
   .container, .franklin-content {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-wrap: pretty;
     margin-left: auto;
     margin-right: auto;
