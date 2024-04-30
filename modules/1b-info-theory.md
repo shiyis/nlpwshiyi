@@ -148,7 +148,7 @@ A derived proof is listed [here](http://premmi.github.io/bernoulli-distribution-
 
 
 
-```
+```julia:no_eval
 using PyPlot
 figure(figsize=(8, 6))
 
