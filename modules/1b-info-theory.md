@@ -148,7 +148,7 @@ A derived proof is listed [here](http://premmi.github.io/bernoulli-distribution-
 
 
 
-```
+```julia:./code/plot1
 using PyPlot
 figure(figsize=(8, 6))
 
@@ -169,7 +169,7 @@ Below is the graph for a Bernoulli trial ($X={0,1}$) the graph of entropy vs. $P
 
 \\
 
-\fig{../../assets/modules/1b-info-theory/code/output/ent1}
+\fig{/output/ent1}
 
 \\
 
