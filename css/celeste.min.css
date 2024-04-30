@@ -1314,7 +1314,6 @@ blockquote {
 } */
 
 img[alt=intro] {
-  width: 160px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1362,7 +1361,7 @@ img[alt=intro] {
 
 
 img[alt=intro] {
-  width: 220px;
+  width: 100px;
   opacity: 1;
 }
 
