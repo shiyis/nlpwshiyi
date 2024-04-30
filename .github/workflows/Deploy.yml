@@ -47,7 +47,7 @@ jobs:
     - run:  python_executable=$(which python)
             julia -e '
             using Pkg; Pkg.add(["NodeJS", "JSON", "Franklin","PyPlot"]);
-            ENV["PYTHON"]=$python_executable;
+            ENV["PYTHON"]="$python_executable";
             Pkg.build("PyCall");
             Pkg.activate("."); Pkg.instantiate();
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
