@@ -195,7 +195,7 @@ Below summarizes theories that tackle the mind-body/consciousness problem that r
 
 Here's a list of various theories in the philosophy of mind, along with a brief contrast regarding their approaches to addressing consciousness:
 
-1. **Type/Token Identity Theory**: Type/token identity theory proposes that consciousness and other mental states are identical to specific physical states or processes in the brain. It suggests that subjective experiences and consciousness are ultimately reducible to patterns of neural activity.
+1. **Type vs. Token Identity Theory**: Type vs. token identity theory proposes that consciousness and other mental states are identical to specific physical states or processes in the brain. It suggests that subjective experiences and consciousness are ultimately reducible to patterns of neural activity.
 
 2. **Eliminative Materialism**: Eliminative materialism suggests that current folk psychology and common-sense understandings of mental states, including consciousness, are fundamentally flawed and may be eliminated or revised in light of future scientific understanding.
 
