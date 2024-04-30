@@ -47,6 +47,7 @@ jobs:
     - run: julia -e '
             using Pkg; Pkg.add(["NodeJS", "JSON", "Franklin","PyPlot","Gtk"]);
             Pkg.activate("."); Pkg.instantiate();
+            using Conda; Conda.add("matplotlib")
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
             using Franklin;
             publish()'
