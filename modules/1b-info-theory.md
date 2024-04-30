@@ -104,8 +104,8 @@ In decision trees, again entropy is a measure of impurity used to evaluates the 
 ```plaintext
 💡Gain and Entropy
 
-1. are related concepts in decision tree algorithms. 
-2 Gain measures the reduction in entropy achieved by splitting a dataset, helping to 
+1. are related concepts in decision tree algorithms.
+2 Gain measures the reduction in entropy achieved by splitting a dataset, helping to
 identify the best attribute for partitioning the data.
 
 ```
@@ -162,7 +162,7 @@ plot(x, f(x))
 xlabel("Pr(x)=1")
 ylabel("H(x)")
 scatter([0.5],[1])
-savefig(joinpath(@OUTPUT, "ent1.svg")) 
+savefig(joinpath(@OUTPUT, "ent1.svg"))
 ```
 
 Below is the graph for a Bernoulli trial ($X={0,1}$) the graph of entropy vs. $Pr(X=1)$. The highest $H(X) = 1 = log(2)$
@@ -219,13 +219,13 @@ x = range(0,0.5,length=1000)
 y = range(0.5,1,length=1000)
 
 f(x) =  (x .* log2.(x) .+ (1 .- x) .* log2.(1 .- x)) .+ 0.66
-g(y) = (.- f(y)) 
+g(y) = (.- f(y))
 
 plot(x, f(x) , y, g(y))
 
 yticks([])
 ylabel("H(x)")
-savefig(joinpath(@OUTPUT, "ent3.svg")) 
+savefig(joinpath(@OUTPUT, "ent3.svg"))
 
 ```
 
@@ -233,7 +233,7 @@ savefig(joinpath(@OUTPUT, "ent3.svg"))
 The final graph is below,
 
 
-\fig{output/ent3}
+![](../extras/info_theory/ent3.svg)
 
 \\
 
@@ -351,14 +351,14 @@ Entropy can be used by decision tree models to choose the optimal plots for maki
 
 #### Conclusion
 
-The amount of surprise (or uncertainty) associated with the value of a random variable or the result of a random process is measured by information entropy, often known as Shannon's entropy. 
+The amount of surprise (or uncertainty) associated with the value of a random variable or the result of a random process is measured by information entropy, often known as Shannon's entropy.
 
-Its importance in the decision tree comes from the fact that it enables us to calculate the heterogeneity or impurity of the target variable. 
+Its importance in the decision tree comes from the fact that it enables us to calculate the heterogeneity or impurity of the target variable.
 
 The child nodes are then formed in such a way that their combined entropy must be lower than that of the parent node in order to obtain the highest possible level of homogeneity in the response variable.
 
 
-<!-- 
+<!--
 ### Topics That Might Be Relevant To This Blog
 
 - Topic 0: Information Theory
