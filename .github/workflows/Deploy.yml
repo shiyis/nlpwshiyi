@@ -33,7 +33,9 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: '3.x'
-    - run: pip install matplotlib # if you use PyPlot this is needed
+    - run: |
+        pip install matplotlib # if you use PyPlot this is needed
+        python_executable=$(which python)
     - name: Install Julia
       uses: julia-actions/setup-julia@v1
       with:
@@ -44,8 +46,7 @@ jobs:
     # Julia packages which may be required to successfully build your site.
     # NOTE: the last line should be `optimize()`, you may want to give it
     # specific arguments, see the documentation or ?optimize in the REPL.
-    - run:  python_executable=$(which python)
-            julia -e '
+    - run:  julia -e '
             using Pkg; Pkg.add(["NodeJS", "JSON", "Franklin","PyPlot"]);
             ENV["PYTHON"]="$python_executable";
             Pkg.build("PyCall");
