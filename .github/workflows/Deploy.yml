@@ -45,7 +45,7 @@ jobs:
     # NOTE: the last line should be `optimize()`, you may want to give it
     # specific arguments, see the documentation or ?optimize in the REPL.
     - run: julia -e '
-            using Pkg; Pkg.add(["NodeJS", "JSON", "Franklin","PyPlot","Gtk"]);
+            using Pkg; Pkg.add(["NodeJS", "JSON", "Franklin","PyPlot","Conda"]);
             Pkg.activate("."); Pkg.instantiate();
             using Conda; Conda.add("matplotlib");
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
