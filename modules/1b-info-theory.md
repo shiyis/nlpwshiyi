@@ -6,7 +6,6 @@ This blog will touch on the topic of entropy and explain in the simplest and bas
 
 \toc
 
-❗ This page largely follows the [Analytics Vindya](https://www.analyticsvidhya.com) blog on [Entropy](https://www.analyticsvidhya.com/blog/2020/11/entropy-a-key-concept-for-all-data-science-beginners/#h-what-is-a-decision-tree-in-machine-learning)
 
 ### What Exactly Is Entropy?
 
