@@ -169,7 +169,7 @@ Below is the graph for a Bernoulli trial ($X={0,1}$) the graph of entropy vs. $P
 
 \\
 
-\fig{/output/ent1}
+\fig{output/ent1}
 
 \\
 
@@ -202,7 +202,7 @@ savefig(joinpath(@OUTPUT, "ent2.svg"))
 The output graph is below,
 
 
-\fig{/output/ent2}
+\fig{output/ent2}
 
 \\
 
@@ -233,7 +233,7 @@ savefig(joinpath(@OUTPUT, "ent3.svg"))
 The final graph is below,
 
 
-\fig{output/ent3.svg}
+\fig{output/ent3}
 
 \\
 
