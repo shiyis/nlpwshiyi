@@ -266,7 +266,7 @@ an automaton's central processor; for example to manipulate symbols); the comput
 computational framework to describe such a process (namely the process of manipulating symbols by the central process is
 considered as a mental process being "computational" ).
 
-Lastly, the type/token-identity theory or physicalism of our cognitive processes defines that similar to a natural
+Lastly, the type vs. token-identity theory or physicalism of our cognitive processes defines that similar to a natural
 language (where a CAT is a type and every appearing instance of the word CAT is a token), _Mentalese_ defines the mental
 representations that central processor is able to manipulate, operate on, and make computations/calculations with.
 
