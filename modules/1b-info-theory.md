@@ -147,8 +147,8 @@ This equation is graphically depicted by a symmetric curve as shown below. On th
 A derived proof is listed [here](http://premmi.github.io/bernoulli-distribution-mean-variance-entropy#:~:text=Proposition%204%20The%20entropy%20H,n(1%E2%88%92%CE%B8))
 
 
-<!--
-```julia:./code/plot1
+
+```
 using PyPlot
 figure(figsize=(8, 6))
 
@@ -164,12 +164,12 @@ ylabel("H(x)")
 scatter([0.5],[1])
 savefig(joinpath(@OUTPUT, "ent1.svg")) 
 ```
--->
+
 Below is the graph for a Bernoulli trial ($X={0,1}$) the graph of entropy vs. $Pr(X=1)$. The highest $H(X) = 1 = log(2)$
 
 \\
 
-\fig{ent1}
+\fig{output/ent1}
 
 \\
 
@@ -180,8 +180,8 @@ The $\text{log}_{2} \text{p}_{i}$ has a very unique property that is when there 
 | $\text{log}_{2} \text{p}_{i}$ | $\text{log}_{2} (1) = 0 $ | $\text{log}_{2} (0.50) = 1$ |
 
 Now, the above values of the probability and $\text{log}_{2} \text{p}_{i}$  are depicted in the following manner:
-<!--
-```julia:./code/plot2
+
+```
 
 using PyPlot
 figure(figsize=(8, 6))
@@ -198,17 +198,17 @@ plot(x, f(x))
 ylabel("H(x)")
 savefig(joinpath(@OUTPUT, "ent2.svg"))
 ```
--->
+
 The output graph is below,
 
 
-\fig{ent2}
+\fig{output/ent2}
 
 \\
 
 Due to the properties of log, When the probability, $\text{p}_{i}$ becomes 0, then the value of $\text{log}_{2}  \, \text{p}_{0}$ moves towards infinity and the curve changes its shape to:
 
-<!--
+
 
 ```
 
@@ -228,12 +228,12 @@ ylabel("H(x)")
 savefig(joinpath(@OUTPUT, "ent3.svg")) 
 
 ```
--->
+
 
 The final graph is below,
 
 
-\fig{ent3}
+\fig{output/ent3}
 
 \\
 
