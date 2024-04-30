@@ -169,7 +169,7 @@ Below is the graph for a Bernoulli trial ($X={0,1}$) the graph of entropy vs. $P
 
 \\
 
-\fig{output/ent1.svg}
+\fig{../../assets/modules/1b-info-theory/code/output/ent1}
 
 \\
 
