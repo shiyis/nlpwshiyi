@@ -169,7 +169,7 @@ Below is the graph for a Bernoulli trial ($X={0,1}$) the graph of entropy vs. $P
 
 \\
 
-\fig{output/ent1}
+\fig{../extras/info_theory/ent1.svg}
 
 \\
 
@@ -181,7 +181,7 @@ The $\text{log}_{2} \text{p}_{i}$ has a very unique property that is when there 
 
 Now, the above values of the probability and $\text{log}_{2} \text{p}_{i}$  are depicted in the following manner:
 
-```julia:./code/plot2
+```
 
 using PyPlot
 figure(figsize=(8, 6))
@@ -202,7 +202,9 @@ savefig(joinpath(@OUTPUT, "ent2.svg"))
 The output graph is below,
 
 
-\fig{output/ent2}
+\\
+
+![](../extras/info_theory/ent2.svg)
 
 \\
 

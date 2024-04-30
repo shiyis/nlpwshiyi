@@ -13,7 +13,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Set Actions Allow Unsecure Commands
       run: |
@@ -52,7 +52,7 @@ jobs:
             using NodeJS; run(`$(npm_cmd()) install highlight.js`);
             using Franklin;
             publish()'
-  
+
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
