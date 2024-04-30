@@ -148,7 +148,7 @@ A derived proof is listed [here](http://premmi.github.io/bernoulli-distribution-
 
 
 
-```
+```julia:./code/plot1
 using PyPlot
 figure(figsize=(8, 6))
 
@@ -181,7 +181,7 @@ The $\text{log}_{2} \text{p}_{i}$ has a very unique property that is when there 
 
 Now, the above values of the probability and $\text{log}_{2} \text{p}_{i}$  are depicted in the following manner:
 
-```
+```julia:./code/plot2
 
 using PyPlot
 figure(figsize=(8, 6))
