@@ -72,7 +72,7 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def add_github_view  = true
 @def add_github_star  = true
-@def github_repo      = "git@github.com:shiyis/nlpwme.git"
+@def github_repo      = "git@github.com:shiyis/nlpwme"
 
 <!-- SECTION LAYOUT
 NOTE:
