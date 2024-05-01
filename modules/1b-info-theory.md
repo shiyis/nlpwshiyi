@@ -103,9 +103,9 @@ In decision trees, again entropy is a measure of impurity used to evaluates the 
 ```plaintext
 💡Gain and Entropy
 
-1. are related concepts in decision tree algorithms.
-2 Gain measures the reduction in entropy achieved by splitting a dataset, helping to
-identify the best attribute for partitioning the data.
+  1. are related concepts in decision tree algorithms.
+  2 Gain measures the reduction in entropy achieved by splitting a dataset, helping to
+  identify the best attribute for partitioning the data.
 
 ```
 
