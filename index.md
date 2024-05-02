@@ -44,7 +44,7 @@ The history of Computational Linguistics dates back to the 40s to 50s. So, it's 
 
 Before diving in, first we have to ask ourselves what exactly is artificial intelligence (AI)?
 
-Well, according to the official definition extracted out of John McCarthy's 2004 [paper](https://www-formal.stanford.edu/jmc/whatisai.pdf) listed on IBM's [website](https://www.ibm.com/topics/artificial-intelligence),
+According to the official definition extracted out of John McCarthy's 2004 [paper](https://www-formal.stanford.edu/jmc/whatisai.pdf) listed on IBM's [website](https://www.ibm.com/topics/artificial-intelligence),
 
 ```plaintext
 🤖️ "It is the science and engineering of making intelligent machines,

@@ -443,10 +443,12 @@ Vector to Sequence:
     takes in a vector and output a sequence of any length.
 
 Sequence to Vector: 
-    accepts a sequence as input and output a vector (frequently used for semantic analysis).
+    accepts a sequence as input and output a vector (frequently 
+    used for semantic analysis).
 
 Sequence To Sequence: 
-    Models take one sequence as input and produce another sequence (mostly used for machine translation).
+    Models take one sequence as input and produce another sequence 
+    (mostly used for machine translation).
 ```
 
 #### The Encoder-Decoder Architecture
