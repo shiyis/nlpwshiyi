@@ -66,8 +66,6 @@ b = b_init
     y_pred = forward(x)
     <span class=hljs-keyword >return</span> (y_pred - y)**<span class=hljs-number >2</span> 
 
-<span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;initial loss:&quot;</span>, np.<span class=hljs-built_in >sum</span>([loss(x_val,y_val) <span class=hljs-keyword >for</span> x_val, y_val <span class=hljs-keyword >in</span> <span class=hljs-built_in >zip</span>(x, y)]) )
-
 <span class=hljs-comment ># compute gradient</span>
 <span class=hljs-keyword >def</span> <span class="hljs-title function_">gradient</span>(<span class=hljs-params >x, y</span>):  <span class=hljs-comment ># d_loss/d_w, d_loss/d_c</span>
     <span class=hljs-keyword >return</span> <span class=hljs-number >2</span>*(x.dot(w)+b - y)*x, <span class=hljs-number >2</span> * (x.dot(w)+b - y)
@@ -105,10 +103,11 @@ b_v.requires_grad_(<span class=hljs-literal >True</span>)
     <span class=hljs-comment ># of the loss with respect to w and b respectively.</span>
     loss.backward()
     
-    <span class=hljs-comment ># Update weights using gradient descent. For this step we just want to mutate</span>
-    <span class=hljs-comment ># the values of w_v and b_v in-place; we don&#x27;t want to build up a computational</span>
-    <span class=hljs-comment ># graph for the update steps, so we use the torch.no_grad() context manager</span>
-    <span class=hljs-comment ># to prevent PyTorch from building a computational graph for the updates</span>
+    <span class=hljs-comment ># Update weights using gradient descent. For this step we just want to </span>
+    <span class=hljs-comment ># mutate the values of w_v and b_v in-place; we don&#x27;t want to build up </span>
+    <span class=hljs-comment ># a computational graph for the update steps, so we use the </span>
+    <span class=hljs-comment ># torch.no_grad() context manager to prevent PyTorch from building  a </span>
+    <span class=hljs-comment ># computational graph for the updates</span>
     <span class=hljs-keyword >with</span> torch.no_grad():
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
@@ -121,10 +120,12 @@ b_v.requires_grad_(<span class=hljs-literal >True</span>)
     <span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;progress:&quot;</span>, <span class=hljs-string >&quot;epoch:&quot;</span>, epoch, <span class=hljs-string >&quot;loss&quot;</span>,loss.data.item())
 
 <span class=hljs-comment ># After training</span>
-<span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;estimation of the parameters:&quot;</span>, w_v.data, b_v.data.t() )</code></pre> <h3 id=linear_regression_with_neural_network ><a href="#linear_regression_with_neural_network" class=header-anchor >Linear Regression with Neural Network </a></h3> <p>An implementation of <strong>&#40;Batch&#41; Gradient Descent</strong> using the nn package. Here we have a super simple model with only one layer and no activation function&#33;</p> <pre><code class="Python hljs"><span class=hljs-comment ># Use the nn package to define our model as a sequence of layers. nn.Sequential</span>
-<span class=hljs-comment ># is a Module which contains other Modules, and applies them in sequence to</span>
-<span class=hljs-comment ># produce its output. Each Linear Module computes output from input using a</span>
-<span class=hljs-comment ># linear function, and holds internal Variables for its weight and bias.</span>
+<span class=hljs-built_in >print</span>(<span class=hljs-string >&quot;estimation of the parameters:&quot;</span>, w_v.data, b_v.data.t() )</code></pre> <h3 id=linear_regression_with_neural_network ><a href="#linear_regression_with_neural_network" class=header-anchor >Linear Regression with Neural Network </a></h3> <p>An implementation of <strong>&#40;Batch&#41; Gradient Descent</strong> using the nn package. Here we have a super simple model with only one layer and no activation function&#33;</p> <pre><code class="Python hljs"><span class=hljs-comment ># Use the nn package to define our model as a sequence of layers. </span>
+<span class=hljs-comment ># nn.Sequential is a Module which contains other Modules, and applies </span>
+<span class=hljs-comment ># them in sequence to produce its output. Each Linear Module computes </span>
+<span class=hljs-comment ># output from input using a linear function, and holds internal Variables </span>
+<span class=hljs-comment ># for its weight and bias.</span>
+
 model = torch.nn.Sequential(
     torch.nn.Linear(<span class=hljs-number >2</span>, <span class=hljs-number >1</span>),
 )
@@ -133,38 +134,38 @@ model = torch.nn.Sequential(
     m.weight.data = w_init_t.clone().unsqueeze(<span class=hljs-number >0</span>)
     m.bias.data = b_init_t.clone()
 
-<span class=hljs-comment ># The nn package also contains definitions of popular loss functions; in this</span>
-<span class=hljs-comment ># case we will use Mean Squared Error (MSE) as our loss function.</span>
+<span class=hljs-comment ># The nn package also contains definitions of popular loss functions; </span>
+<span class=hljs-comment ># in this case we will use Mean Squared Error (MSE) as our loss function.</span>
 loss_fn = torch.nn.MSELoss(reduction=<span class=hljs-string >&#x27;sum&#x27;</span>)
 
 <span class=hljs-comment ># switch to train mode</span>
 model.train()
 
 <span class=hljs-keyword >for</span> epoch <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class=hljs-number >10</span>):
-    <span class=hljs-comment ># Forward pass: compute predicted y by passing x to the model. Module objects</span>
-    <span class=hljs-comment ># override the __call__ operator so you can call them like functions. When</span>
-    <span class=hljs-comment ># doing so you pass a Variable of input data to the Module and it produces</span>
-    <span class=hljs-comment ># a Variable of output data.</span>
+    <span class=hljs-comment ># Forward pass: compute predicted y by passing x to the model.</span>
+    <span class=hljs-comment ># Module objects override the __call__ operator so you can call </span>
+    <span class=hljs-comment ># them like functions. When doing so you pass a Variable of </span>
+    <span class=hljs-comment ># input data to the Module and it produces a Variable of output data.</span>
     y_pred = model(x_t)
   
     <span class=hljs-comment ># Note this operation is equivalent to: pred = model.forward(x_v)</span>
-
-    <span class=hljs-comment ># Compute and print loss. We pass Variables containing the predicted and true</span>
-    <span class=hljs-comment ># values of y, and the loss function returns a Variable containing the</span>
-    <span class=hljs-comment ># loss.</span>
+    <span class=hljs-comment ># Compute and print loss. We pass Variables containing the predicted </span>
+    <span class=hljs-comment ># and true values of y, and the loss function returns a Variable </span>
+    <span class=hljs-comment ># containing the loss.</span>
     loss = loss_fn(y_pred, y_t)
 
     <span class=hljs-comment ># Zero the gradients before running the backward pass.</span>
     model.zero_grad()
 
-    <span class=hljs-comment ># Backward pass: compute gradient of the loss with respect to all the learnable</span>
-    <span class=hljs-comment ># parameters of the model. Internally, the parameters of each Module are stored</span>
-    <span class=hljs-comment ># in Variables with requires_grad=True, so this call will compute gradients for</span>
-    <span class=hljs-comment ># all learnable parameters in the model.</span>
+    <span class=hljs-comment ># Backward pass: compute gradient of the loss with respect to all </span>
+    <span class=hljs-comment ># the learnable parameters of the model. Internally, the parameters </span>
+    <span class=hljs-comment ># of each Module are stored in Variables with requires_grad=True, </span>
+    <span class=hljs-comment ># so this call will compute gradients for all learnable parameters </span>
+    <span class=hljs-comment ># in the model.</span>
     loss.backward()
 
-    <span class=hljs-comment ># Update the weights using gradient descent. Each parameter is a Tensor, so</span>
-    <span class=hljs-comment ># we can access its data and gradients like we did before.</span>
+    <span class=hljs-comment ># Update the weights using gradient descent. Each parameter is a </span>
+    <span class=hljs-comment ># Tensor, so we can access its data and gradients like we did before.</span>
     <span class=hljs-keyword >with</span> torch.no_grad():
         <span class=hljs-keyword >for</span> param <span class=hljs-keyword >in</span> model.parameters():
             param.data -= learning_rate * param.grad

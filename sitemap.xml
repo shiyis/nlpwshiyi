@@ -32,12 +32,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/7-dataloading/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4g-etl-job/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -51,12 +45,6 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2a-mdn-nlp/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/11b-recurrent-neural-networks-practice/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -80,43 +68,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/18a-diffusion/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4i-neo4j-gql/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/12-intro-julia/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/8a-embedding-layers/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/part-two-comp-conn/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/graph1/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/6-convolutional-neural-network/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -134,25 +86,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/graph2/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3c-roberta/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/graph0/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/pytorch-tensors/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -170,31 +104,13 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/11c-batches-with-sequences/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/CAM-adversarial/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4j-amr-parser/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/9a-autoencoders/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -224,24 +140,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/graph3/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/17-resnets/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/stacking-layers/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4c-vae-mnist/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -249,12 +147,6 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/extras/GCN_inductivebias_spectral/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/11a-recurrent-neural-networks-theory/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -309,12 +201,6 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/2c-word2vec/index.html</loc>
-    <lastmod>2024-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/optimization-for-deep-learning/index.html</loc>
     <lastmod>2024-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
