@@ -46,26 +46,27 @@ optimizer_D = torch.optim.Adam(net_D.parameters(),lr=lr)
 
 loss_D_epoch = []
 loss_G_epoch = []
+
 <span class=hljs-keyword >for</span> e <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(nb_epochs):
     np.random.shuffle(X)
     real_samples = torch.from_numpy(X).<span class=hljs-built_in >type</span>(torch.FloatTensor)
     loss_G = <span class=hljs-number >0</span>
     loss_D = <span class=hljs-number >0</span>
     <span class=hljs-keyword >for</span> t, real_batch <span class=hljs-keyword >in</span> <span class=hljs-built_in >enumerate</span>(real_samples.split(batch_size)):
-            <span class=hljs-comment >#improving D</span>
+        <span class=hljs-comment >#improving D</span>
         z = torch.empty(batch_size,z_dim).normal_().to(device)
         fake_batch = net_G(z)
         D_scores_on_real = net_D(real_batch.to(device))
         D_scores_on_fake = net_D(fake_batch)
             
-        loss = -torch.mean(torch.log(<span class=hljs-number >1</span>-D_scores_on_fake) 
-        + torch.log(D_scores_on_real))
+        loss = - torch.mean(torch.log(<span class=hljs-number >1</span>-D_scores_on_fake) 
+               + torch.log(D_scores_on_real))
         optimizer_D.zero_grad()
         loss.backward()
         optimizer_D.step()
         loss_D += loss.cpu().data.numpy()
                     
-            <span class=hljs-comment ># improving G</span>
+        <span class=hljs-comment ># improving G</span>
         z = torch.empty(batch_size,z_dim).normal_().to(device)
         fake_batch = net_G(z)
         D_scores_on_fake = net_D(fake_batch)
@@ -115,7 +116,8 @@ label_dim = <span class=hljs-number >2</span>
 
 
 <span class=hljs-keyword >class</span> <span class="hljs-title class_">generator</span>(nn.Module):
-    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim</span>):
         <span class=hljs-built_in >super</span>(generator,self).__init__()
         self.net = nn.Sequential(nn.Linear(z_dim+label_dim,hidden_dim),
                      nn.ReLU(), nn.Linear(hidden_dim, <span class=hljs-number >2</span>))
@@ -125,7 +127,8 @@ label_dim = <span class=hljs-number >2</span>
         <span class=hljs-keyword >return</span> self.net(x)
     
 <span class=hljs-keyword >class</span> <span class="hljs-title class_">discriminator</span>(nn.Module):
-    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim</span>):
         <span class=hljs-built_in >super</span>(discriminator,self).__init__()
         self.net =  nn.Sequential(nn.Linear(<span class=hljs-number >2</span>+label_dim,hidden_dim),
                      nn.ReLU(),
@@ -154,25 +157,30 @@ loss_G_epoch = []
     real_labels = torch.from_numpy(Y).<span class=hljs-built_in >type</span>(torch.LongTensor)
     loss_G = <span class=hljs-number >0</span>
     loss_D = <span class=hljs-number >0</span>
-    <span class=hljs-keyword >for</span> real_batch, real_batch_label <span class=hljs-keyword >in</span> <span class=hljs-built_in >zip</span>(real_samples.split(batch_size),real_labels.split(batch_size)):
+    <span class=hljs-keyword >for</span> real_batch, real_batch_label <span class=hljs-keyword >in</span> <span class=hljs-built_in >zip</span>(real_samples.split(batch_size),
+                                            real_labels.split(batch_size)):
             <span class=hljs-comment >#improving D</span>
         z = torch.empty(batch_size,z_dim).normal_().to(device)
+        
         <span class=hljs-comment >#</span>
         <span class=hljs-comment ># your code here</span>
-        <span class=hljs-comment ># hint: https://discuss.pytorch.org/t/convert-int-into-one-hot-format/507/4</span>
+        <span class=hljs-comment ># hint: https://discuss.pytorch.org/t/</span>
+        <span class=hljs-comment ># convert-int-into-one-hot-format/507/4</span>
         <span class=hljs-comment >#</span>
                 
-        loss = -torch.mean(torch.log(<span class=hljs-number >1</span>-D_scores_on_fake) + torch.log(D_scores_on_real))
+        loss = - .mean(torch.log(<span class=hljs-number >1</span>-D_scores_on_fake) 
+               + torch.log(D_scores_on_real))
         optimizer_CD.zero_grad()
         loss.backward()
         optimizer_CD.step()
         loss_D += loss.cpu().data.numpy()
             
-            <span class=hljs-comment ># improving G</span>
+        <span class=hljs-comment ># improving G</span>
         z = torch.empty(batch_size,z_dim).normal_().to(device)
-        <span class=hljs-comment >#</span>
-        <span class=hljs-comment ># your code here</span>
-        <span class=hljs-comment >#</span>
+        
+        
+        <span class=hljs-comment ># to-do</span>
+        
                     
         loss = -torch.mean(torch.log(D_scores_on_fake))
         optimizer_CG.zero_grad()
@@ -195,7 +203,8 @@ label_dim = <span class=hljs-number >2</span>
 
 
 <span class=hljs-keyword >class</span> <span class="hljs-title class_">Igenerator</span>(nn.Module):
-    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim</span>):
         <span class=hljs-built_in >super</span>(Igenerator,self).__init__()
         self.net = nn.Sequential(nn.Linear(z_dim+label_dim,hidden_dim),
                      nn.ReLU(), nn.Linear(hidden_dim, <span class=hljs-number >2</span>))
@@ -205,7 +214,8 @@ label_dim = <span class=hljs-number >2</span>
         <span class=hljs-keyword >return</span> self.net(x)
     
 <span class=hljs-keyword >class</span> <span class="hljs-title class_">Idiscriminator</span>(nn.Module):
-    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim</span>):
+    <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim</span>):
         <span class=hljs-built_in >super</span>(Idiscriminator,self).__init__()
         self.fc1 = nn.Linear(<span class=hljs-number >2</span>,hidden_dim)
         self.fc2 = nn.Linear(hidden_dim,<span class=hljs-number >1</span>)
@@ -238,8 +248,10 @@ loss_G_epoch = []
     loss_G = <span class=hljs-number >0</span>
     loss_D = <span class=hljs-number >0</span>
     <span class=hljs-keyword >for</span> real_batch <span class=hljs-keyword >in</span> real_samples.split(batch_size):
-            <span class=hljs-comment >#improving D</span>
+       
+        <span class=hljs-comment ># improving D</span>
         z = torch.empty(batch_size,z_dim).normal_().to(device)
+        
         <span class=hljs-comment >#</span>
         <span class=hljs-comment ># your code here</span>
         <span class=hljs-comment >#</span>

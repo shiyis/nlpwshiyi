@@ -106,7 +106,8 @@ to_forward = np.array(<span class=hljs-built_in >list</span>(<span class=hljs-bu
         <span class=hljs-keyword >raise</span> NotImplementedError()
     
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">step</span>(<span class=hljs-params >self, learning_rate</span>):
-        <span class=hljs-comment ># update self.W and self.b in the opposite direction of the stored gradients, for learning_rate</span>
+        <span class=hljs-comment ># update self.W and self.b in the opposite direction of the </span>
+        <span class=hljs-comment ># stored gradients, for learning_rate</span>
         <span class=hljs-comment ># YOUR CODE HERE</span>
         <span class=hljs-keyword >raise</span> NotImplementedError()</code></pre> <h2 id=using_the_bce_loss ><a href="#using_the_bce_loss" class=header-anchor >Using the BCE loss</a></h2> <pre><code class="python hljs"><span class=hljs-keyword >class</span> <span class="hljs-title class_">Sequential</span>(<span class="hljs-title class_ inherited__">object</span>):
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, layers</span>):
