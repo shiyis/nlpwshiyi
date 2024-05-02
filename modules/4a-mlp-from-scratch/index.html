@@ -97,10 +97,11 @@ to_forward = np.array(<span class=hljs-built_in >list</span>(<span class=hljs-bu
         <span class=hljs-comment ># YOUR CODE HERE</span>
         <span class=hljs-keyword >raise</span> NotImplementedError()
         
-        <span class=hljs-comment ># now we need to compute the gradient with respect to x to continue the back propagation</span>
-        <span class=hljs-comment ># d y_i / d x_j = W_{j, i}</span>
-        <span class=hljs-comment ># to compute the gradient of the loss, we have to sum over all possible y_i in the chain rule</span>
-        <span class=hljs-comment ># d loss / d x_j = \sum_i (d loss / d y_i) (d y_i / d x_j)</span>
+        <span class=hljs-comment ># now we need to compute the gradient with respect to x to</span>
+        <span class=hljs-comment ># continue the back propagation d y_i / d x_j = W_{j, i}</span>
+        <span class=hljs-comment ># to compute the gradient of the loss, we have to sum over </span>
+        <span class=hljs-comment ># all possible y_i in the chain rule d loss / d x_j = \sum_i </span>
+        <span class=hljs-comment ># (d loss / d y_i) (d y_i / d x_j)</span>
         <span class=hljs-comment ># YOUR CODE HERE</span>
         <span class=hljs-keyword >raise</span> NotImplementedError()
     
@@ -121,7 +122,8 @@ to_forward = np.array(<span class=hljs-built_in >list</span>(<span class=hljs-bu
         <span class=hljs-comment ># -(label * log(output) + (1-label) * log(1-output))</span>
         <span class=hljs-comment ># save the gradient, and return the loss      </span>
         <span class=hljs-comment ># beware of dividing by zero in the gradient.</span>
-        <span class=hljs-comment ># split the computation in two cases, one where the label is 0 and another one where the label is 1</span>
+        <span class=hljs-comment ># split the computation in two cases, one where the label is </span>
+        <span class=hljs-comment ># 0 and another one where the label is 1</span>
         <span class=hljs-comment ># add a small value (1e-10) to the denominator</span>
         <span class=hljs-comment ># YOUR CODE HERE</span>
         <span class=hljs-keyword >raise</span> NotImplementedError()

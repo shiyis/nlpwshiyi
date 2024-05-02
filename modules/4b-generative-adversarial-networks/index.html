@@ -58,7 +58,8 @@ loss_G_epoch = []
         D_scores_on_real = net_D(real_batch.to(device))
         D_scores_on_fake = net_D(fake_batch)
             
-        loss = -torch.mean(torch.log(<span class=hljs-number >1</span>-D_scores_on_fake) + torch.log(D_scores_on_real))
+        loss = -torch.mean(torch.log(<span class=hljs-number >1</span>-D_scores_on_fake) 
+        + torch.log(D_scores_on_real))
         optimizer_D.zero_grad()
         loss.backward()
         optimizer_D.step()
