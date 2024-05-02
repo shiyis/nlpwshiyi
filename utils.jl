@@ -61,8 +61,8 @@ function hfun_bar(vname)
   
       function onYouTubeIframeAPIReady() {
           player = new YT.Player('player', {
-              height: '395px',
-              width: '705px',
+              width: '100%',
+              position: 'relative',
               left: '0px',
               videoId: '$(get(videos, id, id))',
               playerVars: {
