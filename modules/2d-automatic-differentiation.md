@@ -211,8 +211,6 @@ def loss(x, y):
     y_pred = forward(x)
     return (y_pred - y)**2 
 
-print("initial loss:", np.sum([loss(x_val,y_val) for x_val, y_val in zip(x, y)]) )
-
 # compute gradient
 def gradient(x, y):  # d_loss/d_w, d_loss/d_c
     return 2*(x.dot(w)+b - y)*x, 2 * (x.dot(w)+b - y)
@@ -264,10 +262,11 @@ for epoch in range(10):
     # of the loss with respect to w and b respectively.
     loss.backward()
     
-    # Update weights using gradient descent. For this step we just want to mutate
-    # the values of w_v and b_v in-place; we don't want to build up a computational
-    # graph for the update steps, so we use the torch.no_grad() context manager
-    # to prevent PyTorch from building a computational graph for the updates
+    # Update weights using gradient descent. For this step we just want to 
+    # mutate the values of w_v and b_v in-place; we don't want to build up 
+    # a computational graph for the update steps, so we use the 
+    # torch.no_grad() context manager to prevent PyTorch from building  a 
+    # computational graph for the updates
     with torch.no_grad():
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
@@ -291,10 +290,12 @@ An implementation of **(Batch) Gradient Descent** using the nn package. Here we 
 
 ```Python
 
-# Use the nn package to define our model as a sequence of layers. nn.Sequential
-# is a Module which contains other Modules, and applies them in sequence to
-# produce its output. Each Linear Module computes output from input using a
-# linear function, and holds internal Variables for its weight and bias.
+# Use the nn package to define our model as a sequence of layers. 
+# nn.Sequential is a Module which contains other Modules, and applies 
+# them in sequence to produce its output. Each Linear Module computes 
+# output from input using a linear function, and holds internal Variables 
+# for its weight and bias.
+
 model = torch.nn.Sequential(
     torch.nn.Linear(2, 1),
 )
@@ -303,38 +304,38 @@ for m in model.children():
     m.weight.data = w_init_t.clone().unsqueeze(0)
     m.bias.data = b_init_t.clone()
 
-# The nn package also contains definitions of popular loss functions; in this
-# case we will use Mean Squared Error (MSE) as our loss function.
+# The nn package also contains definitions of popular loss functions; 
+# in this case we will use Mean Squared Error (MSE) as our loss function.
 loss_fn = torch.nn.MSELoss(reduction='sum')
 
 # switch to train mode
 model.train()
 
 for epoch in range(10):
-    # Forward pass: compute predicted y by passing x to the model. Module objects
-    # override the __call__ operator so you can call them like functions. When
-    # doing so you pass a Variable of input data to the Module and it produces
-    # a Variable of output data.
+    # Forward pass: compute predicted y by passing x to the model.
+    # Module objects override the __call__ operator so you can call 
+    # them like functions. When doing so you pass a Variable of 
+    # input data to the Module and it produces a Variable of output data.
     y_pred = model(x_t)
   
     # Note this operation is equivalent to: pred = model.forward(x_v)
-
-    # Compute and print loss. We pass Variables containing the predicted and true
-    # values of y, and the loss function returns a Variable containing the
-    # loss.
+    # Compute and print loss. We pass Variables containing the predicted 
+    # and true values of y, and the loss function returns a Variable 
+    # containing the loss.
     loss = loss_fn(y_pred, y_t)
 
     # Zero the gradients before running the backward pass.
     model.zero_grad()
 
-    # Backward pass: compute gradient of the loss with respect to all the learnable
-    # parameters of the model. Internally, the parameters of each Module are stored
-    # in Variables with requires_grad=True, so this call will compute gradients for
-    # all learnable parameters in the model.
+    # Backward pass: compute gradient of the loss with respect to all 
+    # the learnable parameters of the model. Internally, the parameters 
+    # of each Module are stored in Variables with requires_grad=True, 
+    # so this call will compute gradients for all learnable parameters 
+    # in the model.
     loss.backward()
 
-    # Update the weights using gradient descent. Each parameter is a Tensor, so
-    # we can access its data and gradients like we did before.
+    # Update the weights using gradient descent. Each parameter is a 
+    # Tensor, so we can access its data and gradients like we did before.
     with torch.no_grad():
         for param in model.parameters():
             param.data -= learning_rate * param.grad
