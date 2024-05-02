@@ -76,26 +76,27 @@ optimizer_D = torch.optim.Adam(net_D.parameters(),lr=lr)
 
 loss_D_epoch = []
 loss_G_epoch = []
+
 for e in range(nb_epochs):
     np.random.shuffle(X)
     real_samples = torch.from_numpy(X).type(torch.FloatTensor)
     loss_G = 0
     loss_D = 0
     for t, real_batch in enumerate(real_samples.split(batch_size)):
-            #improving D
+        #improving D
         z = torch.empty(batch_size,z_dim).normal_().to(device)
         fake_batch = net_G(z)
         D_scores_on_real = net_D(real_batch.to(device))
         D_scores_on_fake = net_D(fake_batch)
             
-        loss = -torch.mean(torch.log(1-D_scores_on_fake) 
-        + torch.log(D_scores_on_real))
+        loss = - torch.mean(torch.log(1-D_scores_on_fake) 
+               + torch.log(D_scores_on_real))
         optimizer_D.zero_grad()
         loss.backward()
         optimizer_D.step()
         loss_D += loss.cpu().data.numpy()
                     
-            # improving G
+        # improving G
         z = torch.empty(batch_size,z_dim).normal_().to(device)
         fake_batch = net_G(z)
         D_scores_on_fake = net_D(fake_batch)
@@ -166,7 +167,8 @@ label_dim = 2
 
 
 class generator(nn.Module):
-    def __init__(self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim):
+    def __init__(self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim):
         super(generator,self).__init__()
         self.net = nn.Sequential(nn.Linear(z_dim+label_dim,hidden_dim),
                      nn.ReLU(), nn.Linear(hidden_dim, 2))
@@ -176,7 +178,8 @@ class generator(nn.Module):
         return self.net(x)
     
 class discriminator(nn.Module):
-    def __init__(self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim):
+    def __init__(self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim):
         super(discriminator,self).__init__()
         self.net =  nn.Sequential(nn.Linear(2+label_dim,hidden_dim),
                      nn.ReLU(),
@@ -210,25 +213,30 @@ for e in range(nb_epochs):
     real_labels = torch.from_numpy(Y).type(torch.LongTensor)
     loss_G = 0
     loss_D = 0
-    for real_batch, real_batch_label in zip(real_samples.split(batch_size),real_labels.split(batch_size)):
+    for real_batch, real_batch_label in zip(real_samples.split(batch_size),
+                                            real_labels.split(batch_size)):
             #improving D
         z = torch.empty(batch_size,z_dim).normal_().to(device)
+        
         #
         # your code here
-        # hint: https://discuss.pytorch.org/t/convert-int-into-one-hot-format/507/4
+        # hint: https://discuss.pytorch.org/t/
+        # convert-int-into-one-hot-format/507/4
         #
                 
-        loss = -torch.mean(torch.log(1-D_scores_on_fake) + torch.log(D_scores_on_real))
+        loss = - .mean(torch.log(1-D_scores_on_fake) 
+               + torch.log(D_scores_on_real))
         optimizer_CD.zero_grad()
         loss.backward()
         optimizer_CD.step()
         loss_D += loss.cpu().data.numpy()
             
-            # improving G
+        # improving G
         z = torch.empty(batch_size,z_dim).normal_().to(device)
-        #
-        # your code here
-        #
+        
+        
+        # to-do
+        
                     
         loss = -torch.mean(torch.log(D_scores_on_fake))
         optimizer_CG.zero_grad()
@@ -269,7 +277,8 @@ label_dim = 2
 
 
 class Igenerator(nn.Module):
-    def __init__(self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim):
+    def __init__(self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim):
         super(Igenerator,self).__init__()
         self.net = nn.Sequential(nn.Linear(z_dim+label_dim,hidden_dim),
                      nn.ReLU(), nn.Linear(hidden_dim, 2))
@@ -279,7 +288,8 @@ class Igenerator(nn.Module):
         return self.net(x)
     
 class Idiscriminator(nn.Module):
-    def __init__(self,z_dim = z_dim, label_dim=label_dim,hidden_dim =hidden_dim):
+    def __init__(self,z_dim = z_dim, label_dim=label_dim, 
+        hidden_dim =hidden_dim):
         super(Idiscriminator,self).__init__()
         self.fc1 = nn.Linear(2,hidden_dim)
         self.fc2 = nn.Linear(hidden_dim,1)
@@ -317,8 +327,10 @@ for e in range(nb_epochs):
     loss_G = 0
     loss_D = 0
     for real_batch in real_samples.split(batch_size):
-            #improving D
+       
+        # improving D
         z = torch.empty(batch_size,z_dim).normal_().to(device)
+        
         #
         # your code here
         #

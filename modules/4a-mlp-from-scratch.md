@@ -144,7 +144,8 @@ class MyLinear(object):
         raise NotImplementedError()
     
     def step(self, learning_rate):
-        # update self.W and self.b in the opposite direction of the stored gradients, for learning_rate
+        # update self.W and self.b in the opposite direction of the 
+        # stored gradients, for learning_rate
         # YOUR CODE HERE
         raise NotImplementedError()
 ```
