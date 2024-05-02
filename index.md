@@ -11,15 +11,14 @@ Areas that I have dabbled in,
 
 
 
-### Plaintext Example:
-
-
 ```
 → General Linguistics
 → Symbolic Computational Linguistics
 → Statistical Natural Language Processing
 → State of the Art Large Language Modeling
 ```
+
+
 
 
 
