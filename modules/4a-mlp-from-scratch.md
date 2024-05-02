@@ -135,10 +135,11 @@ class MyLinear(object):
         # YOUR CODE HERE
         raise NotImplementedError()
         
-        # now we need to compute the gradient with respect to x to continue the back propagation
-        # d y_i / d x_j = W_{j, i}
-        # to compute the gradient of the loss, we have to sum over all possible y_i in the chain rule
-        # d loss / d x_j = \sum_i (d loss / d y_i) (d y_i / d x_j)
+        # now we need to compute the gradient with respect to x to
+        # continue the back propagation d y_i / d x_j = W_{j, i}
+        # to compute the gradient of the loss, we have to sum over 
+        # all possible y_i in the chain rule d loss / d x_j = \sum_i 
+        # (d loss / d y_i) (d y_i / d x_j)
         # YOUR CODE HERE
         raise NotImplementedError()
     
@@ -166,7 +167,8 @@ class Sequential(object):
         # -(label * log(output) + (1-label) * log(1-output))
         # save the gradient, and return the loss      
         # beware of dividing by zero in the gradient.
-        # split the computation in two cases, one where the label is 0 and another one where the label is 1
+        # split the computation in two cases, one where the label is 
+        # 0 and another one where the label is 1
         # add a small value (1e-10) to the denominator
         # YOUR CODE HERE
         raise NotImplementedError()

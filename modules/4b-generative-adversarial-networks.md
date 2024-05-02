@@ -88,7 +88,8 @@ for e in range(nb_epochs):
         D_scores_on_real = net_D(real_batch.to(device))
         D_scores_on_fake = net_D(fake_batch)
             
-        loss = -torch.mean(torch.log(1-D_scores_on_fake) + torch.log(D_scores_on_real))
+        loss = -torch.mean(torch.log(1-D_scores_on_fake) 
+        + torch.log(D_scores_on_real))
         optimizer_D.zero_grad()
         loss.backward()
         optimizer_D.step()
