@@ -75,7 +75,8 @@ function VITERBI(observations, state_graph) return best_path
             max_score <- -infinity
             max_prev_state <- None
             for each previous state prev_state from 1 to num_states do
-                score <- viterbi[prev_state, t-1] + log(a[prev_state, s]) + log(b_s(o_t))
+                score <- viterbi[prev_state, t-1] 
+                        + log(a[prev_state, s]) + log(b_s(o_t))
                 if score > max_score then
                     max_score <- score
                     max_prev_state <- prev_state
@@ -91,7 +92,7 @@ function VITERBI(observations, state_graph) return best_path
             max_final_score <- viterbi[s, len(observations)]
             best_final_state <- s
     current_state <- best_final_state
-    for t from len(observations) downto 1 do
+    for t from len(observations) down to 1 do
         best_path.prepend(current_state)
         current_state <- back_pointer[current_state, t]
     return best_path
