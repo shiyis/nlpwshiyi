@@ -51,7 +51,8 @@
             out = model.decode(z,y_onehot).view(-<span class=hljs-number >1</span>, <span class=hljs-number >1</span>, <span class=hljs-number >28</span>, <span class=hljs-number >28</span>)
         <span class=hljs-keyword >else</span>:
             z = torch.randn(n, z_dim).to(device)
-            y_onehot = torch.tensor(np.roll(matrix, fix_number)).<span class=hljs-built_in >type</span>(torch.FloatTensor).to(device)
+            y_onehot = torch.tensor(np.roll(matrix, fix_number))
+                       .<span class=hljs-built_in >type</span>(torch.FloatTensor).to(device)
             out = model.decode(z,y_onehot).view(-<span class=hljs-number >1</span>, <span class=hljs-number >1</span>, <span class=hljs-number >28</span>, <span class=hljs-number >28</span>)
 
     out_grid = torchvision.utils.make_grid(out).cpu()

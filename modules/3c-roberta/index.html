@@ -7,8 +7,10 @@
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, vocab_size, embedding_size, hidden_size</span>):
         <span class=hljs-built_in >super</span>(RoBERTa, self).__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_size)
-        self.transformer_layer = nn.TransformerEncoderLayer(d_model=embedding_size, nhead=<span class=hljs-number >8</span>, dim_feedforward=hidden_size)
-        self.transformer = nn.TransformerEncoder(self.transformer_layer, num_layers=<span class=hljs-number >6</span>)
+        self.transformer_layer = nn.TransformerEncoderLayer(
+                            d_model=embedding_size, nhead=<span class=hljs-number >8</span>, dim_feedforward=hidden_size)
+        self.transformer = nn.TransformerEncoder(
+                            self.transformer_layer, num_layers=<span class=hljs-number >6</span>)
         self.fc = nn.Linear(embedding_size, vocab_size)
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, input_ids</span>):
