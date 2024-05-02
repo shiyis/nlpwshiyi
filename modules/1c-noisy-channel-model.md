@@ -1,5 +1,5 @@
 
-@def seqquence = ["noisy-channel"]
+@def sequence = ["noisy-channel"]
 
 
 # How Everything Started
@@ -20,7 +20,7 @@ Hi there, if you have come across this blog and have the patience to go through 
 
 ### What Exactly Is A Noisy Channel Model?
 
-It's a system designed to capture how information gets trasmitted.  It's also a mathematical or probabilistic model developed to capture the way signals get transmitted. 
+It's a system designed to capture how information gets transmitted.  It's also a mathematical or probabilistic model developed to capture the way signals get transmitted. 
 
 ### One of The Most Important Master's Theses In The 20th Century
 
@@ -46,7 +46,7 @@ Let's break down the components of the noisy channel model,
 
 ### Another Important Equation
 
-Here I will follow the video and jot down the important equation that represents the transimission of a message through the noisy channel. 
+Here I will follow the video and jot down the important equation that represents the transmission of a message through the noisy channel. 
 
 Below is the equation. So, here `e` and/or `f` represents respectively the message that gets encoded and sent in the channel and the output message that gets decoded back to human readable language. 
 
@@ -60,7 +60,7 @@ To calculate the probability, we are going to use an important mathematical law,
 $$p(\text{e|f}) = \frac{p(\textbf{f|e})p(\textbf{e})}{\textbf{f}} $$
 
 
-We will be talking about this God of an equation indepedently in another blog, but here we could understand that we are able to calculate the above noisy channel model through using the Bayes' law. And the three components available in the equation will allow us to do this. 
+We will be talking about this God of an equation independently in another blog, but here we could understand that we are able to calculate the above noisy channel model through using the Bayes' law. And the three components available in the equation will allow us to do this. 
 
 The posterior function which is intuitively the outcome function $p(\text{e|f})$ is derived from the likelihood function which is the probability of `e` given `f` or $p(\text{f|e})$ and the prior distributions $p(e)$ together divided by the prior distribution of $p(f)$.
 
