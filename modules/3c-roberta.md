@@ -33,8 +33,10 @@ class RoBERTa(nn.Module):
     def __init__(self, vocab_size, embedding_size, hidden_size):
         super(RoBERTa, self).__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_size)
-        self.transformer_layer = nn.TransformerEncoderLayer(d_model=embedding_size, nhead=8, dim_feedforward=hidden_size)
-        self.transformer = nn.TransformerEncoder(self.transformer_layer, num_layers=6)
+        self.transformer_layer = nn.TransformerEncoderLayer(
+                            d_model=embedding_size, nhead=8, dim_feedforward=hidden_size)
+        self.transformer = nn.TransformerEncoder(
+                            self.transformer_layer, num_layers=6)
         self.fc = nn.Linear(embedding_size, vocab_size)
 
     def forward(self, input_ids):

@@ -59,7 +59,8 @@ def plot_conditional_generation(model, n=8, fix_number=None):
             out = model.decode(z,y_onehot).view(-1, 1, 28, 28)
         else:
             z = torch.randn(n, z_dim).to(device)
-            y_onehot = torch.tensor(np.roll(matrix, fix_number)).type(torch.FloatTensor).to(device)
+            y_onehot = torch.tensor(np.roll(matrix, fix_number))
+                       .type(torch.FloatTensor).to(device)
             out = model.decode(z,y_onehot).view(-1, 1, 28, 28)
 
     out_grid = torchvision.utils.make_grid(out).cpu()
