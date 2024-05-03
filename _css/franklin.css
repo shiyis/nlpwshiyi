@@ -652,8 +652,13 @@ h2 {
     display: block;
   }
 
-  .button {
-    background: noe;
+  button, [type="button"], [type="reset"], [type="submit"] {
+    background: none;
+  }
+
+  button {
+    background: none;
+    margin-top: 2px;
   }
 }
 
