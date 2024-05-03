@@ -667,14 +667,14 @@ h2 {
 @media (min-width:375px) and (max-width:667px) {
   
   button, [type="button"], [type="reset"], [type="submit"] {
-    background: none;
+    /* background: none; */
     border-color: dimgrey;
     margin-top: 3px;
   }
 
 
   button {
-    background: none;
+    /* background: none; */
     border-color: dimgrey;
     margin-top: 2px;
   }
