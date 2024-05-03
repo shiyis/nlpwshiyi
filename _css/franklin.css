@@ -651,6 +651,10 @@ h2 {
     width: 97%;
     display: block;
   }
+
+  .button {
+    background: noe;
+  }
 }
 
 .card {
