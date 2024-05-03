@@ -1368,6 +1368,14 @@ img[alt=intro] {
 }
 
 
+@media only screen and (min-width: 375px) and (max-width: 675px) {
+
+  .button {
+    margin-top: 3.7px;
+    right: 20px;
+  }
+
+}
 
 
 
