@@ -129,8 +129,8 @@ class BiLSTM_CRF(nn.Module):
                 # the previous tag
                 emit_score = feat[next_tag].view(
                     1, -1).expand(1, self.tagset_size)
-                # the ith entry of trans_score is the score of transitioning to
-                # next_tag from i
+                # the ith entry of trans_score is the score of 
+                # transitioning to next_tag from i
                 trans_score = self.transitions[next_tag].view(1, -1)
                 # The ith entry of next_tag_var is the value for the
                 # edge (i -> next_tag) before we do log-sum-exp
