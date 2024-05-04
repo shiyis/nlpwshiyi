@@ -1362,6 +1362,15 @@ img[alt=intro] {
 
 
 
+@media only screen and (min-width: 375px) and (max-width: 675px) {
+
+  .page-foot{
+    font-size: 11px;
+  }
+
+}
+
+
 
 img[alt=intro] {
   width: 145px;
