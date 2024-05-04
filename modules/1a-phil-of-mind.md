@@ -345,7 +345,7 @@ RTM is able to accomplish the above by assuming,
 **Productivity**:
 
 A finites set of symbols in natural language and the device could \\
-entertain a infinite numbers of logic.
+entertain a infinite numbers of logic using a finite set of rules and elements.
 
 **Systematicity**: 
 
