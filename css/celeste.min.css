@@ -1364,7 +1364,7 @@ img[alt=intro] {
 
 @media only screen and (min-width: 375px) and (max-width: 675px) {
 
-  .page-foot{
+  .page-foot a, b {
     font-size: 11px;
   }
 
