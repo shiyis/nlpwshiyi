@@ -390,6 +390,10 @@ abbr[title] {
 b,
 strong {
   font-weight: bolder;
+}
+
+b {
+
   font-size: 11px
 }
 
