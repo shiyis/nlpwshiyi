@@ -40,8 +40,10 @@ num_documents, num_words = counts.shape</code></pre> <pre><code class="python hl
     )
 <span class=hljs-keyword >else</span>:
     rng1, rng2 = random.split(rng_seed, <span class=hljs-number >2</span>)
-    initial_document_loc = random.normal(rng1, shape=(num_documents, num_topics))
-    initial_objective_topic_loc = random.normal(rng2, shape=(num_topics, num_words))</code></pre>
+    initial_document_loc = random.normal(rng1, 
+                                        shape=(num_documents, num_topics))
+    initial_objective_topic_loc = random.normal(rng2, 
+                                        shape=(num_topics, num_words))</code></pre>
 <pre><code class="python hljs"><span class=hljs-comment ># Fit NMF to be used as initialization for TBIP</span>
 <span class=hljs-keyword >from</span> sklearn.decomposition <span class=hljs-keyword >import</span> NMF
 
@@ -138,7 +140,8 @@ num_documents, num_words = counts.shape</code></pre> <pre><code class="python hl
                 jnp.expand_dims(theta, <span class=hljs-number >2</span>)
                 * jnp.expand_dims(beta, <span class=hljs-number >0</span>)
                 * jnp.exp(
-                    jnp.expand_dims(x[i_batch], (<span class=hljs-number >1</span>, <span class=hljs-number >2</span>)) * jnp.expand_dims(eta, <span class=hljs-number >0</span>)
+                    jnp.expand_dims(x[i_batch], (<span class=hljs-number >1</span>, <span class=hljs-number >2</span>)) * 
+                    jnp.expand_dims(eta, <span class=hljs-number >0</span>)
                 ),
                 <span class=hljs-number >1</span>,
             )
