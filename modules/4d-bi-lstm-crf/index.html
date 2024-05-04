@@ -69,8 +69,8 @@ torch.manual_seed(<span class=hljs-number >1</span>)</code></pre> <pre><code cla
                 <span class=hljs-comment ># the previous tag</span>
                 emit_score = feat[next_tag].view(
                     <span class=hljs-number >1</span>, -<span class=hljs-number >1</span>).expand(<span class=hljs-number >1</span>, self.tagset_size)
-                <span class=hljs-comment ># the ith entry of trans_score is the score of transitioning to</span>
-                <span class=hljs-comment ># next_tag from i</span>
+                <span class=hljs-comment ># the ith entry of trans_score is the score of </span>
+                <span class=hljs-comment ># transitioning to next_tag from i</span>
                 trans_score = self.transitions[next_tag].view(<span class=hljs-number >1</span>, -<span class=hljs-number >1</span>)
                 <span class=hljs-comment ># The ith entry of next_tag_var is the value for the</span>
                 <span class=hljs-comment ># edge (i -&gt; next_tag) before we do log-sum-exp</span>
