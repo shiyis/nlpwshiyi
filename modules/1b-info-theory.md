@@ -66,7 +66,8 @@ A Pearson's Chi-Square test is a statistical test for `categorical data`.
     1. is divided into groups or categories.
     2. is based on qualitative characteristics.
     3. has no order in categorical values and variables.
-    4. can take numerical values, but those numbers don’t have any mathematical meaning.
+    4. can take numerical values, but those numbers don’t 
+       have any mathematical meaning.
     5. is displayed graphically by bar charts and pie charts.
 
 ```
