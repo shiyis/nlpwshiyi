@@ -78,7 +78,7 @@ $$\mathbb{P}(\textrm{the}\mid\textrm{loves})\cdot\mathbb{P}(\textrm{man}\mid\tex
     
 ---
 
-![skip-gram-demo](https://www.di.ens.fr/~lelarge/skip-gram.svg)
+![alt=skip-gram-demo](https://www.di.ens.fr/~lelarge/skip-gram.svg)
 
 ---
     

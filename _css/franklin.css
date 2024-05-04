@@ -41,6 +41,7 @@ html {
   width: 100%;
   padding-left: 0;
   border-radius: 10px;
+  max-width: 100%;
 }
 
 
@@ -302,6 +303,7 @@ td {
   width: 50%;
   text-align: center;
   padding-left: 20%;
+  max-width: 100%;
 }
 
 /* ==================================================================
@@ -603,6 +605,7 @@ h2 {
 
   padding-left: 0;
   width: 100%;
+  max-width: 100%;
 
 }
 
@@ -621,10 +624,6 @@ h2 {
 
 }
 
-.sidebar img {
-  margin-left: 0.5em;
-}
-
 .card img {
 
   padding-left: 0;
@@ -637,7 +636,6 @@ h2 {
   .page-foot a{
     font-size: 11px;
   }
-
 }
 
 
@@ -655,8 +653,17 @@ img[alt=skip-gram-demo] {
   text-align: center;
 }
 
+img[alt=skip-gram-demo] {
+  width: auto;
+  position:relative;
+}
+
+
 img[alt=vae] {
 
   width: 300px;
   text-align: center;
 }
+
+
+

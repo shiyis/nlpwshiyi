@@ -425,10 +425,10 @@ sup {
 }
 
 img {
-  width: 560px;
   align-items: center;
   border-style: none;
   border-radius: 7px
+  max-width: 100%;
 }
 
 input,
