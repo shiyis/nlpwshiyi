@@ -3,4 +3,6 @@
 # syntax in your markdown files to embed the video into the page!
 videos = Dict(
               "automatic-diff" => "cNADlHfHQHg",
+              "noisy-channel" => "zjWXLD_ihOc"
+
 )
