@@ -53,7 +53,7 @@ referred to as panpsychism, which "holds that mind or a mind-like aspect is a fu
 reality". It is also described as a theory that "the mind is a fundamental feature of the world which exists throughout
 the universe."
 
-#### Consciousness As A Weak/Strong/Normal Emergence
+#### Consciousness As A Weak, Strong, or Normal Emergence
 
 Each one of them is a hypothesis over the emergence and origin of consciousness, and below is a more detailed breakdown.
 
