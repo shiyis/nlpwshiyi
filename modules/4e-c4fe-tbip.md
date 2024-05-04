@@ -87,8 +87,10 @@ if pre_initialize_parameters:
     )
 else:
     rng1, rng2 = random.split(rng_seed, 2)
-    initial_document_loc = random.normal(rng1, shape=(num_documents, num_topics))
-    initial_objective_topic_loc = random.normal(rng2, shape=(num_topics, num_words))
+    initial_document_loc = random.normal(rng1, 
+                                        shape=(num_documents, num_topics))
+    initial_objective_topic_loc = random.normal(rng2, 
+                                        shape=(num_topics, num_words))
 ```
 
 
@@ -205,7 +207,8 @@ class TBIP:
                 jnp.expand_dims(theta, 2)
                 * jnp.expand_dims(beta, 0)
                 * jnp.exp(
-                    jnp.expand_dims(x[i_batch], (1, 2)) * jnp.expand_dims(eta, 0)
+                    jnp.expand_dims(x[i_batch], (1, 2)) * 
+                    jnp.expand_dims(eta, 0)
                 ),
                 1,
             )
