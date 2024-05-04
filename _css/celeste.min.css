@@ -389,7 +389,8 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bolder
+  font-weight: bolder;
+  font-size: 11px
 }
 
 code,
@@ -570,7 +571,8 @@ a strong {
 footer,
 .page-foot {
   text-align: center;
-  text-transform: lowercase;
+  text-transform: capitalize;
+  font-size: 11px;
   margin-bottom: 2rem
 }
 
@@ -1366,7 +1368,7 @@ img[alt=intro] {
 
   .page-foot a, b {
     font-size: 11px;
-  }
+  
 
 }
 
