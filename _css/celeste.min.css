@@ -427,7 +427,7 @@ sup {
 img {
   align-items: center;
   border-style: none;
-  border-radius: 7px
+  border-radius: 7px;
   max-width: 100%;
 }
 
@@ -1312,12 +1312,6 @@ blockquote {
 }
 
 
-/* img {
-  display: block;
-  max-width: 100%;
-  margin: 1rem 1rem 1rem 1rem;
-  border-radius: 5px;
-} */
 
 img[alt=intro] {
   display: block;
