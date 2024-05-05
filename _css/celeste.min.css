@@ -1344,7 +1344,7 @@ img[alt=intro] {
   .container, .franklin-content {
     padding-left: 1rem;
     padding-right: 1rem;
-    text-wrap: pretty;
+    text-wrap: 19tty;
     margin-left: auto;
     margin-right: auto;
   }
