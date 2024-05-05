@@ -62,7 +62,7 @@ So if it's to understand human intelligence, we need to know humans gain informa
   second through experience and experimentation.
 ```
 
-Below are some important notes with respect to the **historical timeline** of the development of Computational Linguistics and NLP and how it all started from one of these two principles and gradually transitioned to the other (rationalism / computationalism to empiricalism / connectionism; although computationalism is not always symbolic; namely it also incorporates empirical evidence):
+Below are some important notes with respect to the **historical timeline** of the development of Computational Linguistics and NLP and how it all started from one of these two principles and gradually transitioned to the other (rationalism / computationalism to empiricism / connectionism; although computationalism is not always symbolic; namely it also incorporates empirical evidence):
 
 \textoutput{cards}
 
