@@ -13,9 +13,7 @@ other mental processes.
 
 ### The Implications of Human Beings As Conscious Automata and The Definition of Consciousness
 
-Advances in computing raise the prospect known as _The Computational Theory of Mind_ (CTM). Computationalists understand
-this paradigm as the principle to cognitive science. Then later two schools of thoughts challenged this orthodox
-position.
+Advances in computing raise the prospect known as _The Computational Theory of Mind_ (CTM). Computationalists understand this paradigm as the principle to cognitive science (Rescorla 2020). Then later two schools of thoughts challenged this orthodox position.
 
 One pertains to the neurological properties of the mind and body and the other emphasized representational mental
 states. To have a better understanding overall, we have to first know where these premises in the realm of CTM stemmed

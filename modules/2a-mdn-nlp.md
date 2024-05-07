@@ -20,7 +20,7 @@ That being said, the language that we used to describe our mental experience is 
 
 ### What Does It Mean To Have A Mental Language?
 
-Continuing the discussion of LOTH or the _The Language of Thought Hypothesis_, again one can postulate that it's closely correlated with the mental representation (drawing reference from _the Representational Theory of Mind_), and also as per the context of current discussions around understanding how the brain actually works (at least w.r.t the folk psychology).
+Continuing the discussion of LOTH or the _The Language of Thought Hypothesis_, again one can postulate that it's closely correlated with the mental representation (drawing reference from _the Representational Theory of Mind_ and the current discussions around understanding how the brain actually works; at least w.r.t the folk psychology).
 
 It confirms that _Mentalese_ exists within the scope of research. Aside from the physical aspects (the basic ability to identify, match, and represent the objective and physical reality), researches of these "mental representations" strive to incorporate subjective and qualitative dimensions, for example, consciousness and propositional attitudes specifically borne out in the form of a natural language as feelings, beliefs, desires, intentions, and fears.
 
