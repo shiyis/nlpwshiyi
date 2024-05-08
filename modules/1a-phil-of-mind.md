@@ -69,7 +69,11 @@ levels can be directly influenced (causally acted upon) by what is happening at 
 
 The idea, in other words, that you can’t really understand the microscopic behavior without knowing something about the
 macroscopic.
+@@
 
+In contrast, 
+
+@@colbox-blue
 
 **A Weak Emergence**: Instead of being a strong emergence, maybe in reality consciousness might just be a weak emergence
 instead as proposed.
