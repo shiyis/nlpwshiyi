@@ -159,7 +159,7 @@ To accept this position, connectionism has to accept RTM + COMP. Eliminativist c
 
 Some literature later debated around the necessity of commitment to productivity and systematicity of thoughts. Supporters still seek to illuminate the traditional style of computational system.
 
-    However, objections in entirety go against the need of adopting the representational theory. Another stream of objections go against the fact that the productivity and systematicity nature of language of thought had been greatly exaggerated. The last streak of objections posits that one can still create models that reflect the compositionality and the internal structures without adopting the Turing style model.
+Another stream of objections go against the fact that the productivity and systematicity nature of language of thought had been greatly exaggerated. The last streak of objections posits that one can still create models that reflect the compositionality and the internal structures without adopting the Turing style model.
 
 The connectionists contend that instead of a concatenated structure, distributed representations could well capture the integral parts of LOTH. However, doubt was raised around the idea that if we consider concatenative constituency structure is only one of the realizations of the _productivity_ and _systematicity_ of the LOTH, then these schools of neural models would still be considered as part of the classicism.
 
