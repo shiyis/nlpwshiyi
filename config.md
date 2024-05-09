@@ -32,7 +32,7 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def title = "NLPwShiyi - Natural Language Processing with Shiyi"
 @def website_description = "Website for documenting my journey of understanding Natural Language Processing"
-@def prepath = "NLPWME"
+@def prepath = "nlpwme"
 
 <!-- @def website_url   = "https://dataflowr.github.io/mydocs/" -->
 
