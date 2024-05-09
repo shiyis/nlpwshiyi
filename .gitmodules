@@ -1,0 +1,3 @@
+[submodule "nlp-docs"]
+	path = nlp-docs
+	url = https://github.com/shiyis/nlp-docs.git
