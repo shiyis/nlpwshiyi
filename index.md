@@ -4,12 +4,10 @@
 # Understanding Natural Language Processing with Me!
 
 
-Hi, I’m Shiyi (about [me](https://shiyis.github.io/nlpwme/aboutme/)). Welcome to my technical blog. I will be documenting my journey of learning Natural Language Processing here. I will be presenting everything I have learned so far, including important concepts, necessary code snippets, and more. I am by no means an expert in this subject, but I have gone through extensive studies and training in the fields and subfields related to have a good grasp of what’s important.
+Hi, I’m Shiyi. Welcome to my technical blog. Please check out this [page](https://shiyis.github.io/nlp-docs) for a more personal account of my journey with respect to learning Natural Language Processing. Here I will only be documenting the gist. I will be presenting everything I have learned so far, including important concepts, necessary code snippets, and more. I am by no means an expert in this subject, but I have gone through extensive studies and training in the fields and subfields related to have a good grasp of what’s important.
 
 
 Areas that I have dabbled in,
-
-
 
 ```
 → General Linguistics
