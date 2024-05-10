@@ -76,11 +76,9 @@ We assume that, given the central target word, the context words are generated i
 
 $$\mathbb{P}(\textrm{the}\mid\textrm{loves})\cdot\mathbb{P}(\textrm{man}\mid\textrm{loves})\cdot\mathbb{P}(\textrm{his}\mid\textrm{loves})\cdot\mathbb{P}(\textrm{son}\mid\textrm{loves}) $$
     
----
 
 ![alt=skip-gram-demo](https://www.di.ens.fr/~lelarge/skip-gram.svg)
 
----
     
 In the skip-gram model, each word is represented as two $d$-dimension vectors, which are used to compute the conditional probability. We assume that the word is indexed as $i$ in the dictionary, its vector is represented as $\boldsymbol{v}_i\in\mathbb{R}^d$ when it is the central target word, and $\boldsymbol{u}_i\in\mathbb{R}^d$ when it is a context word.  Let the central target word $w_c$ and context word $w_o$ be indexed as $c$ and $o$ respectively in the dictionary. The conditional probability of generating the context word for the given central target word can be obtained by performing a softmax operation on the vector inner product:
 
