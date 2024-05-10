@@ -104,6 +104,10 @@ html {
     padding-left: 6%;
     padding-right: 6%;
   }
+
+  #myButton {
+    background: linear-gradient(to bottom right, white 50%, black 50%);
+  }
 }
 
 /* ==================================================================
