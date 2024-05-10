@@ -1370,6 +1370,14 @@ img[alt=intro] {
 }
 
 
+.icon {
+  width:auto;
+  height: auto;
+  background-repeat: no-repeat;
+  background-image: url("../assets/copy-regular.svg");
+}
+
+
 
 img[alt=intro] {
   width: 145px;
@@ -1403,3 +1411,5 @@ img[alt=finite_fig2] {
   margin-right: auto;
   width: 40%;
 }
+
+
