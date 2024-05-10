@@ -923,7 +923,8 @@
 
 .fa-copy:before,
 .fa-files-o:before {
-  content: "\f0c5"
+  /* content: "\f0c5" */
+  content: " "
 }
 
 .fa-paperclip:before {
@@ -1071,7 +1072,8 @@
 
 .fa-paste:before,
 .fa-clipboard:before {
-  content: "\f0ea"
+  /* content: "\f0ea" */
+  content: " "
 }
 
 .fa-lightbulb-o:before {

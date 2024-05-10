@@ -1159,9 +1159,6 @@ pre code {
     margin-right: auto;
   }
 
-  a {
-    font-size: 1.2rem;
-  }
 
 }
 
@@ -1372,6 +1369,21 @@ img[alt=intro] {
 
 }
 
+#copy {
+  width:auto;
+  height: auto;
+  background-repeat: no-repeat;
+  background-image: url("../assets/clipboard-solid.svg");
+}
+
+/* #paste {
+
+  width:auto;
+  height: auto;
+  background-repeat: no-repeat;
+  background-image: url("../assets/check-solid.svg");
+} */
+
 
 
 img[alt=intro] {
@@ -1406,3 +1418,5 @@ img[alt=finite_fig2] {
   margin-right: auto;
   width: 40%;
 }
+
+
