@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+   <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+   
+
+  <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/celeste.min.css">
+
+<link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+<!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+<link rel="icon" type="image/png" sizes="152x152" href="/assets/robot_smaller_152x152.png">
+<link rel="icon" type="image/x-icon" sizes="64x64" href="/assets/robot_smaller_64x64.png">
+<link rel="icon" type="image/x-icon" sizes="32x32" href="/assets/robot_smaller_32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/robot_smaller_64x64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/robot_smaller_32x32.png">
+
+
+   <title>NLPwShiyi - Natural Language Processing with Shiyi</title>  
+</head>
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+<nav id="navbar" class="navigation" role="navigation">
+  <input id="toggle1" type="checkbox" />
+  <label class="hamburger1" for="toggle1">
+    <div class="top"></div>
+    <div class="meat"></div>
+    <div class="bottom"></div>
+  </label>
+
+  <nav class="topnav mx-auto" id="myTopnav">
+    <div class="dropdown">
+      <button class="dropbtn">Comp Ling
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <!-- <a href="/modules/1a-phil-of-mind">Philosophy of Mind</a> -->
+        <a href="/modules/1b-info-theory">Information Theory</a>
+        <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+        <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+        <a href="/modules/1e-mutual-info">Mutual Information</a>
+        <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+        <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+        <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+        <!-- <a href="/modules/1i-cryptanalysis">Cryptography</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >DL / NLP
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <!-- <a href="/modules/2a-mdn-nlp">Modern NLP</a> -->
+        <a href="/modules/2b-markov-processes">Markov Processes</a>
+        <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+        <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+        <a href="/modules/2f-loss-functions">Stochastic GD</a>
+        <a href="/modules/2c-word2vec">Word2Vec</a>
+        <a href="/modules/2g-batchnorm">Batchnorm</a>
+        <a href="/modules/2j-perplexity">Perplexity</a>
+        <a href="/modules/2h-dropout">Dropout</a>
+        <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+        <a href="/modules/2k-VAE">Variational Autoencoders</a>
+        <a href="/modules/2l-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+      </div>
+    </div>
+    <a href="/" class="active">Intro </a>
+    <div class="dropdown">
+      <button class="dropbtn" >SOTA
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+
+        <a href="/modules/3a-transformers"> GPT (Generative Pre-trained Transformer) </a>
+        <a href="/modules/3b-xlnet"> XLNet (Generalized Autoregressive Pretraining) </a>
+        <a href="/modules/3c-roberta"> RoBERTa (Robustly optimized BERT approach) </a>
+        <a href="/modules/3d-t5"> T5 (Text-to-Text Transfer Transformer) </a>
+        <a href="/modules/3e-clip"> CLIP (Contrastive Language-Image Pre-training) </a>
+        
+        <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >Hands-on
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+        <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+        <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+        <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF Seq2Seq</a>
+        <a href="/modules/4e-c4fe-tbip">Text-based Ideal Points Model</a>
+        <!-- <a href="/modules/4f-server-build">WebServer Build Example</a> -->
+        <a href="/modules/4g-etl-job">Serverless ETL Example</a>
+        <a href="/modules/4h-ocr-data-aug">OCR Text Augmentation</a>
+        <a href="/modules/4i-neo4j-gql">Neo4j GQL Example</a>
+        <!-- <a href="/modules/4j-amr-parser">AMR Parser Example</a> -->
+
+
+        
+
+      </div>
+    </div>
+  </nav>
+</nav>
+  
+  
+<!-- Content appended here -->
+  <!-- {{if hascode}} {{insert copy_paste.html}} {{end}} --><div class="franklin-content"><h2 id="clip_or_the_contrastive_language-image_pre-training"><a href="#clip_or_the_contrastive_language-image_pre-training" class="header-anchor">CLIP or The Contrastive Language-Image Pre-training </a></h2>
+<p>Here&#39;s a breakdown of CLIP &#40;Contrastive Language-Image Pre-training&#41; along with a simple coding example:</p>
+<h3 id="clip_breakdown"><a href="#clip_breakdown" class="header-anchor">CLIP Breakdown:</a></h3>
+<ol>
+<li><p><strong>Contrastive Learning Objective</strong>:</p>
+<ul>
+<li><p>CLIP is trained using a contrastive learning approach, where it learns to associate images and corresponding textual descriptions. The model is trained to maximize agreement between image-text pairs and minimize agreement between mismatched pairs.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Unified Vision-Text Embedding Space</strong>:</p>
+<ul>
+<li><p>CLIP learns a shared embedding space for both images and text, allowing it to represent visual and textual information in a common feature space. This enables the model to perform various tasks involving image-text interactions.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Vision Transformer &#40;ViT&#41; Backbone</strong>:</p>
+<ul>
+<li><p>CLIP utilizes a vision transformer &#40;ViT&#41; backbone for processing images. ViT divides the input image into patches, which are then linearly embedded and processed by transformer layers, enabling the model to capture spatial relationships in the image.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Text Encoding</strong>:</p>
+<ul>
+<li><p>CLIP encodes textual descriptions using a transformer-based architecture similar to T5. It processes the text input through stacked transformer layers to extract meaningful representations of text.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Cross-modal Alignment</strong>:</p>
+<ul>
+<li><p>CLIP learns to align the representations of images and text in the shared embedding space. This allows the model to perform tasks such as image classification, image retrieval, and image generation based on textual prompts.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="simple_coding_example"><a href="#simple_coding_example" class="header-anchor">Simple Coding Example:</a></h3>
+<pre><code class="language-python">import torch
+import clip
+
+# Load pre-trained CLIP model
+device &#61; &quot;cuda&quot; if torch.cuda.is_available&#40;&#41; else &quot;cpu&quot;
+model, preprocess &#61; clip.load&#40;&quot;ViT-B/32&quot;, device&#61;device&#41;
+
+# Example image and text
+image &#61; preprocess&#40;torch.randn&#40;3, 224, 224&#41;&#41;.unsqueeze&#40;0&#41;.to&#40;device&#41;
+text &#61; clip.tokenize&#40;&#91;&quot;a photo of a cat&quot;&#93;&#41;.to&#40;device&#41;
+
+# Perform image-text embedding
+with torch.no_grad&#40;&#41;:
+    image_features &#61; model.encode_image&#40;image&#41;
+    text_features &#61; model.encode_text&#40;text&#41;
+
+# Calculate cosine similarity between image and text features
+similarity &#61; &#40;image_features @ text_features.T&#41;.squeeze&#40;0&#41;
+
+# Print similarity score
+print&#40;&quot;Similarity score:&quot;, similarity.item&#40;&#41;&#41;</code></pre>
+<p>In this example, we load a pre-trained CLIP model and preprocess an example image and text. We then encode both the image and text into feature vectors using the model&#39;s <code>encode_image</code> and <code>encode_text</code> functions, respectively. Finally, we calculate the cosine similarity between the image and text features to measure their semantic similarity.</p>
+<div class="page-foot">
+    <div class="copyright">
+      <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+       ©️ Last modified: May 09, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+    </div>
+  </div>
+  </div><!-- CONTENT ENDS HERE -->
+    
+    
+        <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>

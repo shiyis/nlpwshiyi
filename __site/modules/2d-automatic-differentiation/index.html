@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+     
+   <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+   
+
+  <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/celeste.min.css">
+
+<link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+<!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+<link rel="icon" type="image/png" sizes="152x152" href="/assets/robot_smaller_152x152.png">
+<link rel="icon" type="image/x-icon" sizes="64x64" href="/assets/robot_smaller_64x64.png">
+<link rel="icon" type="image/x-icon" sizes="32x32" href="/assets/robot_smaller_32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/robot_smaller_64x64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/robot_smaller_32x32.png">
+
+
+   <title>NLPwShiyi - Natural Language Processing with Shiyi</title>  
+</head>
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+<nav id="navbar" class="navigation" role="navigation">
+  <input id="toggle1" type="checkbox" />
+  <label class="hamburger1" for="toggle1">
+    <div class="top"></div>
+    <div class="meat"></div>
+    <div class="bottom"></div>
+  </label>
+
+  <nav class="topnav mx-auto" id="myTopnav">
+    <div class="dropdown">
+      <button class="dropbtn">Comp Ling
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <!-- <a href="/modules/1a-phil-of-mind">Philosophy of Mind</a> -->
+        <a href="/modules/1b-info-theory">Information Theory</a>
+        <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+        <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+        <a href="/modules/1e-mutual-info">Mutual Information</a>
+        <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+        <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+        <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+        <!-- <a href="/modules/1i-cryptanalysis">Cryptography</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >DL / NLP
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <!-- <a href="/modules/2a-mdn-nlp">Modern NLP</a> -->
+        <a href="/modules/2b-markov-processes">Markov Processes</a>
+        <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+        <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+        <a href="/modules/2f-loss-functions">Stochastic GD</a>
+        <a href="/modules/2c-word2vec">Word2Vec</a>
+        <a href="/modules/2g-batchnorm">Batchnorm</a>
+        <a href="/modules/2j-perplexity">Perplexity</a>
+        <a href="/modules/2h-dropout">Dropout</a>
+        <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+        <a href="/modules/2k-VAE">Variational Autoencoders</a>
+        <a href="/modules/2l-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+      </div>
+    </div>
+    <a href="/" class="active">Intro </a>
+    <div class="dropdown">
+      <button class="dropbtn" >SOTA
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+
+        <a href="/modules/3a-transformers"> GPT (Generative Pre-trained Transformer) </a>
+        <a href="/modules/3b-xlnet"> XLNet (Generalized Autoregressive Pretraining) </a>
+        <a href="/modules/3c-roberta"> RoBERTa (Robustly optimized BERT approach) </a>
+        <a href="/modules/3d-t5"> T5 (Text-to-Text Transfer Transformer) </a>
+        <a href="/modules/3e-clip"> CLIP (Contrastive Language-Image Pre-training) </a>
+        
+        <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >Hands-on
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+        <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+        <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+        <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF Seq2Seq</a>
+        <a href="/modules/4e-c4fe-tbip">Text-based Ideal Points Model</a>
+        <!-- <a href="/modules/4f-server-build">WebServer Build Example</a> -->
+        <a href="/modules/4g-etl-job">Serverless ETL Example</a>
+        <a href="/modules/4h-ocr-data-aug">OCR Text Augmentation</a>
+        <a href="/modules/4i-neo4j-gql">Neo4j GQL Example</a>
+        <!-- <a href="/modules/4j-amr-parser">AMR Parser Example</a> -->
+
+
+        
+
+      </div>
+    </div>
+  </nav>
+</nav>
+  
+  
+<!-- Content appended here -->
+  <!-- {{if hascode}} {{insert copy_paste.html}} {{end}} --><div class="franklin-content"><h1 id="automatic_differentiation_what_is_it_and_why_do_we_need_it"><a href="#automatic_differentiation_what_is_it_and_why_do_we_need_it" class="header-anchor">Automatic Differentiation: What Is It and Why Do We Need It? </a></h1>
+<p><strong>Table of Contents</strong></p>
+<div class="franklin-toc"><ol><li><a href="#technicalities_of_automatic_differentiation">Technicalities of Automatic Differentiation</a></li><li><a href="#hand_derivation_of_automatic_differentiation">Hand Derivation of Automatic Differentiation</a></li><li><a href="#backward_propagation_graphic_example">Backward Propagation Graphic Example</a></li><li><a href="#running_the_code_example">Running The Code Example </a></li><li><a href="#linear_regression_with_autograd">Linear Regression with Autograd </a><ol><li><a href="#linear_regression_with_neural_network">Linear Regression with Neural Network </a></li><li><a href="#play_with_the_code_using_pytorch">Play with The Code Using Pytorch </a></li><li><a href="#auxiliary_codes">Auxiliary Codes </a></li></ol></li></ol></div>
+<p>Automatic differentiation &#40;AD&#41; is a crucial technique in the field of machine learning for optimizing models through the training process. </p>
+<p>Below attached is a video of one of the lessons from the CMU deep learning classes cmu10714 I find really helpful and useful. It&#39;s one of the steps of a simple implementation of a ML Module called NEEDLE, and in this video the important gists of automatic differentiation is covered. </p>
+<h2 id="technicalities_of_automatic_differentiation"><a href="#technicalities_of_automatic_differentiation" class="header-anchor">Technicalities of Automatic Differentiation</a></h2>
+<p>    <div id="videoContainer" >
+            <div id="player"></div>        
+    </div>
+    <script>
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            width: '100%',
+            position: 'relative',
+            left: '0px',
+            videoId: 'cNADlHfHQHg',
+            playerVars: {
+                'autoplay': 0,
+                'rel': 0,
+                'cc_load_policy': 1
+            }
+        });
+    }
+
+    function changeYouTubeSource(startTime, endTime) {
+
+        var youtubeIframe = document.getElementById('player');
+
+        var youtubeIframeSrc = document.getElementById('player').getAttribute('src');
+
+        var trimmedIframeUrl = '';
+        var iframeUrlTimeStamp = '';
+
+        if (youtubeIframeSrc.match(/&start=/g)) {
+            var mediaFragmentIndex = youtubeIframeSrc.indexOf('&start=');
+            trimmedIframeUrl = youtubeIframeSrc.slice(0, mediaFragmentIndex);
+
+            if (endTime === 0) {
+                iframeUrlTimeStamp = trimmedIframeUrl + '&start=' + startTime;
+            } else {
+                iframeUrlTimeStamp = trimmedIframeUrl + '&start=' + startTime + '&end=' + endTime;
+            }
+        }
+
+        if (youtubeIframeSrc.match(/&start=/g) === null) {
+            if (endTime === 0) {
+                iframeUrlTimeStamp = youtubeIframeSrc + '&start=' + startTime;
+            } else {
+                iframeUrlTimeStamp = youtubeIframeSrc + '&start=' + startTime + '&end=' + endTime;
+            }
+        }
+
+        setTimeout(function() {
+
+            var iframeAutoplayUrl = iframeUrlTimeStamp.replace('autoplay=0', 'autoplay=1');
+
+            youtubeIframe.setAttribute('src', iframeAutoplayUrl);
+        }, 1000);
+}
+    </script>
+     <br>
+<a href='#player' onclick='changeYouTubeSource(0,0)'> 0:00</a> Introduction
+ <br>
+<a href='#player' onclick='changeYouTubeSource(222,0)'> 3:42</a> The NEEDLE Module
+ <br>
+<a href='#player' onclick='changeYouTubeSource(649,0)'> 10:49</a> Codebase and Data Structures
+ <br>
+<a href='#player' onclick='changeYouTubeSource(860,0)'> 14:20</a> Computational Graph
+ <br>
+<a href='#player' onclick='changeYouTubeSource(1779,0)'> 29:39</a> Executing The Computation
+ <br>
+<a href='#player' onclick='changeYouTubeSource(2758,0)'> 45:58</a> Scenarios Where Things Might Go Amok
+ <br>
+<a href='#player' onclick='changeYouTubeSource(3137,0)'> 52:17</a> Reverse Mode Auto Diff
+</p>
+<h2 id="hand_derivation_of_automatic_differentiation"><a href="#hand_derivation_of_automatic_differentiation" class="header-anchor">Hand Derivation of Automatic Differentiation</a></h2>
+<p>Say we are dealing with the model function below. </p>
+<p>Our model is:</p>
+\[
+y_t = 2x^1_t-3x^2_t+1, \quad t\in\{1,\dots,30\}
+\]
+<p>Our task is given the &#39;observations&#39; \((x_t,y_t)_{t\in\{1,\dots,30\}}\) to recover the weights \(w^1=2, w^2=-3\) and the bias \(b = 1\).</p>
+<p>In order to do so, we will solve the following optimization problem:</p>
+\[
+\underset{w^1,w^2,b}{\operatorname{argmin}} \sum_{t=1}^{30} \left(w^1x^1_t+w^2x^2_t+b-y_t\right)^2
+\]
+<p>In vector form, we define:</p>
+\[
+\hat{y}_t = {\bf w}^T{\bf x}_t+b
+\]
+<p>and we want to minimize the loss given by:</p>
+\[
+loss = \sum_t\underbrace{\left(\hat{y}_t-y_t \right)^2}_{loss_t}.
+\]
+<p>To minimize the loss we first compute the gradient of each \(loss_t\):</p>
+<div class="nonumber">\[\begin{array}{rcl}
+\frac{\partial{loss_t}}{\partial w^1} &=& 2x^1_t\left({\bf w}^T{\bf x}_t+b-y_t \right)\\
+\frac{\partial{loss_t}}{\partial w^2} &=& 2x^2_t\left({\bf w}^T{\bf x}_t+b-y_t \right)\\
+\frac{\partial{loss_t}}{\partial b} &=& 2\left({\bf w}^T{\bf x}_t+b-y_t \right)
+\end{array}\]</div>
+<p>Note that the actual gradient of the loss is given by:</p>
+\[
+\frac{\partial{loss}}{\partial w^1} =\sum_t \frac{\partial{loss_t}}{\partial w^1},\quad
+\frac{\partial{loss}}{\partial w^2} =\sum_t \frac{\partial{loss_t}}{\partial w^2},\quad
+\frac{\partial{loss}}{\partial b} =\sum_t \frac{\partial{loss_t}}{\partial b}
+\]
+<p>For one epoch, <strong>&#40;Batch&#41; Gradient Descent</strong> updates the weights and bias as follows:</p>
+<div class="nonumber">\[\begin{array}{rcl}
+w^1_{new}&=&w^1_{old}-\alpha\frac{\partial{loss}}{\partial w^1} \\
+w^2_{new}&=&w^2_{old}-\alpha\frac{\partial{loss}}{\partial w^2} \\
+b_{new}&=&b_{old}-\alpha\frac{\partial{loss}}{\partial b},
+\end{array}\]</div>
+<p>and then we run several epochs.</p>
+<h2 id="backward_propagation_graphic_example"><a href="#backward_propagation_graphic_example" class="header-anchor">Backward Propagation Graphic Example</a></h2>
+<p><img src="../extras/auto_diff/image.png" alt="alt text" /></p>
+<h2 id="running_the_code_example"><a href="#running_the_code_example" class="header-anchor">Running The Code Example </a></h2>
+<p>Initializing Random Weights for Our Example</p>
+<pre><code class="language-Python"># randomly initialize learnable weights and bias
+w_init &#61; random&#40;2&#41;
+b_init &#61; random&#40;1&#41;
+
+w &#61; w_init
+b &#61; b_init
+print&#40;&quot;initial values of the parameters:&quot;, w, b &#41;</code></pre>
+<pre><code class="language-Python"># our model forward pass
+def forward&#40;x&#41;:
+    return x.dot&#40;w&#41;&#43;b
+
+# Loss function
+def loss&#40;x, y&#41;:
+    y_pred &#61; forward&#40;x&#41;
+    return &#40;y_pred - y&#41;**2 
+
+# compute gradient
+def gradient&#40;x, y&#41;:  # d_loss/d_w, d_loss/d_c
+    return 2*&#40;x.dot&#40;w&#41;&#43;b - y&#41;*x, 2 * &#40;x.dot&#40;w&#41;&#43;b - y&#41;
+ 
+learning_rate &#61; 1e-2
+# Training loop
+for epoch in range&#40;10&#41;:
+    grad_w &#61; np.array&#40;&#91;0,0&#93;&#41;
+    grad_b &#61; np.array&#40;0&#41;
+    l &#61; 0
+    for x_val, y_val in zip&#40;x, y&#41;:
+        grad_w &#61; np.add&#40;grad_w,gradient&#40;x_val, y_val&#41;&#91;0&#93;&#41;
+        grad_b &#61; np.add&#40;grad_b,gradient&#40;x_val, y_val&#41;&#91;1&#93;&#41;
+        l &#43;&#61; loss&#40;x_val, y_val&#41;
+    w &#61; w - learning_rate * grad_w
+    b &#61; b - learning_rate * grad_b
+    print&#40;&quot;progress:&quot;, &quot;epoch:&quot;, epoch, &quot;loss&quot;,l&#91;0&#93;&#41;
+
+# After training
+print&#40;&quot;estimation of the parameters:&quot;, w, b&#41;</code></pre>
+<h2 id="linear_regression_with_autograd"><a href="#linear_regression_with_autograd" class="header-anchor">Linear Regression with Autograd </a></h2>
+<pre><code class="language-Python"># Setting requires_grad&#61;True indicates that we want to compute 
+# gradients with respect to these Tensors during the backward 
+# pass.
+
+w_v &#61; w_init_t.clone&#40;&#41;.unsqueeze&#40;1&#41;
+w_v.requires_grad_&#40;True&#41;
+b_v &#61; b_init_t.clone&#40;&#41;.unsqueeze&#40;1&#41;
+b_v.requires_grad_&#40;True&#41;
+print&#40;&quot;initial values of the parameters:&quot;, w_v.data, b_v.data &#41;</code></pre>
+<p>An implementation of &#40;Batch&#41; Gradient Descent without computing explicitly the gradient and using autograd instead. </p>
+<pre><code class="language-Python">for epoch in range&#40;10&#41;:
+    y_pred &#61; x_t.mm&#40;w_v&#41;&#43;b_v
+    loss &#61; &#40;y_pred - y_t&#41;.pow&#40;2&#41;.sum&#40;&#41;
+    
+    # Use autograd to compute the backward pass. This call will compute the
+    # gradient of loss with respect to all Variables with requires_grad&#61;True.
+    # After this call w.grad and b.grad will be tensors holding the gradient
+    # of the loss with respect to w and b respectively.
+    loss.backward&#40;&#41;
+    
+    # Update weights using gradient descent. For this step we just want to 
+    # mutate the values of w_v and b_v in-place; we don&#39;t want to build up 
+    # a computational graph for the update steps, so we use the 
+    # torch.no_grad&#40;&#41; context manager to prevent PyTorch from building  a 
+    # computational graph for the updates
+    with torch.no_grad&#40;&#41;:
+        w_v -&#61; learning_rate * w_v.grad
+        b_v -&#61; learning_rate * b_v.grad
+    
+    # Manually zero the gradients after updating weights
+    # otherwise gradients will be accumulated after each .backward&#40;&#41;
+    w_v.grad.zero_&#40;&#41;
+    b_v.grad.zero_&#40;&#41;
+    
+    print&#40;&quot;progress:&quot;, &quot;epoch:&quot;, epoch, &quot;loss&quot;,loss.data.item&#40;&#41;&#41;
+
+# After training
+print&#40;&quot;estimation of the parameters:&quot;, w_v.data, b_v.data.t&#40;&#41; &#41;</code></pre>
+<h3 id="linear_regression_with_neural_network"><a href="#linear_regression_with_neural_network" class="header-anchor">Linear Regression with Neural Network </a></h3>
+<p>An implementation of <strong>&#40;Batch&#41; Gradient Descent</strong> using the nn package. Here we have a super simple model with only one layer and no activation function&#33;</p>
+<pre><code class="language-Python"># Use the nn package to define our model as a sequence of layers. 
+# nn.Sequential is a Module which contains other Modules, and applies 
+# them in sequence to produce its output. Each Linear Module computes 
+# output from input using a linear function, and holds internal Variables 
+# for its weight and bias.
+
+model &#61; torch.nn.Sequential&#40;
+    torch.nn.Linear&#40;2, 1&#41;,
+&#41;
+
+for m in model.children&#40;&#41;:
+    m.weight.data &#61; w_init_t.clone&#40;&#41;.unsqueeze&#40;0&#41;
+    m.bias.data &#61; b_init_t.clone&#40;&#41;
+
+# The nn package also contains definitions of popular loss functions; 
+# in this case we will use Mean Squared Error &#40;MSE&#41; as our loss function.
+loss_fn &#61; torch.nn.MSELoss&#40;reduction&#61;&#39;sum&#39;&#41;
+
+# switch to train mode
+model.train&#40;&#41;
+
+for epoch in range&#40;10&#41;:
+    # Forward pass: compute predicted y by passing x to the model.
+    # Module objects override the __call__ operator so you can call 
+    # them like functions. When doing so you pass a Variable of 
+    # input data to the Module and it produces a Variable of output data.
+    y_pred &#61; model&#40;x_t&#41;
+  
+    # Note this operation is equivalent to: pred &#61; model.forward&#40;x_v&#41;
+    # Compute and print loss. We pass Variables containing the predicted 
+    # and true values of y, and the loss function returns a Variable 
+    # containing the loss.
+    loss &#61; loss_fn&#40;y_pred, y_t&#41;
+
+    # Zero the gradients before running the backward pass.
+    model.zero_grad&#40;&#41;
+
+    # Backward pass: compute gradient of the loss with respect to all 
+    # the learnable parameters of the model. Internally, the parameters 
+    # of each Module are stored in Variables with requires_grad&#61;True, 
+    # so this call will compute gradients for all learnable parameters 
+    # in the model.
+    loss.backward&#40;&#41;
+
+    # Update the weights using gradient descent. Each parameter is a 
+    # Tensor, so we can access its data and gradients like we did before.
+    with torch.no_grad&#40;&#41;:
+        for param in model.parameters&#40;&#41;:
+            param.data -&#61; learning_rate * param.grad
+        
+    print&#40;&quot;progress:&quot;, &quot;epoch:&quot;, epoch, &quot;loss&quot;,loss.data.item&#40;&#41;&#41;
+
+# After training
+print&#40;&quot;estimation of the parameters:&quot;&#41;
+for param in model.parameters&#40;&#41;:
+    print&#40;param&#41;</code></pre>
+<p>Last step, we update the weights and bias. </p>
+<pre><code class="language-Python">model &#61; torch.nn.Sequential&#40;
+    torch.nn.Linear&#40;2, 1&#41;,
+&#41;
+
+for m in model.children&#40;&#41;:
+    m.weight.data &#61; w_init_t.clone&#40;&#41;.unsqueeze&#40;0&#41;
+    m.bias.data &#61; b_init_t.clone&#40;&#41;
+
+loss_fn &#61; torch.nn.MSELoss&#40;reduction&#61;&#39;sum&#39;&#41;
+
+model.train&#40;&#41;
+
+optimizer &#61; torch.optim.SGD&#40;model.parameters&#40;&#41;, lr&#61;learning_rate&#41;
+
+
+for epoch in range&#40;10&#41;:
+    y_pred &#61; model&#40;x_t&#41;
+    loss &#61; loss_fn&#40;y_pred, y_t&#41;
+    print&#40;&quot;progress:&quot;, &quot;epoch:&quot;, epoch, &quot;loss&quot;,loss.item&#40;&#41;&#41;
+    # Zero gradients, perform a backward pass, and update the weights.
+    optimizer.zero_grad&#40;&#41;
+    loss.backward&#40;&#41;
+    optimizer.step&#40;&#41;
+    
+    
+# After training
+print&#40;&quot;estimation of the parameters:&quot;&#41;
+for param in model.parameters&#40;&#41;:
+    print&#40;param&#41;</code></pre>
+<h3 id="play_with_the_code_using_pytorch"><a href="#play_with_the_code_using_pytorch" class="header-anchor">Play with The Code Using Pytorch </a></h3>
+<p>Change the number of samples and see what happens. </p>
+<pre><code class="language-Python">x &#61; random&#40;&#40;300,2&#41;&#41;
+y &#61; np.dot&#40;x, &#91;2., -3.&#93;&#41; &#43; 1.
+x_t &#61; torch.from_numpy&#40;x&#41;.type&#40;dtype&#41;
+y_t &#61; torch.from_numpy&#40;y&#41;.type&#40;dtype&#41;.unsqueeze&#40;1&#41;
+
+
+model &#61; torch.nn.Sequential&#40;
+    torch.nn.Linear&#40;2, 1&#41;,
+&#41;
+
+for m in model.children&#40;&#41;:
+    m.weight.data &#61; w_init_t.clone&#40;&#41;.unsqueeze&#40;0&#41;
+    m.bias.data &#61; b_init_t.clone&#40;&#41;
+
+loss_fn &#61; torch.nn.MSELoss&#40;reduction &#61; &#39;sum&#39;&#41;
+
+model.train&#40;&#41;
+
+optimizer &#61; torch.optim.SGD&#40;model.parameters&#40;&#41;, lr&#61;learning_rate&#41;
+
+
+for epoch in range&#40;10&#41;:
+    y_pred &#61; model&#40;x_t&#41;
+    loss &#61; loss_fn&#40;y_pred, y_t&#41;
+    print&#40;&quot;progress:&quot;, &quot;epoch:&quot;, epoch, &quot;loss&quot;,loss.item&#40;&#41;&#41;
+    # Zero gradients, perform a backward pass, and update the weights.
+    optimizer.zero_grad&#40;&#41;
+    loss.backward&#40;&#41;
+    optimizer.step&#40;&#41;
+    
+    
+# After training
+print&#40;&quot;estimation of the parameters:&quot;&#41;
+for param in model.parameters&#40;&#41;:
+    print&#40;param&#41;</code></pre>
+<h3 id="auxiliary_codes"><a href="#auxiliary_codes" class="header-anchor">Auxiliary Codes </a></h3>
+<p>Here are some more reasons why automatic differentiation is essential and applicable in this context:</p>
+<blockquote>
+<p><strong>Efficient Gradient Computation</strong>:  Autodiff allows you to compute gradients efficiently without manually deriving and implementing them.</p>
+</blockquote>
+<p>Sample Python code: </p>
+<pre><code class="language-Python">import tensorflow as tf
+
+x &#61; tf.constant&#40;2.0&#41;
+
+with tf.GradientTape&#40;&#41; as tape:
+    y &#61; x**2
+
+dy_dx &#61; tape.gradient&#40;y, x&#41;
+print&#40;dy_dx.numpy&#40;&#41;&#41;  # Output: 4.0</code></pre>
+<blockquote>
+<p><strong>Higher-order Gradients</strong>: Autodiff can easily compute higher-order derivatives without much additional effort.</p>
+</blockquote>
+<p>Sample Python code: </p>
+<pre><code class="language-julia">import tensorflow as tf
+
+x &#61; tf.constant&#40;2.0&#41;
+
+with tf.GradientTape&#40;&#41; as tape1:
+    with tf.GradientTape&#40;&#41; as tape2:
+        y &#61; x**3
+    dy_dx &#61; tape2.gradient&#40;y, x&#41;
+
+d2y_dx2 &#61; tape1.gradient&#40;dy_dx, x&#41;
+print&#40;d2y_dx2.numpy&#40;&#41;&#41;  # Output: 12.0</code></pre>
+<blockquote>
+<p><strong>Optimization with Gradient Descent</strong>: Autodiff facilitates gradient-based optimization algorithms like gradient descent.</p>
+</blockquote>
+<p>Sample Python code:</p>
+<pre><code class="language-julia">import tensorflow as tf
+
+x &#61; tf.Variable&#40;3.0, trainable&#61;True&#41;
+y &#61; x**2
+
+optimizer &#61; tf.optimizers.SGD&#40;learning_rate&#61;0.1&#41;
+
+for _ in range&#40;100&#41;:
+    with tf.GradientTape&#40;&#41; as tape:
+        y &#61; x**2
+    gradients &#61; tape.gradient&#40;y, x&#41;
+    optimizer.apply_gradients&#40;&#91;&#40;gradients, x&#41;&#93;&#41;
+
+print&#40;x.numpy&#40;&#41;&#41;  # Output: close to 0.0 &#40;minimum of y&#61;x^2&#41;</code></pre>
+<blockquote>
+<p><strong>Neural Network Training</strong>: Autodiff is essential for training neural networks efficiently by computing gradients for the backpropagation algorithm.</p>
+</blockquote>
+<p>Sample Python code:</p>
+<pre><code class="language-julia">import tensorflow as tf
+
+# Define a simple neural network
+model &#61; tf.keras.Sequential&#40;&#91;
+        tf.keras.layers.Dense&#40;10, activation&#61;&#39;relu&#39;, input_shape&#61;&#40;5,&#41;&#41;,
+        tf.keras.layers.Dense&#40;1&#41;&#93;&#41;
+
+# Define a sample dataset
+data &#61; tf.constant&#40;tf.random.normal&#40;&#40;100, 5&#41;&#41;&#41;
+labels &#61; tf.constant&#40;tf.random.normal&#40;&#40;100, 1&#41;&#41;&#41;
+
+# Training loop
+optimizer &#61; tf.optimizers.Adam&#40;learning_rate&#61;0.01&#41;
+
+for epoch in range&#40;100&#41;:
+    with tf.GradientTape&#40;&#41; as tape:
+        predictions &#61; model&#40;data&#41;
+        loss &#61; tf.losses.mean_squared_error&#40;labels, predictions&#41;
+
+    gradients &#61; tape.gradient&#40;loss, model.trainable_variables&#41;
+    optimizer.apply_gradients&#40;zip&#40;gradients, model.trainable_variables&#41;&#41;
+
+# Model is now trained</code></pre>
+<div class="page-foot">
+    <div class="copyright">
+      <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+       ©️ Last modified: May 09, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+    </div>
+  </div>
+  </div><!-- CONTENT ENDS HERE -->
+    
+        <script src="/libs/katex/katex.min.js"></script>
+<script src="/libs/katex/contrib/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+
+    
+    
+        <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>

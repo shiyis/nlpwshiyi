@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/libs/katex/katex.min.css">
+     
+   <link rel="stylesheet" href="/libs/highlight/styles/github.min.css">
+   
+
+  <link rel="stylesheet" href="/css/franklin.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Source+Code+Pro:400,700" type="text/css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/celeste.min.css">
+
+<link rel="icon" type="image/png" sizes="200x200" href="/assets/robot.png">
+<!-- <link rel="shortcut icon" href="/assets/favicon.ico"> -->
+<link rel="icon" type="image/png" sizes="152x152" href="/assets/robot_smaller_152x152.png">
+<link rel="icon" type="image/x-icon" sizes="64x64" href="/assets/robot_smaller_64x64.png">
+<link rel="icon" type="image/x-icon" sizes="32x32" href="/assets/robot_smaller_32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/robot_smaller_64x64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/robot_smaller_32x32.png">
+
+
+   <title>NLPwShiyi - Natural Language Processing with Shiyi</title>  
+</head>
+<body>
+  <!-- Latest compiled and minified CSS -->
+
+<nav id="navbar" class="navigation" role="navigation">
+  <input id="toggle1" type="checkbox" />
+  <label class="hamburger1" for="toggle1">
+    <div class="top"></div>
+    <div class="meat"></div>
+    <div class="bottom"></div>
+  </label>
+
+  <nav class="topnav mx-auto" id="myTopnav">
+    <div class="dropdown">
+      <button class="dropbtn">Comp Ling
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <!-- <a href="/modules/1a-phil-of-mind">Philosophy of Mind</a> -->
+        <a href="/modules/1b-info-theory">Information Theory</a>
+        <a href="/modules/1c-noisy-channel-model">The Noisy Channel Model</a>
+        <a href="/modules/1d-finite-automata">FSAs and FSTs</a>
+        <a href="/modules/1e-mutual-info">Mutual Information</a>
+        <a href="/modules/1f-cky-algorithm">CKY Algorithm</a>
+        <a href="/modules/1g-viterbi">Viterbi Algorithm</a>
+        <a href="/modules/1h-semantics">Logic and Problem Solving</a>
+        <!-- <a href="/modules/1i-cryptanalysis">Cryptography</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >DL / NLP
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <!-- <a href="/modules/2a-mdn-nlp">Modern NLP</a> -->
+        <a href="/modules/2b-markov-processes">Markov Processes</a>
+        <a href="/modules/2e-jax">Jacobian Matrices Derivation</a>
+        <a href="/modules/2d-automatic-differentiation">Automatic Differentiation</a>
+        <a href="/modules/2f-loss-functions">Stochastic GD</a>
+        <a href="/modules/2c-word2vec">Word2Vec</a>
+        <a href="/modules/2g-batchnorm">Batchnorm</a>
+        <a href="/modules/2j-perplexity">Perplexity</a>
+        <a href="/modules/2h-dropout">Dropout</a>
+        <a href="/modules/2i-depth">Depth: Pros and Cons</a>
+        <a href="/modules/2k-VAE">Variational Autoencoders</a>
+        <a href="/modules/2l-dnns">DNNs(RNNs, CNNs, (Bi)-LSTM)</a>
+      </div>
+    </div>
+    <a href="/" class="active">Intro </a>
+    <div class="dropdown">
+      <button class="dropbtn" >SOTA
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+
+        <a href="/modules/3a-transformers"> GPT (Generative Pre-trained Transformer) </a>
+        <a href="/modules/3b-xlnet"> XLNet (Generalized Autoregressive Pretraining) </a>
+        <a href="/modules/3c-roberta"> RoBERTa (Robustly optimized BERT approach) </a>
+        <a href="/modules/3d-t5"> T5 (Text-to-Text Transfer Transformer) </a>
+        <a href="/modules/3e-clip"> CLIP (Contrastive Language-Image Pre-training) </a>
+        
+        <!-- <a href="/modules/">TODO: Diffusion Prob Models</a> -->
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" >Hands-on
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/modules/4a-mlp-from-scratch">MLP from Scratch</a>
+        <a href="/modules/4b-generative-adversarial-networks">GAN Example </a>
+        <a href="/modules/4c-vae-mnist">VAE for MNIST</a>
+        <a href="/modules/4d-bi-lstm-crf">BI-LSTM-CRF Seq2Seq</a>
+        <a href="/modules/4e-c4fe-tbip">Text-based Ideal Points Model</a>
+        <!-- <a href="/modules/4f-server-build">WebServer Build Example</a> -->
+        <a href="/modules/4g-etl-job">Serverless ETL Example</a>
+        <a href="/modules/4h-ocr-data-aug">OCR Text Augmentation</a>
+        <a href="/modules/4i-neo4j-gql">Neo4j GQL Example</a>
+        <!-- <a href="/modules/4j-amr-parser">AMR Parser Example</a> -->
+
+
+        
+
+      </div>
+    </div>
+  </nav>
+</nav>
+  
+  
+<!-- Content appended here -->
+  <!-- {{if hascode}} {{insert copy_paste.html}} {{end}} --><div class="franklin-content"><h2 id="t5_or_text-to-text_transfer_transformer"><a href="#t5_or_text-to-text_transfer_transformer" class="header-anchor">T5 or Text-To-Text Transfer Transformer</a></h2>
+<p>T5 &#40;Text-to-Text Transfer Transformer&#41; is a versatile model designed to handle various natural language processing tasks using a unified text-to-text format. Here&#39;s a breakdown of T5 and a simple coding example:</p>
+<h3 id="t5_breakdown"><a href="#t5_breakdown" class="header-anchor">T5 Breakdown:</a></h3>
+<ol>
+<li><p><strong>Text-to-Text Format</strong>:</p>
+<ul>
+<li><p>T5 operates on a text-to-text framework, where both inputs and outputs are represented as text. This uniform format allows different tasks to be formulated as text generation or prediction tasks, enabling the model to be trained and applied across a wide range of tasks.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Encoder-Decoder Architecture</strong>:</p>
+<ul>
+<li><p>T5 consists of a transformer-based encoder-decoder architecture, similar to models like BERT and GPT. The encoder processes the input text, while the decoder generates the output text.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Unified Training Objective</strong>:</p>
+<ul>
+<li><p>T5 is trained on a diverse set of text-based tasks using a single objective: minimizing the negative log-likelihood of the target text given the input text. This unified training approach allows T5 to learn generalized language representations that can be fine-tuned for specific tasks.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Task Agnostic Pre-training</strong>:</p>
+<ul>
+<li><p>During pre-training, T5 learns to perform various tasks such as translation, summarization, question answering, and text classification. By training on a mixture of tasks, T5 acquires rich linguistic knowledge that can be transferred to downstream tasks.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Dynamic Masking</strong>:</p>
+<ul>
+<li><p>T5 uses dynamic masking during pre-training, where different tokens are masked at each training iteration. This helps the model learn robust representations that capture the underlying structure of the text.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="formula_for_training_objective"><a href="#formula_for_training_objective" class="header-anchor">Formula for Training Objective:</a></h3>
+<p>Given an input text \( X \) and a target text \( Y \), the objective is to minimize the negative log-likelihood of \( Y \) given \( X \): \( \text{Loss} = -\log P(Y | X) \)</p>
+<p>Where \( P(Y | X) \) is the probability of generating \( Y \) from \( X \) according to the T5 model.</p>
+<h3 id="simple_coding_example"><a href="#simple_coding_example" class="header-anchor">Simple Coding Example:</a></h3>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+from transformers import T5Tokenizer, T5ForConditionalGeneration
+
+# Initialize T5 tokenizer and model
+tokenizer &#61; T5Tokenizer.from_pretrained&#40;&quot;t5-small&quot;&#41;
+model &#61; T5ForConditionalGeneration.from_pretrained&#40;&quot;t5-small&quot;&#41;
+
+# Example input text
+input_text &#61; &quot;translate English to French: Hello, how are you?&quot;
+
+# Tokenize input text
+input_ids &#61; tokenizer.encode&#40;input_text, return_tensors&#61;&quot;pt&quot;&#41;
+
+# Generate output text
+output_ids &#61; model.generate&#40;input_ids&#41;
+
+# Decode output text
+output_text &#61; tokenizer.decode&#40;output_ids&#91;0&#93;, skip_special_tokens&#61;True&#41;
+
+# Print output text
+print&#40;&quot;Translated text:&quot;, output_text&#41;</code></pre>
+<p>This example demonstrates how to use a pre-trained T5 model for text translation. First, the input text is tokenized using the T5 tokenizer. Then, the model generates the output text based on the input text. Finally, the output text is decoded from token IDs to human-readable text.</p>
+<div class="page-foot">
+    <div class="copyright">
+      <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class="github-logo" src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></img></b></a></br>
+       ©️ Last modified: May 09, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+    </div>
+  </div>
+  </div><!-- CONTENT ENDS HERE -->
+    
+        <script src="/libs/katex/katex.min.js"></script>
+<script src="/libs/katex/contrib/auto-render.min.js"></script>
+<script>renderMathInElement(document.body)</script>
+
+    
+    
+        <script src="/libs/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();hljs.configure({tabReplace: '    '});</script>
+
+    
+  </body>
+</html>
