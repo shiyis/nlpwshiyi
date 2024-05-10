@@ -494,7 +494,7 @@ body {
   text-wrap: pretty;
   display: block;
   overflow-x: scroll;
-  border-top: 24px solid #2F2F2F;
+  border-top: 22px solid #2F2F2F;
   border-radius: 7px;
 }
 

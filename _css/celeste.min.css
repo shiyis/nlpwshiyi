@@ -1369,12 +1369,20 @@ img[alt=intro] {
 
 }
 
-i {
+#copy {
   width:auto;
   height: auto;
   background-repeat: no-repeat;
-  background-image: url("../assets/copy-regular.svg");
+  background-image: url("../assets/clipboard-solid.svg");
 }
+
+/* #paste {
+
+  width:auto;
+  height: auto;
+  background-repeat: no-repeat;
+  background-image: url("../assets/check-solid.svg");
+} */
 
 
 
