@@ -55,6 +55,10 @@ b_v.requires_grad_(<span class=hljs-literal >True</span>)
     <span class=hljs-comment ># a computational graph for the update steps, so we use the </span>
     <span class=hljs-comment ># torch.no_grad() context manager to prevent PyTorch from building  a </span>
     <span class=hljs-comment ># computational graph for the updates</span>
+
+    <span class=hljs-comment ># This is because the update steps are not part of the model&#x27;s </span>
+    <span class=hljs-comment ># computation that we want to differentiate. </span>
+    <span class=hljs-comment >#They are just simple in-place updates of the parameters.</span>
     <span class=hljs-keyword >with</span> torch.no_grad():
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
