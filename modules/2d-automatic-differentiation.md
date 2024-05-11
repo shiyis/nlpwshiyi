@@ -158,6 +158,10 @@ for epoch in range(10):
     # a computational graph for the update steps, so we use the 
     # torch.no_grad() context manager to prevent PyTorch from building  a 
     # computational graph for the updates
+
+    # This is because the update steps are not part of the model's 
+    # computation that we want to differentiate. 
+    #They are just simple in-place updates of the parameters.
     with torch.no_grad():
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
