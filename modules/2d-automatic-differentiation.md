@@ -76,6 +76,10 @@ and then we run several epochs.
 
 ![alt text](../extras/auto_diff/image.png)
 
+One thing to note is that, in the picture provided here, the gradient of the loss function with respect to the weights and bias is multiplied by the actual output Y. However, this is not necessary and is not typically done in the actual calculation. 
+
+The purpose of the gradient descent algorithm is to adjust the weights and bias in the direction of the negative gradient of the loss function with respect to the weights and bias, in order to minimize the loss function. Multiplying the gradient by the actual output Y would not contribute to this objective and would not be necessary.
+
 ## Running The Code Example 
 
 Initializing Random Weights for Our Example
@@ -112,6 +116,11 @@ for epoch in range(10):
     grad_w = np.array([0,0])
     grad_b = np.array(0)
     l = 0
+
+    # The addition is used to add the gradients of the loss function
+    # with respect to each weight and bias together, in order to obtain 
+    # the total gradient of the loss function with respect to the 
+    # weights and bias.
     for x_val, y_val in zip(x, y):
         grad_w = np.add(grad_w,gradient(x_val, y_val)[0])
         grad_b = np.add(grad_b,gradient(x_val, y_val)[1])
@@ -161,8 +170,8 @@ for epoch in range(10):
 
     # This is because the update steps are not part of the model's 
     # computation that we want to differentiate. 
-    #They are just simple in-place updates of the parameters.
-    with torch.no_grad():
+    # They are just simple in-place updates of the parameters.
+    with torch.no_grad(): d
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
     
