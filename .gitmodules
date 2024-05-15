@@ -1,2 +1,3 @@
-[submodule "https://github.com/shiyis/nlp-docs.git"]
-	url = nlp-docs
+[submodule "nlp-docs"]
+	url = https://github.com/shiyis/nlp-docs.git
+	path = nlp-docs
