@@ -1,14 +1,14 @@
 @def sequence = ["automatic-diff"]
 
-# Automatic Differentiation: What Is It and Why Do We Need It? 
+# Automatic Differentiation: What Is It and Why Do We Need It?
 
 **Table of Contents**
 
 \toc
 
-Automatic differentiation (AD) is a crucial technique in the field of machine learning for optimizing models through the training process. 
+Automatic differentiation (AD) is a crucial technique in the field of machine learning for optimizing models through the training process.
 
-Below attached is a video of one of the lessons from the CMU deep learning classes cmu10714 I find really helpful and useful. It's one of the steps of a simple implementation of a ML Module called NEEDLE, and in this video the important gists of automatic differentiation is covered. 
+Below attached is a video of one of the lessons from the CMU deep learning classes cmu10714 I find really helpful and useful. It's one of the steps of a simple implementation of a ML Module called NEEDLE, and in this video the important gists of automatic differentiation are covered. 
 
 
 ## Technicalities of Automatic Differentiation
@@ -26,7 +26,7 @@ Below attached is a video of one of the lessons from the CMU deep learning class
 
 ## Hand Derivation of Automatic Differentiation
 
-Say we are dealing with the model function below. 
+Say we are dealing with the model function below.
 
 Our model is:
 $$
@@ -76,11 +76,11 @@ and then we run several epochs.
 
 ![alt text](../extras/auto_diff/image.png)
 
-One thing to note is that, in the picture provided here, the gradient of the loss function with respect to the weights and bias is multiplied by the actual output Y. However, this is not necessary and is not typically done in the actual calculation. 
+One thing to note is that, in the picture provided here, the gradient of the loss function with respect to the weights and bias is multiplied by the actual output Y. However, this is not necessary and is not typically done in the actual calculation.
 
 The purpose of the gradient descent algorithm is to adjust the weights and bias in the direction of the negative gradient of the loss function with respect to the weights and bias, in order to minimize the loss function. Multiplying the gradient by the actual output Y would not contribute to this objective and would not be necessary.
 
-## Running The Code Example 
+## Running The Code Example
 
 Initializing Random Weights for Our Example
 
@@ -104,12 +104,12 @@ def forward(x):
 # Loss function
 def loss(x, y):
     y_pred = forward(x)
-    return (y_pred - y)**2 
+    return (y_pred - y)**2
 
 # compute gradient
 def gradient(x, y):  # d_loss/d_w, d_loss/d_c
     return 2*(x.dot(w)+b - y)*x, 2 * (x.dot(w)+b - y)
- 
+
 learning_rate = 1e-2
 # Training loop
 for epoch in range(10):
@@ -118,8 +118,8 @@ for epoch in range(10):
     l = 0
 
     # The addition is used to add the gradients of the loss function
-    # with respect to each weight and bias together, in order to obtain 
-    # the total gradient of the loss function with respect to the 
+    # with respect to each weight and bias together, in order to obtain
+    # the total gradient of the loss function with respect to the
     # weights and bias.
     for x_val, y_val in zip(x, y):
         grad_w = np.add(grad_w,gradient(x_val, y_val)[0])
@@ -134,12 +134,12 @@ print("estimation of the parameters:", w, b)
 
 ```
 
-## Linear Regression with Autograd 
+## Linear Regression with Autograd
 
 ```Python
 
-# Setting requires_grad=True indicates that we want to compute 
-# gradients with respect to these Tensors during the backward 
+# Setting requires_grad=True indicates that we want to compute
+# gradients with respect to these Tensors during the backward
 # pass.
 
 w_v = w_init_t.clone().unsqueeze(1)
@@ -149,37 +149,37 @@ b_v.requires_grad_(True)
 print("initial values of the parameters:", w_v.data, b_v.data )
 
 ```
-An implementation of (Batch) Gradient Descent without computing explicitly the gradient and using autograd instead. 
-```Python 
+An implementation of (Batch) Gradient Descent without computing explicitly the gradient and using autograd instead.
+```Python
 
 for epoch in range(10):
     y_pred = x_t.mm(w_v)+b_v
     loss = (y_pred - y_t).pow(2).sum()
-    
+
     # Use autograd to compute the backward pass. This call will compute the
     # gradient of loss with respect to all Variables with requires_grad=True.
     # After this call w.grad and b.grad will be tensors holding the gradient
     # of the loss with respect to w and b respectively.
     loss.backward()
-    
-    # Update weights using gradient descent. For this step we just want to 
-    # mutate the values of w_v and b_v in-place; we don't want to build up 
-    # a computational graph for the update steps, so we use the 
-    # torch.no_grad() context manager to prevent PyTorch from building  a 
+
+    # Update weights using gradient descent. For this step we just want to
+    # mutate the values of w_v and b_v in-place; we don't want to build up
+    # a computational graph for the update steps, so we use the
+    # torch.no_grad() context manager to prevent PyTorch from building  a
     # computational graph for the updates
 
-    # This is because the update steps are not part of the model's 
-    # computation that we want to differentiate. 
+    # This is because the update steps are not part of the model's
+    # computation that we want to differentiate.
     # They are just simple in-place updates of the parameters.
     with torch.no_grad(): d
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
-    
+
     # Manually zero the gradients after updating weights
     # otherwise gradients will be accumulated after each .backward()
     w_v.grad.zero_()
     b_v.grad.zero_()
-    
+
     print("progress:", "epoch:", epoch, "loss",loss.data.item())
 
 # After training
@@ -187,17 +187,17 @@ print("estimation of the parameters:", w_v.data, b_v.data.t() )
 
 ```
 
-### Linear Regression with Neural Network 
+### Linear Regression with Neural Network
 
 An implementation of **(Batch) Gradient Descent** using the nn package. Here we have a super simple model with only one layer and no activation function!
 
 
 ```Python
 
-# Use the nn package to define our model as a sequence of layers. 
-# nn.Sequential is a Module which contains other Modules, and applies 
-# them in sequence to produce its output. Each Linear Module computes 
-# output from input using a linear function, and holds internal Variables 
+# Use the nn package to define our model as a sequence of layers.
+# nn.Sequential is a Module which contains other Modules, and applies
+# them in sequence to produce its output. Each Linear Module computes
+# output from input using a linear function, and holds internal Variables
 # for its weight and bias.
 
 model = torch.nn.Sequential(
@@ -208,7 +208,7 @@ for m in model.children():
     m.weight.data = w_init_t.clone().unsqueeze(0)
     m.bias.data = b_init_t.clone()
 
-# The nn package also contains definitions of popular loss functions; 
+# The nn package also contains definitions of popular loss functions;
 # in this case we will use Mean Squared Error (MSE) as our loss function.
 loss_fn = torch.nn.MSELoss(reduction='sum')
 
@@ -217,33 +217,33 @@ model.train()
 
 for epoch in range(10):
     # Forward pass: compute predicted y by passing x to the model.
-    # Module objects override the __call__ operator so you can call 
-    # them like functions. When doing so you pass a Variable of 
+    # Module objects override the __call__ operator so you can call
+    # them like functions. When doing so you pass a Variable of
     # input data to the Module and it produces a Variable of output data.
     y_pred = model(x_t)
-  
+
     # Note this operation is equivalent to: pred = model.forward(x_v)
-    # Compute and print loss. We pass Variables containing the predicted 
-    # and true values of y, and the loss function returns a Variable 
+    # Compute and print loss. We pass Variables containing the predicted
+    # and true values of y, and the loss function returns a Variable
     # containing the loss.
     loss = loss_fn(y_pred, y_t)
 
     # Zero the gradients before running the backward pass.
     model.zero_grad()
 
-    # Backward pass: compute gradient of the loss with respect to all 
-    # the learnable parameters of the model. Internally, the parameters 
-    # of each Module are stored in Variables with requires_grad=True, 
-    # so this call will compute gradients for all learnable parameters 
+    # Backward pass: compute gradient of the loss with respect to all
+    # the learnable parameters of the model. Internally, the parameters
+    # of each Module are stored in Variables with requires_grad=True,
+    # so this call will compute gradients for all learnable parameters
     # in the model.
     loss.backward()
 
-    # Update the weights using gradient descent. Each parameter is a 
+    # Update the weights using gradient descent. Each parameter is a
     # Tensor, so we can access its data and gradients like we did before.
     with torch.no_grad():
         for param in model.parameters():
             param.data -= learning_rate * param.grad
-        
+
     print("progress:", "epoch:", epoch, "loss",loss.data.item())
 
 # After training
@@ -253,7 +253,7 @@ for param in model.parameters():
 
 ```
 
-Last step, we update the weights and bias. 
+Last step, we update the weights and bias.
 
 
 ```Python
@@ -281,8 +281,8 @@ for epoch in range(10):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
-    
+
+
 # After training
 print("estimation of the parameters:")
 for param in model.parameters():
@@ -290,9 +290,9 @@ for param in model.parameters():
 
 ```
 
-### Play with The Code Using Pytorch 
+### Play with The Code Using Pytorch
 
-Change the number of samples and see what happens. 
+Change the number of samples and see what happens.
 
 ```Python
 
@@ -325,8 +325,8 @@ for epoch in range(10):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-    
-    
+
+
 # After training
 print("estimation of the parameters:")
 for param in model.parameters():
@@ -336,16 +336,16 @@ for param in model.parameters():
 
 
 
-### Auxiliary Codes 
+### Auxiliary Codes
 
 Here are some more reasons why automatic differentiation is essential and applicable in this context:
 
-> **Efficient Gradient Computation**: 
+> **Efficient Gradient Computation**:
 > Autodiff allows you to compute gradients efficiently without manually deriving and implementing them.
 
 
 
-Sample Python code: 
+Sample Python code:
 
 ```Python
 import tensorflow as tf
@@ -367,7 +367,7 @@ print(dy_dx.numpy())  # Output: 4.0
 
 
 
-Sample Python code: 
+Sample Python code:
 
 ```
 import tensorflow as tf
@@ -444,12 +444,3 @@ for epoch in range(100):
 # Model is now trained
 
 ```
-
-
-
-
-
-
-
-
-
