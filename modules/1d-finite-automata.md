@@ -63,6 +63,30 @@ If you want to create a state transition diagram that is accurate, you should fi
 The list above is just a small portion of all possible acceptable strings; there are many other strings that contain the letters "a" and "b".
 ```
 
+---
+
+![finite_fig2](../extras/finite_automata/fig2.png)
+
+---
+
+
+
+| State / Symbol | a             | b       |
+| :------------- | :------------ | :------ |
+| $q_0$          | ${q_1}$       | $q_0$   |
+| $q_1$          | ${q_1}$       | $q_0$   |
+
+
+
+
+2) Nondeterministic Finite Automata(NFA): NFA is similar to DFA except following additional features:
+
+1. Null (or ?) move is allowed i.e., it can move forward without reading symbols.
+2. Ability to transmit to any number of states for a particular input.
+
+
+
+
 See below figure:
     As you can see in the transition function is for any input including null (or ?), NFA can go to any state number of states. For example, below is an NFA for the above problem.
 
@@ -73,7 +97,7 @@ See below figure:
 
 ---
 
-![finite_fig2](../extras/finite_automata/fig2.png)
+![finite_fig2](../extras/finite_automata/fig3.png)
 
 ---
 
@@ -133,9 +157,9 @@ In the context of automata theory and computational theory, "deterministic" and 
 Here are some key differences between deterministic and non-deterministic machines:
 
 - **Transitions**: Deterministic machines have exactly one possible transition for each state and input symbol pair, while non-deterministic machines may have multiple possible transitions.
-  
+
 - **Decision Making**: Deterministic machines make decisions based solely on their current state and the input symbol they receive, whereas non-deterministic machines can make "guesses" about which state to transition to.
-  
+
 - **Ambiguity**: Deterministic machines have no ambiguity in their transitions, whereas non-deterministic machines may have ambiguity due to multiple possible transitions.
 
 In summary, deterministic machines follow a single, predictable path of execution based on their current state and input, while non-deterministic machines have the ability to explore multiple paths simultaneously or make non-deterministic choices during computation.
