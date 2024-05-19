@@ -68,6 +68,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/docs/docs/markov_chains/index.html</loc>
+    <lastmod>2024-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/3e-clip/index.html</loc>
     <lastmod>2024-05-19</lastmod>
     <changefreq>monthly</changefreq>
@@ -75,12 +81,6 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4c-vae-mnist/index.html</loc>
-    <lastmod>2024-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4g-etl-job/index.html</loc>
     <lastmod>2024-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -117,6 +117,12 @@
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4b-generative-adversarial-networks/index.html</loc>
+    <lastmod>2024-05-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4g-etl-job/index.html</loc>
     <lastmod>2024-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
