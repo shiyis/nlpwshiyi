@@ -3,6 +3,8 @@
 In this blog, the generalities of Markov Processes will be introduced. The foundation of Markov Processes dewells on the idea that there are states and events. The future behavior of the system depends only on its current state and not on the sequence of events that preceded it. This property is often referred to as the memoryless property.
 
 
+
+
 ##### How Are Markov Processes Applicable Theoretically?
 
 Markov Processes are powerful statistical framework and ideas that could be applied in many different theoretical contexts. The most fundamental would be an investigation of these processes and measures in a mathematical analysis, such as how a limit is met (convergence or stability) while time approaches infinity. This is called the **limit theorem**.
@@ -47,47 +49,6 @@ In a separate blog, Viterbi algorithm will be visited to talk about how the algo
 ##### How Are Markov Processes Applicable in Real Life?
 
 There are many scenarios where Markov processes are applicable in real life due to their ability to model systems with probabilistic state transitions. With some digging, below are some practical applications of Markov processes in various fields.
-
-Below are listed scenarios where they are applicable,
-
-
-
-@@colbox-blue
-
-**Modeling Stock Prices**: Markov processes are used to model the movement of stock prices, where each state represents a certain price level, and transitions occur based on market conditions.
-
-**Economic Forecasting**: Markov models help in analyzing economic conditions by representing different states of the economy and the transitions between them.
-
-**Disease Progression**: Markov models are employed to study the progression of diseases over time, helping healthcare professionals understand the likelihood of transitioning between different health states.
-
-**Pharmacokinetics**: In pharmacology, Markov processes model the absorption, distribution, metabolism, and excretion of drugs within the human body.
-
-**Network Protocols**: Markov processes are used to model communication protocols in computer networks, helping in the analysis of data transmission and error rates.
-
-**Quality of Service**: Telecommunication systems use Markov models to assess and improve the quality of service by analyzing transitions between different states, such as signal strength or network congestion.
-
-**Service Systems**: Markov processes model queueing systems, where the states represent the number of customers in a queue, and transitions correspond to the arrival or departure of customers.
-
-**Call Centers**: Markov processes are applied to analyze call center dynamics, including the number of agents available, waiting times, and customer satisfaction.
-
-**Climate Modeling**: Markov models are used in climate science to simulate transitions between different weather states and assess the likelihood of climate events.
-
-**Ecosystem Dynamics**: Markov processes model transitions between ecological states, helping in the study of population dynamics and biodiversity changes.
-
-**Customer Loyalty**: Markov models are applied to study customer behavior and loyalty, predicting transitions between different customer states, such as active, inactive, or loyal.
-
-**Marketing Strategies**: Businesses use Markov processes to analyze the effectiveness of marketing strategies and understand how customer preferences evolve over time.
-
-**Player Performance**: Markov models are used in sports analytics to model the transitions between different states of player performance during a game.
-
-**Team Strategies**: Coaches and analysts use Markov processes to study the effectiveness of different team strategies and formations.
-
-**Traffic Systems**: Markov processes model the transitions between different traffic flow states, helping in the analysis of congestion and traffic patterns.
-
-**Public Transportation**: Markov models are applied to study the movement of vehicles or passengers in public transportation systems.
-
-@@
-
 
 
 In many cases, Markov processes reach a stationary or steady-state distribution as time  goes to infinity. In this state, the probabilities of being in each state no longer change with time. The stationary distribution provides insights into the long-term behavior of the system.
