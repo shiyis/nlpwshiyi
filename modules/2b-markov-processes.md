@@ -2,53 +2,6 @@
 
 In this blog, the generalities of Markov Processes will be introduced. The foundation of Markov Processes dewells on the idea that there are states and events. The future behavior of the system depends only on its current state and not on the sequence of events that preceded it. This property is often referred to as the memoryless property.
 
-The key components of markov processes are listed below,
-
-
-
-@@colbox-blue
-
-##### What Are Markov Processes Consist of?
-
-1. **States:**
-
-   A system can exist in different states, representing distinct configurations or conditions. Denoted by symbols, numbers, or labels.
-2. **Transition Probabilities:**
-
-   Markov processes are characterized by transition probabilities, which determine the likelihood of moving from one state to another in the next time step.
-
-   These probabilities are often organized into a transition probability matrix.
-3. **Transition Probability Matrix:**
-
-   A square matrix where each element represents the probability of transitioning from one state to another.
-
-   Rows correspond to the current state, and columns correspond to the next state.
-4. **Markov Property:**
-
-   The key feature of Markov processes is the Markov property, stating that the future evolution of the system depends only on its current state and is independent of how the system reached its current state.
-5. **Homogeneity:**
-
-   Markov processes are often assumed to be homogeneous, meaning that transition probabilities do not change over time. The system's dynamics are consistent throughout.
-6. **Continuous and Discrete Time:**
-
-   Markov processes can be classified into continuous-time and discrete-time processes based on whether the state transitions occur at every instant or at discrete time intervals.
-7. **Stationary Distribution:**
-
-   In a steady state, the system may reach a stationary distribution, where the probabilities of being in each state remain constant over time.
-8. **Absorbing and Transient States:**
-
-   Some states may be absorbing, meaning that once entered, the system stays in that state permanently.
-   Transient states are those from which the system may leave and not return.
-9. **Applications:**
-
-   Markov processes find applications in various fields, including physics, economics, biology, and computer science, for modeling dynamic systems with probabilistic transitions.
-10. **Markov Chain:**
-
-    A specific type of Markov process where the state space is discrete and the time parameter takes on discrete values.
-
-@@
-
-
 
 ##### How Are Markov Processes Applicable Theoretically?
 
