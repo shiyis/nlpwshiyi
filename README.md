@@ -4,6 +4,6 @@ supplementary blog to [nlpwme](https://shiyis.github.io/nlpwme/) blog: please ch
 #### Agenda in this blog
 
 
-- Writing more about Theory of Mind and Mental Representations
-- Introduce more context
-- Include Misc. things
+- Writing more about Philosophy of Mind and Mental Representations.
+- Introduce more context.
+- Include Misc. things.
