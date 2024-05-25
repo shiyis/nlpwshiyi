@@ -1,11 +1,8 @@
-
 ![intro](./assets/nlpwshiyi.png)
 
 # Understanding Natural Language Processing with Me!
 
-
-Hi, I’m Shiyi. Welcome to my technical blog. Please check out this [page](https://shiyis.github.io/nlp-docs) for a more personal account of my journey with respect to learning Natural Language Processing. Here I will only be documenting the gist. I will be presenting everything I have learned so far, including important concepts, necessary code snippets, and more. I am by no means an expert in this subject, but I have gone through extensive studies and training in the fields and subfields related to have a good grasp of what’s important.
-
+Hi, I’m Shiyi. Welcome to my technical blog. Please check out this [page](https://shiyis.github.io/nlp-docs) for a more personal account of my journey with respect to learning Natural Language Processing. Here I will only be documenting the gists. I will be presenting everything I have learned so far, including important concepts, necessary code snippets, and more. I am by no means an expert in this subject, but I have gone through extensive studies and training in the fields and subfields related to have a good grasp of what’s important.
 
 Areas that I have dabbled in,
 
@@ -15,10 +12,6 @@ Areas that I have dabbled in,
 → Statistical Natural Language Processing
 → State of the Art Large Language Modeling
 ```
-
-
-
-
 
 ### **The Subject Matter**
 
@@ -34,7 +27,6 @@ What do we mean by Natural Language Processing? If we do a little googling and r
 → Document Classification 
 → Question answering 
 ```
-
 
 ### **A Little Bit Of History**
 
