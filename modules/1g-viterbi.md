@@ -10,8 +10,8 @@ Breaking down what the backward algorithm entails, below is a brief overview:
    Similar to the forward algorithm, the backward algorithm is computed recursively. It starts from the last observation in the sequence and moves backward in time, updating probabilities for each state. The final result is a set of probabilities representing the likelihood of observing the remaining part of the sequence from each state at each time.
 3. **Application in HMMs:**
    The backward probabilities are used in various applications, including:
-   * **Likelihood Calculation:** The backward algorithm is crucial for cal culating the likelihood of the observed sequence, which is essential for training HMMs using methods like the Expectation-Maximization (EM) algorithm.
-   * **Decoding and Inference:** The backward probabilities, combined with the forward probabilities, are used to perform tasks like sequence decoding and finding the most likely state sequence given the observed sequence. This is commonly known as the Viterbi algorithm.
+   **Likelihood Calculation:** The backward algorithm is crucial for calculating the likelihood of the observed sequence, which is essential for training HMMs using methods like the Expectation-Maximization (EM) algorithm.
+   **Decoding and Inference:** The backward probabilities, combined with the forward probabilities, are used to perform tasks like sequence decoding and finding the most likely state sequence given the observed sequence. This is commonly known as the Viterbi algorithm.
 4. **Relationship with Forward Algorithm:**
    The forward and backward algorithms are related through their combination in the context of HMMs. The forward and backward probabilities are used together to compute the posterior probabilities of being in a particular state at a specific time given the observed sequence. This information is crucial for various tasks, including parameter estimation and decoding.
 
