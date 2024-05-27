@@ -15,7 +15,7 @@ Data augmentation is particularly useful when working with limited or imbalanced
 
 # How is it applied in NLP tasks? 
 
-Certainly! Natural Language Processing (NLP) techniques applied to electronic health records (EHRs) play a significant role in extracting valuable insights from the vast amount of textual data contained within these records. Optical Character Recognition (OCR) is often used to convert scanned or handwritten documents into machine-readable text, enabling further analysis using NLP techniques.
+Natural Language Processing (NLP) techniques applied to electronic health records (EHRs) play a significant role in extracting valuable insights from the vast amount of textual data contained within these records. Optical Character Recognition (OCR) is often used to convert scanned or handwritten documents into machine-readable text, enabling further analysis using NLP techniques.
 
 When dealing with OCR and NLP tasks in the healthcare domain, data augmentation techniques can be beneficial in several ways:
 
