@@ -1179,13 +1179,17 @@ pre code {
 
 
   .card {
-    background-color: #555;
-  }
-
-  .card {
     .container {
       padding: 3px 10px 3px 10px;
       background-color: #555;
+      
+      h2 {
+        color: white;
+      }
+
+      a {
+        color: lightgreen;
+      }
     }
 
     box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
