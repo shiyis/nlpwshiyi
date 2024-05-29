@@ -2,7 +2,7 @@
 
 # Understanding Natural Language Processing with Me!
 
-Hi, I’m Shiyi. Welcome to my technical blog. Please check out this [page](https://shiyis.github.io/nlp-docs) for a more personal account of my journey with respect to learning Natural Language Processing. Here I will only be documenting the gists. I will be presenting everything I have learned so far, including important concepts, necessary code snippets, and more. I am by no means an expert in this subject, but I have gone through extensive studies and training in the fields and subfields related to have a good grasp of what’s important.
+Hi, I’m Shiyi. Welcome to my technical blog. Please check out this [page](https://shiyis.github.io/nlp-docs) for a more detailed account of my journey with respect to learning Natural Language Processing. Here I will only be documenting the gists. I will be presenting everything I have learned so far, including important concepts, necessary code snippets, and more. I am by no means an expert in this subject, but I have gone through extensive studies and training in the fields and subfields related to have a good grasp of what’s important.
 
 Areas that I have dabbled in,
 
@@ -19,13 +19,13 @@ What do we mean by Natural Language Processing? If we do a little googling and r
 
 ```plaintext
 → Sentiment analysis
-→ Machine translation 
-→ Word-sense disambiguation 
-→ Named-entity recognition 
-→ Topic modeling 
-→ Text classification 
-→ Document Classification 
-→ Question answering 
+→ Machine translation
+→ Word-sense disambiguation
+→ Named-entity recognition
+→ Topic modeling
+→ Text classification
+→ Document Classification
+→ Question answering
 ```
 
 ### **A Little Bit Of History**
@@ -38,17 +38,17 @@ According to the official definition extracted out of John McCarthy's 2004 [pape
 
 ```plaintext
 🤖️ "It is the science and engineering of making intelligent machines,
- especially intelligent computer programs. It is related to the similar 
- task of using computers to understand human intelligence, but AI does 
+ especially intelligent computer programs. It is related to the similar
+ task of using computers to understand human intelligence, but AI does
  not have to confine itself to methods that are biologically observable."
 ```
 
 So if it's to understand human intelligence, we need to know humans gain information and how human intelligence, or the brain, really works both through physiology and psychology,
 
 ```plaintext
-💡 Two Important Sources of Knowledge: Rationalism and Empiricism. 
+💡 Two Important Sources of Knowledge: Rationalism and Empiricism.
 
-  The first acquires knowledge through reasoning and logic, while the 
+  The first acquires knowledge through reasoning and logic, while the
   second through experience and experimentation.
 ```
 
@@ -56,7 +56,7 @@ Below are some important notes with respect to the **historical timeline** of th
 
 \textoutput{cards}
 
-<!-- 
+<!--
 ### Topics That Might Be Relevant (Cont. updated)
 
 - Topic 0: Information Theory
