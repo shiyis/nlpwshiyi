@@ -16,9 +16,9 @@
 }
 
 .highlight .k {
-  color: #069    "-moz-transform": "scale(0.9)", 
-    "-ms-transform": "scale(0.9)", 
-    "-webkit-transform": "scale(0.9)", 
+  color: #069    "-moz-transform": "scale(0.9)",
+    "-ms-transform": "scale(0.9)",
+    "-webkit-transform": "scale(0.9)",
     "transform": "scale(0.9)"
 }
 
@@ -553,7 +553,7 @@ html {
 }
 
 body {
-  color: hsl(0, 0%, 94%);
+  color: hsl(0, 0%, 29.5%);
   background-color: hsl(from color h s l);
   /* border-top: 5px solid #0A3b76 */
 }
@@ -611,6 +611,7 @@ tbody tr:nth-child(odd) td {
 
 tbody tr:nth-child(odd) th {
   background-color: darkslategray;
+  color:white;
 }
 
 .container,
@@ -635,7 +636,7 @@ h6 {
   margin-bottom: 1rem;
   font-weight: bold;
   line-height: 1.25;
-  color: hsl(0, 0%, 94%);
+  color: dimgrey;
   text-rendering: optimizeLegibility
 }
 
@@ -1178,13 +1179,13 @@ pre code {
 
 
   .card {
-    background-color: black;
+    background-color: #555;
   }
 
   .card {
     .container {
       padding: 3px 10px 3px 10px;
-      background-color: black;
+      background-color: #555;
     }
 
     box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
@@ -1349,11 +1350,16 @@ img[alt=intro] {
 
 .card {
   padding: 3px 10px 20px 10px;
-  background-color: black;
+  background-color: #555;
   margin-left: 0.3rem;
   margin-right: 0.3rem;
+  color: white;
   box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
   border-radius: 7px;
+
+  h2 {
+    color: white;
+  }
 }
 
 
@@ -1363,7 +1369,7 @@ img[alt=intro] {
 
   .page-foot a, b {
     font-size: 11px;
-  
+
 
   }
 
@@ -1418,5 +1424,3 @@ img[alt=finite_fig2] {
   margin-right: auto;
   width: 40%;
 }
-
-

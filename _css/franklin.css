@@ -203,6 +203,7 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
+  background-color: gainsboro;
   text-align: center;
 }
 
@@ -239,7 +240,7 @@ td {
 }
 
 .franklin-content a {
-  color: lightgreen;
+  color: darkgreen;
   text-decoration: none;
 }
 
@@ -460,7 +461,7 @@ h3 {
 
 html,
 body {
-  background-color: #555;
+  background-color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   align-text: center;
@@ -486,7 +487,7 @@ body {
 .franklin-content pre>code {
   color: #8482e6;
   /* opacity: 0.3; */
-  background-color: black;
+  background-color: #90868633;
   padding: 1.5em;
   margin-left: 5px;
   margin-right: 5px;
@@ -494,7 +495,7 @@ body {
   text-wrap: pretty;
   display: block;
   overflow-x: scroll;
-  border-top: 24px solid #2F2F2F;
+  border-top: 24px solid #5d5d5d;
   border-radius: 7px;
 }
 
@@ -599,7 +600,7 @@ h2 {
 .card {
   .container {
     padding: 3px 10px 3px 10px;
-    background-color: black;
+    background-color: #555;
   }
 
   box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
@@ -668,7 +669,3 @@ img[alt=vae] {
   width: 300px;
   text-align: center;
 }
-
-
-
-
