@@ -71,7 +71,7 @@ The idea, in other words, that you can’t really understand the microscopic beh
 macroscopic.
 @@
 
-In contrast, 
+In contrast,
 
 @@colbox-blue
 
@@ -311,7 +311,6 @@ going to do with it.
 
 Another objection to the byproduct hypothesis would be that,
 
-@@colbox-blue
 
 #### The Functionality and Usability of Affective Values
 
@@ -349,7 +348,7 @@ RTM is able to accomplish the above by assuming,
 A finites set of symbols in natural language and the device could \\
 entertain a infinite numbers of logic using a finite set of rules and elements.
 
-**Systematicity**: 
+**Systematicity**:
 
 That there are inherent systematic relations between basic cognitive constitutions.
 
