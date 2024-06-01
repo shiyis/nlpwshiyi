@@ -1182,7 +1182,7 @@ pre code {
     .container {
       padding: 3px 10px 3px 10px;
       background-color: #555;
-      
+
       h2 {
         color: white;
       }
@@ -1379,6 +1379,18 @@ img[alt=intro] {
     font-size: 11px;
 
 
+  }
+
+
+  .card {
+
+    h2 {
+      color: white;
+    }
+
+    a {
+      color: lightgreen;
+    }
   }
 
 }
