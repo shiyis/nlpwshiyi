@@ -647,6 +647,16 @@ h2 {
   }
 }
 
+.card {
+
+  h2 {
+    color: white;
+  }
+
+  a {
+    color: lightgreen;
+  }
+}
 
 
 

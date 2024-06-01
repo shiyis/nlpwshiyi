@@ -1316,15 +1316,6 @@ img[alt=intro] {
 }
 
 
-.card {
-  h2 {
-    color: white;
-  }
-
-  a {
-    color: lightgreen;
-  }
-}
 
 @media screen and (max-width: 500px) {
   img[alt=intro] {
@@ -1363,6 +1354,14 @@ img[alt=intro] {
   color: white;
   box-shadow: 0 4px 8px 0 rgba(144, 134, 134, 0.2);
   border-radius: 7px;
+
+  h2 {
+    color: white;
+  }
+
+  a {
+    color: lightgreen;
+  }
 }
 
 
