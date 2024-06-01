@@ -10,16 +10,15 @@
 
 ## Batchnorm
 
-Machine learning enthusiasts are looking for smarter ways to craft [weight initialization]() techniques. Batch re-normalization was introduced to force the activation statistics during the forward pass by re-normalizing the initial weights. 
+Machine learning enthusiasts are looking for smarter ways to craft [weight initialization]() techniques. Batch re-normalization was introduced to force the activation statistics during the forward pass by re-normalizing the initial weights.
 
 To quote,
 
 "Training Deep Neural Network is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization..."
 
-## Data Normalization 
+### Data Normalization
 
 Weight initialization strategies aim to preserve the activation variance constant across layers, under the initial assumption that the input feature variances are the same.
-
 
 Normalization, specifically standardizing input data feature-wise, is a common preprocessing step in machine learning to ensure that different features have comparable scales. This process helps algorithms converge faster and makes models less sensitive to the scale of input features. Let's break down the steps involved in standardizing input data feature-wise:
 
@@ -70,7 +69,7 @@ Or in a more simplified notation, we see in visualization format that,
 
 ![](../extras/batch_norm/stndrd_scaling.png)
 
-## Batch Normalization Process 
+### Batch Normalization Process
 
  Below explains the batch normalization process used in machine learning, specifically in the context of neural networks. Here's a step-by-step breakdown:
 
@@ -92,7 +91,7 @@ Or in a more simplified notation, we see in visualization format that,
 
 This process is used to normalize the inputs of each layer so that they have a mean of zero and a variance of one, which helps to stabilize the learning process and reduce the number of training epochs required. The $\epsilon$ is a small constant added for numerical stability to avoid division by zero.
 
-## Performing Back-Propagation for Batch Normalization at Inference/Runtime 
+### Performing Back-Propagation for Batch Normalization at Inference/Runtime
 
 
 Performing backpropagation with batch normalization involves computing gradients with respect to the input, scale (gamma), and shift (beta) parameters. Let's break down the steps for backpropagation through a component-wise affine transformation, considering batch normalization.
@@ -154,7 +153,7 @@ beta -= learning_rate * dL_dbeta
 
 Note: This is a simplified explanation, and actual implementations might involve additional considerations, such as the choice of optimizer, learning rate scheduling, and the specific architecture of your neural network.
 
-### In The Context of A Batch Normalized Set of Weights 
+### In The Context of A Batch Normalized Set of Weights
 
 
 Let's break down the components of this expression:
@@ -203,7 +202,7 @@ The key differences are in the notation used, but conceptually, they represent t
 
 
 
-<!-- 
+<!--
 {{youtube_placeholder batchnorm}} -->
 
 
