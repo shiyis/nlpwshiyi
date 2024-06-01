@@ -1323,6 +1323,16 @@ img[alt=intro] {
 }
 
 
+.card {
+  h2 {
+    color: white;
+  }
+
+  a {
+    color: lightgreen;
+  }
+}
+
 @media screen and (max-width: 500px) {
   img[alt=intro] {
     width: 30%;
