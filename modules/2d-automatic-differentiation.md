@@ -8,11 +8,9 @@
 
 Automatic differentiation (AD) is a crucial technique in the field of machine learning for optimizing models through the training process.
 
-Below attached is a video of one of the lessons from the CMU deep learning classes cmu10714 I find really helpful and useful. It's one of the steps of a simple implementation of a ML Module called NEEDLE, and in this video the important gists of automatic differentiation are covered. 
+Below attached is a video of one of the lessons from the CMU deep learning classes cmu10714 I find really helpful and useful. It's one of the steps of a simple implementation of a ML Module called NEEDLE, and in this video the important gists of automatic differentiation are covered.
 
-
-## Technicalities of Automatic Differentiation
-
+### Technicalities of Automatic Differentiation
 {{youtube_placeholder automatic-diff}}
 {{yt_tsp 0 0 Introduction}}
 {{yt_tsp 222 0 The NEEDLE Module}}
@@ -24,7 +22,7 @@ Below attached is a video of one of the lessons from the CMU deep learning class
 
 
 
-## Hand Derivation of Automatic Differentiation
+### Hand Derivation of Automatic Differentiation
 
 Say we are dealing with the model function below.
 
@@ -72,7 +70,7 @@ b_{new}&=&b_{old}-\alpha\frac{\partial{loss}}{\partial b},
 
 and then we run several epochs.
 
-## Backward Propagation Graphic Example
+### Backward Propagation Graphic Example
 
 ![alt text](../extras/auto_diff/image.png)
 
@@ -80,7 +78,7 @@ One thing to note is that, in the picture provided here, the gradient of the los
 
 The purpose of the gradient descent algorithm is to adjust the weights and bias in the direction of the negative gradient of the loss function with respect to the weights and bias, in order to minimize the loss function. Multiplying the gradient by the actual output Y would not contribute to this objective and would not be necessary.
 
-## Running The Code Example
+### Running The Code Example
 
 Initializing Random Weights for Our Example
 
@@ -134,7 +132,7 @@ print("estimation of the parameters:", w, b)
 
 ```
 
-## Linear Regression with Autograd
+### Linear Regression with Autograd
 
 ```Python
 
@@ -187,7 +185,7 @@ print("estimation of the parameters:", w_v.data, b_v.data.t() )
 
 ```
 
-### Linear Regression with Neural Network
+#### Linear Regression with Neural Network
 
 An implementation of **(Batch) Gradient Descent** using the nn package. Here we have a super simple model with only one layer and no activation function!
 
@@ -290,7 +288,7 @@ for param in model.parameters():
 
 ```
 
-### Play with The Code Using Pytorch
+#### Play with The Code Using Pytorch
 
 Change the number of samples and see what happens.
 
@@ -336,7 +334,7 @@ for param in model.parameters():
 
 
 
-### Auxiliary Codes
+#### Auxiliary Codes
 
 Here are some more reasons why automatic differentiation is essential and applicable in this context:
 
