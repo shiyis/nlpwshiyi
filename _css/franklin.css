@@ -224,15 +224,11 @@ td {
   margin: 10px 5px 15px 10px;
   padding: 0px 15px 0px 15px;
   font-style: italic;
-
-  p {
-    color: #4b4b4b;
-  }
 }
 
-/* .franklin-content blockquote p {
-  display: inline;
-} */
+.franklin-content blockquote p {
+  color: #4b4b4b
+}
 
 /* ==================================================================
     GENERAL FORMATTING
