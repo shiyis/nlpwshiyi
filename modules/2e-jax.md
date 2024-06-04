@@ -24,12 +24,12 @@ Below is the Jacobian matrix of the vector-valued function $( \mathbf{f}(\mathbf
 
 2. **Vectorized Form:**
    - The Jacobian matrix can also be expressed in a vectorized form by stacking the gradients of the individual components of $( \mathbf{f} )$.
-   
+
 \[\frac{\partial \mathbf{f}}{\partial \mathbf{x}} = J_{\mathbf{f}}(\mathbf{x}) = \left( \frac{\partial \mathbf{f}}{\partial x_1}, \dots, \frac{\partial \mathbf{f}}{\partial x_n} \right)\]
 
 3. **Gradient Representation:**
    - Each row of the Jacobian matrix corresponds to the transpose of the gradient of a component of $( \mathbf{f} )$ with respect to $( \mathbf{x} )$.
-   
+
 \[\frac{\partial \mathbf{f}}{\partial \mathbf{x}} = J_{\mathbf{f}}(\mathbf{x}) = \left( \begin{array}{c}
 \nabla f_1(\mathbf{x})^T\\
 \vdots\\
@@ -38,7 +38,7 @@ Below is the Jacobian matrix of the vector-valued function $( \mathbf{f}(\mathbf
 
 In summary, the Jacobian matrix provides a linear approximation of the function $( \mathbf{f}(\mathbf{x}) )$ near the point $( \mathbf{x} )$. It captures the sensitivity of each component of $( \mathbf{f} )$ to small changes in the variables $( x_i )$. The vectorized form and the representation using gradients offer different perspectives on the same mathematical concept.
 
-## Taylor Expansion 
+## Taylor Expansion
 
 The above expressions involve concepts that are related to the Taylor expansion. Let me clarify the connection between the provided expression and the Taylor expansion.
 
@@ -62,7 +62,7 @@ So, while the provided expression itself is not the Taylor expansion, it involve
 
 Hence the Jacobian $J_{\mathbf{f}}(\mathbf{x})\in \mathbb{R}^{m\times n}$ is a linear map from $\mathbb{R}^n$ to $\mathbb{R}^m$ such that for $\mathbf{x},\mathbf{v} \in \mathbb{R}^n$ and $h\in \mathbb{R}$:
 \begin{align*}
-\mathbf{f}(\mathbf{x}+h\mathbf{v}) = \mathbf{f}(\mathbf{x}) + h J_{\mathbf{f}}(\mathbf{x})\mathbf{v} +o(h).
+\mathbf{f}(\mathbf{x}+h\mathbf{v}) = \mathbf{f}(\mathbf{x}) + hJ_{\mathbf{f}}(\mathbf{x})\mathbf{v} +o(h).
 \end{align*}
 The term $J_{\mathbf{f}}(\mathbf{x})\mathbf{v}\in \mathbb{R}^m$ is a Jacobian Vector Product (**JVP**), corresponding to the interpretation where the Jacobian is the linear map: $J_{\mathbf{f}}(\mathbf{x}):\mathbb{R}^n \to \mathbb{R}^m$, where $J_{\mathbf{f}}(\mathbf{x})(\mathbf{v})=J_{\mathbf{f}}(\mathbf{x})\mathbf{v}$.
 
@@ -111,7 +111,7 @@ In order to perform this computation, if we begin at the right and work our way 
 An effective method for calculating the gradient "from the right to the left," or backward, is **backpropagation**. Specifically, we will have to calculate amounts in the following format: This may be expressed as $\mathbf{u}^T J_{\mathbf{f}}(\mathbf{x})$, which is a Vector Jacobian Product (**VJP**), corresponding to the interpretation where the Jacobian is the linear map: $J_{\mathbf{f}}(\mathbf{x})^T\mathbf{u} \in \mathbb{R}^n$ with $\mathbf{u} \in\mathbb{R}^m$. Composed with the linear map $J_{\mathbf{f}}(\mathbf{x}):\mathbb{R}^n \to \mathbb{R}^m$ In order for $\mathbf{u}^TJ_{\mathbf{f}}(\mathbf{x}) = \mathbf{u} \circ J_{\mathbf{f}}(\mathbf{x})$ to be true, $\mathbf{u}:\mathbb{R}^m\to \mathbb{R}$.
 
 
-### Jacobian Vector Product 
+### Jacobian Vector Product
 
 The Jacobian-vector product (JVP) is a concept in calculus and linear algebra, particularly relevant in the context of automatic differentiation and optimization. It involves computing the product of the Jacobian matrix of a function with a given vector. The Jacobian matrix represents the partial derivatives of a vector-valued function with respect to its input variables, and the JVP allows you to efficiently compute the effect of a small perturbation in the input space on the function's output.
 
@@ -129,7 +129,7 @@ In the context of automatic differentiation libraries like JAX, which supports J
 $$
 J_{\mathbf{f}}(\mathbf{x}) = W^T.
 $$
-Note that here, we are slightly abusing notations and considering the partial function $\mathbf{x}\mapsto \mathbf{f}(\mathbf{x}, W)$. To see this, we can write $f_j = \sum_{i}x_iW_{ij}$ so that 
+Note that here, we are slightly abusing notations and considering the partial function $\mathbf{x}\mapsto \mathbf{f}(\mathbf{x}, W)$. To see this, we can write $f_j = \sum_{i}x_iW_{ij}$ so that
 $$
 \frac{\partial \mathbf{f}}{\partial x_i}= \left( W_{i1}\dots W_{ib}\right)^T
 $$
@@ -142,7 +142,7 @@ $$
 J_{\mathbf{f}}(W) = \begin{bmatrix} \mathbf{x} \\ \vdots \\ \mathbf{x} \end{bmatrix}  $$
 $$ \text{ since, } \mathbf{f}(\mathbf{x}, W+\Delta W) = \mathbf{f}(\mathbf{x}, W) + \mathbf{x} \Delta W.
 $$
-Note that multiplying $\mathbf{x}$ on the left is actually convenient when using broadcasting, i.e. we can take a batch of input vectors of shape $\text{bs}\times a$ without modifying the math above. 
+Note that multiplying $\mathbf{x}$ on the left is actually convenient when using broadcasting, i.e. we can take a batch of input vectors of shape $\text{bs}\times a$ without modifying the math above.
 
 In short, what the above did was ,
 
