@@ -127,7 +127,7 @@ In the context of automatic differentiation libraries like JAX, which supports J
 
 **Example:** let $\mathbf{f}(\mathbf{x}, W) = \mathbf{x} W\in \mathbb{R}^b$ where $W\in \mathbb{R}^{a\times b}$ and $\mathbf{x}\in \mathbb{R}^a$. We clearly have
 $$
-J_{\mathbf{f}}(\mathbf{x}) = W^T.
+J_{\mathbf{f}}(\mathbf{x}) = W^T
 $$
 Note that here, we are slightly abusing notations and considering the partial function $\mathbf{x}\mapsto \mathbf{f}(\mathbf{x}, W)$. To see this, we can write $f_j = \sum_{i}x_iW_{ij}$ so that
 $$
@@ -135,12 +135,12 @@ $$
 $$
 Then recall from definitions that
 $$
-J_{\mathbf{f}}(\mathbf{x}) = \left( \frac{\partial \mathbf{f}}{\partial x_1},\dots, \frac{\partial \mathbf{f}}{\partial x_n}\right)=W^T.
+J_{\mathbf{f}}(\mathbf{x}) = \left( \frac{\partial \mathbf{f}}{\partial x_1},\dots, \frac{\partial \mathbf{f}}{\partial x_n}\right)=W^T
 $$
 Now we clearly have
 $$
 J_{\mathbf{f}}(W) = \begin{bmatrix} \mathbf{x} \\ \vdots \\ \mathbf{x} \end{bmatrix}  $$
-$$ \text{ since, } \mathbf{f}(\mathbf{x}, W+\Delta W) = \mathbf{f}(\mathbf{x}, W) + \mathbf{x} \Delta W.
+$$ \text{ since, } \mathbf{f}(\mathbf{x}, W+\Delta W) = \mathbf{f}(\mathbf{x}, W) + \mathbf{x} \Delta W
 $$
 Note that multiplying $\mathbf{x}$ on the left is actually convenient when using broadcasting, i.e. we can take a batch of input vectors of shape $\text{bs}\times a$ without modifying the math above.
 
