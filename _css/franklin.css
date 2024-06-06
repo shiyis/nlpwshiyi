@@ -227,7 +227,7 @@ td {
 }
 
 .franklin-content blockquote p {
-  color: #4b4b4b
+  color: #007ca3
 }
 
 /* ==================================================================
@@ -240,7 +240,7 @@ td {
 }
 
 .franklin-content a {
-  color: darkgreen;
+  color: lightgreen;
   text-decoration: none;
 }
 
@@ -372,6 +372,10 @@ code {
   border-radius: 10px;
 }
 
+.hljs-comment {
+  color: #aaa
+}
+
 .hljs-meta .hljs-string,
 .hljs-regexp,
 .hljs-string {
@@ -450,7 +454,7 @@ h1 {
 
 h1,
 h2 {
-  color: #555;
+  color: #fff;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: bold;
 }
@@ -461,7 +465,7 @@ h3 {
 
 html,
 body {
-  background-color: #fff;
+  background-color: #000;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   align-text: center;
@@ -485,7 +489,7 @@ body {
 }
 
 .franklin-content pre>code {
-  color: #4a7baf;
+  color: #02c1ff;
   /* opacity: 0.3; */
   background-color: #90868633;
   padding: 1.5em;
