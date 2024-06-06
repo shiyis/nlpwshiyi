@@ -946,7 +946,7 @@ pre code {
 
 
 .topnav {
-  background-color: #8482e6;
+  background-color: #243a75;
   overflow: hidden;
 }
 
@@ -1064,7 +1064,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: #8482e6;
+    background-color: #243a75;
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1118,7 +1118,7 @@ pre code {
   /* Menu */
   .topnav {
     width: 100%;
-    background-color: #8482e6;
+    background-color: #0c66c2;
     display: -ms-grid;
     display: grid;
     grid-template-rows: 1fr repeat(5, 0.02fr);
@@ -1143,7 +1143,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: #8482e6;
+    background-color: #243a75;
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1209,7 +1209,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: #8482e6;
+    background-color: #243a75;
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1263,7 +1263,7 @@ pre code {
   /* Menu */
   .topnav {
     width: 100%;
-    background-color: #8482e6;
+    background-color: #243a75;
     display: -ms-grid;
     display: grid;
     grid-template-rows: 1fr repeat(5, 0.02fr);
@@ -1288,7 +1288,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: #8482e6;
+    background-color: #243a75;
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1312,14 +1312,14 @@ img[alt=intro] {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 23%;
+  /* width: 23%; */
 }
 
 
 
 @media screen and (max-width: 500px) {
   img[alt=intro] {
-    width: 30%;
+    width: 80%;
     opacity: 0.95;
   }
 
@@ -1329,7 +1329,7 @@ img[alt=intro] {
 
   .active {
     order: -2;
-    background-color: #8482e6;
+    background-color: #243a75;
     padding: 14px 16px;
   }
 
@@ -1394,7 +1394,7 @@ img[alt=intro] {
 
 
 img[alt=intro] {
-  width: 145px;
+  width: 320px;
   opacity: 1;
 }
 
