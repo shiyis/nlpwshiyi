@@ -485,7 +485,7 @@ body {
 }
 
 .franklin-content pre>code {
-  color: #8482e6;
+  color: #4a7baf;
   /* opacity: 0.3; */
   background-color: #90868633;
   padding: 1.5em;
@@ -495,7 +495,7 @@ body {
   text-wrap: pretty;
   display: block;
   overflow-x: scroll;
-  border-top: 24px solid #aeacc9;
+  border-top: 24px solid #a6b8cb;
   border-radius: 7px;
 }
 

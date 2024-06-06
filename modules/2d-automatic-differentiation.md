@@ -17,7 +17,7 @@ Below attached is a video of one of the lessons from the CMU deep learning class
 {{yt_tsp 649 0 Codebase and Data Structures}}
 {{yt_tsp 860 0 Computational Graph}}
 {{yt_tsp 1779 0 Executing The Computation}}
-{{yt_tsp 2758 0 Scenarios Where Things Might Go Amok}}
+{{yt_tsp 2758 0 Scenarios Where Things Might Go Wrong}}
 {{yt_tsp 3137 0 Reverse Mode Auto Diff}}
 
 
