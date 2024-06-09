@@ -104,13 +104,19 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4a-mlp-from-scratch/index.html</loc>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1j-bayesian/index.html</loc>
     <lastmod>2024-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/1c-noisy-channel-model/index.html</loc>
+    <lastmod>2024-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://tlienart.github.io/FranklinTemplates.jl/modules/4a-mlp-from-scratch/index.html</loc>
     <lastmod>2024-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
