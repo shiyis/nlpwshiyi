@@ -102,6 +102,7 @@ NOTE:
 @def link_hover_color   = "teal"
 @def section_bg_color   = "#f6f8fa"
 @def footer_link_color  = "cornflowerblue"
+@def layout_dir = "_layout"
 
 <!-- CODE LAYOUT
 NOTE:
