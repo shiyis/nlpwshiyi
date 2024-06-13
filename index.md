@@ -1,5 +1,4 @@
 
-
 ![intro](./assets/nlpwme5.png)
 
 # Understanding Natural Language Processing with Me!
@@ -57,6 +56,10 @@ So if it's to understand human intelligence, we need to know humans gain informa
 Below are some important notes with respect to the **historical timeline** of the development of Computational Linguistics and NLP and how it all started from one of these two principles and gradually transitioned to the other (rationalism / computationalism to empiricism / connectionism; although computationalism is not always symbolic; namely it also incorporates empirical evidence):
 
 \textoutput{cards}
+
+
+<script src="assets/js/custom.js"></script>
+
 
 <!--
 ### Topics That Might Be Relevant (Cont. updated)
