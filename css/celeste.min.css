@@ -553,7 +553,7 @@ html {
 }
 
 body {
-  color: hsl(0, 0%, 29.5%);
+  color: #fff;
   background-color: hsl(from color h s l);
   /* border-top: 5px solid #0A3b76 */
 }
@@ -599,6 +599,7 @@ td,
 th {
   padding: .25rem .5rem;
   border: 1px solid white;
+  color: black;
 }
 
 th {
@@ -611,7 +612,7 @@ tbody tr:nth-child(odd) td {
 
 tbody tr:nth-child(odd) th {
   background-color: darkslategray;
-  color:white;
+  color:#000000;
 }
 
 .container,
@@ -635,7 +636,7 @@ h6 {
   margin-bottom: 1rem;
   font-weight: bold;
   line-height: 1.25;
-  color: dimgrey;
+  color: white;
   text-rendering: optimizeLegibility
 }
 
@@ -946,7 +947,7 @@ pre code {
 
 
 .topnav {
-  background-color: #243a75;
+  background-color: #017da5;
   overflow: hidden;
 }
 
@@ -1064,7 +1065,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: #243a75;
+    background-color: #017da5;
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1143,7 +1144,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: #243a75;
+    background-color: #017da5;
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1209,7 +1210,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: #243a75;
+    background-color: #017da5;
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1263,7 +1264,7 @@ pre code {
   /* Menu */
   .topnav {
     width: 100%;
-    background-color: #243a75;
+    background-color: #017da5;
     display: -ms-grid;
     display: grid;
     grid-template-rows: 1fr repeat(5, 0.02fr);
@@ -1288,7 +1289,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: #243a75;
+    background-color: #017da5;
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1329,7 +1330,7 @@ img[alt=intro] {
 
   .active {
     order: -2;
-    background-color: #243a75;
+    background-color: #017da5;
     padding: 14px 16px;
   }
 
