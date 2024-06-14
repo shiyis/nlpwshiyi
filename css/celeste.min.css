@@ -1391,10 +1391,10 @@ img[alt=intro] {
   background-repeat: no-repeat;
   background-image: url("../assets/check-solid.svg");
 } */
-
-/* .code-block {
-  position: relative;
-  padding-top: 40px; /* Adjust as needed to create space for the button
+/*
+.code-block {
+  position: absolute;
+  padding-top: 46px; /* Adjust as needed to create space for the button 
 } */
 
 .copy-button {
