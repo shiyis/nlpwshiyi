@@ -1394,12 +1394,12 @@ img[alt=intro] {
 /*
 .code-block {
   position: absolute;
-  padding-top: 46px; /* Adjust as needed to create space for the button 
+  padding-top: 46px; /* Adjust as needed to create space for the button
 } */
 
 .copy-button {
   position: absolute;
-  top: 2.5px; /* Adjust as needed */
+  margin-top: 2.3px;
   right: 45px; /* Adjust as needed */
   padding: 3px 10px 4px 10px;
   background-color: #017da5;
