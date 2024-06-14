@@ -1399,7 +1399,7 @@ img[alt=intro] {
 
 .copy-button {
   position: absolute;
-  margin-top: 2.3px;
+  margin-top: 2px;
   right: 45px; /* Adjust as needed */
   padding: 3px 10px 4px 10px;
   background-color: #017da5;
@@ -1447,7 +1447,6 @@ img[alt=intro] {
 
 @media (max-width: 600px) {
   .copy-button {
-      right: 35px; /* Adjusted for smaller screen */
       padding: 5px 5px 6px 5px;
       line-height: 0.6rem;
   }
