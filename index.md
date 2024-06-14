@@ -58,7 +58,6 @@ Below are some important notes with respect to the **historical timeline** of th
 \textoutput{cards}
 
 
-<script src="assets/js/custom.js"></script>
 
 
 <!--
