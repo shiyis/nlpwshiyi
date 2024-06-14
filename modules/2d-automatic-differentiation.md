@@ -133,7 +133,6 @@ print("estimation of the parameters:", w, b)
 ```
 
 ### Linear Regression with Autograd
-
 ```Python
 
 # Setting requires_grad=True indicates that we want to compute
