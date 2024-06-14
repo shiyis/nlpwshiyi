@@ -1430,16 +1430,36 @@ img[alt=intro] {
 }
 
 
+
+
+
 .copy-button.copied {
     background-color: #616161; /* Background color when copied */
 }
 
+
+/* .small-screen .copy-button {
+    background-color: #017da5;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+} */
+
 @media (max-width: 600px) {
   .copy-button {
-      right: 30px; /* Adjusted for smaller screen */
+      right: 35px; /* Adjusted for smaller screen */
       padding: 5px 5px 6px 5px;
       line-height: 0.6rem;
   }
+
+  .copy-button.copied {
+      background-color: #616161; /* Background color when copied */
+  }
+
+  /* .copy-button:hover {
+    background-color: #017da5;
+  } */
+
 }
 
 img[alt=intro] {
