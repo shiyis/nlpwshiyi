@@ -105,7 +105,7 @@ def loss(x, y):
     return (y_pred - y)**2
 
 # compute gradient
-def gradient(x, y):  # d_loss/d_w, d_loss/d_c
+def gradient(x, y):  # d_loss/d_w, d_loss/d_b
     return 2*(x.dot(w)+b - y)*x, 2 * (x.dot(w)+b - y)
 
 learning_rate = 1e-2
