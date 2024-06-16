@@ -14,11 +14,6 @@ The following characteristics of automata in the aforementioned figure are
 
 ---
 
-Input
-Output
-States of automata
-State relation
-Output relation
 A Finite Automata consists of the following:
 
 ```
