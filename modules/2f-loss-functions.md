@@ -9,22 +9,22 @@
 
 # General ML Classification Tasks
 
-In this blog, general machine learning classification task will be covered. 
+In this blog, general machine learning classification task will be covered.
 
-**Some supervised learning basics** 
-- Linear regression 
+**Some supervised learning basics**
+- Linear regression
 - Gradient descent algorithms
-- Logistic regression 
-- Classification and softmax regression 
+- Logistic regression
+- Classification and softmax regression
 
 The training steps pretty much consist of the below flow:
-- Dataset and Dataloader + Model + Loss and Optimizer = Training 
+- Dataset and Dataloader + Model + Loss and Optimizer = Training
 
 Maximizing the log likelihood in the training step.
 
 **A Probabilistic Model**
 
-The dataset is made of $m$ training examples $(x(i), y(i))_{i\in[m]}$, where 
+The dataset is made of $m$ training examples $(x(i), y(i))_{i\in[m]}$, where
 
 $$\mathcal{L}(\theta \mid x) = \log L(\theta)
                              = -m\log (\sigma \sqrt{2\pi}) - \frac{1}{2\sigma^{2}}\sum_{i=1}^{m}(y(i) - \theta^T x(i))^2$$
@@ -40,25 +40,25 @@ $$\frac{\partial}{\partial\theta} J(\theta) = \sum_{i=0}^{m} (y(i) - \theta^T x(
 
 # Gradient  Descent Algorithms
 
-Batch gradient descent performs the update 
+Batch gradient descent performs the update
 
 $$ \theta_{j} := \theta_{j} + \alpha \sum_{i=0}^{m} (y(i) - \theta^Tx(i)x_{j}(i)) $$
 
 where $\alpha$ is the learning rate,
 
-This method looks at every example in the entire training set 
+This method looks at every example in the entire training set
 
-Stochastic gradient descent works very well. The sum above is "replaced" by a loop over the training examples, so that the update becomes: 
+Stochastic gradient descent works very well. The sum above is "replaced" by a loop over the training examples, so that the update becomes:
 
 for $i = 1$ to $m$:
                 $$\theta_{j} := \theta_{j} + \alpha (y(i) - \theta_{T}x(i)x_{j}(i))$$
 
 
-Linear regression: recall that under mild assumptions, the explicit solution for the ordinary least squares can be written explicitly as: 
+Linear regression: recall that under mild assumptions, the explicit solution for the ordinary least squares can be written explicitly as:
                 $$\theta^{*} = (X^TX)^{-1}X^{T}Y$$
 
 where the linear model is written in matrix form $Y = X\theta + \epsilon$, with $Y = (y(1),...y(m)) \in \mathbb{R}^{m \times d}$
- 
+
 
 
 In the context of linear regression, the log-likelihood is often associated with the assumption of normally distributed errors. The typical formulation assumes that the response variable follows a normal distribution with a mean determined by the linear regression model. Here's how you can express the log-likelihood for a simple linear regression model:
@@ -95,7 +95,7 @@ where $\sigma(z) = \frac{1}{1+\epsilon^{-z}}$ is the sigmoid function (or logist
 
 The compact formula is $p_{\theta}(y|x) = \sigma(\theta^{T}x)^y(1 - \theta(\theta^{T}x))^{(1-y)}$
 
-Logistic Regression: 
+Logistic Regression:
 
 $$ L(\theta) = \prod_{i=1}^{m} \sigma(\theta^{T}x(i)^{y(i)}) $$
 
@@ -111,7 +111,7 @@ $$ \text{loss}(i) = -[\text{y}(i)\text{log} \text{z}(i) + (1 - \text{y}(i)) \tex
 
 $$ \text{BCELoss}(z,y) = \frac{1}{m} \sum_{i=1}^{m} \text{loss}(i)$$
 
-In summary, we get 
+In summary, we get
 
 $$\text{BCEWithLogitsLoss}(z,y) = \text{BCELoss}(\sigma(z),y)$$
 
@@ -200,7 +200,7 @@ loss1 = nn.NLLLoss()
 loss2 = nn.CrossEntropyLoss()
 C = 8
 input = torch.randn(3,C,4,5)
-target = torch.empty(3,4,5 dtype=torch.long).random_(0,C) 
+target = torch.empty(3,4,5 dtype=torch.long).random_(0,C)
 assert loss1(m(input),target) == loss2(input,target)
 ```
 
