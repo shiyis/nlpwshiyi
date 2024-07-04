@@ -163,7 +163,7 @@ for epoch in range(10):
     # mutate the values of w_v and b_v in-place; we don't want to build up
     # a computational graph for the update steps, so we use the
     # torch.no_grad() context manager to prevent PyTorch from building  a
-    # computational graph for the updates
+    # computational graph for the updates.
 
     # This is because the update steps are not part of the model's
     # computation that we want to differentiate.
