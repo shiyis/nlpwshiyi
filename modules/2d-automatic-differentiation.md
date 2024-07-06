@@ -10,7 +10,7 @@ Automatic differentiation (AD) is a crucial technique in the field of machine le
 
 Below attached is a video of one of the lessons from the CMU deep learning classes cmu10714 I find really helpful and useful. It's one of the steps of a simple implementation of a ML Module called NEEDLE, and in this video the important gists of automatic differentiation are covered.
 
-### Technicalities of Automatic Differentiation
+### Technicalities of Implementing Automatic Differentiation
 {{youtube_placeholder automatic-diff}}
 {{yt_tsp 0 0 Introduction}}
 {{yt_tsp 222 0 The NEEDLE Module}}
@@ -168,7 +168,7 @@ for epoch in range(10):
     # This is because the update steps are not part of the model's
     # computation that we want to differentiate.
     # They are just simple in-place updates of the parameters.
-    with torch.no_grad(): 
+    with torch.no_grad():
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
 
