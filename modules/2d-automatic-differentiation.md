@@ -6,7 +6,7 @@
 
 \toc
 
-Automatic differentiation (AD) is a crucial technique in the field of machine learning for optimizing models through the training process.
+Automatic differentiation (AD) is a crucial technique in the field of machine learning for optimizing models through the training process. Please check out [this]() for the introduction of the mathematical foundation behind AD. 
 
 Below attached is a video of one of the lessons from the CMU deep learning classes cmu10714 I find really helpful and useful. It's one of the steps of a simple implementation of a ML Module called NEEDLE, and in this video the important gists of automatic differentiation are covered.
 
