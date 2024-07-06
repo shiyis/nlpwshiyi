@@ -64,7 +64,7 @@ b_v.requires_grad_(<span class=hljs-literal >True</span>)
     <span class=hljs-comment ># This is because the update steps are not part of the model&#x27;s</span>
     <span class=hljs-comment ># computation that we want to differentiate.</span>
     <span class=hljs-comment ># They are just simple in-place updates of the parameters.</span>
-    <span class=hljs-keyword >with</span> torch.no_grad(): d
+    <span class=hljs-keyword >with</span> torch.no_grad(): 
         w_v -= learning_rate * w_v.grad
         b_v -= learning_rate * b_v.grad
 
@@ -246,4 +246,4 @@ optimizer = tf.optimizers.Adam(learning_rate=<span class=hljs-number >0.01</span
     gradients = tape.gradient(loss, model.trainable_variables)
     optimizer.apply_gradients(zip(gradients, model.trainable_variables))
 
-<span class=hljs-comment ># Model is now trained</span></code></pre> <div class=page-foot > <div class=copyright > <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a> ©️ Last modified: July 04, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> <script src="/nlpwme/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
+<span class=hljs-comment ># Model is now trained</span></code></pre> <div class=page-foot > <div class=copyright > <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a> ©️ Last modified: July 06, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> <script src="/nlpwme/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
