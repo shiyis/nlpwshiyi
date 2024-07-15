@@ -86,16 +86,16 @@ learning_rate = <span class=hljs-number >1e-3</span>
 <span class=hljs-comment ># VAE model</span>
 <span class=hljs-keyword >class</span> <span class="hljs-title class_">VAE</span>(nn.Module):
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, image_size=<span class=hljs-number >784</span>, h_dim=<span class=hljs-number >400</span>, z_dim=<span class=hljs-number >20</span></span>):
-        <span class=hljs-built_in >super</span>(VAE, self).__init__()
-        self.fc1 = nn.Linear(image_size, h_dim)
-        self.fc2 = nn.Linear(h_dim, z_dim)
-        self.fc3 = nn.Linear(h_dim, z_dim)
-        self.fc4 = nn.Linear(z_dim, h_dim)
-        self.fc5 = nn.Linear(h_dim, image_size)
+        <span class=hljs-built_in >super</span>(VAE, <span class="hljs-variable language_">self</span>).__init__()
+        <span class="hljs-variable language_">self</span>.fc1 = nn.Linear(image_size, h_dim)
+        <span class="hljs-variable language_">self</span>.fc2 = nn.Linear(h_dim, z_dim)
+        <span class="hljs-variable language_">self</span>.fc3 = nn.Linear(h_dim, z_dim)
+        <span class="hljs-variable language_">self</span>.fc4 = nn.Linear(z_dim, h_dim)
+        <span class="hljs-variable language_">self</span>.fc5 = nn.Linear(h_dim, image_size)
         
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">encode</span>(<span class=hljs-params >self, x</span>):
-        h = F.relu(self.fc1(x))
-        <span class=hljs-keyword >return</span> self.fc2(h), self.fc3(h)
+        h = F.relu(<span class="hljs-variable language_">self</span>.fc1(x))
+        <span class=hljs-keyword >return</span> <span class="hljs-variable language_">self</span>.fc2(h), <span class="hljs-variable language_">self</span>.fc3(h)
     
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">reparameterize</span>(<span class=hljs-params >self, mu, log_var</span>):
         std = torch.exp(log_var/<span class=hljs-number >2</span>)
@@ -103,13 +103,13 @@ learning_rate = <span class=hljs-number >1e-3</span>
         <span class=hljs-keyword >return</span> mu + eps * std
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">decode</span>(<span class=hljs-params >self, z</span>):
-        h = F.relu(self.fc4(z))
-        <span class=hljs-keyword >return</span> torch.sigmoid(self.fc5(h))
+        h = F.relu(<span class="hljs-variable language_">self</span>.fc4(z))
+        <span class=hljs-keyword >return</span> torch.sigmoid(<span class="hljs-variable language_">self</span>.fc5(h))
     
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, x</span>):
-        mu, log_var = self.encode(x)
-        z = self.reparameterize(mu, log_var)
-        x_reconst = self.decode(z)
+        mu, log_var = <span class="hljs-variable language_">self</span>.encode(x)
+        z = <span class="hljs-variable language_">self</span>.reparameterize(mu, log_var)
+        x_reconst = <span class="hljs-variable language_">self</span>.decode(z)
         <span class=hljs-keyword >return</span> x_reconst, mu, log_var
 
 model = VAE().to(device)
@@ -155,17 +155,17 @@ optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)</code></pre> 
 
 <span class=hljs-keyword >class</span> <span class="hljs-title class_">VAE_Cond</span>(nn.Module):
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, image_size=<span class=hljs-number >784</span>, h_dim=<span class=hljs-number >400</span>, z_dim=<span class=hljs-number >20</span>, n_classes = <span class=hljs-number >10</span></span>):
-        <span class=hljs-built_in >super</span>(VAE_Cond, self).__init__()
-        self.fc1 = nn.Linear(image_size, h_dim)
-        self.fc2 = nn.Linear(h_dim, z_dim)
-        self.fc3 = nn.Linear(h_dim, z_dim)
+        <span class=hljs-built_in >super</span>(VAE_Cond, <span class="hljs-variable language_">self</span>).__init__()
+        <span class="hljs-variable language_">self</span>.fc1 = nn.Linear(image_size, h_dim)
+        <span class="hljs-variable language_">self</span>.fc2 = nn.Linear(h_dim, z_dim)
+        <span class="hljs-variable language_">self</span>.fc3 = nn.Linear(h_dim, z_dim)
         <span class=hljs-comment >#</span>
         <span class=hljs-comment ># your code here</span>
         <span class=hljs-comment >#</span>
         
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">encode</span>(<span class=hljs-params >self, x</span>):
-        h = F.relu(self.fc1(x))
-        <span class=hljs-keyword >return</span> self.fc2(h), self.fc3(h)
+        h = F.relu(<span class="hljs-variable language_">self</span>.fc1(x))
+        <span class=hljs-keyword >return</span> <span class="hljs-variable language_">self</span>.fc2(h), <span class="hljs-variable language_">self</span>.fc3(h)
     
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">reparameterize</span>(<span class=hljs-params >self, mu, log_var</span>):
         std = torch.exp(log_var/<span class=hljs-number >2</span>)
@@ -223,7 +223,7 @@ plot_conditional_generation(model_C, n=<span class=hljs-number >8</span>)</code>
 <div class=page-foot >
     <div class=copyright >
       <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a>
-       ©️ Last modified: July 06, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+       ©️ Last modified: July 15, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
     </div>
   </div>
   </div>

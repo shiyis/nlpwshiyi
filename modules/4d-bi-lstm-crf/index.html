@@ -22,41 +22,41 @@ torch.manual_seed(<span class=hljs-number >1</span>)</code></pre> <pre><code cla
         torch.log(torch.<span class=hljs-built_in >sum</span>(torch.exp(vec - max_score_broadcast)))</code></pre> <p>create model </p> <pre><code class="python hljs"><span class=hljs-keyword >class</span> <span class="hljs-title class_">BiLSTM_CRF</span>(nn.Module):
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, vocab_size, tag_to_ix, embedding_dim, hidden_dim</span>):
-        <span class=hljs-built_in >super</span>(BiLSTM_CRF, self).__init__()
-        self.embedding_dim = embedding_dim
-        self.hidden_dim = hidden_dim
-        self.vocab_size = vocab_size
-        self.tag_to_ix = tag_to_ix
-        self.tagset_size = <span class=hljs-built_in >len</span>(tag_to_ix)
+        <span class=hljs-built_in >super</span>(BiLSTM_CRF, <span class="hljs-variable language_">self</span>).__init__()
+        <span class="hljs-variable language_">self</span>.embedding_dim = embedding_dim
+        <span class="hljs-variable language_">self</span>.hidden_dim = hidden_dim
+        <span class="hljs-variable language_">self</span>.vocab_size = vocab_size
+        <span class="hljs-variable language_">self</span>.tag_to_ix = tag_to_ix
+        <span class="hljs-variable language_">self</span>.tagset_size = <span class=hljs-built_in >len</span>(tag_to_ix)
 
-        self.word_embeds = nn.Embedding(vocab_size, embedding_dim)
-        self.lstm = nn.LSTM(embedding_dim, hidden_dim // <span class=hljs-number >2</span>,
+        <span class="hljs-variable language_">self</span>.word_embeds = nn.Embedding(vocab_size, embedding_dim)
+        <span class="hljs-variable language_">self</span>.lstm = nn.LSTM(embedding_dim, hidden_dim // <span class=hljs-number >2</span>,
                             num_layers=<span class=hljs-number >1</span>, bidirectional=<span class=hljs-literal >True</span>)
 
         <span class=hljs-comment ># Maps the output of the LSTM into tag space.</span>
-        self.hidden2tag = nn.Linear(hidden_dim, self.tagset_size)
+        <span class="hljs-variable language_">self</span>.hidden2tag = nn.Linear(hidden_dim, <span class="hljs-variable language_">self</span>.tagset_size)
 
         <span class=hljs-comment ># Matrix of transition parameters.  Entry i,j is the score of</span>
         <span class=hljs-comment ># transitioning *to* i *from* j.</span>
-        self.transitions = nn.Parameter(
-            torch.randn(self.tagset_size, self.tagset_size))
+        <span class="hljs-variable language_">self</span>.transitions = nn.Parameter(
+            torch.randn(<span class="hljs-variable language_">self</span>.tagset_size, <span class="hljs-variable language_">self</span>.tagset_size))
 
         <span class=hljs-comment ># These two statements enforce the constraint that we never transfer</span>
         <span class=hljs-comment ># to the start tag and we never transfer from the stop tag</span>
-        self.transitions.data[tag_to_ix[START_TAG], :] = -<span class=hljs-number >10000</span>
-        self.transitions.data[:, tag_to_ix[STOP_TAG]] = -<span class=hljs-number >10000</span>
+        <span class="hljs-variable language_">self</span>.transitions.data[tag_to_ix[START_TAG], :] = -<span class=hljs-number >10000</span>
+        <span class="hljs-variable language_">self</span>.transitions.data[:, tag_to_ix[STOP_TAG]] = -<span class=hljs-number >10000</span>
 
-        self.hidden = self.init_hidden()
+        <span class="hljs-variable language_">self</span>.hidden = <span class="hljs-variable language_">self</span>.init_hidden()
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">init_hidden</span>(<span class=hljs-params >self</span>):
-        <span class=hljs-keyword >return</span> (torch.randn(<span class=hljs-number >2</span>, <span class=hljs-number >1</span>, self.hidden_dim // <span class=hljs-number >2</span>),
-                torch.randn(<span class=hljs-number >2</span>, <span class=hljs-number >1</span>, self.hidden_dim // <span class=hljs-number >2</span>))
+        <span class=hljs-keyword >return</span> (torch.randn(<span class=hljs-number >2</span>, <span class=hljs-number >1</span>, <span class="hljs-variable language_">self</span>.hidden_dim // <span class=hljs-number >2</span>),
+                torch.randn(<span class=hljs-number >2</span>, <span class=hljs-number >1</span>, <span class="hljs-variable language_">self</span>.hidden_dim // <span class=hljs-number >2</span>))
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">_forward_alg</span>(<span class=hljs-params >self, feats</span>):
         <span class=hljs-comment ># Do the forward algorithm to compute the partition function</span>
-        init_alphas = torch.full((<span class=hljs-number >1</span>, self.tagset_size), -<span class=hljs-number >10000.</span>)
+        init_alphas = torch.full((<span class=hljs-number >1</span>, <span class="hljs-variable language_">self</span>.tagset_size), -<span class=hljs-number >10000.</span>)
         <span class=hljs-comment ># START_TAG has all of the score.</span>
-        init_alphas[<span class=hljs-number >0</span>][self.tag_to_ix[START_TAG]] = <span class=hljs-number >0.</span>
+        init_alphas[<span class=hljs-number >0</span>][<span class="hljs-variable language_">self</span>.tag_to_ix[START_TAG]] = <span class=hljs-number >0.</span>
 
         <span class=hljs-comment ># Wrap in a variable so that we will get automatic backprop</span>
         forward_var = init_alphas
@@ -64,14 +64,14 @@ torch.manual_seed(<span class=hljs-number >1</span>)</code></pre> <pre><code cla
         <span class=hljs-comment ># Iterate through the sentence</span>
         <span class=hljs-keyword >for</span> feat <span class=hljs-keyword >in</span> feats:
             alphas_t = []  <span class=hljs-comment ># The forward tensors at this timestep</span>
-            <span class=hljs-keyword >for</span> next_tag <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(self.tagset_size):
+            <span class=hljs-keyword >for</span> next_tag <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class="hljs-variable language_">self</span>.tagset_size):
                 <span class=hljs-comment ># broadcast the emission score: it is the same regardless of</span>
                 <span class=hljs-comment ># the previous tag</span>
                 emit_score = feat[next_tag].view(
-                    <span class=hljs-number >1</span>, -<span class=hljs-number >1</span>).expand(<span class=hljs-number >1</span>, self.tagset_size)
+                    <span class=hljs-number >1</span>, -<span class=hljs-number >1</span>).expand(<span class=hljs-number >1</span>, <span class="hljs-variable language_">self</span>.tagset_size)
                 <span class=hljs-comment ># the ith entry of trans_score is the score of </span>
                 <span class=hljs-comment ># transitioning to next_tag from i</span>
-                trans_score = self.transitions[next_tag].view(<span class=hljs-number >1</span>, -<span class=hljs-number >1</span>)
+                trans_score = <span class="hljs-variable language_">self</span>.transitions[next_tag].view(<span class=hljs-number >1</span>, -<span class=hljs-number >1</span>)
                 <span class=hljs-comment ># The ith entry of next_tag_var is the value for the</span>
                 <span class=hljs-comment ># edge (i -&gt; next_tag) before we do log-sum-exp</span>
                 next_tag_var = forward_var + trans_score + emit_score
@@ -79,34 +79,34 @@ torch.manual_seed(<span class=hljs-number >1</span>)</code></pre> <pre><code cla
                 <span class=hljs-comment ># scores.</span>
                 alphas_t.append(log_sum_exp(next_tag_var).view(<span class=hljs-number >1</span>))
             forward_var = torch.cat(alphas_t).view(<span class=hljs-number >1</span>, -<span class=hljs-number >1</span>)
-        terminal_var = forward_var + self.transitions[self.tag_to_ix[STOP_TAG]]
+        terminal_var = forward_var + <span class="hljs-variable language_">self</span>.transitions[<span class="hljs-variable language_">self</span>.tag_to_ix[STOP_TAG]]
         alpha = log_sum_exp(terminal_var)
         <span class=hljs-keyword >return</span> alpha
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">_get_lstm_features</span>(<span class=hljs-params >self, sentence</span>):
-        self.hidden = self.init_hidden()
-        embeds = self.word_embeds(sentence).view(<span class=hljs-built_in >len</span>(sentence), <span class=hljs-number >1</span>, -<span class=hljs-number >1</span>)
-        lstm_out, self.hidden = self.lstm(embeds, self.hidden)
-        lstm_out = lstm_out.view(<span class=hljs-built_in >len</span>(sentence), self.hidden_dim)
-        lstm_feats = self.hidden2tag(lstm_out)
+        <span class="hljs-variable language_">self</span>.hidden = <span class="hljs-variable language_">self</span>.init_hidden()
+        embeds = <span class="hljs-variable language_">self</span>.word_embeds(sentence).view(<span class=hljs-built_in >len</span>(sentence), <span class=hljs-number >1</span>, -<span class=hljs-number >1</span>)
+        lstm_out, <span class="hljs-variable language_">self</span>.hidden = <span class="hljs-variable language_">self</span>.lstm(embeds, <span class="hljs-variable language_">self</span>.hidden)
+        lstm_out = lstm_out.view(<span class=hljs-built_in >len</span>(sentence), <span class="hljs-variable language_">self</span>.hidden_dim)
+        lstm_feats = <span class="hljs-variable language_">self</span>.hidden2tag(lstm_out)
         <span class=hljs-keyword >return</span> lstm_feats
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">_score_sentence</span>(<span class=hljs-params >self, feats, tags</span>):
         <span class=hljs-comment ># Gives the score of a provided tag sequence</span>
         score = torch.zeros(<span class=hljs-number >1</span>)
-        tags = torch.cat([torch.tensor([self.tag_to_ix[START_TAG]], dtype=torch.long), tags])
+        tags = torch.cat([torch.tensor([<span class="hljs-variable language_">self</span>.tag_to_ix[START_TAG]], dtype=torch.long), tags])
         <span class=hljs-keyword >for</span> i, feat <span class=hljs-keyword >in</span> <span class=hljs-built_in >enumerate</span>(feats):
             score = score + \
-                self.transitions[tags[i + <span class=hljs-number >1</span>], tags[i]] + feat[tags[i + <span class=hljs-number >1</span>]]
-        score = score + self.transitions[self.tag_to_ix[STOP_TAG], tags[-<span class=hljs-number >1</span>]]
+                <span class="hljs-variable language_">self</span>.transitions[tags[i + <span class=hljs-number >1</span>], tags[i]] + feat[tags[i + <span class=hljs-number >1</span>]]
+        score = score + <span class="hljs-variable language_">self</span>.transitions[<span class="hljs-variable language_">self</span>.tag_to_ix[STOP_TAG], tags[-<span class=hljs-number >1</span>]]
         <span class=hljs-keyword >return</span> score
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">_viterbi_decode</span>(<span class=hljs-params >self, feats</span>):
         backpointers = []
 
         <span class=hljs-comment ># Initialize the viterbi variables in log space</span>
-        init_vvars = torch.full((<span class=hljs-number >1</span>, self.tagset_size), -<span class=hljs-number >10000.</span>)
-        init_vvars[<span class=hljs-number >0</span>][self.tag_to_ix[START_TAG]] = <span class=hljs-number >0</span>
+        init_vvars = torch.full((<span class=hljs-number >1</span>, <span class="hljs-variable language_">self</span>.tagset_size), -<span class=hljs-number >10000.</span>)
+        init_vvars[<span class=hljs-number >0</span>][<span class="hljs-variable language_">self</span>.tag_to_ix[START_TAG]] = <span class=hljs-number >0</span>
 
         <span class=hljs-comment ># forward_var at step i holds the viterbi variables for step i-1</span>
         forward_var = init_vvars
@@ -114,13 +114,13 @@ torch.manual_seed(<span class=hljs-number >1</span>)</code></pre> <pre><code cla
             bptrs_t = []  <span class=hljs-comment ># holds the backpointers for this step</span>
             viterbivars_t = []  <span class=hljs-comment ># holds the viterbi variables for this step</span>
 
-            <span class=hljs-keyword >for</span> next_tag <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(self.tagset_size):
+            <span class=hljs-keyword >for</span> next_tag <span class=hljs-keyword >in</span> <span class=hljs-built_in >range</span>(<span class="hljs-variable language_">self</span>.tagset_size):
                 <span class=hljs-comment ># next_tag_var[i] holds the viterbi variable for tag i at the</span>
                 <span class=hljs-comment ># previous step, plus the score of transitioning</span>
                 <span class=hljs-comment ># from tag i to next_tag.</span>
                 <span class=hljs-comment ># We don&#x27;t include the emission scores here because the max</span>
                 <span class=hljs-comment ># does not depend on them (we add them in below)</span>
-                next_tag_var = forward_var + self.transitions[next_tag]
+                next_tag_var = forward_var + <span class="hljs-variable language_">self</span>.transitions[next_tag]
                 best_tag_id = argmax(next_tag_var)
                 bptrs_t.append(best_tag_id)
                 viterbivars_t.append(next_tag_var[<span class=hljs-number >0</span>][best_tag_id].view(<span class=hljs-number >1</span>))
@@ -130,7 +130,7 @@ torch.manual_seed(<span class=hljs-number >1</span>)</code></pre> <pre><code cla
             backpointers.append(bptrs_t)
 
         <span class=hljs-comment ># Transition to STOP_TAG</span>
-        terminal_var = forward_var + self.transitions[self.tag_to_ix[STOP_TAG]]
+        terminal_var = forward_var + <span class="hljs-variable language_">self</span>.transitions[<span class="hljs-variable language_">self</span>.tag_to_ix[STOP_TAG]]
         best_tag_id = argmax(terminal_var)
         path_score = terminal_var[<span class=hljs-number >0</span>][best_tag_id]
 
@@ -141,22 +141,22 @@ torch.manual_seed(<span class=hljs-number >1</span>)</code></pre> <pre><code cla
             best_path.append(best_tag_id)
         <span class=hljs-comment ># Pop off the start tag (we dont want to return that to the caller)</span>
         start = best_path.pop()
-        <span class=hljs-keyword >assert</span> start == self.tag_to_ix[START_TAG]  <span class=hljs-comment ># Sanity check</span>
+        <span class=hljs-keyword >assert</span> start == <span class="hljs-variable language_">self</span>.tag_to_ix[START_TAG]  <span class=hljs-comment ># Sanity check</span>
         best_path.reverse()
         <span class=hljs-keyword >return</span> path_score, best_path
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">neg_log_likelihood</span>(<span class=hljs-params >self, sentence, tags</span>):
-        feats = self._get_lstm_features(sentence)
-        forward_score = self._forward_alg(feats)
-        gold_score = self._score_sentence(feats, tags)
+        feats = <span class="hljs-variable language_">self</span>._get_lstm_features(sentence)
+        forward_score = <span class="hljs-variable language_">self</span>._forward_alg(feats)
+        gold_score = <span class="hljs-variable language_">self</span>._score_sentence(feats, tags)
         <span class=hljs-keyword >return</span> forward_score - gold_score
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">forward</span>(<span class=hljs-params >self, sentence</span>):  <span class=hljs-comment ># dont confuse this with _forward_alg above.</span>
         <span class=hljs-comment ># Get the emission scores from the BiLSTM</span>
-        lstm_feats = self._get_lstm_features(sentence)
+        lstm_feats = <span class="hljs-variable language_">self</span>._get_lstm_features(sentence)
 
         <span class=hljs-comment ># Find the best path, given the features.</span>
-        score, tag_seq = self._viterbi_decode(lstm_feats)
+        score, tag_seq = <span class="hljs-variable language_">self</span>._viterbi_decode(lstm_feats)
         <span class=hljs-keyword >return</span> score, tag_seq</code></pre> <p>run training </p> <pre><code class="python hljs">START_TAG = <span class=hljs-string >&quot;&lt;START&gt;&quot;</span>
 STOP_TAG = <span class=hljs-string >&quot;&lt;STOP&gt;&quot;</span>
 EMBEDDING_DIM = <span class=hljs-number >5</span>
@@ -213,4 +213,4 @@ optimizer = optim.SGD(model.parameters(), lr=<span class=hljs-number >0.01</span
 <span class=hljs-keyword >with</span> torch.no_grad():
     precheck_sent = prepare_sequence(training_data[<span class=hljs-number >0</span>][<span class=hljs-number >0</span>], word_to_ix)
     <span class=hljs-built_in >print</span>(model(precheck_sent))
-<span class=hljs-comment ># We got it!</span></code></pre> <div class=page-foot > <div class=copyright > <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a> ©️ Last modified: July 06, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> <script src="/nlpwme/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>
+<span class=hljs-comment ># We got it!</span></code></pre> <div class=page-foot > <div class=copyright > <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a> ©️ Last modified: July 15, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>. </div> </div> </div> <script src="/nlpwme/libs/highlight/highlight.min.js"></script> <script>hljs.highlightAll();hljs.configure({tabReplace: ' '});</script>

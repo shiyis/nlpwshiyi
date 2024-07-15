@@ -104,34 +104,34 @@ num_documents, num_words = counts.shape</code></pre> <pre><code class="python hl
 
 <span class=hljs-keyword >class</span> <span class="hljs-title class_">TBIP</span>:
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">__init__</span>(<span class=hljs-params >self, N, D, K, V, batch_size, init_mu_theta=<span class=hljs-literal >None</span>, init_mu_beta=<span class=hljs-literal >None</span></span>):
-        self.N = N  <span class=hljs-comment ># number of people</span>
-        self.D = D  <span class=hljs-comment ># number of documents</span>
-        self.K = K  <span class=hljs-comment ># number of topics</span>
-        self.V = V  <span class=hljs-comment ># number of words in vocabulary</span>
-        self.batch_size = batch_size  <span class=hljs-comment ># number of documents in a batch</span>
+        <span class="hljs-variable language_">self</span>.N = N  <span class=hljs-comment ># number of people</span>
+        <span class="hljs-variable language_">self</span>.D = D  <span class=hljs-comment ># number of documents</span>
+        <span class="hljs-variable language_">self</span>.K = K  <span class=hljs-comment ># number of topics</span>
+        <span class="hljs-variable language_">self</span>.V = V  <span class=hljs-comment ># number of words in vocabulary</span>
+        <span class="hljs-variable language_">self</span>.batch_size = batch_size  <span class=hljs-comment ># number of documents in a batch</span>
 
         <span class=hljs-keyword >if</span> init_mu_theta <span class=hljs-keyword >is</span> <span class=hljs-literal >None</span>:
             init_mu_theta = jnp.zeros([D, K])
         <span class=hljs-keyword >else</span>:
-            self.init_mu_theta = init_mu_theta
+            <span class="hljs-variable language_">self</span>.init_mu_theta = init_mu_theta
 
         <span class=hljs-keyword >if</span> init_mu_beta <span class=hljs-keyword >is</span> <span class=hljs-literal >None</span>:
             init_mu_beta = jnp.zeros([K, V])
         <span class=hljs-keyword >else</span>:
-            self.init_mu_beta = init_mu_beta
+            <span class="hljs-variable language_">self</span>.init_mu_beta = init_mu_beta
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">model</span>(<span class=hljs-params >self, Y_batch, d_batch, i_batch</span>):
-        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;i&quot;</span>, self.N):
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;i&quot;</span>, <span class="hljs-variable language_">self</span>.N):
             <span class=hljs-comment ># Sample the per-unit latent variables (ideal points)</span>
             x = sample(<span class=hljs-string >&quot;x&quot;</span>, dist.Normal())
 
-        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k&quot;</span>, size=self.K, dim=-<span class=hljs-number >2</span>):
-            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k_v&quot;</span>, size=self.V, dim=-<span class=hljs-number >1</span>):
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k&quot;</span>, size=<span class="hljs-variable language_">self</span>.K, dim=-<span class=hljs-number >2</span>):
+            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k_v&quot;</span>, size=<span class="hljs-variable language_">self</span>.V, dim=-<span class=hljs-number >1</span>):
                 beta = sample(<span class=hljs-string >&quot;beta&quot;</span>, dist.Gamma(<span class=hljs-number >0.3</span>, <span class=hljs-number >0.3</span>))
                 eta = sample(<span class=hljs-string >&quot;eta&quot;</span>, dist.Normal())
 
-        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d&quot;</span>, size=self.D, subsample_size=self.batch_size, dim=-<span class=hljs-number >2</span>):
-            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d_k&quot;</span>, size=self.K, dim=-<span class=hljs-number >1</span>):
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d&quot;</span>, size=<span class="hljs-variable language_">self</span>.D, subsample_size=<span class="hljs-variable language_">self</span>.batch_size, dim=-<span class=hljs-number >2</span>):
+            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d_k&quot;</span>, size=<span class="hljs-variable language_">self</span>.K, dim=-<span class=hljs-number >1</span>):
                 <span class=hljs-comment ># Sample document-level latent variables (topic intensities)</span>
                 theta = sample(<span class=hljs-string >&quot;theta&quot;</span>, dist.Gamma(<span class=hljs-number >0.3</span>, <span class=hljs-number >0.3</span>))
 
@@ -146,7 +146,7 @@ num_documents, num_words = counts.shape</code></pre> <pre><code class="python hl
                 <span class=hljs-number >1</span>,
             )
 
-        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;v&quot;</span>, size=self.V, dim=-<span class=hljs-number >1</span>):
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;v&quot;</span>, size=<span class="hljs-variable language_">self</span>.V, dim=-<span class=hljs-number >1</span>):
             <span class=hljs-comment ># Sample observed words</span>
             sample(<span class=hljs-string >&quot;Y_batch&quot;</span>, dist.Poisson(P), obs=Y_batch)
 
@@ -159,52 +159,52 @@ num_documents, num_words = counts.shape</code></pre> <pre><code class="python hl
         <span class=hljs-comment ># Also notice it is required that model and the guide have the same call.</span>
 
         mu_x = param(
-            <span class=hljs-string >&quot;mu_x&quot;</span>, init_value=-<span class=hljs-number >1</span> + <span class=hljs-number >2</span> * random.uniform(random.PRNGKey(<span class=hljs-number >1</span>), (self.N,))
+            <span class=hljs-string >&quot;mu_x&quot;</span>, init_value=-<span class=hljs-number >1</span> + <span class=hljs-number >2</span> * random.uniform(random.PRNGKey(<span class=hljs-number >1</span>), (<span class="hljs-variable language_">self</span>.N,))
         )
         sigma_x = param(
-            <span class=hljs-string >&quot;sigma_y&quot;</span>, init_value=jnp.ones([self.N]), constraint=constraints.positive
+            <span class=hljs-string >&quot;sigma_y&quot;</span>, init_value=jnp.ones([<span class="hljs-variable language_">self</span>.N]), constraint=constraints.positive
         )
 
         mu_eta = param(
-            <span class=hljs-string >&quot;mu_eta&quot;</span>, init_value=random.normal(random.PRNGKey(<span class=hljs-number >2</span>), (self.K, self.V))
+            <span class=hljs-string >&quot;mu_eta&quot;</span>, init_value=random.normal(random.PRNGKey(<span class=hljs-number >2</span>), (<span class="hljs-variable language_">self</span>.K, <span class="hljs-variable language_">self</span>.V))
         )
         sigma_eta = param(
             <span class=hljs-string >&quot;sigma_eta&quot;</span>,
-            init_value=jnp.ones([self.K, self.V]),
+            init_value=jnp.ones([<span class="hljs-variable language_">self</span>.K, <span class="hljs-variable language_">self</span>.V]),
             constraint=constraints.positive,
         )
 
-        mu_theta = param(<span class=hljs-string >&quot;mu_theta&quot;</span>, init_value=self.init_mu_theta)
+        mu_theta = param(<span class=hljs-string >&quot;mu_theta&quot;</span>, init_value=<span class="hljs-variable language_">self</span>.init_mu_theta)
         sigma_theta = param(
             <span class=hljs-string >&quot;sigma_theta&quot;</span>,
-            init_value=jnp.ones([self.D, self.K]),
+            init_value=jnp.ones([<span class="hljs-variable language_">self</span>.D, <span class="hljs-variable language_">self</span>.K]),
             constraint=constraints.positive,
         )
 
-        mu_beta = param(<span class=hljs-string >&quot;mu_beta&quot;</span>, init_value=self.init_mu_beta)
+        mu_beta = param(<span class=hljs-string >&quot;mu_beta&quot;</span>, init_value=<span class="hljs-variable language_">self</span>.init_mu_beta)
         sigma_beta = param(
             <span class=hljs-string >&quot;sigma_beta&quot;</span>,
-            init_value=jnp.ones([self.K, self.V]),
+            init_value=jnp.ones([<span class="hljs-variable language_">self</span>.K, <span class="hljs-variable language_">self</span>.V]),
             constraint=constraints.positive,
         )
 
-        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;i&quot;</span>, self.N):
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;i&quot;</span>, <span class="hljs-variable language_">self</span>.N):
             sample(<span class=hljs-string >&quot;x&quot;</span>, dist.Normal(mu_x, sigma_x))
 
-        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k&quot;</span>, size=self.K, dim=-<span class=hljs-number >2</span>):
-            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k_v&quot;</span>, size=self.V, dim=-<span class=hljs-number >1</span>):
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k&quot;</span>, size=<span class="hljs-variable language_">self</span>.K, dim=-<span class=hljs-number >2</span>):
+            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;k_v&quot;</span>, size=<span class="hljs-variable language_">self</span>.V, dim=-<span class=hljs-number >1</span>):
                 sample(<span class=hljs-string >&quot;beta&quot;</span>, dist.LogNormal(mu_beta, sigma_beta))
                 sample(<span class=hljs-string >&quot;eta&quot;</span>, dist.Normal(mu_eta, sigma_eta))
 
-        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d&quot;</span>, size=self.D, subsample_size=self.batch_size, dim=-<span class=hljs-number >2</span>):
-            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d_k&quot;</span>, size=self.K, dim=-<span class=hljs-number >1</span>):
+        <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d&quot;</span>, size=<span class="hljs-variable language_">self</span>.D, subsample_size=<span class="hljs-variable language_">self</span>.batch_size, dim=-<span class=hljs-number >2</span>):
+            <span class=hljs-keyword >with</span> plate(<span class=hljs-string >&quot;d_k&quot;</span>, size=<span class="hljs-variable language_">self</span>.K, dim=-<span class=hljs-number >1</span>):
                 sample(<span class=hljs-string >&quot;theta&quot;</span>, dist.LogNormal(mu_theta[d_batch], sigma_theta[d_batch]))
 
     <span class=hljs-keyword >def</span> <span class="hljs-title function_">get_batch</span>(<span class=hljs-params >self, rng, Y, author_indices</span>):
         <span class=hljs-comment ># Helper functions to obtain a batch of data, convert from scipy.sparse</span>
         <span class=hljs-comment ># to jax.numpy.array and move to gpu</span>
 
-        D_batch = random.choice(rng, jnp.arange(self.D), shape=(self.batch_size,))
+        D_batch = random.choice(rng, jnp.arange(<span class="hljs-variable language_">self</span>.D), shape=(<span class="hljs-variable language_">self</span>.batch_size,))
         Y_batch = jax.device_put(jnp.array(Y[D_batch].toarray()), jax.devices(<span class=hljs-string >&quot;gpu&quot;</span>)[<span class=hljs-number >0</span>])
         D_batch = jax.device_put(D_batch, jax.devices(<span class=hljs-string >&quot;gpu&quot;</span>)[<span class=hljs-number >0</span>])
         I_batch = author_indices[D_batch]
@@ -448,7 +448,7 @@ svi_state_autoguide = create_svi_object(guide=autoguide)
 <div class=page-foot >
     <div class=copyright >
       <a href="https://github.com/shiyis/nlpwsys/tree/master"><b> This page is hosted on <img class=github-logo  src="https://unpkg.com/ionicons@5.1.2/dist/svg/logo-github.svg"></b></a>
-       ©️ Last modified: July 06, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+       ©️ Last modified: July 15, 2024. Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
     </div>
   </div>
   </div>
