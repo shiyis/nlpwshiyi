@@ -3,3 +3,6 @@
 	url = https://github.com/shiyis/nlp-docs.git
 [submodule "https://github.com/shiyis/nlp-doc"]
 	url = nlp-doc
+[submodule "nlp-doc"]
+	path = nlp-doc
+	url = https://github.com/shiyis/nlp-doc
