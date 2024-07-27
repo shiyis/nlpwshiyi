@@ -1324,7 +1324,7 @@ img[alt=intro] {
 
 @media screen and (max-width: 500px) {
   img[alt=intro] {
-    width: 85%;
+    width: 95%;
     opacity: 0.95;
   }
 
