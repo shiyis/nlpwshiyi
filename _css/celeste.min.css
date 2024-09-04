@@ -947,7 +947,7 @@ pre code {
 
 
 .topnav {
-  background-color: #017da5;
+  background-color: darkolivegreen;
   overflow: hidden;
 }
 
@@ -969,7 +969,7 @@ pre code {
 /* Add an active class to highlight the current page */
 .active {
   left: 50%;
-  background-color: #04AA6D;
+  background-color: chocolate;
   color: ivory;
   width: 100px;
 }
@@ -1065,7 +1065,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: #017da5;
+    background-color: darkolivegreen;
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1144,7 +1144,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: #017da5;
+    background-color: darkolivegreen;
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1214,7 +1214,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: #017da5;
+    background-color: darkolivegreen;
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1268,7 +1268,7 @@ pre code {
   /* Menu */
   .topnav {
     width: 100%;
-    background-color: #017da5;
+    background-color: darkolivegreen;
     display: -ms-grid;
     display: grid;
     grid-template-rows: 1fr repeat(5, 0.02fr);
@@ -1293,7 +1293,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: #017da5;
+    background-color: darkolivegreen;
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1335,7 +1335,7 @@ img[alt=intro] {
 
   .active {
     order: -2;
-    background-color: #017da5;
+    background-color: darkolivegreen;
     padding: 14px 16px;
   }
 
@@ -1407,7 +1407,7 @@ img[alt=intro] {
   margin-top: 2px;
   right: 45px; /* Adjust as needed */
   padding: 3px 10px 4px 10px;
-  background-color: #017da5;
+  background-color: #4166a7;
   color: white;
   border: none;
   border-radius: 5px; /* Make the border radius oval */
@@ -1444,7 +1444,7 @@ img[alt=intro] {
 
 
 /* .small-screen .copy-button {
-    background-color: #017da5;
+    background-color: darkolivegreen;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -1461,7 +1461,7 @@ img[alt=intro] {
   }
 
   /* .copy-button:hover {
-    background-color: #017da5;
+    background-color: darkolivegreen;
   } */
 
 }
