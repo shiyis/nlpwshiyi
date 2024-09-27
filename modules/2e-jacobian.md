@@ -1,6 +1,6 @@
 @def sequence = ["jax"]
 
-# Automatic Differentiation: VJP and More on JAX
+# Automatic Differentiation: More on Linear Mapping and Jacobian Matrices
 
 **Table of Contents**
 
