@@ -947,7 +947,7 @@ pre code {
 
 
 .topnav {
-  background-color: darkolivegreen;
+  background-color: rgb(65, 102, 167);
   overflow: hidden;
 }
 
@@ -1065,7 +1065,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1144,7 +1144,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1214,7 +1214,7 @@ pre code {
 
   /* Hamburger */
   .hamburger1 {
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
     height: 49px;
     display: -ms-grid;
     display: grid;
@@ -1268,7 +1268,7 @@ pre code {
   /* Menu */
   .topnav {
     width: 100%;
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
     display: -ms-grid;
     display: grid;
     grid-template-rows: 1fr repeat(5, 0.02fr);
@@ -1293,7 +1293,7 @@ pre code {
 
   .active {
     order: -2;
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
     font-size: 19px;
     /* width: 132px;
     margin: auto; */
@@ -1335,7 +1335,7 @@ img[alt=intro] {
 
   .active {
     order: -2;
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
     padding: 14px 16px;
   }
 
@@ -1444,7 +1444,7 @@ img[alt=intro] {
 
 
 /* .small-screen .copy-button {
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
     position: absolute;
     top: 10px;
     right: 10px;
@@ -1461,7 +1461,7 @@ img[alt=intro] {
   }
 
   /* .copy-button:hover {
-    background-color: darkolivegreen;
+    background-color: rgb(65, 102, 167);
   } */
 
 }
