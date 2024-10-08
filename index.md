@@ -47,10 +47,9 @@ According to the official definition extracted out of John McCarthy's 2004 [pape
 So if it's to understand human intelligence, we need to know humans gain information and how human intelligence, or the brain, really works both through physiology and psychology,
 
 ```plaintext
-💡 Two Important Sources of Knowledge: Rationalism and Empiricism.
+  💡 Two Important Sources of Knowledge: Rationalism and Empiricism.
 
-  The first acquires knowledge through reasoning and logic, while the
-  second through experience and experimentation.
+  The first acquires knowledge through reasoning and logic, while the second through experience   and experimentation.
 ```
 
 Below are some important notes with respect to the **historical timeline** of the development of Computational Linguistics and NLP and how it all started from one of these two principles and gradually transitioned to the other (rationalism / computationalism to empiricism / connectionism; although computationalism is not always symbolic; namely it also incorporates empirical evidence):
