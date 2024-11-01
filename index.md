@@ -8,10 +8,12 @@ Hi, I’m Shiyi. Welcome to my technical blog. Please check out this [page](http
 Areas that I have dabbled in,
 
 ```
+
 → General Linguistics
 → Symbolic Computational Linguistics
 → Statistical Natural Language Processing
 → State of the Art Large Language Modeling
+
 ```
 
 ### **The Subject Matter**
@@ -19,6 +21,7 @@ Areas that I have dabbled in,
 What do we mean by Natural Language Processing? If we do a little googling and researching, it's very intuitive that natural language processing involves a set of solutions to various natural human language tasks. The most common ones are
 
 ```plaintext
+
 → Sentiment analysis
 → Machine translation
 → Word-sense disambiguation
@@ -27,6 +30,7 @@ What do we mean by Natural Language Processing? If we do a little googling and r
 → Text classification
 → Document Classification
 → Question answering
+
 ```
 
 ### **A Little Bit Of History**
@@ -44,7 +48,7 @@ According to the official definition extracted out of John McCarthy's 2004 [pape
  not have to confine itself to methods that are biologically observable."
 ```
 
-So if it's to understand human intelligence, we need to know humans gain information and how human intelligence, or the brain, really works both through physiology and psychology,
+So if it's to understand human intelligence, we need to know how we as humans gain information and human intelligence, or the brain, really works both through physiology and psychology,
 
 ```plaintext
   💡 Two Important Sources of Knowledge: Rationalism and Empiricism.
