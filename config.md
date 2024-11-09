@@ -32,7 +32,7 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def title = "NLPwShiyi | Natural Language Processing with Shiyi"
 @def website_description = "Website for documenting my journey of understanding Natural Language Processing"
-@def prepath = "nlpwme"
+@def prepath = "nlpwshiyi"
 
 
 @def lang = "julia"
@@ -71,7 +71,7 @@ website_url   = "https://tlienart.github.io/FranklinTemplates.jl/"
 
 @def add_github_view  = true
 @def add_github_star  = true
-@def github_repo      = "https://github.com/shiyis/nlpwme"
+@def github_repo      = "https://github.com/shiyis/nlpwshiyi"
 
 <!-- SECTION LAYOUT
 NOTE:
